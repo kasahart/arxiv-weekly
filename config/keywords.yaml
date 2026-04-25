@@ -1,0 +1,82 @@
+# ============================================================
+# arXiv 論文フィルタリング設定
+# キーワードの追加・削除はこのファイルのみ編集してください
+# ============================================================
+
+# 対象 arXiv カテゴリ
+categories:
+  - cs.SD
+  - eess.AS
+
+# フィルタリングキーワード（OR 条件）
+# タイトル・アブストラクトのいずれかに含まれる論文を対象とする
+include:
+  # 音の基盤モデル
+  - audio foundation model
+  - audio language model
+  - audio large language model
+  - sound foundation model
+  - music foundation model
+  - audio pre-training
+  - audio self-supervised
+  - universal audio
+  # 音源分離
+  - source separation
+  - music separation
+  - speech separation
+  - sound separation
+  - speaker separation
+  - vocal separation
+  - music demixing
+  # 異音検知
+  - anomalous sound detection
+  - anomaly sound detection
+  - anomaly detection
+  - acoustic anomaly
+  - machine sound anomaly
+  - unsupervised anomaly
+  - sound event detection
+
+# 除外キーワード（include にマッチしても除外する）
+exclude:
+  - survey only
+  - retracted
+
+# UI 表示用カテゴリ定義
+ui_categories:
+  - id: foundation
+    label: 音の基盤モデル
+    color: "#38bdf8"
+    keywords:
+      - audio foundation model
+      - audio language model
+      - audio large language model
+      - sound foundation model
+      - music foundation model
+      - audio pre-training
+      - audio self-supervised
+      - universal audio
+
+  - id: separation
+    label: 音源分離
+    color: "#4ade80"
+    keywords:
+      - source separation
+      - music separation
+      - speech separation
+      - sound separation
+      - speaker separation
+      - vocal separation
+      - music demixing
+
+  - id: anomaly
+    label: 異音検知
+    color: "#fb923c"
+    keywords:
+      - anomalous sound detection
+      - anomaly sound detection
+      - anomaly detection
+      - acoustic anomaly
+      - machine sound anomaly
+      - unsupervised anomaly
+      - sound event detection

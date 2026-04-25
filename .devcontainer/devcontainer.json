@@ -1,0 +1,39 @@
+{
+  "name": "arxiv-weekly-report",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".."
+  },
+  "forwardPorts": [5173],
+  "postCreateCommand": "bash .devcontainer/postCreate.sh",
+  "remoteEnv": {
+    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
+  },
+  "mounts": [
+    "source=arxiv-venv,target=/venv,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.pylint",
+        "charliermarsh.ruff",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "GitHub.copilot",
+        "GitHub.vscode-github-actions",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/venv/bin/python",
+        "editor.formatOnSave": true,
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+      }
+    }
+  }
+}
