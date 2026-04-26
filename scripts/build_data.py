@@ -93,11 +93,6 @@ def main():
     filename = f"{date_key}.json"
     weekly_path = ROOT / SETTINGS["data"]["weekly_dir"] / filename
 
-    # 同一日付のファイルが既にある場合はスキップ
-    if weekly_path.exists():
-        print(f"[build] {weekly_path} は既に存在します。スキップします。")
-        return
-
     # GitHub Models でトレンド生成
     token = os.environ.get("GITHUB_TOKEN")
     if token:
