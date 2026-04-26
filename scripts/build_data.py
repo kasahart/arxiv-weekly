@@ -3,6 +3,7 @@
 build_data.py
 解析済み論文を週次 JSON に整形し、インデックスを更新する
 """
+
 import json
 import os
 import time
@@ -11,6 +12,8 @@ from pathlib import Path
 
 import yaml
 from openai import OpenAI
+
+from model_utils import build_chat_kwargs
 
 ROOT = Path(__file__).parent.parent
 SETTINGS = yaml.safe_load((ROOT / "config/settings.yaml").read_text())
@@ -24,9 +27,7 @@ JSON 配列として返してください（文字列 3 要素）。コードブ
 
 def generate_trend(client: OpenAI, papers: list[dict]) -> list[str]:
     cfg = SETTINGS["github_models"]
-    summaries = "\n".join(
-        f"- {p['title']}: {p['what']}" for p in papers[:20]
-    )
+    summaries = "\n".join(f"- {p['title']}: {p['what']}" for p in papers[:20])
     for attempt in range(cfg["retry_max"]):
         try:
             resp = client.chat.completions.create(
@@ -35,8 +36,7 @@ def generate_trend(client: OpenAI, papers: list[dict]) -> list[str]:
                     {"role": "system", "content": "JSONのみで返答してください。"},
                     {"role": "user", "content": f"{TREND_PROMPT}\n\n{summaries}"},
                 ],
-                max_tokens=400,
-                temperature=0.4,
+                **build_chat_kwargs(cfg["model"], 400, temperature=0.4),
             )
             raw = (resp.choices[0].message.content or "").strip()
             raw = raw.lstrip("```json").lstrip("```").rstrip("```").strip()
@@ -44,8 +44,8 @@ def generate_trend(client: OpenAI, papers: list[dict]) -> list[str]:
             if isinstance(result, list) and len(result) == 3:
                 return result
         except Exception as e:
-            print(f"  [warn] trend generation error (attempt {attempt+1}): {e}")
-        time.sleep(cfg["retry_interval"] * (2 ** attempt))
+            print(f"  [warn] trend generation error (attempt {attempt + 1}): {e}")
+        time.sleep(cfg["retry_interval"] * (2**attempt))
     return [
         "① 今週の音声基盤モデル研究のトレンドを解析中です。",
         "② 音源分離・異音検知の最新手法が多数投稿されました。",
@@ -55,9 +55,16 @@ def generate_trend(client: OpenAI, papers: list[dict]) -> list[str]:
 
 def group_by_category(papers: list[dict]) -> list[dict]:
     ui_cats = KEYWORDS["ui_categories"]
-    cat_map = {c["id"]: {"id": c["id"], "label": c["label"], "color": c["color"], "papers": []}
-               for c in ui_cats}
-    cat_map["other"] = {"id": "other", "label": "その他", "color": "#94a3b8", "papers": []}
+    cat_map = {
+        c["id"]: {"id": c["id"], "label": c["label"], "color": c["color"], "papers": []}
+        for c in ui_cats
+    }
+    cat_map["other"] = {
+        "id": "other",
+        "label": "その他",
+        "color": "#94a3b8",
+        "papers": [],
+    }
 
     for p in papers:
         cat_id = p.get("category", "other")
@@ -85,11 +92,13 @@ def save_index(index: dict):
 def main():
     analyzed_path = ROOT / "data" / "analyzed_papers.json"
     if not analyzed_path.exists():
-        raise FileNotFoundError(f"{analyzed_path} が見つかりません。analyze_papers.py を先に実行してください。")
+        raise FileNotFoundError(
+            f"{analyzed_path} が見つかりません。analyze_papers.py を先に実行してください。"
+        )
 
     papers = json.loads(analyzed_path.read_text())
     now = datetime.now(timezone.utc)
-    date_key = now.strftime("%Y-%m%d")          # 例: 2026-0425
+    date_key = now.strftime("%Y-%m%d")  # 例: 2026-0425
     filename = f"{date_key}.json"
     weekly_path = ROOT / SETTINGS["data"]["weekly_dir"] / filename
 
@@ -128,12 +137,15 @@ def main():
     index = load_index()
     # 同一 date_key のエントリがあれば削除してから先頭に追加
     index["weeks"] = [w for w in index["weeks"] if w["date"] != date_key]
-    index["weeks"].insert(0, {
-        "date": date_key,
-        "file": f"weekly/{filename}",
-        "count": len(papers),
-        "generated_at": now.isoformat(),
-    })
+    index["weeks"].insert(
+        0,
+        {
+            "date": date_key,
+            "file": f"weekly/{filename}",
+            "count": len(papers),
+            "generated_at": now.isoformat(),
+        },
+    )
     save_index(index)
 
     # 中間ファイルを削除
