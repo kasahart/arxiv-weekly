@@ -89,7 +89,7 @@ def save_index(index: dict):
     print(f"[build] Index updated → {index_path}")
 
 
-def main():
+def main(date_str: str | None = None):
     analyzed_path = ROOT / "data" / "analyzed_papers.json"
     if not analyzed_path.exists():
         raise FileNotFoundError(
@@ -97,7 +97,10 @@ def main():
         )
 
     papers = json.loads(analyzed_path.read_text())
-    now = datetime.now(timezone.utc)
+    if date_str:
+        now = datetime.fromisoformat(date_str).replace(tzinfo=timezone.utc)
+    else:
+        now = datetime.now(timezone.utc)
     date_key = now.strftime("%Y-%m%d")  # 例: 2026-0425
     filename = f"{date_key}.json"
     weekly_path = ROOT / SETTINGS["data"]["weekly_dir"] / filename
@@ -155,4 +158,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date", type=str, default=None, help="基準日 YYYY-MM-DD（省略時は今日）")
+    args = parser.parse_args()
+    main(date_str=args.date)

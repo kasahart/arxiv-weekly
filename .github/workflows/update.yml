@@ -10,6 +10,10 @@ on:
         description: 'Dry run（取得のみ、コミットなし）'
         required: false
         default: 'false'
+      target_date:
+        description: '基準日 YYYY-MM-DD（省略時は今日）過去週のデータ生成に使用'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -35,7 +39,11 @@ jobs:
       - name: Fetch papers from arXiv
         id: fetch
         run: |
-          python scripts/fetch_papers.py
+          DATE_ARG=""
+          if [ -n "${{ github.event.inputs.target_date }}" ]; then
+            DATE_ARG="--date ${{ github.event.inputs.target_date }}"
+          fi
+          python scripts/fetch_papers.py $DATE_ARG
           COUNT=$(python -c "import json; print(len(json.load(open('data/raw_papers.json'))))")
           echo "paper_count=$COUNT" >> $GITHUB_OUTPUT
           echo "✅ Fetched $COUNT papers"
@@ -105,7 +113,12 @@ jobs:
       - name: Build weekly JSON and update index
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/build_data.py
+        run: |
+          DATE_ARG=""
+          if [ -n "${{ github.event.inputs.target_date }}" ]; then
+            DATE_ARG="--date ${{ github.event.inputs.target_date }}"
+          fi
+          python scripts/build_data.py $DATE_ARG
 
       - name: Upload built data
         uses: actions/upload-artifact@v4

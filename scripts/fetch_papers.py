@@ -102,11 +102,11 @@ def extract_orgs(entry) -> str:
         return f"{authors[0]} et al."
 
 
-def is_within_window(published_iso: str, lookback_days: int) -> bool:
+def is_within_window(published_iso: str, lookback_days: int, ref_date: datetime) -> bool:
     try:
         pub_dt = datetime.fromisoformat(published_iso.replace("Z", "+00:00"))
-        cutoff = datetime.now(timezone.utc) - timedelta(days=lookback_days)
-        return pub_dt >= cutoff
+        cutoff = ref_date - timedelta(days=lookback_days)
+        return cutoff <= pub_dt <= ref_date
     except Exception:
         return True  # パース失敗時は含める
 
@@ -126,11 +126,16 @@ def assign_category(paper: dict, ui_categories: list[dict]) -> str:
     return "other"
 
 
-def main(dry_run: bool = False):
+def main(dry_run: bool = False, date_str: str | None = None):
     cfg = SETTINGS["arxiv"]
     max_papers = cfg["max_papers"]
     lookback_days = cfg["lookback_days"]
     interval = cfg["request_interval"]
+
+    if date_str:
+        ref_date = datetime.fromisoformat(date_str).replace(tzinfo=timezone.utc)
+    else:
+        ref_date = datetime.now(timezone.utc)
 
     query = build_query()
     include_kws = KEYWORDS["include"]
@@ -138,7 +143,7 @@ def main(dry_run: bool = False):
     ui_cats = KEYWORDS["ui_categories"]
 
     print(f"[fetch] Query: {query}")
-    print(f"[fetch] Lookback: {lookback_days} days / Max: {max_papers} papers")
+    print(f"[fetch] Ref date: {ref_date.date()} / Lookback: {lookback_days} days / Max: {max_papers} papers")
 
     seen_ids: set[str] = set()
     collected: list[dict] = []
@@ -156,10 +161,17 @@ def main(dry_run: bool = False):
                 continue
             seen_ids.add(p["id"])
 
-            if not is_within_window(p["published_iso"], lookback_days):
-                print(f"[fetch] Out of window, stopping.")
-                papers = []  # force outer break
-                break
+            if not is_within_window(p["published_iso"], lookback_days, ref_date):
+                # ref_date より新しい論文はスキップ、古い論文は打ち切り
+                try:
+                    pub_dt = datetime.fromisoformat(p["published_iso"].replace("Z", "+00:00"))
+                    if pub_dt < ref_date - timedelta(days=lookback_days):
+                        print(f"[fetch] Out of window, stopping.")
+                        papers = []  # force outer break
+                        break
+                except Exception:
+                    pass
+                continue
 
             if keyword_match(p, include_kws, exclude_kws):
                 p["category"] = assign_category(p, ui_cats)
@@ -186,5 +198,6 @@ def main(dry_run: bool = False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="取得件数のみ表示してファイル出力しない")
+    parser.add_argument("--date", type=str, default=None, help="基準日 YYYY-MM-DD（省略時は今日）")
     args = parser.parse_args()
-    main(dry_run=args.dry_run)
+    main(dry_run=args.dry_run, date_str=args.date)
