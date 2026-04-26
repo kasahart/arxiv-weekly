@@ -2,11 +2,6 @@
   "name": "arxiv-weekly-report",
   "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {
-      "installZsh": "false",
-      "configureZshAsDefaultShell": "false",
-      "upgradePackages": "true"
-    },
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
     },
@@ -18,7 +13,9 @@
     "PYTHONPATH": "${containerWorkspaceFolder}"
   },
   "initializeCommand": "mkdir -p ${localEnv:HOME}/.config/claude",
-  "forwardPorts": [5173],
+  "forwardPorts": [
+    5173
+  ],
   "postCreateCommand": {
     "python": "sudo chown -R vscode:vscode /venv && if [ ! -x /venv/bin/python ]; then python3 -m venv /venv; fi && /venv/bin/python -m pip install --quiet -r ${containerWorkspaceFolder}/requirements.txt && echo '✅ Python 依存パッケージをインストールしました'",
     "node": "sudo chown -R vscode:vscode ${containerWorkspaceFolder}/web && npm --prefix ${containerWorkspaceFolder}/web install --silent && echo '✅ Node.js 依存パッケージをインストールしました'",
@@ -53,7 +50,6 @@
         "[typescriptreact]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         }
-        
       }
     }
   }
