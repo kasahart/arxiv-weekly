@@ -7,12 +7,12 @@ arxiv:
   lookback_days: 7          # 取得対象期間（日数）
   max_papers: 50            # フィルタ後の最大取得件数
   request_interval: 1.0     # API リクエスト間隔（秒）
-  user_agent: "arxiv-weekly-report/1.0 (github.com/your-org/arxiv-weekly)"
+  user_agent: "arxiv-weekly-report/1.0 (github.com/kasahart/arxiv-weekly)"
 
 # GitHub Models 設定
 github_models:
   endpoint: "https://models.inference.ai.azure.com"
-  model: "claude-3-7-sonnet"
+  model: "claude-3-6-sonnet"
   max_tokens: 1500
   retry_max: 3
   retry_interval: 5.0       # リトライ間隔（秒）
