@@ -1,0 +1,86 @@
+{
+  "date": "2026-0426",
+  "generated_at": "2026-04-26T18:23:30.339857+00:00",
+  "total": 4,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2604.19949v1",
+          "date": "Apr 21",
+          "title": "Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages",
+          "titleJa": "Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages",
+          "org": " Girish et al.",
+          "url": "https://arxiv.org/abs/2604.19949v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2604.19221v1",
+          "date": "Apr 21",
+          "title": "UAF: A Unified Audio Front-end LLM for Full-Duplex Speech Interaction",
+          "titleJa": "UAF: A Unified Audio Front-end LLM for Full-Duplex Speech Interaction",
+          "org": "Yadong Li et al.",
+          "url": "https://arxiv.org/abs/2604.19221v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2604.18187v1",
+          "date": "Apr 20",
+          "title": "Audio-DeepThinker: Progressive Reasoning-Aware Reinforcement Learning for High-Quality Chain-of-Thought Emergence in Audio Language Models",
+          "titleJa": "Audio-DeepThinker: Progressive Reasoning-Aware Reinforcement Learning for High-Quality Chain-of-Thought Emergence in Audio Language Models",
+          "org": "Xiang He et al.",
+          "url": "https://arxiv.org/abs/2604.18187v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2604.20270v1",
+          "date": "Apr 22",
+          "title": "Embedding-Based Intrusive Evaluation Metrics for Musical Source Separation Using MERT Representations",
+          "titleJa": "Embedding-Based Intrusive Evaluation Metrics for Musical Source Separation Using MERT Representations",
+          "org": "Paul A. Bereuter / Alois Sontacchi",
+          "url": "https://arxiv.org/abs/2604.20270v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 今週の音声基盤モデル研究のトレンドを解析中です。",
+    "② 音源分離・異音検知の最新手法が多数投稿されました。",
+    "③ 詳細は各論文をご参照ください。"
+  ]
+}
