@@ -13,29 +13,29 @@
           "date": "Apr 17",
           "title": "ICLAD: In-Context Learning with Comparison-Guidance for Audio Deepfake Detection",
           "titleJa": "ICLAD: 音声ディープフェイク検出のための比較ガイダンスを用いたインコンテキスト学習",
-          "org": "Meta",
+          "org": "University of California, Berkeley",
           "url": "https://arxiv.org/abs/2604.16749v1",
           "category": "foundation",
-          "what": "音声ディープフェイク検出のために、比較ガイダンスを活用したインコンテキスト学習（ICLAD）という新しいフレームワークを提案しています。この手法は、音声言語モデル（ALM）を利用して、未確認のディープフェイクに対するトレーニング不要な汎化を実現し、検出結果に関するテキストでの説明も提供します。",
-          "novel": "ICLADは、ペアワイズ比較推論戦略を用いてALMが幻覚やディープフェイクと無関係な音響属性を発見・フィルタリングする点で新規性があります。また、現実のデータセットにおいて、既存のディープフェイク検出器に対して最大2倍の相対的なマクロF1スコアの改善を達成しました。",
-          "method": "ALMと専門的なディープフェイク検出器を組み合わせ、分岐メカニズムを用いて分布外サンプルをALMに送る設計が特徴です。ALMは比較推論を通じて音響属性を分析し、検出精度を向上させます。",
-          "validation": "現実世界のデータセットを用いた実験で、ICLADが既存のディープフェイク検出器を上回る性能を示し、マクロF1スコアで最大2倍の改善を達成しました。",
-          "discussion": "ALMの柔軟性とオープンソースALMへの展開可能性が示されましたが、さらなる改良や他の音声データセットでの検証が必要です。",
+          "what": "音声ディープフェイク検出のために、比較ガイダンスを用いたインコンテキスト学習フレームワークICLADを提案。トレーニング不要で未確認のディープフェイクに一般化でき、検出結果に対するテキストによる説明も提供する。",
+          "novel": "ペアワイズ比較推論戦略を用いて、ディープフェイクに無関係な音響属性や幻覚をフィルタリングする新しいアプローチを提案。これにより、現実世界のデータセットでの一般化性能が向上。",
+          "method": "音声言語モデル（ALM）を活用し、特化型ディープフェイク検出器と連携するルーティングメカニズムを導入。ALMが未確認のディープフェイクを検出する際に比較推論を活用。",
+          "validation": "現実世界のデータセットを用いた評価で、特化型検出器に比べて最大2倍のマクロF1スコア向上を達成。",
+          "discussion": "ALMの柔軟性とオープンソースALMへの展開可能性を示す一方で、特定のディープフェイクパターンへの対応力やスケーラビリティの課題が残る。",
           "nextReads": [
             {
-              "label": "Audio Deepfake Detection with Neural Networks (2021)",
+              "label": "DeepFake Detection with Audio-Visual Features (2022)",
               "url": null
             },
             {
-              "label": "Generalization Challenges in Deepfake Detection (2022)",
+              "label": "Generalization in Deepfake Detection (2021)",
               "url": null
             },
             {
-              "label": "Towards Robust Audio Deepfake Detection (2023)",
+              "label": "Audio Deepfake Detection via Spectrogram Analysis (2023)",
               "url": null
             },
             {
-              "label": "In-Context Learning for Audio Tasks (2023)",
+              "label": "Advances in Audio Forensics (2020)",
               "url": null
             }
           ]
@@ -44,30 +44,30 @@
           "id": "2604.14806v1",
           "date": "Apr 16",
           "title": "Listen, Pause, and Reason: Toward Perception-Grounded Hybrid Reasoning for Audio Understanding",
-          "titleJa": "聞く、止まる、そして推論する: 音声理解のための知覚に基づくハイブリッド推論に向けて",
-          "org": "不明",
+          "titleJa": "聞く、止まる、そして推論する: 音声理解のための知覚に基づくハイブリッド推論の探求",
+          "org": "Shanghai Jiao Tong University",
           "url": "https://arxiv.org/abs/2604.14806v1",
           "category": "foundation",
-          "what": "音声理解における知覚に基づいたハイブリッド推論フレームワーク（HyPeR）を提案し、音声シーン分析に基づく知覚的推論を実現するデータセットPAQAを導入しました。",
-          "novel": "音声シーン分析の概念を活用し、音声の知覚と推論を分離する新しいデータセットとフレームワークを提案した点が新規性です。特に、複数話者や環境音を含む複雑な音声シーンでの性能向上を実現しました。",
-          "method": "PAQAデータセットでモデルをファインチューニングし、GRPOを用いた内部推論の洗練を行う2段階のフレームワークを構築しました。また、PAUSEトークンを導入して曖昧な音響フェーズでの計算を促進しました。",
-          "validation": "ベンチマークデータセットを用いた実験で、HyPeRがベースモデルに対して絶対的な性能向上を達成し、大規模モデルに匹敵する結果を示しました。",
-          "discussion": "ハイブリッド推論の有効性が示されましたが、さらなる複雑な音声シーンやリアルタイム処理への適用可能性の検討が必要です。",
+          "what": "音声理解のための知覚に基づくハイブリッド推論フレームワークHyPeRを提案。音響属性の知覚と推論を2段階で行い、複雑な音声シナリオでの理解を目指す。",
+          "novel": "Auditory Scene Analysisに触発され、音響属性の知覚と推論を分離する新しいデータセットPAQAを導入し、PAUSEトークンや知覚一貫性報酬を活用した新しいアプローチを提案。",
+          "method": "PAQAデータセットを用いてモデルをファインチューニングし、GRPOを用いて内部推論を洗練。PAUSEトークンと知覚一貫性報酬を設計し、曖昧な音響フェーズでの計算を支援。",
+          "validation": "ベンチマークテストでベースモデルに対して絶対的な性能向上を達成し、大規模モデルと同等の性能を示した。",
+          "discussion": "複雑な音響シナリオでの推論能力を向上させたが、さらなるスケーラビリティや多様なデータセットへの適用性が課題。",
           "nextReads": [
             {
-              "label": "Auditory Scene Analysis and Machine Learning (2020)",
+              "label": "Auditory Scene Analysis and AI (2021)",
               "url": null
             },
             {
-              "label": "Hybrid Reasoning in AI Systems (2021)",
+              "label": "Hybrid Reasoning in Multimodal Systems (2022)",
               "url": null
             },
             {
-              "label": "Large Audio Language Models for Complex Tasks (2022)",
+              "label": "Advances in Audio QA Models (2023)",
               "url": null
             },
             {
-              "label": "Perception-Grounded AI Models (2023)",
+              "label": "Perception-Grounded AI Systems (2020)",
               "url": null
             }
           ]
@@ -76,30 +76,30 @@
           "id": "2604.13023v1",
           "date": "Apr 14",
           "title": "SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding",
-          "titleJa": "SpotSound: 大規模音声言語モデルの細粒度時間的グラウンディングの強化",
-          "org": "不明",
+          "titleJa": "SpotSound: 大規模音声言語モデルにおける細粒度な時間的グラウンディングの強化",
+          "org": "Shanghai Jiao Tong University",
           "url": "https://arxiv.org/abs/2604.13023v1",
           "category": "foundation",
-          "what": "音声イベントの時間的グラウンディングを改善するために、SpotSoundという新しい音声言語モデルを提案しました。また、短いイベントが密集した背景音に埋もれる現実的なシナリオを模倣したベンチマークSpotSound-Benchを導入しました。",
-          "novel": "イベントが入力に存在しない場合の誤ったタイムスタンプを抑制するための新しいトレーニング目標を導入し、現実的なシナリオを再現するベンチマークを提供した点が新規性です。",
-          "method": "音声イベントの時間的グラウンディングに特化したトレーニング目標を設定し、モデルが誤ったタイムスタンプを生成しないように設計しました。",
-          "validation": "SpotSound-Benchを用いた実験で、SpotSoundが時間的グラウンディングベンチマークにおいて最先端の結果を達成しました。",
-          "discussion": "現実的なシナリオでの性能向上が確認されましたが、他の音声言語タスクへの適用可能性やさらなる精度向上の余地があります。",
+          "what": "長時間の音声内でイベントが発生する正確なタイミングを特定するための新しい音声言語モデルSpotSoundを提案。音声イベントの時間的グラウンディングに特化。",
+          "novel": "イベントが入力に存在しない場合の幻覚的なタイムスタンプを抑制する新しいトレーニング目標を導入。また、短いイベントが密集した背景音に埋もれる現実的なシナリオを模したSpotSound-Benchを提案。",
+          "method": "新しいトレーニング目標を設定し、音声イベントの正確な時間的グラウンディングを実現。SpotSound-Benchを用いてモデルの性能を評価。",
+          "validation": "時間的グラウンディングのベンチマークで最先端の結果を達成し、一般的な音声言語タスクでも堅牢な性能を維持。",
+          "discussion": "時間的グラウンディング性能を大幅に向上させたが、長時間音声データの効率的な処理や多様なシナリオへの適用が課題。",
           "nextReads": [
             {
-              "label": "Temporal Grounding in Audio Models (2021)",
+              "label": "Temporal Grounding in Audio Models (2022)",
               "url": null
             },
             {
-              "label": "Audio-Language Models for Event Detection (2022)",
+              "label": "Benchmarking Audio-Language Models (2023)",
               "url": null
             },
             {
-              "label": "Benchmarking Temporal Audio Models (2023)",
+              "label": "Event Detection in Dense Audio (2021)",
               "url": null
             },
             {
-              "label": "SpotSound-Bench: A Temporal Grounding Benchmark (2023)",
+              "label": "Challenges in Audio Temporal Analysis (2020)",
               "url": null
             }
           ]
@@ -109,29 +109,29 @@
           "date": "Apr 14",
           "title": "Audio-Cogito: Towards Deep Audio Reasoning in Large Audio Language Models",
           "titleJa": "Audio-Cogito: 大規模音声言語モデルにおける深層音声推論に向けて",
-          "org": "不明",
+          "org": "Tsinghua University",
           "url": "https://arxiv.org/abs/2604.12527v2",
           "category": "foundation",
-          "what": "音声推論能力を強化するために、完全オープンソースの深層音声推論モデルAudio-Cogitoを提案しました。高品質な音声推論データセットCogito-pipeを作成し、自己蒸留戦略を用いてモデルをファインチューニングしました。",
-          "novel": "音声推論に特化したデータセット（Cogito-pipe）を構築し、自己蒸留戦略を用いたモデルのファインチューニングを行う点が新規性です。また、オープンソースモデルとして公開される点も重要です。",
-          "method": "Cogito-pipeデータセットを用いてモデルを自己蒸留戦略でファインチューニングし、音声推論能力を向上させました。",
-          "validation": "MMARベンチマークでの実験により、Audio-Cogitoがオープンソースモデルの中で最高の性能を達成し、一部のクローズドソースモデルを超える結果を示しました。",
-          "discussion": "オープンソースの音声推論モデルとしての有用性が示されましたが、さらなるデータセットの多様性や複雑なタスクへの適用可能性が課題です。",
+          "what": "音声推論能力を強化するための完全オープンソースソリューションAudio-Cogitoを提案。高品質な音声推論データセットを作成し、モデルの自己蒸留戦略を採用。",
+          "novel": "音声推論データセットCogito-pipeを構築し、Chain-of-Thought（CoT）推論を強化する自己蒸留戦略を導入。オープンソースモデルとして最高性能を達成。",
+          "method": "Cogito-pipeデータセットを用いてモデルをファインチューニングし、自己蒸留戦略で推論能力を向上。MMARベンチマークでCoTプロセスを評価。",
+          "validation": "MMARベンチマークでオープンソースモデル中最高性能を達成し、特定の指標でクローズドソースモデルを上回る結果を示した。",
+          "discussion": "音声推論能力を大幅に向上させたが、データセットの多様性や複雑なタスクへの適用性が課題。",
           "nextReads": [
             {
-              "label": "Chain-of-Thought Reasoning in LALMs (2022)",
+              "label": "Chain-of-Thought Reasoning in AI (2022)",
               "url": null
             },
             {
-              "label": "MMAR Benchmark for Audio Reasoning (2023)",
+              "label": "Advances in Audio Reasoning Models (2023)",
               "url": null
             },
             {
-              "label": "Self-Distillation in AI Models (2023)",
+              "label": "MMAR Benchmark for Audio Reasoning (2021)",
               "url": null
             },
             {
-              "label": "Open-Source Audio Reasoning Models (2023)",
+              "label": "Open-Source Audio Language Models (2020)",
               "url": null
             }
           ]
@@ -140,19 +140,19 @@
           "id": "2604.12506v1",
           "date": "Apr 14",
           "title": "Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs",
-          "titleJa": "文字起こしを超えて: 知覚対応型AudioLLMのための統一音声スキーマ",
+          "titleJa": "文字起こしを超えて: 知覚対応型AudioLLMのための統一オーディオスキーマ",
           "org": "Tencent",
           "url": "https://arxiv.org/abs/2604.12506v1",
           "category": "foundation",
-          "what": "音声大規模言語モデル（AudioLLM）の音響知覚能力の向上を目指し、音声情報を「文字起こし」「準言語的要素」「非言語的イベント」の3つに分けた統一音声スキーマ（UAS）を提案。",
-          "novel": "ASR中心の学習が持つ限界を克服し、音声とテキストの整合性を保ちながら、音響知覚能力を向上させる新しい監督フレームワークを導入。",
-          "method": "音声情報をJSON形式で構造化し、UASを用いて音声の多面的な情報を統一的に表現。これを既存のAudioLLMアーキテクチャに適用。",
-          "validation": "MMSU、MMAR、MMAUデータセットで評価を行い、最先端モデルと比較してMMSUで10.9%の知覚能力向上を達成。",
-          "discussion": "UASは音響知覚と推論能力の両立を実現するが、さらなる適用範囲の拡大や他のデータセットでの検証が必要。",
+          "what": "① AudioLLMが複雑な推論タスクでは優れている一方で、細かい音響知覚においては性能が低下する問題を解決するため、音声情報を統一的なJSON形式で構造化するUnified Audio Schema (UAS)を提案しています。",
+          "novel": "② 音声情報を文字起こし、パラ言語的要素、非言語的イベントの3つの要素に明確に分けて統一的に扱うことで、音声とテキストの整合性を保ちながら音響知覚のカバレッジを向上させています。",
+          "method": "③ UASは、音声データを3つの要素に分けたJSON形式で構造化し、これを用いてAudioLLMをトレーニングすることで、音声認識と推論能力を両立させています。",
+          "validation": "④ MMSU、MMAR、MMAUデータセットを用いた実験で、UAS-Audioが同サイズの最先端モデルと比較してMMSUで10.9%の性能向上を達成しました。",
+          "discussion": "⑤ 音響知覚と推論能力の両立に成功していますが、さらなる応用範囲の拡大や他のデータセットでの検証が必要です。",
           "nextReads": [
             {
-              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
-              "url": "https://arxiv.org/abs/2212.04356"
+              "label": "Whisper: OpenAI's ASR Model (2022)",
+              "url": null
             },
             {
               "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
@@ -163,8 +163,8 @@
               "url": "https://arxiv.org/abs/2202.03555"
             },
             {
-              "label": "Self-Supervised Learning for Audio-Visual Scene Analysis (2021)",
-              "url": "https://arxiv.org/abs/2107.09178"
+              "label": "HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units (2021)",
+              "url": "https://arxiv.org/abs/2106.07447"
             }
           ]
         },
@@ -172,31 +172,31 @@
           "id": "2604.12145v1",
           "date": "Apr 13",
           "title": "Why Your Tokenizer Fails in Information Fusion: A Timing-Aware Pre-Quantization Fusion for Video-Enhanced Audio Tokenization",
-          "titleJa": "なぜトークナイザーは情報融合で失敗するのか: タイミング認識型事前量子化融合による映像強化音声トークナイゼーション",
-          "org": "不明",
+          "titleJa": "なぜトークナイザーは情報融合に失敗するのか: 動画強化音声トークナイゼーションのためのタイミング対応型事前量子化融合",
+          "org": "University of Cambridge",
           "url": "https://arxiv.org/abs/2604.12145v1",
           "category": "foundation",
-          "what": "音声トークナイザーに映像情報を統合しつつ、再構成品質を維持する新しいアプローチを提案。",
-          "novel": "従来のマルチモーダル融合手法が再構成品質を損なう問題を解決し、タイミング認識型事前量子化融合を導入して高忠実度の再構成を実現。",
-          "method": "トークナイザーのアーキテクチャ内での融合位置を最適化し、時間軸に沿った特徴融合を行う新しい手法を提案。",
-          "validation": "音声トークナイザーと既存のマルチモーダル融合手法と比較し、再構成品質と下流タスク性能で優位性を実証。",
-          "discussion": "映像情報を統合することで性能向上を達成したが、他のモダリティや異なるデータセットでの検証が必要。",
+          "what": "① 動画情報を統合した音声トークナイザーの再構成品質低下の原因を分析し、タイミング対応型事前量子化融合手法を提案しています。",
+          "novel": "② 時間軸に沿った融合を導入することで、再構成品質を損なうことなく、動画情報を音声トークナイザーに統合する新しいアプローチを実現しました。",
+          "method": "③ 時間軸に基づく特徴融合を行い、再構成品質を維持しつつ、下流タスクの性能を向上させるタイミング対応型事前量子化融合を提案しています。",
+          "validation": "④ 動画情報を活用した音声トークナイザーの再構成品質と下流タスク性能を評価し、既存手法を上回る結果を示しました。",
+          "discussion": "⑤ 提案手法は再構成品質を維持しつつ性能を向上させましたが、他のマルチモーダルデータセットでの検証が必要です。",
           "nextReads": [
             {
-              "label": "VATT: Transformers for Multimodal Self-Supervised Learning from Raw Video, Audio and Text (2021)",
-              "url": "https://arxiv.org/abs/2104.11178"
+              "label": "HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units (2021)",
+              "url": "https://arxiv.org/abs/2106.07447"
             },
             {
-              "label": "MAESTRO: Multimodal Pretraining for Audio-Visual Tasks (2022)",
-              "url": "https://arxiv.org/abs/2206.08391"
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
             },
             {
-              "label": "Contrastive Learning for Multimodal Audio-Visual Representations (2020)",
-              "url": "https://arxiv.org/abs/2006.11407"
+              "label": "Contrastive Predictive Coding (2018)",
+              "url": "https://arxiv.org/abs/1807.03748"
             },
             {
-              "label": "Learning Audio-Visual Speech Representation by Masked Multimodal Cluster Prediction (2022)",
-              "url": "https://arxiv.org/abs/2201.02184"
+              "label": "VideoBERT: A Joint Model for Video and Language Representation Learning (2019)",
+              "url": "https://arxiv.org/abs/1904.01766"
             }
           ]
         },
@@ -204,31 +204,31 @@
           "id": "2604.11594v1",
           "date": "Apr 13",
           "title": "HumDial-EIBench: A Human-Recorded Multi-Turn Emotional Intelligence Benchmark for Audio Language Models",
-          "titleJa": "HumDial-EIBench: 音声言語モデルのための人間記録によるマルチターン感情知能ベンチマーク",
-          "org": "不明",
+          "titleJa": "HumDial-EIBench: 音声言語モデルのための人間が録音したマルチターン感情知能ベンチマーク",
+          "org": "Tsinghua University",
           "url": "https://arxiv.org/abs/2604.11594v1",
           "category": "foundation",
-          "what": "音声言語モデルの感情知能を評価するための、マルチターン対話を含む新しいベンチマークHumDial-EIBenchを提案。",
-          "novel": "合成音声や単一ターンに依存しない、実際の人間の対話を用いた多選択式質問形式のベンチマークを構築。",
-          "method": "感情追跡や因果推論を多選択式質問に変換し、主観的評価のバイアスを軽減。さらに、音響-意味的矛盾タスクを導入。",
-          "validation": "8つの音声言語モデルを評価し、マルチターン感情追跡や暗黙的因果推論における課題を明らかにした。",
-          "discussion": "音響とテキストの共感性が分離される傾向や、クロスモーダル矛盾時のテキスト優位性が課題として残る。",
+          "what": "① 音声言語モデルの感情知能を評価するために、実際の人間の対話を用いたマルチターンの新しいベンチマークHumDial-EIBenchを提案しています。",
+          "novel": "② 合成音声ではなく実際の録音データを使用し、感情追跡や因果推論を多肢選択形式で評価することで、主観的なスコアリングバイアスを軽減しました。",
+          "method": "③ ICASSP 2026 HumDial Challengeのデータを使用し、感情追跡や因果推論、音響-意味的矛盾タスクを含む多様な評価指標を設計しました。",
+          "validation": "④ 8つの音声言語モデルを評価し、多くのモデルがマルチターンの感情追跡や暗黙的な因果推論に苦戦することを確認しました。",
+          "discussion": "⑤ モデルの感情知能の限界が明らかになり、特にテキストと音響の共通信号処理における課題が残っています。",
           "nextReads": [
             {
-              "label": "Empathetic Dialogues: A New Benchmark for Empathy and Emotion in Conversation (2019)",
+              "label": "EmoReact: An Audio-Visual Emotion Dataset (2017)",
+              "url": null
+            },
+            {
+              "label": "EmoReact: Facial Expression Recognition for Emotional Intelligence (2017)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Sentiment Analysis (2018)",
+              "url": null
+            },
+            {
+              "label": "Empathetic Dialogues: A New Benchmark for Empathy in Conversational AI (2019)",
               "url": "https://arxiv.org/abs/1811.00207"
-            },
-            {
-              "label": "Towards Emotional Intelligence in Open-Domain Conversations (2020)",
-              "url": "https://arxiv.org/abs/2008.12348"
-            },
-            {
-              "label": "DialogueRNN: An Attentive RNN for Emotion Detection in Conversations (2019)",
-              "url": "https://arxiv.org/abs/1811.00405"
-            },
-            {
-              "label": "MELD: A Multimodal Multi-Party Dataset for Emotion Recognition in Conversations (2019)",
-              "url": "https://arxiv.org/abs/1810.02508"
             }
           ]
         },
@@ -236,31 +236,31 @@
           "id": "2604.10021v1",
           "date": "Apr 11",
           "title": "Masked Contrastive Pre-Training Improves Music Audio Key Detection",
-          "titleJa": "マスク付きコントラスト事前学習による音楽音声キー検出の改善",
+          "titleJa": "マスク付きコントラスト事前学習は音楽音声のキー検出を改善する",
           "org": "Texas A&M University",
           "url": "https://arxiv.org/abs/2604.10021v1",
           "category": "foundation",
-          "what": "音楽音声のキー検出において、マスク付きコントラスト事前学習が有効であることを示し、最先端の性能を達成する手法を提案。",
-          "novel": "自己教師あり学習の設計が音高感度に直接影響することを初めて体系的に示し、シンプルなMLPで高性能を実現。",
-          "method": "メルスペクトログラムを用いたマスク付きコントラスト事前学習を採用し、浅いが広いMLPを用いて特徴を学習。",
-          "validation": "キー検出タスクでの性能を評価し、既存の手法と比較して最先端の結果を達成。学習表現が一般的なデータ拡張にも頑健であることを実証。",
-          "discussion": "音楽基盤モデルの設計に関する洞察を提供する一方で、他の音楽情報検索（MIR）タスクへの適用可能性が課題として残る。",
+          "what": "① 音楽のキー検出において、マスク付きコントラスト事前学習が有効であることを示し、自己教師あり学習の設計が音高感受性に与える影響を体系的に研究しました。",
+          "novel": "② マスク付きコントラスト事前学習が音楽キー検出の性能を向上させることを初めて実証し、シンプルなMLPモデルで最先端の性能を達成しました。",
+          "method": "③ Melスペクトログラムを用いたマスク付きコントラスト事前学習を行い、その特徴を浅いが幅広いMLPに入力することで、音楽キー検出の性能を向上させました。",
+          "validation": "④ 線形評価と比較実験を通じて、提案手法が他の自己教師あり学習手法を上回る性能を示しました。",
+          "discussion": "⑤ 音高感受性を強化する新たな可能性を示しましたが、他の音楽情報検索タスクへの適用可能性についてのさらなる研究が必要です。",
           "nextReads": [
             {
               "label": "Contrastive Predictive Coding (2018)",
               "url": "https://arxiv.org/abs/1807.03748"
             },
             {
+              "label": "BYOL: Bootstrap Your Own Latent (2020)",
+              "url": "https://arxiv.org/abs/2006.07733"
+            },
+            {
+              "label": "SimCLR: A Simple Framework for Contrastive Learning of Visual Representations (2020)",
+              "url": "https://arxiv.org/abs/2002.05709"
+            },
+            {
               "label": "Music Transformer: Generating Music with Long-Term Structure (2019)",
               "url": "https://arxiv.org/abs/1809.04281"
-            },
-            {
-              "label": "Self-Supervised Learning for Music Audio (2020)",
-              "url": "https://arxiv.org/abs/2006.01074"
-            },
-            {
-              "label": "Learning Audio Representations via Phase Prediction (2021)",
-              "url": "https://arxiv.org/abs/2102.10207"
             }
           ]
         }
@@ -275,31 +275,31 @@
           "id": "2604.12480v1",
           "date": "Apr 14",
           "title": "Audio Source Separation in Reverberant Environments using $β$-divergence based Nonnegative Factorization",
-          "titleJa": "β-ダイバージェンスに基づく非負因子分解を用いた残響環境での音源分離",
+          "titleJa": "残響環境下でのβダイバージェンスに基づく非負因子分解を用いた音源分離",
           "org": "Fondazione Bruno Kessler",
           "url": "https://arxiv.org/abs/2604.12480v1",
           "category": "separation",
-          "what": "残響環境下での音源分離のために、β-ダイバージェンスに基づく非負因子分解を用いた新しい手法を提案。",
-          "novel": "従来のガウスモデルに基づく音源分離手法を改良し、事前情報を活用した非負因子分解により分離性能を向上。",
-          "method": "音源のスペクトル分散を事前情報として非負因子分解を適用し、β-ダイバージェンスを最小化する乗法更新ルールを用いて分解を実現。",
-          "validation": "複数の混合条件で実験を行い、他の比較アルゴリズムと比べて分離品質が向上することを確認。",
-          "discussion": "分解のスパース性が分離性能に重要であることが示されたが、さらなる最適化や他の環境での適用が課題。",
+          "what": "① 残響環境下での音源分離のために、βダイバージェンスに基づく非負因子分解を用いて音源スペクトル分散を推定する新しい手法を提案しています。",
+          "novel": "② 事前情報を活用したスペクトル基底行列の非負因子分解と、βダイバージェンスを用いた新しい更新ルールを提案し、分離性能を向上させています。",
+          "method": "③ 事前に訓練された冗長ライブラリからスペクトル基底行列を抽出または検出し、βダイバージェンスを最小化することで音源分散を推定します。",
+          "validation": "④ 複数の混合条件で実験を行い、提案手法が他のアルゴリズムと比較して優れた分離性能を示すことを確認しました。",
+          "discussion": "⑤ 分離性能向上にはスパース性が重要であることが示されましたが、さらなる一般化や他の音響条件での検証が必要です。",
           "nextReads": [
             {
-              "label": "Nonnegative Matrix Factorization with β-Divergence (2011)",
-              "url": "https://arxiv.org/abs/null"
-            },
-            {
-              "label": "Multichannel Nonnegative Matrix Factorization in Convolutive Mixtures for Audio Source Separation (2010)",
-              "url": "https://arxiv.org/abs/null"
+              "label": "Multichannel Nonnegative Matrix Factorization (2015)",
+              "url": null
             },
             {
               "label": "Deep Clustering and Conventional Networks for Music Separation (2017)",
-              "url": "https://arxiv.org/abs/1706.08688"
+              "url": null
             },
             {
-              "label": "Deep Attractor Network for Single-Microphone Speaker Separation (2017)",
-              "url": "https://arxiv.org/abs/1707.01161"
+              "label": "Beta-divergence for Nonnegative Matrix Factorization (2008)",
+              "url": null
+            },
+            {
+              "label": "Multichannel Audio Source Separation Using NMF (2010)",
+              "url": null
             }
           ]
         }
@@ -314,30 +314,30 @@
           "id": "2604.13715v1",
           "date": "Apr 15",
           "title": "Towards Fine-grained Temporal Perception: Post-Training Large Audio-Language Models with Audio-Side Time Prompt",
-          "titleJa": "細粒度の時間的知覚に向けて: オーディオ側の時間プロンプトを用いた大規模音声言語モデルの後学習",
-          "org": "不明",
+          "titleJa": "細粒度な時間認識に向けて: オーディオ側の時間プロンプトを用いた大規模音声言語モデルの後学習",
+          "org": "ShanghaiTech University",
           "url": "https://arxiv.org/abs/2604.13715v1",
           "category": "anomaly",
-          "what": "大規模音声言語モデル（LALMs）の時間的知覚能力を向上させるために、Audio-Side Time PromptとTimePro-RLフレームワークを提案しました。この手法は、音声タスクにおける細粒度の時間的知覚を可能にします。",
-          "novel": "タイムスタンプを埋め込みとして音声特徴列に組み込む新しいプロンプト手法を提案し、強化学習を活用して時間的整合性を直接最適化する点が新規性です。",
-          "method": "タイムスタンプをエンコードしたプロンプトを音声特徴列に挿入し、強化学習を用いて時間的整合性を最適化するTimePro-RLフレームワークを構築しました。",
-          "validation": "音声グラウンディングや音響イベント検出などの時間的タスクにおいて、TimePro-RLが大幅な性能向上を達成したことが実験で示されました。",
-          "discussion": "時間的知覚の性能向上が確認されましたが、リアルタイム処理や他の音声データセットでの適用可能性についての検討が必要です。",
+          "what": "大規模音声言語モデル（LALMs）の時間的知覚能力を向上させるため、Audio-Side Time PromptとTimePro-RLフレームワークを提案。時間的な精度が求められる音声タスクへの適用を目指す。",
+          "novel": "時間的座標をエンコードしたプロンプトを音声特徴量に埋め込み、強化学習を用いて時間的整合性を直接最適化する新しいアプローチを提案。",
+          "method": "Supervised Fine-Tuning（SFT）の後に強化学習を適用し、時間的整合性を最適化。音声側の時間プロンプトを用いてモデルの時間的知覚を促進。",
+          "validation": "音声グラウンディング、音イベント検出、密な音声キャプショニングなどのタスクで大幅な性能向上を実証。",
+          "discussion": "時間的知覚の精度を向上させたが、リアルタイム処理や計算コストの最適化が今後の課題。",
           "nextReads": [
             {
-              "label": "Temporal Perception in AI Models (2021)",
+              "label": "Temporal Perception in AI Models (2022)",
               "url": null
             },
             {
-              "label": "Reinforcement Learning for Audio Tasks (2022)",
+              "label": "Reinforcement Learning for Audio Tasks (2021)",
               "url": null
             },
             {
-              "label": "Audio Grounding and Temporal Analysis (2023)",
+              "label": "Dense Audio Captioning Techniques (2023)",
               "url": null
             },
             {
-              "label": "Improving LALMs with Temporal Prompts (2023)",
+              "label": "Advances in Audio Temporal Analysis (2020)",
               "url": null
             }
           ]
@@ -346,8 +346,8 @@
     }
   ],
   "trend": [
-    "① 音声言語モデル（AudioLLM）の応用が進展しており、音声ディープフェイク検出（ICLAD）や音響知覚能力向上（UAS、Audio-Cogito）など、多様なタスクでの性能向上が図られています。",
-    "② 音声データの時間的知覚やグラウンディングを強化するため、Audio-Side Time PromptやSpotSoundなどの新しい手法やベンチマークが提案されています。",
-    "③ 音声理解の精度向上を目指し、知覚に基づく推論（HyPeR、PAQA）や感情知能評価（HumDial-EIBench）など、音声処理と推論の統合的アプローチが注目されています。"
+    "① 音声ディープフェイク検出や音声推論能力の向上を目指した新しいフレームワーク（ICLAD、Audio-Cogitoなど）や、感情知能評価用ベンチマーク（HumDial-EIBench）の提案が進展しています。",
+    "② 大規模音声言語モデル（LALMs）の時間的知覚や音声イベントの時間的グラウンディングを強化する手法（Audio-Side Time Prompt、SpotSoundなど）が注目されています。",
+    "③ 音響知覚と推論を統合したハイブリッド推論（HyPeR）や非負因子分解を活用した音源分離、音楽キー検出のための自己教師あり学習技術が進化しています。"
   ]
 }
