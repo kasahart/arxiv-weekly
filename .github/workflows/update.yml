@@ -151,11 +151,35 @@ jobs:
           name: built-data
           path: data/
 
-      - name: Copy data to web/public
+      - name: Fetch existing weekly data from gh-pages
         run: |
+          git fetch origin gh-pages
           mkdir -p web/public/data/weekly
+          # 既存の weekly JSON をコピー
+          for f in $(git ls-tree -r --name-only origin/gh-pages 2>/dev/null | grep '^data/weekly/.*\.json$'); do
+            git show origin/gh-pages:$f > web/public/$f 2>/dev/null || true
+          done
+          # 既存の index.json を保存
+          git show origin/gh-pages:data/index.json > /tmp/existing_index.json 2>/dev/null \
+            || echo '{"weeks":[],"generated_at":""}' > /tmp/existing_index.json
+
+      - name: Merge data and copy to web/public
+        run: |
+          # 新しい weekly JSON を上書きコピー
           find data/weekly -name '*.json' -exec cp {} web/public/data/weekly/ \;
-          cp data/index.json web/public/data/
+          # index.json をマージ（既存 + 新規）
+          python3 - << 'EOF'
+          import json
+          existing = json.load(open('/tmp/existing_index.json'))
+          new = json.load(open('data/index.json'))
+          merged = {w['date']: w for w in existing.get('weeks', [])}
+          for w in new.get('weeks', []):
+              merged[w['date']] = w
+          existing['weeks'] = sorted(merged.values(), key=lambda x: x['date'], reverse=True)
+          existing['generated_at'] = new.get('generated_at', '')
+          json.dump(existing, open('web/public/data/index.json', 'w'), ensure_ascii=False, indent=2)
+          print(f"[deploy] Merged index: {len(existing['weeks'])} weeks")
+          EOF
           cp data/latest.json web/public/data/
 
       - name: Build frontend
