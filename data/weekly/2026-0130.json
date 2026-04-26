@@ -1,0 +1,213 @@
+{
+  "date": "2026-0130",
+  "generated_at": "2026-01-30T00:00:00+00:00",
+  "total": 12,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2601.21463v2",
+          "date": "Jan 29",
+          "title": "Unifying Speech Editing Detection and Content Localization via Prior-Enhanced Audio LLMs",
+          "titleJa": "Unifying Speech Editing Detection and Content Localization via Prior-Enhanced Audio LLMs",
+          "org": "Jun Xue et al.",
+          "url": "https://arxiv.org/abs/2601.21463v2",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.19029v1",
+          "date": "Jan 26",
+          "title": "Audio Foundation Models Outperform Symbolic Representations for Piano Performance Evaluation",
+          "titleJa": "Audio Foundation Models Outperform Symbolic Representations for Piano Performance Evaluation",
+          "org": "Jai Dhiman",
+          "url": "https://arxiv.org/abs/2601.19029v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.16547v1",
+          "date": "Jan 23",
+          "title": "CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation",
+          "titleJa": "CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation",
+          "org": "Jing Hu et al.",
+          "url": "https://arxiv.org/abs/2601.16547v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.16540v2",
+          "date": "Jan 23",
+          "title": "Do Models Hear Like Us? Probing the Representational Alignment of Audio LLMs and Naturalistic EEG",
+          "titleJa": "Do Models Hear Like Us? Probing the Representational Alignment of Audio LLMs and Naturalistic EEG",
+          "org": "Haoyun Yang et al.",
+          "url": "https://arxiv.org/abs/2601.16540v2",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2601.22260v1",
+          "date": "Jan 29",
+          "title": "Brain-Informed Speech Separation for Cochlear Implants",
+          "titleJa": "Brain-Informed Speech Separation for Cochlear Implants",
+          "org": "Tom Gajecki / Jonas Althoff / Waldo Nogueira",
+          "url": "https://arxiv.org/abs/2601.22260v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.21114v1",
+          "date": "Jan 28",
+          "title": "DNN-Based Online Source Counting Based on Spatial Generalized Magnitude Squared Coherence",
+          "titleJa": "DNN-Based Online Source Counting Based on Spatial Generalized Magnitude Squared Coherence",
+          "org": "Henri Gode / Simon Doclo",
+          "url": "https://arxiv.org/abs/2601.21114v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.19533v1",
+          "date": "Jan 27",
+          "title": "SLM-SS: Speech Language Model for Generative Speech Separation",
+          "titleJa": "SLM-SS: Speech Language Model for Generative Speech Separation",
+          "org": "Tianhua Li et al.",
+          "url": "https://arxiv.org/abs/2601.19533v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.19109v1",
+          "date": "Jan 27",
+          "title": "Interpretable and Perceptually-Aligned Music Similarity with Pretrained Embeddings",
+          "titleJa": "Interpretable and Perceptually-Aligned Music Similarity with Pretrained Embeddings",
+          "org": "Arhan Vohra / Taketo Akama",
+          "url": "https://arxiv.org/abs/2601.19109v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.18456v1",
+          "date": "Jan 26",
+          "title": "Geneses: Unified Generative Speech Enhancement and Separation",
+          "titleJa": "Geneses: Unified Generative Speech Enhancement and Separation",
+          "org": "Kohei Asai et al.",
+          "url": "https://arxiv.org/abs/2601.18456v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.18037v1",
+          "date": "Jan 25",
+          "title": "SpatialEmb: Extract and Encode Spatial Information for 1-Stage Multi-channel Multi-speaker ASR on Arbitrary Microphone Arrays",
+          "titleJa": "SpatialEmb: Extract and Encode Spatial Information for 1-Stage Multi-channel Multi-speaker ASR on Arbitrary Microphone Arrays",
+          "org": "Yiwen Shao et al.",
+          "url": "https://arxiv.org/abs/2601.18037v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.16603v1",
+          "date": "Jan 23",
+          "title": "Omni-directional attention mechanism based on Mamba for speech separation",
+          "titleJa": "Omni-directional attention mechanism based on Mamba for speech separation",
+          "org": "Ke Xue et al.",
+          "url": "https://arxiv.org/abs/2601.16603v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2601.19017v1",
+          "date": "Jan 26",
+          "title": "A Framework for Evaluating Faithfulness in Explainable AI for Machine Anomalous Sound Detection Using Frequency-Band Perturbation",
+          "titleJa": "A Framework for Evaluating Faithfulness in Explainable AI for Machine Anomalous Sound Detection Using Frequency-Band Perturbation",
+          "org": "Alexander Buck et al.",
+          "url": "https://arxiv.org/abs/2601.19017v1",
+          "category": "anomaly",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 今週の音声基盤モデル研究のトレンドを解析中です。",
+    "② 音源分離・異音検知の最新手法が多数投稿されました。",
+    "③ 詳細は各論文をご参照ください。"
+  ]
+}

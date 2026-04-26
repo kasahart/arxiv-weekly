@@ -11,7 +11,103 @@
       "file": "weekly/2026-0418.json",
       "count": 10,
       "generated_at": "2026-04-18T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0417",
+      "file": "weekly/2026-0417.json",
+      "count": 12,
+      "generated_at": "2026-04-17T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0410",
+      "file": "weekly/2026-0410.json",
+      "count": 5,
+      "generated_at": "2026-04-10T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0403",
+      "file": "weekly/2026-0403.json",
+      "count": 11,
+      "generated_at": "2026-04-03T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0327",
+      "file": "weekly/2026-0327.json",
+      "count": 5,
+      "generated_at": "2026-03-27T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0320",
+      "file": "weekly/2026-0320.json",
+      "count": 10,
+      "generated_at": "2026-03-20T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0313",
+      "file": "weekly/2026-0313.json",
+      "count": 8,
+      "generated_at": "2026-03-13T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0306",
+      "file": "weekly/2026-0306.json",
+      "count": 6,
+      "generated_at": "2026-03-06T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0227",
+      "file": "weekly/2026-0227.json",
+      "count": 10,
+      "generated_at": "2026-02-27T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0220",
+      "file": "weekly/2026-0220.json",
+      "count": 12,
+      "generated_at": "2026-02-20T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0213",
+      "file": "weekly/2026-0213.json",
+      "count": 9,
+      "generated_at": "2026-02-13T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0206",
+      "file": "weekly/2026-0206.json",
+      "count": 20,
+      "generated_at": "2026-02-06T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0130",
+      "file": "weekly/2026-0130.json",
+      "count": 12,
+      "generated_at": "2026-01-30T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0123",
+      "file": "weekly/2026-0123.json",
+      "count": 9,
+      "generated_at": "2026-01-23T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0116",
+      "file": "weekly/2026-0116.json",
+      "count": 7,
+      "generated_at": "2026-01-16T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0109",
+      "file": "weekly/2026-0109.json",
+      "count": 9,
+      "generated_at": "2026-01-09T00:00:00+00:00"
+    },
+    {
+      "date": "2026-0102",
+      "file": "weekly/2026-0102.json",
+      "count": 3,
+      "generated_at": "2026-01-02T00:00:00+00:00"
     }
   ],
-  "generated_at": "2026-04-26T20:30:26.672313+00:00"
+  "generated_at": "2026-04-26T22:48:19.289182+00:00"
 }

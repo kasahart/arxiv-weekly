@@ -1,0 +1,101 @@
+{
+  "date": "2026-0327",
+  "generated_at": "2026-03-27T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.25767v1",
+          "date": "Mar 26",
+          "title": "Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods",
+          "titleJa": "Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods",
+          "org": "Xuanru Zhou et al.",
+          "url": "https://arxiv.org/abs/2603.25767v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.23810v1",
+          "date": "Mar 25",
+          "title": "Rethinking Masking Strategies for Masked Prediction-based Audio Self-supervised Learning",
+          "titleJa": "Rethinking Masking Strategies for Masked Prediction-based Audio Self-supervised Learning",
+          "org": "Daisuke Niizumi et al.",
+          "url": "https://arxiv.org/abs/2603.23810v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.22728v1",
+          "date": "Mar 24",
+          "title": "The Interspeech 2026 Audio Encoder Capability Challenge for Large Audio Language Models",
+          "titleJa": "The Interspeech 2026 Audio Encoder Capability Challenge for Large Audio Language Models",
+          "org": "Heinrich Dinkel et al.",
+          "url": "https://arxiv.org/abs/2603.22728v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.20638v1",
+          "date": "Mar 21",
+          "title": "OmniCodec: Low Frame Rate Universal Audio Codec with Semantic-Acoustic Disentanglement",
+          "titleJa": "OmniCodec: Low Frame Rate Universal Audio Codec with Semantic-Acoustic Disentanglement",
+          "org": "Jingbin Hu et al.",
+          "url": "https://arxiv.org/abs/2603.20638v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2603.24385v1",
+          "date": "Mar 25",
+          "title": "ArrayDPS-Refine: Generative Refinement of Discriminative Multi-Channel Speech Enhancement",
+          "titleJa": "ArrayDPS-Refine: Generative Refinement of Discriminative Multi-Channel Speech Enhancement",
+          "org": "Zhongweiyang Xu et al.",
+          "url": "https://arxiv.org/abs/2603.24385v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 今週の音声基盤モデル研究のトレンドを解析中です。",
+    "② 音源分離・異音検知の最新手法が多数投稿されました。",
+    "③ 詳細は各論文をご参照ください。"
+  ]
+}

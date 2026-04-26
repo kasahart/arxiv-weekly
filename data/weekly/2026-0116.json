@@ -1,0 +1,131 @@
+{
+  "date": "2026-0116",
+  "generated_at": "2026-01-16T00:00:00+00:00",
+  "total": 7,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2601.10547v2",
+          "date": "Jan 15",
+          "title": "HeartMuLa: A Family of Open Sourced Music Foundation Models",
+          "titleJa": "HeartMuLa: A Family of Open Sourced Music Foundation Models",
+          "org": "Dongchao Yang et al.",
+          "url": "https://arxiv.org/abs/2601.10547v2",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.10770v1",
+          "date": "Jan 15",
+          "title": "Unifying Speech Recognition, Synthesis and Conversion with Autoregressive Transformers",
+          "titleJa": "Unifying Speech Recognition, Synthesis and Conversion with Autoregressive Transformers",
+          "org": "Runyuan Cai et al.",
+          "url": "https://arxiv.org/abs/2601.10770v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.10272v1",
+          "date": "Jan 15",
+          "title": "MoST: Mixing Speech and Text with Modality-Aware Mixture of Experts",
+          "titleJa": "MoST: Mixing Speech and Text with Modality-Aware Mixture of Experts",
+          "org": "Yuxuan Lou / Kai Yang / Yang You",
+          "url": "https://arxiv.org/abs/2601.10272v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.08516v1",
+          "date": "Jan 13",
+          "title": "Robust CAPTCHA Using Audio Illusions in the Era of Large Language Models: from Evaluation to Advances",
+          "titleJa": "Robust CAPTCHA Using Audio Illusions in the Era of Large Language Models: from Evaluation to Advances",
+          "org": "Ziqi Ding et al.",
+          "url": "https://arxiv.org/abs/2601.08516v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.07367v2",
+          "date": "Jan 12",
+          "title": "FOCAL: A Novel Benchmarking Technique for Multi-modal Agents",
+          "titleJa": "FOCAL: A Novel Benchmarking Technique for Multi-modal Agents",
+          "org": "Anupam Purwar / Aditya Choudhary",
+          "url": "https://arxiv.org/abs/2601.07367v2",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2601.07331v1",
+          "date": "Jan 12",
+          "title": "SEE: Signal Embedding Energy for Quantifying Noise Interference in Large Audio Language Models",
+          "titleJa": "SEE: Signal Embedding Energy for Quantifying Noise Interference in Large Audio Language Models",
+          "org": "Yuanhe Zhang et al.",
+          "url": "https://arxiv.org/abs/2601.07331v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2601.08480v1",
+          "date": "Jan 13",
+          "title": "Quantitative Analysis of Proxy Tasks for Anomalous Sound Detection",
+          "titleJa": "Quantitative Analysis of Proxy Tasks for Anomalous Sound Detection",
+          "org": "Seunghyeon Shin / Seokjin Lee",
+          "url": "https://arxiv.org/abs/2601.08480v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 今週の音声基盤モデル研究のトレンドを解析中です。",
+    "② 音源分離・異音検知の最新手法が多数投稿されました。",
+    "③ 詳細は各論文をご参照ください。"
+  ]
+}

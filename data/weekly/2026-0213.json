@@ -1,0 +1,168 @@
+{
+  "date": "2026-0213",
+  "generated_at": "2026-02-13T00:00:00+00:00",
+  "total": 9,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2602.11909v2",
+          "date": "Feb 12",
+          "title": "Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning",
+          "titleJa": "Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning",
+          "org": "Daiqing Wu et al.",
+          "url": "https://arxiv.org/abs/2602.11909v2",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2602.10934v2",
+          "date": "Feb 11",
+          "title": "MOSS-Audio-Tokenizer: Scaling Audio Tokenizers for Future Audio Foundation Models",
+          "titleJa": "MOSS-Audio-Tokenizer: Scaling Audio Tokenizers for Future Audio Foundation Models",
+          "org": "Yitian Gong et al.",
+          "url": "https://arxiv.org/abs/2602.10934v2",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2602.10439v1",
+          "date": "Feb 11",
+          "title": "AudioRouter: Data Efficient Audio Understanding via RL based Dual Reasoning",
+          "titleJa": "AudioRouter: Data Efficient Audio Understanding via RL based Dual Reasoning",
+          "org": "Liyang Chen et al.",
+          "url": "https://arxiv.org/abs/2602.10439v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2602.10230v1",
+          "date": "Feb 10",
+          "title": "Frame-Level Internal Tool Use for Temporal Grounding in Audio LMs",
+          "titleJa": "Frame-Level Internal Tool Use for Temporal Grounding in Audio LMs",
+          "org": "Joesph An et al.",
+          "url": "https://arxiv.org/abs/2602.10230v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2602.11896v1",
+          "date": "Feb 12",
+          "title": "Musical Metamerism with Time--Frequency Scattering",
+          "titleJa": "Musical Metamerism with Time--Frequency Scattering",
+          "org": "Vincent Lostanlen / Han Han",
+          "url": "https://arxiv.org/abs/2602.11896v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2602.08671v1",
+          "date": "Feb 09",
+          "title": "Input-Adaptive Spectral Feature Compression by Sequence Modeling for Source Separation",
+          "titleJa": "Input-Adaptive Spectral Feature Compression by Sequence Modeling for Source Separation",
+          "org": "Kohei Saijo / Yoshiaki Bando",
+          "url": "https://arxiv.org/abs/2602.08671v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2602.07211v1",
+          "date": "Feb 06",
+          "title": "Equipping LLM with Directional Multi-Talker Speech Understanding Capabilities",
+          "titleJa": "Equipping LLM with Directional Multi-Talker Speech Understanding Capabilities",
+          "org": "Ju Lin et al.",
+          "url": "https://arxiv.org/abs/2602.07211v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2602.09210v1",
+          "date": "Feb 09",
+          "title": "AI-Driven Cardiorespiratory Signal Processing: Separation, Clustering, and Anomaly Detection",
+          "titleJa": "AI-Driven Cardiorespiratory Signal Processing: Separation, Clustering, and Anomaly Detection",
+          "org": "Yasaman Torabi",
+          "url": "https://arxiv.org/abs/2602.09210v1",
+          "category": "anomaly",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2602.06271v1",
+          "date": "Feb 06",
+          "title": "Misophonia Trigger Sound Detection on Synthetic Soundscapes Using a Hybrid Model with a Frozen Pre-Trained CNN and a Time-Series Module",
+          "titleJa": "Misophonia Trigger Sound Detection on Synthetic Soundscapes Using a Hybrid Model with a Frozen Pre-Trained CNN and a Time-Series Module",
+          "org": "Kurumi Sashida / Gouhei Tanaka",
+          "url": "https://arxiv.org/abs/2602.06271v1",
+          "category": "anomaly",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 今週の音声基盤モデル研究のトレンドを解析中です。",
+    "② 音源分離・異音検知の最新手法が多数投稿されました。",
+    "③ 詳細は各論文をご参照ください。"
+  ]
+}

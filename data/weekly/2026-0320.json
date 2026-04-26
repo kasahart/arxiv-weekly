@@ -1,0 +1,183 @@
+{
+  "date": "2026-0320",
+  "generated_at": "2026-03-20T00:00:00+00:00",
+  "total": 10,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.19195v1",
+          "date": "Mar 19",
+          "title": "How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation",
+          "titleJa": "How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation",
+          "org": "Ke-Han Lu et al.",
+          "url": "https://arxiv.org/abs/2603.19195v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.18678v1",
+          "date": "Mar 19",
+          "title": "Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models",
+          "titleJa": "Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models",
+          "org": "Yuchen Su et al.",
+          "url": "https://arxiv.org/abs/2603.18678v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.17822v1",
+          "date": "Mar 18",
+          "title": "Multi-Source Evidence Fusion for Audio Question Answering",
+          "titleJa": "Multi-Source Evidence Fusion for Audio Question Answering",
+          "org": "Aivo Olev / Tanel Alumäe",
+          "url": "https://arxiv.org/abs/2603.17822v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.18048v2",
+          "date": "Mar 17",
+          "title": "DEAF: A Benchmark for Diagnostic Evaluation of Acoustic Faithfulness in Audio Language Models",
+          "titleJa": "DEAF: A Benchmark for Diagnostic Evaluation of Acoustic Faithfulness in Audio Language Models",
+          "org": "Jiaqi Xiong et al.",
+          "url": "https://arxiv.org/abs/2603.18048v2",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.16966v1",
+          "date": "Mar 17",
+          "title": "CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization",
+          "titleJa": "CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization",
+          "org": "Liangbin Huang et al.",
+          "url": "https://arxiv.org/abs/2603.16966v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.13768v1",
+          "date": "Mar 14",
+          "title": "Causal Tracing of Audio-Text Fusion in Large Audio Language Models",
+          "titleJa": "Causal Tracing of Audio-Text Fusion in Large Audio Language Models",
+          "org": "Wei-Chih Chen / Chien-yu Huang / Hung-yi Lee",
+          "url": "https://arxiv.org/abs/2603.13768v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2603.16668v1",
+          "date": "Mar 17",
+          "title": "HRTF-guided Binaural Target Speaker Extraction with Real-World Validation",
+          "titleJa": "HRTF-guided Binaural Target Speaker Extraction with Real-World Validation",
+          "org": "Yoav Ellinson / Sharon Gannot",
+          "url": "https://arxiv.org/abs/2603.16668v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.14983v1",
+          "date": "Mar 16",
+          "title": "Cepstral Smoothing of Binary Masks for Convolutive Blind Separation of Speech Mixtures",
+          "titleJa": "Cepstral Smoothing of Binary Masks for Convolutive Blind Separation of Speech Mixtures",
+          "org": "Ibrahim Missaoui / Zied Lachiri",
+          "url": "https://arxiv.org/abs/2603.14983v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.16926v1",
+          "date": "Mar 13",
+          "title": "Music Source Restoration with Ensemble Separation and Targeted Reconstruction",
+          "titleJa": "Music Source Restoration with Ensemble Separation and Targeted Reconstruction",
+          "org": "Xinlong Deng / Yu Xia / Jie Jiang",
+          "url": "https://arxiv.org/abs/2603.16926v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2603.13749v1",
+          "date": "Mar 14",
+          "title": "Sub-Band Spectral Matching with Localized Score Aggregation for Robust Anomalous Sound Detection",
+          "titleJa": "Sub-Band Spectral Matching with Localized Score Aggregation for Robust Anomalous Sound Detection",
+          "org": "Phurich Saengthong / Takahiro Shinozaki",
+          "url": "https://arxiv.org/abs/2603.13749v1",
+          "category": "anomaly",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 今週の音声基盤モデル研究のトレンドを解析中です。",
+    "② 音源分離・異音検知の最新手法が多数投稿されました。",
+    "③ 詳細は各論文をご参照ください。"
+  ]
+}

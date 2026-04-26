@@ -1,0 +1,198 @@
+{
+  "date": "2026-0403",
+  "generated_at": "2026-04-03T00:00:00+00:00",
+  "total": 11,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.29263v1",
+          "date": "Mar 31",
+          "title": "Audio Hallucination Attacks: Probing the Reliability of Large Audio Language Models",
+          "titleJa": "Audio Hallucination Attacks: Probing the Reliability of Large Audio Language Models",
+          "org": "Ashish Seth et al.",
+          "url": "https://arxiv.org/abs/2603.29263v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.28378v1",
+          "date": "Mar 30",
+          "title": "Membership Inference Attacks against Large Audio Language Models",
+          "titleJa": "Membership Inference Attacks against Large Audio Language Models",
+          "org": "Jia-Kai Dong / Yu-Xiang Lin / Hung-Yi Lee",
+          "url": "https://arxiv.org/abs/2603.28378v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2604.19782v1",
+          "date": "Mar 30",
+          "title": "KoALa-Bench: Evaluating Large Audio Language Models on Korean Speech Understanding and Faithfulness",
+          "titleJa": "KoALa-Bench: Evaluating Large Audio Language Models on Korean Speech Understanding and Faithfulness",
+          "org": "Jinyoung Kim et al.",
+          "url": "https://arxiv.org/abs/2604.19782v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.28021v2",
+          "date": "Mar 30",
+          "title": "Audio Language Model for Deepfake Detection Grounded in Acoustic Chain-of-Thought",
+          "titleJa": "Audio Language Model for Deepfake Detection Grounded in Acoustic Chain-of-Thought",
+          "org": "Runkun Chen et al.",
+          "url": "https://arxiv.org/abs/2603.28021v2",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.27667v1",
+          "date": "Mar 29",
+          "title": "EvA: An Evidence-First Audio Understanding Paradigm for LALMs",
+          "titleJa": "EvA: An Evidence-First Audio Understanding Paradigm for LALMs",
+          "org": "Xinyuan Xie et al.",
+          "url": "https://arxiv.org/abs/2603.27667v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2604.01120v2",
+          "date": "Apr 01",
+          "title": "Diff-VS: Efficient Audio-Aware Diffusion U-Net for Vocals Separation",
+          "titleJa": "Diff-VS: Efficient Audio-Aware Diffusion U-Net for Vocals Separation",
+          "org": "Amy",
+          "url": "https://arxiv.org/abs/2604.01120v2",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.29097v1",
+          "date": "Mar 31",
+          "title": "Asymmetric Encoder-Decoder Based on Time-Frequency Correlation for Speech Separation",
+          "titleJa": "Asymmetric Encoder-Decoder Based on Time-Frequency Correlation for Speech Separation",
+          "org": "Ui-Hyeop Shin / Hyung-Min Park",
+          "url": "https://arxiv.org/abs/2603.29097v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.28757v1",
+          "date": "Mar 30",
+          "title": "SonoWorld: From One Image to a 3D Audio-Visual Scene",
+          "titleJa": "SonoWorld: From One Image to a 3D Audio-Visual Scene",
+          "org": "Derong Jin et al.",
+          "url": "https://arxiv.org/abs/2603.28757v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.26113v1",
+          "date": "Mar 27",
+          "title": "Cinematic Audio Source Separation Using Visual Cues",
+          "titleJa": "Cinematic Audio Source Separation Using Visual Cues",
+          "org": "Kang Zhang et al.",
+          "url": "https://arxiv.org/abs/2603.26113v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2604.01155v1",
+          "date": "Apr 01",
+          "title": "FineLAP: Taming Heterogeneous Supervision for Fine-grained Language-Audio Pretraining",
+          "titleJa": "FineLAP: Taming Heterogeneous Supervision for Fine-grained Language-Audio Pretraining",
+          "org": "Xiquan Li et al.",
+          "url": "https://arxiv.org/abs/2604.01155v1",
+          "category": "anomaly",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.29956v1",
+          "date": "Mar 31",
+          "title": "An Information-Theoretic Method for Dynamic System Identification With Output-Only Damping Estimation",
+          "titleJa": "An Information-Theoretic Method for Dynamic System Identification With Output-Only Damping Estimation",
+          "org": "Marios Impraimakis / Feiyu Zhou / Andrew Plummer",
+          "url": "https://arxiv.org/abs/2603.29956v1",
+          "category": "anomaly",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 今週の音声基盤モデル研究のトレンドを解析中です。",
+    "② 音源分離・異音検知の最新手法が多数投稿されました。",
+    "③ 詳細は各論文をご参照ください。"
+  ]
+}

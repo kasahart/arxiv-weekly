@@ -1,0 +1,146 @@
+{
+  "date": "2026-0313",
+  "generated_at": "2026-03-13T00:00:00+00:00",
+  "total": 8,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.11947v1",
+          "date": "Mar 12",
+          "title": "Resurfacing Paralinguistic Awareness in Large Audio Language Models",
+          "titleJa": "Resurfacing Paralinguistic Awareness in Large Audio Language Models",
+          "org": "Hao Yang et al.",
+          "url": "https://arxiv.org/abs/2603.11947v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.11661v1",
+          "date": "Mar 12",
+          "title": "Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models",
+          "titleJa": "Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models",
+          "org": "Xiquan Li et al.",
+          "url": "https://arxiv.org/abs/2603.11661v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.10725v2",
+          "date": "Mar 11",
+          "title": "Towards Robust Speech Deepfake Detection via Human-Inspired Reasoning",
+          "titleJa": "Towards Robust Speech Deepfake Detection via Human-Inspired Reasoning",
+          "org": "Artem Dvirniak et al.",
+          "url": "https://arxiv.org/abs/2603.10725v2",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.10175v1",
+          "date": "Mar 10",
+          "title": "Calibration-Reasoning Framework for Descriptive Speech Quality Assessment",
+          "titleJa": "Calibration-Reasoning Framework for Descriptive Speech Quality Assessment",
+          "org": "Elizaveta Kostenok / Mathieu Salzmann / Milos Cernak",
+          "url": "https://arxiv.org/abs/2603.10175v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.09853v1",
+          "date": "Mar 10",
+          "title": "SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases",
+          "titleJa": "SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases",
+          "org": "Laya Iyer / Angelina Wang / Sanmi Koyejo",
+          "url": "https://arxiv.org/abs/2603.09853v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.09232v1",
+          "date": "Mar 10",
+          "title": "How Contrastive Decoding Enhances Large Audio Language Models?",
+          "titleJa": "How Contrastive Decoding Enhances Large Audio Language Models?",
+          "org": "Tzu-Quan Lin et al.",
+          "url": "https://arxiv.org/abs/2603.09232v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        },
+        {
+          "id": "2603.05852v1",
+          "date": "Mar 06",
+          "title": "How Well Do Current Speech Deepfake Detection Methods Generalize to the Real World?",
+          "titleJa": "How Well Do Current Speech Deepfake Detection Methods Generalize to the Real World?",
+          "org": "Daixian Li et al.",
+          "url": "https://arxiv.org/abs/2603.05852v1",
+          "category": "foundation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2603.09187v1",
+          "date": "Mar 10",
+          "title": "The Costs of Reproducibility in Music Separation Research: a Replication of Band-Split RNN",
+          "titleJa": "The Costs of Reproducibility in Music Separation Research: a Replication of Band-Split RNN",
+          "org": "Paul Magron / Romain Serizel / Constance Douwes",
+          "url": "https://arxiv.org/abs/2603.09187v1",
+          "category": "separation",
+          "what": "解析に失敗しました。",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": []
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 今週の音声基盤モデル研究のトレンドを解析中です。",
+    "② 音源分離・異音検知の最新手法が多数投稿されました。",
+    "③ 詳細は各論文をご参照ください。"
+  ]
+}
