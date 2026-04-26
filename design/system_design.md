@@ -152,9 +152,7 @@ ArXiv 音声研究週報 自動更新システム（Sound Research Weekly Report
 ```
 arxiv-weekly/
 ├── .devcontainer/
-│   ├── devcontainer.json       # DevContainer 設定
-│   ├── Dockerfile              # Python 3.11 + Node 20 + GitHub CLI
-│   └── postCreate.sh           # 初回セットアップスクリプト
+│   └── devcontainer.json       # Python 3.11 ベース image + features + 初回セットアップ
 ├── .github/
 │   └── workflows/
 │       └── update.yml          # GitHub Actions ワークフロー

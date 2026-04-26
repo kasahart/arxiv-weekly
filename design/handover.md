@@ -59,8 +59,8 @@
 
 ### 2.6 DevContainer
 - ✅ `.devcontainer/devcontainer.json`
-- ✅ `.devcontainer/Dockerfile` — Python 3.11 + Node 20 + GitHub CLI
-- ✅ `.devcontainer/postCreate.sh` — venv・npm・gh auth 状態確認
+- ✅ `devcontainer features` で Node 20・GitHub CLI・common-utils を導入
+- ✅ `devcontainer.json` に venv・npm・gh auth 状態確認を集約
 
 ---
 
@@ -134,9 +134,7 @@ https://YOUR_ORG.github.io/arxiv-weekly/
 
 | パス | 説明 | 状態 |
 |---|---|---|
-| `.devcontainer/devcontainer.json` | DevContainer 設定 | ✅ 実装済 |
-| `.devcontainer/Dockerfile` | Python 3.11 + Node 20 + gh CLI | ✅ 実装済 |
-| `.devcontainer/postCreate.sh` | 初回セットアップスクリプト | ✅ 実装済 |
+| `.devcontainer/devcontainer.json` | Python 3.11 image + features + 初回セットアップ | ✅ 実装済 |
 | `.github/workflows/update.yml` | 4 ジョブの自動実行ワークフロー | ✅ 実装済 |
 | `config/keywords.yaml` | フィルタキーワード（追加・削除はここだけ） | ✅ 実装済 |
 | `config/settings.yaml` | `max_papers=50` 等のシステム設定 | ✅ 実装済 |
