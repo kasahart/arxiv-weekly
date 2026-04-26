@@ -12,7 +12,7 @@ arxiv:
 # GitHub Models 設定
 github_models:
   endpoint: "https://models.inference.ai.azure.com"
-  model: "claude-3-6-sonnet"
+  model: "claude-3-5-sonnet"
   max_tokens: 1500
   retry_max: 3
   retry_interval: 5.0       # リトライ間隔（秒）
