@@ -5,7 +5,7 @@
 # arXiv 取得設定
 arxiv:
   lookback_days: 7          # 取得対象期間（日数）
-  max_papers: 20            # フィルタ後の最大取得件数
+  max_papers: 50            # フィルタ後の最大取得件数
   request_interval: 1.0     # API リクエスト間隔（秒）
   user_agent: "arxiv-weekly-report/1.0 (github.com/kasahart/arxiv-weekly)"
 
