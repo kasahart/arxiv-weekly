@@ -4,13 +4,15 @@
     "dockerfile": "./Dockerfile",
     "context": ".."
   },
+  "initializeCommand": "mkdir -p ${localEnv:HOME}/.config/claude",
   "forwardPorts": [5173],
   "postCreateCommand": "bash .devcontainer/postCreate.sh",
   "remoteEnv": {
     "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
   },
   "mounts": [
-    "source=arxiv-venv,target=/venv,type=volume"
+    "source=arxiv-venv,target=/venv,type=volume",
+    "source=${localEnv:HOME}/.config/claude,target=/home/vscode/.config/claude,type=bind,consistency=cached"
   ],
   "customizations": {
     "vscode": {

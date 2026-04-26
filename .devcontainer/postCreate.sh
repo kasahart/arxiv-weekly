@@ -1,19 +1,33 @@
 #!/bin/bash
 set -e
 
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
 echo "🔧 DevContainer セットアップ開始..."
 
+cd "$REPO_ROOT"
+
 # Python 仮想環境
-if [ ! -d "/venv" ]; then
-  python -m venv /venv
+sudo chown -R vscode:vscode /venv
+if [ ! -x "/venv/bin/python" ]; then
+  python3 -m venv /venv
 fi
-/venv/bin/pip install --quiet -r requirements.txt
+/venv/bin/python -m pip install --quiet -r requirements.txt
 echo "✅ Python 依存パッケージをインストールしました"
 
 # Node.js 依存パッケージ
+sudo chown -R vscode:vscode web
 cd web && npm install --silent
 echo "✅ Node.js 依存パッケージをインストールしました"
 cd ..
+
+# Claude CLI
+if ! command -v claude &>/dev/null; then
+  curl -fsSL https://claude.ai/install.sh | bash || echo "⚠️  Claude CLI のインストールをスキップしました（後で手動でインストールできます）"
+fi
+if command -v claude &>/dev/null; then
+  echo "✅ Claude CLI をインストールしました"
+fi
 
 # GitHub CLI 認証状態確認
 echo "🔍 GitHub CLI 認証状態:"

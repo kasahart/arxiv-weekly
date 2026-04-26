@@ -1,7 +1,8 @@
 FROM mcr.microsoft.com/devcontainers/python:3.11-bullseye
 
 # 必要ツールのインストール
-RUN apt-get update && apt-get install -y \
+RUN rm -f /etc/apt/sources.list.d/yarn.list \
+    && apt-get update && apt-get install -y \
     curl git jq vim less \
     && rm -rf /var/lib/apt/lists/*
 
