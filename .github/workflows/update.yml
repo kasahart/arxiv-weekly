@@ -47,7 +47,7 @@ jobs:
           path: data/raw_papers.json
           retention-days: 1
 
-  # ─── Step 2: Claude による解析 ───────────────────────────────────────────
+  # ─── Step 2: GPT-4o による解析 ───────────────────────────────────────────
   analyze:
     needs: fetch
     runs-on: ubuntu-latest
@@ -69,7 +69,7 @@ jobs:
           name: raw-papers
           path: data/
 
-      - name: Analyze papers with GitHub Models (Claude)
+      - name: Analyze papers with GitHub Models (GPT-4o)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/analyze_papers.py
@@ -81,14 +81,12 @@ jobs:
           path: data/analyzed_papers.json
           retention-days: 1
 
-  # ─── Step 3: データ生成・Git コミット ────────────────────────────────────
+  # ─── Step 3: データ生成 ───────────────────────────────────────────────────
   build:
     needs: analyze
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -109,23 +107,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/build_data.py
 
-      - name: Commit and push data files
-        if: github.event.inputs.dry_run != 'true'
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            DATE=$(date -u +"%Y-%m%d")
-            git commit -m "chore: weekly update ${DATE}"
-            git push
-          fi
+      - name: Upload built data
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-data
+          path: data/
+          retention-days: 1
 
   # ─── Step 4: フロントエンドビルド・GitHub Pages デプロイ ─────────────────
   deploy:
     needs: build
+    if: github.event.inputs.dry_run != 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -133,14 +125,18 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: main  # build が push した最新を取得
 
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
           cache-dependency-path: web/package-lock.json
+
+      - name: Download built data
+        uses: actions/download-artifact@v4
+        with:
+          name: built-data
+          path: data/
 
       - name: Copy data to web/public
         run: |
