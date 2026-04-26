@@ -1,0 +1,100 @@
+name: Backfill Historical Data
+
+on:
+  workflow_dispatch:
+    inputs:
+      from_date:
+        description: '開始日 YYYY-MM-DD（この日以降の金曜日を対象）'
+        required: true
+        default: '2026-01-01'
+      to_date:
+        description: '終了日 YYYY-MM-DD（省略時は今日）'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Backfill weekly data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TO_ARG=""
+          if [ -n "${{ github.event.inputs.to_date }}" ]; then
+            TO_ARG="--to-date ${{ github.event.inputs.to_date }}"
+          fi
+          python scripts/backfill.py \
+            --from-date ${{ github.event.inputs.from_date }} \
+            $TO_ARG
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/package-lock.json
+
+      - name: Fetch existing data from gh-pages
+        run: |
+          git fetch origin gh-pages
+          mkdir -p web/public/data/weekly
+          for f in $(git ls-tree -r --name-only origin/gh-pages 2>/dev/null | grep '^data/weekly/.*\.json$'); do
+            git show origin/gh-pages:$f > web/public/$f 2>/dev/null || true
+          done
+          git show origin/gh-pages:data/index.json > /tmp/existing_index.json 2>/dev/null \
+            || echo '{"weeks":[],"generated_at":""}' > /tmp/existing_index.json
+
+      - name: Merge and copy data
+        run: |
+          find data/weekly -name '*.json' -exec cp {} web/public/data/weekly/ \;
+          python3 - << 'EOF'
+          import json
+          existing = json.load(open('/tmp/existing_index.json'))
+          new_idx_path = 'data/index.json'
+          import os
+          if os.path.exists(new_idx_path):
+              new = json.load(open(new_idx_path))
+          else:
+              new = {"weeks": []}
+          merged = {w['date']: w for w in existing.get('weeks', [])}
+          for w in new.get('weeks', []):
+              merged[w['date']] = w
+          existing['weeks'] = sorted(merged.values(), key=lambda x: x['date'], reverse=True)
+          existing['generated_at'] = new.get('generated_at', existing.get('generated_at', ''))
+          json.dump(existing, open('web/public/data/index.json', 'w'), ensure_ascii=False, indent=2)
+          print(f"[deploy] Merged index: {len(existing['weeks'])} weeks")
+          EOF
+          cp data/latest.json web/public/data/ 2>/dev/null || true
+
+      - name: Build frontend
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: web/dist
+          publish_branch: gh-pages
+          commit_message: "deploy: backfill ${{ github.event.inputs.from_date }} to ${{ github.event.inputs.to_date }}"
