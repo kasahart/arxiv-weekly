@@ -38,7 +38,8 @@
               "label": "Advances in Audio Forensics (2020)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": 0
         },
         {
           "id": "2604.14806v1",
@@ -70,7 +71,8 @@
               "label": "Perception-Grounded AI Systems (2020)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2604.13023v1",
@@ -102,7 +104,11 @@
               "label": "Challenges in Audio Temporal Analysis (2020)",
               "url": null
             }
-          ]
+          ],
+          "githubRepo": "https://github.com/LoieSun/SpotSound",
+          "upvotes": 1,
+          "projectPage": "https://loiesun.github.io/spotsound/",
+          "citationCount": null
         },
         {
           "id": "2604.12527v2",
@@ -134,7 +140,8 @@
               "label": "Open-Source Audio Language Models (2020)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2604.12506v1",
@@ -166,7 +173,11 @@
               "label": "HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units (2021)",
               "url": "https://arxiv.org/abs/2106.07447"
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 2,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2604.12145v1",
@@ -198,7 +209,8 @@
               "label": "VideoBERT: A Joint Model for Video and Language Representation Learning (2019)",
               "url": "https://arxiv.org/abs/1904.01766"
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2604.11594v1",
@@ -230,7 +242,8 @@
               "label": "Empathetic Dialogues: A New Benchmark for Empathy in Conversational AI (2019)",
               "url": "https://arxiv.org/abs/1811.00207"
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2604.10021v1",
@@ -262,7 +275,8 @@
               "label": "Music Transformer: Generating Music with Long-Term Structure (2019)",
               "url": "https://arxiv.org/abs/1809.04281"
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -301,7 +315,8 @@
               "label": "Multichannel Audio Source Separation Using NMF (2010)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -340,7 +355,8 @@
               "label": "Advances in Audio Temporal Analysis (2020)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     }

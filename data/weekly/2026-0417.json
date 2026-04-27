@@ -38,7 +38,8 @@
               "label": "Hybrid Models for Speech Recognition (2021)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2604.13023v1",
@@ -70,7 +71,11 @@
               "label": "Audio Event Localization in Complex Scenes (2023)",
               "url": null
             }
-          ]
+          ],
+          "githubRepo": "https://github.com/LoieSun/SpotSound",
+          "upvotes": 1,
+          "projectPage": "https://loiesun.github.io/spotsound/",
+          "citationCount": null
         },
         {
           "id": "2604.12527v2",
@@ -102,7 +107,8 @@
               "label": "Advances in Audio Reasoning Models (2022)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2604.12506v1",
@@ -134,7 +140,11 @@
               "label": "Comprehensive Audio-Text Alignment Techniques (2022)",
               "url": null
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 2,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2604.12145v1",
@@ -149,7 +159,8 @@
           "method": "",
           "validation": "",
           "discussion": "",
-          "nextReads": []
+          "nextReads": [],
+          "citationCount": null
         },
         {
           "id": "2604.11594v1",
@@ -164,7 +175,8 @@
           "method": "",
           "validation": "",
           "discussion": "",
-          "nextReads": []
+          "nextReads": [],
+          "citationCount": null
         },
         {
           "id": "2604.10021v1",
@@ -179,7 +191,8 @@
           "method": "",
           "validation": "",
           "discussion": "",
-          "nextReads": []
+          "nextReads": [],
+          "citationCount": null
         },
         {
           "id": "2604.09222v1",
@@ -194,7 +207,8 @@
           "method": "",
           "validation": "",
           "discussion": "",
-          "nextReads": []
+          "nextReads": [],
+          "citationCount": null
         },
         {
           "id": "2604.09094v1",
@@ -209,7 +223,8 @@
           "method": "",
           "validation": "",
           "discussion": "",
-          "nextReads": []
+          "nextReads": [],
+          "citationCount": null
         }
       ]
     },
@@ -231,7 +246,8 @@
           "method": "",
           "validation": "",
           "discussion": "",
-          "nextReads": []
+          "nextReads": [],
+          "citationCount": null
         },
         {
           "id": "2604.09371v2",
@@ -246,7 +262,8 @@
           "method": "",
           "validation": "",
           "discussion": "",
-          "nextReads": []
+          "nextReads": [],
+          "citationCount": null
         }
       ]
     },
@@ -285,7 +302,8 @@
               "label": "Fine-Grained Audio-Visual Event Localization (2022)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     }

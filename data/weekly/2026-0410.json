@@ -38,7 +38,8 @@
               "label": "Adversarial Attacks on Voice Conversion Systems (2021)",
               "url": "https://arxiv.org/abs/2103.17129"
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2604.06694v1",
@@ -70,7 +71,8 @@
               "label": "Efficient Transformers: A Survey (2020)",
               "url": "https://arxiv.org/abs/2009.06732"
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -109,7 +111,8 @@
               "label": "Deep Attractor Network for Single-Microphone Speaker Separation (2017)",
               "url": "https://arxiv.org/abs/1707.01161"
             }
-          ]
+          ],
+          "citationCount": 0
         },
         {
           "id": "2604.06810v2",
@@ -141,7 +144,8 @@
               "label": "SpEx: Multi-Scale Time Domain Speaker Extraction Network (2020)",
               "url": "https://arxiv.org/abs/2004.04862"
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2604.04973v1",
@@ -173,7 +177,8 @@
               "label": "Nonlinear ICA using Auxiliary Variables (2019)",
               "url": "https://arxiv.org/abs/1905.09346"
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     }

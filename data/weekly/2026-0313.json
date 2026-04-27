@@ -38,7 +38,17 @@
               "label": "Self-supervised Learning for Speech and Audio Processing (2021)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Large Audio Language Models (LALMs) have expanded the interaction with human to speech modality, which introduces great interactive potential, due to the paralinguistic cues implicitly indicating the user context. However, building on the current content-centred paradigm, LALMs usually neglect such paralinguistic cues and respond solely based on query content. In this work, to resurface the paralinguistic awareness in LALMs, we introduce five diverse layer-wise analyses to jointly identify paralinguistic layers and semantic understanding layers. Based on these insights, we propose a paralinguistic-enhanced fine-tuning (PE-FT) protocol accordingly to equip LALMs with paralinguistic-aware capabilities, including (1) selective-layer fine-tuning, and (2) an auxiliary dual-level classification head. Our experiments demonstrate that PE-FT protocol efficiently and effectively resurfaces the paralinguistic awareness, even surpassing the performance of the all-layer fine-tuning strategy.",
+          "comment": "Submitted to Interspeech 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.11661v1",
@@ -70,7 +80,11 @@
               "label": "Deep Reinforcement Learning for Audio Generation (2021)",
               "url": null
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2603.10725v2",
@@ -102,7 +116,8 @@
               "label": "FakeCatcher: Detection of Synthetic Media (2021)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": 0
         },
         {
           "id": "2603.10175v1",
@@ -134,7 +149,8 @@
               "label": "QualiSpeech: A Benchmark for Multidimensional Speech Quality (2022)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.09853v1",
@@ -166,7 +182,8 @@
               "label": "Benchmarking Audio Understanding Tasks (2021)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.09232v1",
@@ -198,7 +215,8 @@
               "label": "Improving Audio Decoding with Contrastive Learning (2022)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.05852v1",
@@ -230,7 +248,8 @@
               "label": "Audio LLMs: Challenges and Opportunities (2023)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -269,7 +288,8 @@
               "label": "Transparent Practices in AI Research (2023)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     }

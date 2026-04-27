@@ -38,7 +38,11 @@
               "label": "Flamingo: A Visual Language Model (2022)",
               "url": "https://arxiv.org/abs/2204.14198"
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2602.04683v3",
@@ -70,7 +74,11 @@
               "label": "BEATs: Audio Pre-Training with Acoustic Tokenizers (2022)",
               "url": "https://arxiv.org/abs/2212.09058"
             }
-          ]
+          ],
+          "githubRepo": "https://github.com/yangdongchao/UniAudio2",
+          "upvotes": 3,
+          "projectPage": "https://dongchaoyang.top/UniAudio2Demo/",
+          "citationCount": null
         },
         {
           "id": "2602.04535v1",
@@ -102,7 +110,11 @@
               "label": "ASVspoof 2019: Automatic Speaker Verification Spoofing and Countermeasures Challenge (2019)",
               "url": "https://arxiv.org/abs/1904.05441"
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2602.04085v1",
@@ -134,7 +146,11 @@
               "label": "OpenMusic: Open-Domain Music Understanding (2021)",
               "url": null
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2602.07036v1",
@@ -166,7 +182,11 @@
               "label": "SpeechStew: Simply Mix All the Data to Train Multilingual ASR (2021)",
               "url": "https://arxiv.org/abs/2104.02133"
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2602.03307v2",
@@ -198,7 +218,8 @@
               "label": "SSAST: Self-Supervised Audio Spectrogram Transformer (2021)",
               "url": "https://arxiv.org/abs/2110.09784"
             }
-          ]
+          ],
+          "citationCount": 1
         },
         {
           "id": "2602.01249v2",
@@ -230,7 +251,8 @@
               "label": "Deep Learning for Audio Processing (2019)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": 0
         },
         {
           "id": "2602.03873v1",
@@ -262,7 +284,8 @@
               "label": "Pretrained Language Models for Emotion Recognition (2020)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2602.01030v1",
@@ -294,7 +317,19 @@
               "label": "Multilingual Language Models for Speech Processing (2022)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "This work presents the first systematic investigation of speech bias in multilingual MLLMs. We construct and release the BiasInEar dataset, a speech-augmented benchmark based on Global MMLU Lite, spanning English, Chinese, and Korean, balanced by gender and accent, and totaling 70.8 hours ($\\approx$4,249 minutes) of speech with 11,200 questions. Using four complementary metrics (accuracy, entropy, APES, and Fleiss' $κ$), we evaluate nine representative models under linguistic (language and accent), demographic (gender), and structural (option order) perturbations. Our findings reveal that MLLMs are relatively robust to demographic factors but highly sensitive to language and option order, suggesting that speech can amplify existing structural biases. Moreover, architectural design and reasoning strategy substantially affect robustness across languages. Overall, this study establishes a unified framework for assessing fairness and robustness in speech-integrated LLMs, bridging the gap between text- and speech-based evaluation. The resources can be found at https://github.com/ntunlplab/BiasInEar.",
+          "comment": "Accepted as a long findings paper at EACL 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2602.00744v3",
@@ -326,7 +361,11 @@
               "label": "Jukebox: A Generative Model for Music (2020)",
               "url": "https://arxiv.org/abs/2005.00341"
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 11,
+          "projectPage": null,
+          "citationCount": 0
         },
         {
           "id": "2602.00604v1",
@@ -358,7 +397,11 @@
               "label": "Wav2CLIP: Learning Robust Audio Representations from CLIP (2022)",
               "url": "https://arxiv.org/abs/2110.11499"
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2601.23161v1",
@@ -390,7 +433,11 @@
               "label": "Large Language Models are Few-Shot Learners (2020)",
               "url": "https://arxiv.org/abs/2005.14165"
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 9,
+          "projectPage": null,
+          "citationCount": 0
         },
         {
           "id": "2601.23149v1",
@@ -422,7 +469,8 @@
               "label": "Audio-Visual Scene Understanding (2023)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2601.23066v1",
@@ -454,7 +502,15 @@
               "label": "Audio-Visual Deepfake Detection (2022)",
               "url": "https://arxiv.org/abs/2203.12345"
             }
-          ]
+          ],
+          "abstract": "Speech deepfake detection (SDD) focuses on identifying whether a given speech signal is genuine or has been synthetically generated. Existing audio large language model (LLM)-based methods excel in content understanding; however, their predictions are often biased toward semantically correlated cues, which results in fine-grained acoustic artifacts being overlooked during the decisionmaking process. Consequently, fake speech with natural semantics can bypass detectors despite harboring subtle acoustic anomalies; this suggests that the challenge stems not from the absence of acoustic data, but from its inadequate accessibility when semantic-dominant reasoning prevails. To address this issue, we investigate SDD within the audio LLM paradigm and introduce SDD with Auditory Perception-enhanced Audio Large Language Model (SDD-APALLM), an acoustically enhanced framework designed to explicitly expose fine-grained time-frequency evidence as accessible acoustic cues. By combining raw audio with structured spectrograms, the proposed framework empowers audio LLMs to more effectively capture subtle acoustic inconsistencies without compromising their semantic understanding. Experimental results indicate consistent gains in detection accuracy and robustness, especially in cases where semantic cues are misleading. Further analysis reveals that these improvements stem from a coordinated utilization of semantic and acoustic information, as opposed to simple modality aggregation.",
+          "comment": "9 pages, 4 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "citationCount": null
         },
         {
           "id": "2601.22661v1",
@@ -486,7 +542,14 @@
               "label": "Role-Play Dialogue Systems (2023)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Recent advances in Large Audio Language Models (LALMs) have extended Text-to-Speech (TTS) to interactive role-play scenarios, which demand high expressiveness and strict adherence to role-play instructions. However, existing models struggle to maintain stylistic consistency with character profiles and scene descriptions across multi-turn dialogues. A critical bottleneck is the lack of objective metrics for quantifying speaking style. To bridge this gap, we propose Mean Continuation Log-Probability (MCLP) as both an evaluation metric and a reward signal, validated on LALM-based Role-Play TTS (RP-TTS) tasks. Critically, we leverage the In-Context Learning capability of pre-trained LALMs to formulate MCLP via a continuation log-probability prediction. This metric quantifies stylistic consistency by measuring the likelihood of the ground-truth speech conditioned on the generated speech. Furthermore, we employ MCLP as a reinforcement learning reward to enhance the style alignment between generated speech and Role-Play instructions. To facilitate evaluation, we construct an RP-TTS dataset with rich scene and character annotations. Experimental results demonstrate that our method significantly outperforms strong LALM baselines on both objective and subjective metrics.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -525,7 +588,18 @@
               "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
               "url": "https://arxiv.org/abs/1806.03185"
             }
-          ]
+          ],
+          "abstract": "This report describes the system submitted to the music source restoration (MSR) Challenge 2025. Our approach is composed of sequential BS-RoFormers, each dealing with a single task including music source separation (MSS), denoise and dereverb. To support 8 instruments given in the task, we utilize pretrained checkpoints from MSS community and finetune the MSS model with several training schemes, including (1) mixing and cleaning of datasets; (2) random mixture of music pieces for data augmentation; (3) scale-up of audio length. Our system achieved the first rank in all three subjective and three objective evaluation metrics, including an MMSNR score of 4.4623 and an FAD score of 0.1988. We have open-sourced all the code and checkpoints at https://github.com/ModistAndrew/xlance-msr.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": 0
         },
         {
           "id": "2602.01394v1",
@@ -557,7 +631,16 @@
               "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
               "url": "https://arxiv.org/abs/1809.07454"
             }
-          ]
+          ],
+          "abstract": "This paper addresses the challenge of audio-visual single-microphone speech separation and enhancement in the presence of real-world environmental noise. Our approach is based on generative inverse sampling, where we model clean speech and ambient noise with dedicated diffusion priors and jointly leverage them to recover all underlying sources. To achieve this, we reformulate a recent inverse sampler to match our setting. We evaluate on mixtures of 1, 2, and 3 speakers with noise and show that, despite being entirely unsupervised, our method consistently outperforms leading supervised baselines in \\ac{WER} across all conditions. We further extend our framework to handle off-screen speaker separation. Moreover, the high fidelity of the separated noise component makes it suitable for downstream acoustic scene detection. Demo page: https://ssnapsicml.github.io/ssnapsicml2026/",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "citationCount": null
         },
         {
           "id": "2601.22599v1",
@@ -589,7 +672,18 @@
               "label": "Sound Event Detection and Separation (2023)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Query-based universal sound separation is fundamental to intelligent auditory systems, aiming to isolate specific sources from mixtures. Despite recent advances, existing methods continue to suffer from residual interference in complex acoustic scenes. This performance limitation stems largely from a data bottleneck: in-the-wild datasets contain weak labels and severe co-occurrence of events. These flaws induce models to learn spurious correlations between background noise and target categories instead of robust acoustic features. To address this, we propose an automated pipeline that eliminates co-occurrence of events by mining high-purity single-event segments from in-the-wild datasets via a semantically consistent synthesis protocol. Utilizing this pipeline, we constructed Hive, a high-quality synthetic dataset comprising 2.4k hours of raw audio. Experimental results demonstrate that, compared with the state-of-the-art model SAM-Audio which was trained on a huge dataset $\\sim$500 times larger than Hive, certain open-source models trained on Hive achieve competitive separation accuracy and perceptual quality. Moreover, these models exhibited remarkable zero-shot generalization on out-of-distribution evaluation benchmarks. These findings highlight that prioritizing purity of supervised signals enables significant data efficiency, offering a new paradigm for training robust auditory foundation models with reduced computational costs. Code and dataset are available at https://shandaai.github.io/Hive.",
+          "comment": "Technical Report",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.HC"
+          ],
+          "githubRepo": "https://github.com/ShandaAI/Hive",
+          "upvotes": 5,
+          "projectPage": "https://shandaai.github.io/Hive",
+          "citationCount": null
         },
         {
           "id": "2601.22504v1",
@@ -621,7 +715,14 @@
               "label": "Label-Queried Source Separation (2023)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "To advance immersive communication, the Detection and Classification of Acoustic Scenes and Events (DCASE) 2025 Challenge recently introduced Task 4 on Spatial Semantic Segmentation of Sound Scenes (S5). An S5 system takes a multi-channel audio mixture as input and outputs single-channel dry sources along with their corresponding class labels. Although the DCASE 2025 Challenge simplifies the task by constraining class labels in each mixture to be mutually exclusive, real-world mixtures frequently contain multiple sources from the same class. The presence of duplicated labels can significantly degrade the performance of the label-queried source separation (LQSS) model, which is the key component of many existing S5 systems, and can also limit the validity of the official evaluation metric of DCASE 2025 Task 4. To address these issues, we propose a class-aware permutation-invariant loss function that enables the LQSS model to handle queries involving duplicated labels. In addition, we redesign the S5 evaluation metric to eliminate ambiguities caused by these same-class sources. To evaluate the proposed method within the S5 system, we extend the label prediction model to support same-class labels. Experimental results demonstrate the effectiveness of the proposed methods and the robustness of the new metric on mixtures both with and without same-class sources.",
+          "comment": "Accepted by ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -660,7 +761,16 @@
               "label": "A Survey on Anomaly Detection for Technical Systems using LSTM Networks (2020)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Existing generative models for unsupervised anomalous sound detection are limited by their inability to fully capture the complex feature distribution of normal sounds, while the potential of powerful diffusion models in this domain remains largely unexplored. To address this challenge, we propose a novel framework, TLDiffGAN, which consists of two complementary branches. One branch incorporates a latent diffusion model into the GAN generator for adversarial training, thereby making the discriminator's task more challenging and improving the quality of generated samples. The other branch leverages pretrained audio model encoders to extract features directly from raw audio waveforms for auxiliary discrimination. This framework effectively captures feature representations of normal sounds from both raw audio and Mel spectrograms. Moreover, we introduce a TMixup spectrogram augmentation technique to enhance sensitivity to subtle and localized temporal patterns that are often overlooked. Extensive experiments on the DCASE 2020 Challenge Task 2 dataset demonstrate the superior detection performance of TLDiffGAN, as well as its strong capability in anomalous time-frequency localization.",
+          "comment": "Accepted by ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "citationCount": 0
         }
       ]
     }

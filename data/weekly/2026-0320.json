@@ -34,7 +34,11 @@
               "label": "SpeechLM: Large-Scale Pre-trained Model for Speech Understanding (2022)",
               "url": "https://arxiv.org/abs/2210.00190"
             }
-          ]
+          ],
+          "githubRepo": "https://github.com/kehanlu/AKB",
+          "upvotes": 4,
+          "projectPage": "https://kehanlu.github.io/AKB",
+          "citationCount": null
         },
         {
           "id": "2603.18678v1",
@@ -62,7 +66,8 @@
               "label": "Understanding Multimodal Humor (2021)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.17822v1",
@@ -90,7 +95,8 @@
               "label": "Transparent AI in Speech Processing (2021)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.18048v2",
@@ -118,7 +124,11 @@
               "label": "Acoustic Understanding in AI Models (2021)",
               "url": null
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": 0
         },
         {
           "id": "2603.16966v1",
@@ -150,7 +160,8 @@
               "label": "Deep Learning for Speaker Diarization (2021)",
               "url": "https://arxiv.org/abs/2106.03635"
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.13768v1",
@@ -182,7 +193,11 @@
               "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
               "url": "https://arxiv.org/abs/2006.11477"
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         }
       ]
     },
@@ -217,7 +232,8 @@
               "label": "Spatial Audio in Machine Learning (2023)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.14983v1",
@@ -249,7 +265,8 @@
               "label": "A Review of Blind Source Separation Methods (2010)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.16926v1",
@@ -281,7 +298,8 @@
               "label": "BSRNN: Band-Split RNN for Music Source Separation (2022)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -320,7 +338,8 @@
               "label": "A Study on Sub-band Based Anomaly Detection (2021)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     }

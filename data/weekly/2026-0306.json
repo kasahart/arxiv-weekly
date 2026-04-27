@@ -38,7 +38,18 @@
               "label": "Polyphonic sound event detection with weak labeling (2020)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Large Audio Language Models (LALMs) are increasingly capable of reasoning over audio. However, existing benchmarks provide limited coverage of reasoning in polyphonic audio, where multiple sound events co-occur and induce compositional structure. In this work, we introduce PolyBench, a benchmark designed to evaluate compositional reasoning in polyphonic audio. PolyBench comprises five evaluation subsets covering counting, classification, detection, concurrency, and duration estimation, requiring reasoning over multiple concurrent events and their relations. Evaluation of state-of-the-art LALMs reveals consistent performance degradation in polyphonic audio, indicating a fundamental bottleneck in current LALMs.",
+          "comment": "Submitted to INTERSPEECH 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": 0
         },
         {
           "id": "2603.04862v2",
@@ -70,7 +81,14 @@
               "label": "Speech enhancement using deep learning: A survey (2018)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Large audio language models (LALMs) are a class of foundation models for audio understanding. Existing LALMs tend to degrade significantly in real-world noisy acoustic conditions where speech and non-speech sounds interfere. While noise-aware fine-tuning can improve robustness, it requires task-specific noisy data and expensive retraining, limiting scalability. To address this issue, we propose Focus-Then-Listen (FTL), a plug-and-play audio enhancer that improves LALMs' noise robustness. Specifically, FTL first separates the input waveform into speech and non-speech, and a modality router is applied to predict the target audio modality (e.g., speech) based on the user's instruction. Finally, a modality-aware fusion block generates a task-adaptive enhanced signal for improved downstream perception and reasoning. Experiments across multiple LALMs and tasks show that FTL improves performance across different noise levels without fine-tuning on LALMs.",
+          "comment": "Submitted to Interspeech 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.04293v1",
@@ -102,7 +120,17 @@
               "label": "AI-assisted music analysis tools (2022)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "The advancement of Machine learning (ML), Large Audio Language Models (LALMs), and autonomous AI agents in Music Information Retrieval (MIR) necessitates a shift from static tagging to rich, human-aligned representation learning. However, the scarcity of open-source infrastructure capable of capturing the subjective nuances of audio annotation remains a critical bottleneck. This paper introduces \\textbf{LabelBuddy}, an open-source collaborative auto-tagging audio annotation tool designed to bridge the gap between human intent and machine understanding. Unlike static tools, it decouples the interface from inference via containerized backends, allowing users to plug in custom models for AI-assisted pre-annotation. We describe the system architecture, which supports multi-user consensus, containerized model isolation, and a roadmap for extending agents and LALMs. Code available at https://github.com/GiannisProkopiou/gsoc2022-Label-buddy.",
+          "comment": "Accepted at NLP4MusA 2026 (4th Workshop on NLP for Music and Audio)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.IR",
+            "cs.LG"
+          ],
+          "citationCount": 0
         },
         {
           "id": "2603.00355v1",
@@ -134,7 +162,19 @@
               "label": "Clinical Applications of Audio-Language Models (2023)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Listening to heart and lung sounds - auscultation - is one of the first and most fundamental steps in a clinical examination. Despite being fast and non-invasive, it demands years of experience to interpret subtle audio cues. Recent deep learning methods have made progress in automating cardiopulmonary sound analysis, yet most are restricted to simple classification and offer little clinical interpretability or decision support. We present StethoLM, the first audio-language model specialized for cardiopulmonary auscultation, capable of performing instruction-driven clinical tasks across the full spectrum of auscultation analysis. StethoLM integrates audio encoding with a medical language model backbone and is trained on StethoBench, a comprehensive benchmark comprising 77,027 instruction-response pairs synthesized from 16,125 labeled cardiopulmonary recordings spanning seven clinical task categories: binary classification, detection, reporting, reasoning, differential diagnosis, comparison, and location-based analysis. Through multi-stage training that combines supervised fine-tuning and direct preference optimization, StethoLM achieves substantial gains in performance and robustness on out-of-distribution data. Our work establishes a foundation for instruction-following AI systems in clinical auscultation.",
+          "comment": "To be published in TMLR",
+          "journalRef": null,
+          "categories": [
+            "cs.LG",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         }
       ]
     },
@@ -173,7 +213,14 @@
               "label": "Multi-stage speech separation methods (2021)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "This paper investigates the use of relative cues for text-based target speech extraction (TSE). We first provide a theoretical justification for relative cues from the perspectives of human perception and label quantization, showing that relative cues preserve fine-grained distinctions that are often lost in absolute categorical representations for continuous-valued attributes. Building on this analysis, we propose a two-stage TSE framework in which a speech separation model first generates candidate sources, followed by a text-guided classifier that selects the target speaker based on embedding similarity. Within this framework, we train two separate classification models to evaluate the advantages of relative cues over independent cues in case of continuous-valued attributes, considering both classification accuracy and TSE performance. Experimental results demonstrate that (i) relative cues achieve higher overall classification accuracy and improved TSE performance compared with independent cues; (ii) the proposed two-stage framework substantially outperforms single-stage text-conditioned extraction methods on both signal-level and objective perceptual metrics; and (iii) several relative cues, including language, loudness, distance, temporal order, speaking duration, random cues, and all cues, can even surpass the performance of an enrollment-audio-based TSE system. Further analysis reveals notable differences in discriminative power across cue types, providing insights into the effectiveness of different relative cues for TSE.",
+          "comment": "Submitted to IEEE TASLP",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -212,7 +259,15 @@
               "label": "Learning robust audio representations (2022)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Training-free anomalous sound detection (ASD) based on pre-trained audio embedding models has recently garnered significant attention, as it enables the detection of anomalous sounds using only normal reference data while offering improved robustness under domain shifts. However, existing embedding-based approaches almost exclusively rely on temporal mean pooling, while alternative pooling strategies have so far only been explored for spectrogram-based representations. Consequently, the role of temporal pooling in training-free ASD with pre-trained embeddings remains insufficiently understood. In this paper, we present a systematic evaluation of temporal pooling strategies across multiple state-of-the-art audio embedding models. We propose relative deviation pooling (RDP), an adaptive pooling method that emphasizes informative temporal deviations, and introduce a hybrid pooling strategy that combines RDP with generalized mean pooling. Experiments on five benchmark datasets demonstrate that the proposed methods consistently outperform mean pooling and achieve state-of-the-art performance for training-free ASD, including results that surpass all previously reported trained systems and ensembles on the DCASE2025 ASD dataset.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "citationCount": null
         }
       ]
     }

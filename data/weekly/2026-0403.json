@@ -38,7 +38,8 @@
               "label": "Robustness of Speech Recognition Models to Adversarial Attacks (2021)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.28378v1",
@@ -70,7 +71,11 @@
               "label": "Speech Data Privacy in AI Models (2021)",
               "url": null
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2604.19782v1",
@@ -102,7 +107,17 @@
               "label": "Korean NLP Benchmarks (2020)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Recent advances in large audio language models (LALMs) have enabled multilingual speech understanding. However, benchmarks for evaluating LALMs remain scarce for non-English languages, with Korean being one such underexplored case. In this paper, we introduce KoALa-Bench, a comprehensive benchmark for evaluating Korean speech understanding and speech faithfulness of LALMs. In particular, KoALa-Bench comprises six tasks. Four tasks evaluate fundamental speech understanding capabilities, including automatic speech recognition, speech translation, speech question answering, and speech instruction following, while the remaining two tasks evaluate speech faithfulness, motivated by our observation that several LALMs often fail to fully leverage the speech modality. Furthermore, to reflect Korea-specific knowledge, our benchmark incorporates listening questions from the Korean college scholastic ability test as well as content covering Korean cultural domains. We conduct extensive experiments across six models, including both white-box and black-box ones. Our benchmark, evaluation code, and leaderboard are publicly available at https://ksbench.github.io/Korean-Benchmark/.",
+          "comment": "Under Review",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.AI",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.28021v2",
@@ -134,7 +149,8 @@
               "label": "Interpretable Machine Learning for Audio (2020)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.27667v1",
@@ -166,7 +182,8 @@
               "label": "Evidence Bottleneck in AI Models (2022)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -205,7 +222,8 @@
               "label": "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition (2019)",
               "url": "https://arxiv.org/abs/1904.08779"
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.29097v1",
@@ -237,7 +255,8 @@
               "label": "Multi-Channel Speech Separation with Deep Attractor Network (2018)",
               "url": "https://arxiv.org/abs/1804.11266"
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.28757v1",
@@ -269,7 +288,8 @@
               "label": "360° Image to 3D Scene Reconstruction (2023)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.26113v1",
@@ -301,7 +321,8 @@
               "label": "Looking to Listen at the Cocktail Party (2018)",
               "url": "https://arxiv.org/abs/1804.03619"
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -340,7 +361,11 @@
               "label": "Wav2CLIP: Learning Audio Representations from Textual Annotations (2022)",
               "url": null
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2603.29956v1",
@@ -372,7 +397,8 @@
               "label": "System Identification: Theory for the User (1999)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": 0
         }
       ]
     }

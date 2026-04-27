@@ -34,7 +34,11 @@
               "label": "Self-supervised Learning for Audio (2020)",
               "url": null
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2603.23810v1",
@@ -62,7 +66,8 @@
               "label": "Efficient Masking Strategies for SSL (2020)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.22728v1",
@@ -90,7 +95,8 @@
               "label": "Benchmarking Pre-trained Audio Encoders (2021)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.20638v1",
@@ -118,7 +124,11 @@
               "label": "Low Bitrate Audio Compression Techniques (2020)",
               "url": null
             }
-          ]
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         }
       ]
     },
@@ -153,7 +163,8 @@
               "label": "Generative Models in Audio Processing (2020)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null
         }
       ]
     }

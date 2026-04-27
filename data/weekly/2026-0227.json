@@ -38,7 +38,15 @@
               "label": "Multimodal Transformers for Audio-Visual Learning (2021)",
               "url": "https://arxiv.org/abs/2104.12803"
             }
-          ]
+          ],
+          "abstract": "Audio large language models (ALLMs) have recently advanced spoken interaction by integrating speech processing with large language models. However, existing evaluations of fairness, safety, and security (FSS) remain fragmented, largely because ALLMs differ fundamentally in how acoustic information is represented and where semantic reasoning occurs. Differences that are rarely made explicit. As a result, evaluations often conflate structurally distinct systems, obscuring the relationship between model design and observed FSS behavior. In this work, we introduce a structural taxonomy (system-level and representational) of ALLMs that categorizes systems along two axes: the form of audio input representation (e.g., discrete vs. continuous) and the locus of semantic reasoning (e.g., cascaded, multimodal, or audio-native). Building on the taxonomy, we propose a unified evaluation framework that assesses semantic invariance under paralinguistic variation, refusal and toxicity behavior under unsafe prompts, and robustness to adversarial audio perturbations. We apply this framework to two representative systems and observe systematic differences in refusal rates, attack success, and toxicity between audio and text inputs. Our findings demonstrate that FSS behavior is tightly coupled to how acoustic information is integrated into semantic reasoning, underscoring the need for structure-aware evaluation of audio language models.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "citationCount": null
         },
         {
           "id": "2603.02250v1",
@@ -70,7 +78,15 @@
               "label": "LFM2-Audio: A Benchmark for Audio Models (2022)",
               "url": "https://arxiv.org/abs/2203.12345"
             }
-          ]
+          ],
+          "abstract": "Explaining the behavior of end-to-end audio language models via Shapley value attribution is intractable under native tokenization: a typical utterance yields over $150$ encoder frames, inflating the coalition space by roughly $10^{42}$ relative to text; individual audio frames lack standalone meaning; and token boundaries that bisect phonetic transitions introduce masking artifacts. We introduce Spectrogram-Guided Phonetic Alignment (SGPA), a four-stage pipeline that combines Connectionist Temporal Classification forced alignment with spectral boundary refinement to produce acoustically stable, word-aligned audio segments. Controlled diagnostics on LFM2-Audio-1.5B with VoiceBench show that SGPA yields a 43$\\times$ reduction in model evaluations. Statistical testing confirms that SGPA significantly alters attribution concentration while preserving the global cumulative profile, establishing it as a feasibility-enabling layer for audio explainability.",
+          "comment": "Submitted for admission in Interspeech 2026 conference",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "citationCount": null
         },
         {
           "id": "2602.21772v2",
@@ -102,7 +118,15 @@
               "label": "Universal Speech Representations (2021)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "A universal audio representation should capture fine-grained speech cues and high-level semantics for environmental sounds and music in a single encoder. Existing encoders often excel in one domain but degrade in others. We propose UniWhisper, an efficient continual multi-task training framework that casts heterogeneous audio tasks into a unified instruction and answer format. This enables standard next-token training without task-specific heads and losses. We train it on 38k hours of public audio and assess the encoder using shallow MLP probes and k-nearest neighbors (kNN) on 20 tasks spanning speech, environmental sound, and music. UniWhisper reaches normalized weighted averages of 0.81 with MLP probes and 0.61 with kNN, compared to 0.64 and 0.46 for Whisper, while retaining strong speech performance.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "citationCount": null
         },
         {
           "id": "2602.18721v1",
@@ -134,7 +158,18 @@
               "label": "Error Correction in ASR (2019)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Semi-supervised learning in automatic speech recognition (ASR) typically relies on pseudo-labeling, which often suffers from confirmation bias and error accumulation due to noisy supervision. To address this limitation, we propose ReHear, a framework for iterative pseudo-label refinement that integrates an instruction-tuned, audio-aware large language model (LLM) into the self-training loop. Unlike conventional text-based correctors, our approach conditions the LLM on both the ASR hypothesis and the source audio, allowing it to recover phonetically accurate transcripts even from severe recognition errors. These refined pseudo-labels serve as high-fidelity targets for fine-tuning the ASR model in an iterative cycle. Experimental results across diverse benchmarks demonstrate that ReHear effectively mitigates error propagation, consistently outperforming both supervised and pseudo-labeling baselines.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "eess.AS"
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2602.18010v1",
@@ -166,7 +201,17 @@
               "label": "Cross-Modal Retrieval with LLMs (2023)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Audio-text retrieval is crucial for bridging acoustic signals and natural language. While contrastive dual-encoder architectures like CLAP have shown promise, they are fundamentally limited by the capacity of small-scale encoders. Specifically, the text encoders struggle to understand complex queries that require reasoning or world knowledge. In this paper, we propose AuroLA, a novel contrastive language-audio pre-training framework that re-purposes Multimodal Large Language Models (MLLMs) as a unified backbone for retrieval. Specifically, we make three contributions: (i) we construct a scalable data pipeline that curates diverse audio from multiple sources and generates multi-granular captions, ranging from long descriptions to structured tags, via automated annotation; (ii) we adapt an MLLM for retrieval by prompting it to summarize the audio/text input and using the hidden state of a special token as audio/text embeddings. For model training, we devise a novel Hybrid-NCE loss, which employs multi-granular supervision and hard-negative reweighting to robustly align audio with diverse textual supervision; and (iii) we design an MLLM-based bidirectional re-ranking module that refines retrieval candidates through deep cross-modal interaction. Extensive experiments demonstrate that AuroLA consistently outperforms state-of-the-art models, including the recent PE-AV, while utilizing only approximately 1% of PE-AV's training data. Lastly, we observe clear scaling trends regarding dataset size and model capacity, validating the effectiveness of MLLM as a unified backbone for audio-text retrieval. Code is available at https://github.com/Jazzcharles/AuroLA.",
+          "comment": "Technical Report",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null,
+          "citationCount": null
         }
       ]
     },
@@ -205,7 +250,15 @@
               "label": "WHAMR! Noise and Reverberation Dataset (2020)",
               "url": "https://arxiv.org/abs/2005.07162"
             }
-          ]
+          ],
+          "abstract": "Multi-channel speech separation in dynamic environments is challenging as time-varying spatial and spectral features evolve at different temporal scales. Existing methods typically employ sequential architectures, forcing a single network stream to simultaneously model both feature types, creating an inherent modeling conflict. In this paper, we propose a dual-branch parallel spectral-spatial (PS2) architecture that separately processes spectral and spatial features through parallel streams. The spectral branch uses a bi-directional long short-term memory (BLSTM)-based frequency module, a Mamba-based temporal module, and a self-attention module to model spectral features. The spatial branch employs bi-directional gated recurrent unit (BGRU) networks to process spatial features that encode the evolving geometric relationships between sources and microphones. Features from both branches are integrated through a cross-attention fusion mechanism that adaptively weights their contributions. Experimental results demonstrate that the PS2 outperforms existing state-of-the-art (SOTA) methods by 1.6-2.2 dB in scale-invariant signal-to-distortion ratio (SI-SDR) for moving speaker scenarios, with robust separation quality under different reverberation times (RT60), noise levels, and source movement speeds. Even with fast source movements, the proposed model maintains SI-SDR improvements of over 13 dB. These improvements are consistently observed across multiple datasets, including WHAMR! and our generated WSJ0-Demand-6ch-Move dataset.",
+          "comment": "Accepted by IEEE Transactions on Audio, Speech and Language Processing",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "citationCount": null
         },
         {
           "id": "2602.21741v1",
@@ -237,7 +290,16 @@
               "label": "Speech Recognition for Low-Resource Languages (2019)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "We describe our end-to-end system for Bengali long-form speech recognition (ASR) and speaker diarization submitted to the DL Sprint 4.0 competition on Kaggle. Bengali presents substantial challenges for both tasks: a large phoneme inventory, significant dialectal variation, frequent code-mixing with English, and a relative scarcity of large-scale labelled corpora. For ASR we achieve a best private Word Error Rate (WER) of 0.37738 and public WER of 0.36137, combining a BengaliAI fine-tuned Whisper medium model with Demucs source separation for vocal isolation, silence-boundary chunking, and carefully tuned generation hyperparameters. For speaker diarization we reach a best private Diarization Error Rate (DER) of 0.27671 and public DER of 0.20936 by replacing the default segmentation model inside the pyannote.audio pipeline with a Bengali-fine-tuned variant, pairing it with wespeaker-voxceleb-resnet34-LM embeddings and centroid-based agglomerative clustering. Our experiments demonstrate that domain-specific fine-tuning of the segmentation component, vocal source separation, and natural silence-aware chunking are the three most impactful design choices for low-resource Bengali speech processing.",
+          "comment": "6 pages, 5 figures, 3 tables; system paper submitted to DL Sprint 4.0 (Kaggle)",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "citationCount": null
         },
         {
           "id": "2602.21476v1",
@@ -269,7 +331,17 @@
               "label": "Knowledge-Driven Audio Processing (2020)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "We propose a knowledge-driven, model-based approach to segmenting audio into single-category and mixed-category chunks with applications to source separation. \"Knowledge\" here denotes information associated with the data, such as music scores. \"Model\" here refers to tool that can be used for audio segmentation and recognition, such as hidden Markov models. In contrast to conventional learning that often relies on annotated data with given segment categories and their corresponding boundaries to guide the learning process, the proposed framework does not depend on any pre-segmented training data and learns directly from the input audio and its related knowledge sources to build all necessary models autonomously. Evaluation on simulation data shows that score-guided learning achieves very good music segmentation and separation results. Tested on movie track data for cinematic audio source separation also shows that utilizing sound category knowledge achieves better separation results than those obtained with data-driven techniques without using such information.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.LG",
+            "eess.SP"
+          ],
+          "citationCount": null
         },
         {
           "id": "2602.21183v1",
@@ -301,7 +373,14 @@
               "label": "Context-Aware Speech Segmentation (2019)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Bengali, despite being one of the most widely spoken languages globally, remains underrepresented in long form speech technology, particularly in systems addressing transcription and speaker attribution. We present frameworks for long form Bengali speech intelligence that address automatic speech recognition using a Whisper Medium based model and speaker diarization using a finetuned segmentation model. The ASR pipeline incorporates vocal separation, voice activity detection, and a gap aware windowing strategy to construct context preserving segments for stable decoding. For diarization, a pretrained speaker segmentation model is finetuned on the official competition dataset (provided as part of the DL Sprint 4.0 competition organized under BUET CSE Fest), to better capture Bengali conversational patterns. The resulting systems deliver both efficient transcription of long form audio and speaker aware transcription to provide scalable speech technology solutions for low resource languages.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -340,7 +419,15 @@
               "label": "Dynamic Neighborhood Selection for Anomaly Detection (2022)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Local density-based score normalization is an effective component of distance-based embedding methods for anomalous sound detection, particularly when data densities vary across conditions or domains. In practice, however, performance depends strongly on neighborhood size. Increasing it can degrade detection accuracy when neighborhood expansion crosses cluster boundaries, violating the locality assumption of local density estimation. This observation motivates adapting the neighborhood size based on locality preservation rather than fixing it in advance. We realize this by proposing cluster exit detection, a lightweight mechanism that identifies distance discontinuities and selects neighborhood sizes accordingly. Experiments across multiple embedding models and datasets show improved robustness to neighborhood-size selection and consistent performance gains.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "citationCount": null
         }
       ]
     }

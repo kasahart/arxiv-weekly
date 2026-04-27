@@ -38,7 +38,15 @@
               "label": "Whisper: OpenAI's Speech-to-Text Model (2022)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "The maturation of Large Audio Language Models (LALMs) has raised growing expectations for them to comprehend complex audio much like humans. Current efforts primarily replicate text-based reasoning by contextualizing audio content through a one-time encoding, which introduces a critical information bottleneck. Drawing inspiration from human cognition, we propose audio-interleaved reasoning to break through this bottleneck. It treats audio as an active reasoning component, enabling sustained audio engagement and perception-grounded analysis. To instantiate it, we introduce a two-stage training framework, first teaching LALMs to localize salient audio segments through supervised fine-tuning, and then incentivizing proficient re-listening via reinforcement learning. In parallel, a structured data generation pipeline is developed to produce high-quality training data. Consequently, we present Echo, a LALM capable of dynamically re-listening to audio in demand during reasoning. On audio comprehension benchmarks, Echo achieves overall superiority in both challenging expert-level and general-purpose tasks. Comprehensive analysis further confirms the efficiency and generalizability of audio-interleaved reasoning, establishing it as a promising direction for advancing audio comprehension. Project page: https://github.com/wdqqdw/Echo.",
+          "comment": "Accepted by ICLR 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "citationCount": null
         },
         {
           "id": "2602.10934v2",
@@ -70,7 +78,18 @@
               "label": "HuBERT: Self-Supervised Speech Representation Learning (2021)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Discrete audio tokenizers are fundamental to empowering large language models with native audio processing and generation capabilities. Despite recent progress, existing approaches often rely on pretrained encoders, semantic distillation, or heterogeneous CNN-based architectures. These designs introduce fixed inductive biases that limit reconstruction fidelity and hinder effective scaling. In this paper, we argue that discrete audio tokenization should be learned fully end-to-end using a homogeneous and scalable architecture. To this end, we first propose CAT (Causal Audio Tokenizer with Transformer), a purely Transformer-based architecture that jointly optimizes the encoder, quantizer, and decoder from scratch for high-fidelity reconstruction. Building on the CAT architecture, we develop MOSS-Audio-Tokenizer, a large-scale audio tokenizer featuring 1.6 billion parameters, pre-trained on 3 million hours of diverse, general audio data. We show that this simple, fully end-to-end approach built from homogeneous, causal Transformer blocks scales gracefully and supports high-fidelity reconstruction across diverse audio domains. Across speech, sound, and music, MOSS-Audio-Tokenizer consistently outperforms prior codecs over a wide range of bitrates, while exhibiting predictable improvements with increased scale. Notably, leveraging the discrete tokens from our model, we develop the first purely autoregressive TTS model that surpasses prior non-autoregressive and cascaded systems. Furthermore, MOSS-Audio-Tokenizer enables competitive ASR performance without auxiliary encoders. Our findings position the CAT architecture as a unified, scalable interface for the next generation of native audio foundation models.",
+          "comment": "27 pages, 8 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "githubRepo": "https://github.com/OpenMOSS/MOSS-Audio-Tokenizer",
+          "upvotes": 49,
+          "projectPage": null,
+          "citationCount": null
         },
         {
           "id": "2602.10439v1",
@@ -102,7 +121,16 @@
               "label": "Audio Understanding with Pretrained Models (2021)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Large Audio Language Models (LALMs) have demonstrated strong capabilities in audio understanding and reasoning. However, their performance on fine grained auditory perception remains unreliable, and existing approaches largely rely on data intensive training to internalize perceptual abilities. We propose AudioRouter, a reinforcement learning framework that enables LALMs to improve audio understanding by learning when and how to use external audio tools. Rather than tightly coupling tool usage with audio reasoning, AudioRouter formulates tool use as an explicit decision making problem and optimizes a lightweight routing policy while keeping the underlying reasoning model frozen. Experimental results show that AudioRouter achieves substantial improvements on standard audio understanding benchmarks while requiring up to 600x less training data to learn tool usage compared with conventional training paradigms. These findings suggest that learning effective tool usage offers a data efficient and scalable alternative to internalizing perceptual abilities in LALMs.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "citationCount": 0
         },
         {
           "id": "2602.10230v1",
@@ -134,7 +162,16 @@
               "label": "Efficient Audio Processing with Transformers (2022)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Large audio language models are increasingly used for complex audio understanding tasks, but they struggle with temporal tasks that require precise temporal grounding, such as word alignment and speaker diarization. The standard approach, where we generate timestamps as sequences of text tokens, is computationally expensive and prone to hallucination, especially when processing audio lengths outside the model's training distribution. In this work, we propose frame-level internal tool use, a method that trains audio LMs to use their own internal audio representations to perform temporal grounding directly. We introduce a lightweight prediction mechanism trained via two objectives: a binary frame classifier and a novel inhomogeneous Poisson process (IHP) loss that models temporal event intensity. Across word localization, speaker diarization, and event localization tasks, our approach outperforms token-based baselines. Most notably, it achieves a >50x inference speedup and demonstrates robust length generalization, maintaining high accuracy on out-of-distribution audio durations where standard token-based models collapse completely.",
+          "comment": "Under review. See https://github.com/inkitori/taudio/",
+          "journalRef": null,
+          "categories": [
+            "cs.LG",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -173,7 +210,15 @@
               "label": "Gabor Filterbank for Audio Processing (1992)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "The concept of metamerism originates from colorimetry, where it describes a sensation of visual similarity between two colored lights despite significant differences in spectral content. Likewise, we propose to call ``musical metamerism'' the sensation of auditory similarity which is elicited by two music fragments which differ in terms of underlying waveforms. In this technical report, we describe a method to generate musical metamers from any audio recording. Our method is based on joint time--frequency scattering in Kymatio, an open-source software in Python which enables GPU computing and automatic differentiation. The advantage of our method is that it does not require any manual preprocessing, such as transcription, beat tracking, or source separation. We provide a mathematical description of JTFS as well as some excerpts from the Kymatio source code. Lastly, we review the prior work on JTFS and draw connections with closely related algorithms, such as spectrotemporal receptive fields (STRF), modulation power spectra (MPS), and Gabor filterbank (GBFB).",
+          "comment": "Technical report, 15 pages, 1 figure. Written in November 2024 as part of a collaboration with Henkjan Honing's music cognition group at the University of Amsterdam",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "citationCount": null
         },
         {
           "id": "2602.08671v1",
@@ -205,7 +250,14 @@
               "label": "Efficient Audio Feature Extraction (2021)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Time-frequency domain dual-path models have demonstrated strong performance and are widely used in source separation. Because their computational cost grows with the number of frequency bins, these models often use the band-split (BS) module in high-sampling-rate tasks such as music source separation (MSS) and cinematic audio source separation (CASS). The BS encoder compresses frequency information by encoding features for each predefined subband. It achieves effective compression by introducing an inductive bias that places greater emphasis on low-frequency parts. Despite its success, the BS module has two inherent limitations: (i) it is not input-adaptive, preventing the use of input-dependent information, and (ii) the parameter count is large, since each subband requires a dedicated module. To address these issues, we propose Spectral Feature Compression (SFC). SFC compresses the input using a single sequence modeling module, making it both input-adaptive and parameter-efficient. We investigate two variants of SFC, one based on cross-attention and the other on Mamba, and introduce inductive biases inspired by the BS module to make them suitable for frequency information compression. Experiments on MSS and CASS tasks demonstrate that the SFC module consistently outperforms the BS module across different separator sizes and compression ratios. We also provide an analysis showing that SFC adaptively captures frequency patterns from the input.",
+          "comment": "Accepted by IEEE TASLP. \\c{opyright} 2026 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for all other uses",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "citationCount": null
         },
         {
           "id": "2602.07211v1",
@@ -237,7 +289,15 @@
               "label": "Smart Glasses for Audio Applications (2021)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Recent studies have demonstrated that prompting large language models (LLM) with audio encodings enables effective speech understanding capabilities. However, most speech LLMs are trained on single-channel, single-talker data, which makes it challenging to directly apply them to multi-talker and multi-channel speech understanding task. In this work, we present a comprehensive investigation on how to enable directional multi-talker speech understanding capabilities for LLMs, specifically in smart glasses usecase. We propose two novel approaches to integrate directivity into LLMs: (1) a cascaded system that leverages a source separation front-end module, and (2) an end-to-end system that utilizes serialized output training. All of the approaches utilize a multi-microphone array embedded in smart glasses to optimize directivity interpretation and processing in a streaming manner. Experimental results demonstrate the efficacy of our proposed methods in endowing LLMs with directional speech understanding capabilities, achieving strong performance in both speech recognition and speech translation tasks.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD"
+          ],
+          "citationCount": null
         }
       ]
     },
@@ -276,7 +336,16 @@
               "label": "Advances in MEMS Acoustic Sensors (2021)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "This research applies artificial intelligence (AI) to separate, cluster, and analyze cardiorespiratory sounds. We recorded a new dataset (HLS-CMDS) and developed several AI models, including generative AI methods based on large language models (LLMs) for guided separation, explainable AI (XAI) techniques to interpret latent representations, variational autoencoders (VAEs) for waveform separation, a chemistry-inspired non-negative matrix factorization (NMF) algorithm for clustering, and a quantum convolutional neural network (QCNN) designed to detect abnormal physiological patterns. The performance of these AI models depends on the quality of the recorded signals. Therefore, this thesis also reviews the biosensing technologies used to capture biomedical data. It summarizes developments in microelectromechanical systems (MEMS) acoustic sensors and quantum biosensors, such as quantum dots and nitrogen-vacancy centers. It further outlines the transition from electronic integrated circuits (EICs) to photonic integrated circuits (PICs) and early progress toward integrated quantum photonics (IQP) for chip-based biosensing. Together, these studies show how AI and next-generation sensors can support more intelligent diagnostic systems for future healthcare.",
+          "comment": "PhD thesis",
+          "journalRef": null,
+          "categories": [
+            "eess.SP",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "citationCount": 0
         },
         {
           "id": "2602.06271v1",
@@ -308,7 +377,15 @@
               "label": "Few-Shot Learning for Audio Applications (2021)",
               "url": null
             }
-          ]
+          ],
+          "abstract": "Misophonia is a disorder characterized by a decreased tolerance to specific everyday sounds (trigger sounds) that can evoke intense negative emotional responses such as anger, panic, or anxiety. These reactions can substantially impair daily functioning and quality of life. Assistive technologies that selectively detect trigger sounds could help reduce distress and improve well-being. In this study, we investigate sound event detection (SED) to localize intervals of trigger sounds in continuous environmental audio as a foundational step toward such assistive support. Motivated by the scarcity of real-world misophonia data, we generate synthetic soundscapes tailored to misophonia trigger sound detection using audio synthesis techniques. Then, we perform trigger sound detection tasks using hybrid CNN-based models. The models combine feature extraction using a frozen pre-trained CNN backbone with a trainable time-series module such as gated recurrent units (GRUs), long short-term memories (LSTMs), echo state networks (ESNs), and their bidirectional variants. The detection performance is evaluated using common SED metrics, including Polyphonic Sound Detection Score 1 (PSDS1). On the multi-class trigger SED task, bidirectional temporal modeling consistently improves detection performance, with Bidirectional GRU (BiGRU) achieving the best overall accuracy. Notably, the Bidirectional ESN (BiESN) attains competitive performance while requiring orders of magnitude fewer trainable parameters by optimizing only the readout. We further simulate user personalization via a few-shot \"eating sound\" detection task with at most five support clips, in which BiGRU and BiESN are compared. In this strict adaptation setting, BiESN shows robust and stable performance, suggesting that lightweight temporal modules are promising for personalized misophonia trigger SED.",
+          "comment": "13 pages, 3 figures. Submitted to IJCNN 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "citationCount": 0
         }
       ]
     }
