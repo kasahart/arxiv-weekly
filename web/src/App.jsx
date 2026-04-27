@@ -80,6 +80,13 @@ export default function App() {
     () => new Set(JSON.parse(localStorage.getItem(LS_READ) || '[]'))
   )
   const sentinelRef = useRef(null)
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 400)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const toggleRead = useCallback((arxivId) => {
     setReadPapers(prev => {
@@ -364,6 +371,24 @@ export default function App() {
           SOURCE: arXiv cs.SD / eess.AS - POWERED BY GitHub Models (GPT-4o) - 毎週金曜更新
         </div>
       </div>
+
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          style={{
+            position: 'fixed', bottom: 28, right: 28, zIndex: 100,
+            width: 44, height: 44, borderRadius: '50%',
+            background: '#131720', border: '1px solid #334155',
+            color: '#38bdf8', fontSize: 18, cursor: 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
+            transition: 'opacity 0.2s, border-color 0.2s',
+          }}
+          title="トップへ戻る"
+        >
+          ▴
+        </button>
+      )}
     </div>
   )
 }
