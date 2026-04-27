@@ -209,6 +209,7 @@ def main():
                     "date": paper["date"],
                     "title": paper["title"],
                     "titleJa": result.get("titleJa", paper["title"]),
+                    "authors": paper.get("authors", []),
                     "org": result.get("org") or paper.get("org", ""),
                     "url": paper["url"],
                     "category": paper.get("category", "other"),

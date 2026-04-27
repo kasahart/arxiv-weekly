@@ -91,6 +91,11 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
         <div style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6, marginTop: 3 }}>
           {paper.titleJa}
         </div>
+        {paper.authors?.length > 0 && (
+          <div style={{ fontSize: 11, color: '#475569', lineHeight: 1.6, marginTop: 4 }}>
+            {paper.authors.join(', ')}
+          </div>
+        )}
         {!expanded && paper.what && (
           <div style={{ fontSize: 13, color: '#64748b', lineHeight: 1.8, marginTop: 8,
             paddingLeft: 8, borderLeft: '2px solid #1e293b' }}>
