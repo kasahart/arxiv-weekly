@@ -233,7 +233,7 @@ export default function App() {
       <Header total={totalPapers} loading={loading} />
 
       <div className="toolbar">
-        {/* 1行目: 期間セレクター + コントロール */}
+        {/* 1行目: 期間セレクター + 検索 + コントロール */}
         <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', width: '100%' }}>
           <WeekSelector
             weeks={index?.weeks ?? []}
@@ -242,31 +242,28 @@ export default function App() {
             onToChange={date => { setFromDate(null); setToDate(date) }}
             onFromChange={setFromDate}
           />
-          <div style={{ marginLeft: 'auto', display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
-            <button
-              className={`ctrlBtn${sortByCitations ? ' active' : ''}`}
-              onClick={() => setSortByCitations(s => !s)}
-            >
-              {sortByCitations ? '引用数順' : '日付順'}
-            </button>
-            <button
-              className={`ctrlBtn${showFavoritesOnly ? ' active' : ''}`}
-              onClick={() => setShowFavoritesOnly(s => !s)}
-            >
-              {showFavoritesOnly ? '★ お気に入り' : '☆ お気に入り'}
-            </button>
-          </div>
-        </div>
-        {/* 2行目: カテゴリ + 検索 */}
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', width: '100%' }}>
-          <CategoryFilter categories={allCategories} active={activeCat} onChange={setActiveCat} />
           <input
             className="search-input"
-            style={{ marginLeft: 'auto' }}
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="キーワード検索..."
           />
+          <button
+            className={`ctrlBtn${sortByCitations ? ' active' : ''}`}
+            onClick={() => setSortByCitations(s => !s)}
+          >
+            {sortByCitations ? '引用数順' : '日付順'}
+          </button>
+          <button
+            className={`ctrlBtn${showFavoritesOnly ? ' active' : ''}`}
+            onClick={() => setShowFavoritesOnly(s => !s)}
+          >
+            {showFavoritesOnly ? '★ お気に入り' : '☆ お気に入り'}
+          </button>
+        </div>
+        {/* 2行目: カテゴリフィルター（専用行） */}
+        <div style={{ width: '100%' }}>
+          <CategoryFilter categories={allCategories} active={activeCat} onChange={setActiveCat} />
         </div>
       </div>
 
