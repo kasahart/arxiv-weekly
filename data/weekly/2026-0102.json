@@ -1,0 +1,115 @@
+{
+  "date": "2026-0102",
+  "generated_at": "2026-01-02T00:00:00+00:00",
+  "total": 3,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2512.23881v1",
+          "date": "Dec 29",
+          "title": "Breaking Audio Large Language Models by Attacking Only the Encoder: A Universal Targeted Latent-Space Audio Attack",
+          "titleJa": "オーディオ大規模言語モデルをエンコーダ攻撃で破る：普遍的ターゲット型潜在空間オーディオ攻撃",
+          "org": "Ben-Gurion University",
+          "url": "https://arxiv.org/abs/2512.23881v1",
+          "category": "foundation",
+          "what": "オーディオエンコーダと大規模言語モデルを組み合わせたマルチモーダルシステムに対し、エンコーダレベルでの普遍的な潜在空間攻撃を提案し、攻撃者が指定した出力を生成させる手法を開発しました。",
+          "novel": "従来の波形レベルや入力特定型攻撃とは異なり、入力や話者に依存せず、言語モデルへのアクセスを必要としない普遍的な摂動を学習する点が新規性です。",
+          "method": "オーディオエンコーダの潜在表現を操作することで、下流の言語生成に攻撃者が指定した出力を誘発する普遍的な摂動を生成します。",
+          "validation": "Qwen2-Audio-7B-Instructを用いた実験で、最小限の知覚的歪みで一貫して高い攻撃成功率を達成したことを示しました。",
+          "discussion": "エンコーダレベルの攻撃面がこれまで十分に研究されていなかったことを指摘し、今後の研究でこの脆弱性を軽減する方法を探る必要があります。",
+          "nextReads": [
+            {
+              "label": "Adversarial Examples in Deep Learning (2018)",
+              "url": null
+            },
+            {
+              "label": "Universal Adversarial Perturbations (2017)",
+              "url": null
+            },
+            {
+              "label": "Robustness of Speech Recognition Systems to Adversarial Attacks (2020)",
+              "url": null
+            },
+            {
+              "label": "Adversarial Attacks on Neural Networks for Speech Recognition (2019)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2512.23808v1",
+          "date": "Dec 29",
+          "title": "MiMo-Audio: Audio Language Models are Few-Shot Learners",
+          "titleJa": "MiMo-Audio: オーディオ言語モデルは少数ショット学習者である",
+          "org": "Xiaomi",
+          "url": "https://arxiv.org/abs/2512.23808v1",
+          "category": "foundation",
+          "what": "MiMo-Audioは、100万時間以上のデータで事前学習を行い、少数ショット学習能力を持つオーディオ言語モデルを開発しました。",
+          "novel": "タスク固有の微調整なしで多様なオーディオタスクに一般化できる能力を示し、さらに音声変換やスタイル転送など、学習データに含まれないタスクにも対応可能な点が新規性です。",
+          "method": "次トークン予測の事前学習をスケールアップし、指示調整コーパスを用いたポストトレーニングで音声理解と生成の思考メカニズムを導入しました。",
+          "validation": "MMSUやMMAUなどのベンチマークでSOTA性能を達成し、音声理解や生成タスクにおいても閉鎖型モデルに匹敵またはそれを超える性能を示しました。",
+          "discussion": "モデルの性能は高いものの、さらなる汎用性や特定のタスクでの精度向上が課題として残されています。",
+          "nextReads": [
+            {
+              "label": "GPT-3: Language Models are Few-Shot Learners (2020)",
+              "url": null
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": null
+            },
+            {
+              "label": "SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "Instruction Tuning with GPT-4 (2023)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2512.23686v1",
+          "date": "Dec 29",
+          "title": "PROFASR-BENCH: A Benchmark for Context-Conditioned ASR in High-Stakes Professional Speech",
+          "titleJa": "PROFASR-BENCH: 高リスク専門的音声における文脈条件付き音声認識のためのベンチマーク",
+          "org": "個人研究者",
+          "url": "https://arxiv.org/abs/2512.23686v1",
+          "category": "foundation",
+          "what": "高リスクの専門的な音声認識における課題を評価するためのベンチマーク『ProfASR-Bench』を提案し、文脈条件付き認識性能を測定可能にしました。",
+          "novel": "専門用語やフォーマルな文体の変化、重要なエンティティエラーの許容度が極めて低い環境において、文脈利用のギャップを明らかにし、標準化された評価基盤を提供した点が新規性です。",
+          "method": "自然言語プロンプトとエンティティ豊富な発話をペアにしたデータセットを構築し、文脈利用の有無によるASR性能を比較しました。",
+          "validation": "WhisperやQwen-Omniを用いて、プロンプトの有無や種類による性能差を評価し、軽微な文脈情報では単語誤り率（WER）にほとんど影響がないことを示しました。",
+          "discussion": "現在のシステムは文脈情報を十分に活用できておらず、文脈利用のギャップを埋めるための新たな融合戦略の開発が必要です。",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's ASR Model (2022)",
+              "url": null
+            },
+            {
+              "label": "Context-Aware Neural Speech Recognition (2021)",
+              "url": null
+            },
+            {
+              "label": "ASR Error Analysis in Domain-Specific Applications (2020)",
+              "url": null
+            },
+            {
+              "label": "Qwen-Omni: A Unified Model for Multimodal Tasks (2023)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① オーディオエンコーダへの潜在空間攻撃手法が提案され、マルチモーダルAIのセキュリティ課題が浮き彫りになりました（Breaking Audio Large Language Models by Attacking Only the Encoder）。",
+    "② MiMo-Audioが少数ショット学習可能な大規模オーディオ言語モデルを開発し、長時間の事前学習データの活用が注目されました。",
+    "③ 高リスク専門音声の文脈条件付き認識性能を評価するベンチマーク『ProfASR-Bench』が提案され、専門領域でのASR性能向上が議論されました。"
+  ]
+}

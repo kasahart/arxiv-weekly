@@ -1,0 +1,417 @@
+{
+  "date": "2026-0220",
+  "generated_at": "2026-02-20T00:00:00+00:00",
+  "total": 12,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2602.17097v1",
+          "date": "Feb 19",
+          "title": "AudioChat: Unified Audio Storytelling, Editing, and Understanding with Transfusion Forcing",
+          "titleJa": "AudioChat: 統一された音声ストーリーテリング、編集、理解を実現するトランスフュージョンフォーシング",
+          "org": "Google",
+          "url": "https://arxiv.org/abs/2602.17097v1",
+          "category": "foundation",
+          "what": "音声ストーリー（複数話者や背景音を含む複雑な音響シーン）を生成、編集、理解するためのフレームワークAudioChatを提案。",
+          "novel": "LLMベースのツール呼び出しエージェントを活用し、シミュレートされた対話をトレーニングデータとして使用する新しいパラダイムを導入。",
+          "method": "Audio Transfusion Forcingという新しい目的関数を導入し、構造化された思考の連鎖を通じて高レベルの指示を分解し、対話型のマルチターン音声理解と生成を実現。",
+          "validation": "生成と編集性能を評価するために、新たに3つのタスク指向の評価指標を開発し、デモを公開。",
+          "discussion": "複雑な音響シーンにおけるモデルの汎化性能や、現実世界での適用可能性が今後の課題。",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Automatic Speech Recognition System (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Whispering to Large Language Models (2023)",
+              "url": "https://arxiv.org/abs/2301.00250"
+            },
+            {
+              "label": "SoundStorm: Efficient Parallel Audio Generation (2023)",
+              "url": "https://arxiv.org/abs/2305.09636"
+            }
+          ]
+        },
+        {
+          "id": "2602.16687v1",
+          "date": "Feb 18",
+          "title": "Scaling Open Discrete Audio Foundation Models with Interleaved Semantic, Acoustic, and Text Tokens",
+          "titleJa": "セマンティック、音響、テキストトークンを組み合わせたオープンな離散音声基盤モデルのスケーリング",
+          "org": "Google DeepMind",
+          "url": "https://arxiv.org/abs/2602.16687v1",
+          "category": "foundation",
+          "what": "音声、音響、テキストを統合的にモデル化する離散音声基盤モデルのスケーリングに関する体系的な研究。",
+          "novel": "離散音声モデルにおけるスケーリング則を初めて調査し、データ量とモデルサイズの最適な関係を明らかにした。",
+          "method": "次トークン予測を用い、セマンティック、音響、テキストトークンを統合的に処理するアーキテクチャを採用し、SODAモデルを構築。",
+          "validation": "135Mから4Bパラメータのモデルを500Bトークンでトレーニングし、スケーリング予測や既存モデルと比較。",
+          "discussion": "モデルのスケーリングにおけるデータと計算リソースのトレードオフや、さらなる汎化性能の向上が課題。",
+          "nextReads": [
+            {
+              "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Whisper: OpenAI's Automatic Speech Recognition System (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "SoundStream: An End-to-End Neural Audio Codec (2021)",
+              "url": "https://arxiv.org/abs/2107.03312"
+            },
+            {
+              "label": "Semantic Tokenization for Speech Synthesis (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.16008v1",
+          "date": "Feb 17",
+          "title": "MAEB: Massive Audio Embedding Benchmark",
+          "titleJa": "MAEB: 大規模音声埋め込みベンチマーク",
+          "org": "Amazon",
+          "url": "https://arxiv.org/abs/2602.16008v1",
+          "category": "foundation",
+          "what": "音声、音楽、環境音、音声テキスト推論を含む30のタスクを対象とした大規模音声埋め込みベンチマークMAEBを提案。",
+          "novel": "100以上の言語をカバーする30タスクを統一評価するベンチマークを構築し、50以上のモデルを評価して性能の特徴を明らかにした。",
+          "method": "MAEB+という98タスクのコレクションから多様性を維持しつつ評価コストを削減したMAEBを作成し、MTEBエコシステムに統合。",
+          "validation": "音声エンコーダの性能がMAEBでの評価と音声大規模言語モデルでの性能に高い相関があることを示した。",
+          "discussion": "音響理解と言語タスクの両方で優れた性能を持つモデルの開発が課題。",
+          "nextReads": [
+            {
+              "label": "HEAR 2021: Holistic Evaluation of Audio Representations (2021)",
+              "url": null
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "CLAP: Learning Audio Concepts from Natural Language Supervision (2022)",
+              "url": "https://arxiv.org/abs/2211.06687"
+            },
+            {
+              "label": "AudioCLIP: Extending CLIP to Image, Text and Audio (2021)",
+              "url": "https://arxiv.org/abs/2106.13043"
+            }
+          ]
+        },
+        {
+          "id": "2602.15766v1",
+          "date": "Feb 17",
+          "title": "TAC: Timestamped Audio Captioning",
+          "titleJa": "TAC: タイムスタンプ付き音声キャプショニング",
+          "org": "Northwestern University",
+          "url": "https://arxiv.org/abs/2602.15766v1",
+          "category": "foundation",
+          "what": "① 複雑な音響シーンにおける重なり合うイベントを識別し、時間的に一貫した音声キャプションを生成するモデルTACを提案。",
+          "novel": "② 合成データパイプラインを用いて現実的な多声条件下での学習を可能にし、低い幻覚率と正確な時間的基盤を実現。",
+          "method": "③ 実世界の音源から作成した動的な音声ミックスを用いてモデルを訓練し、時間的に整合性のあるキャプションを生成。",
+          "validation": "④ MMAU-ProやMMSUなどのベンチマークで、TACとTAC-Vが最先端のスコアを達成し、競合手法を上回る性能を確認。",
+          "discussion": "⑤ 合成データに依存しているため、実際のデータでの性能や一般化能力についてさらなる検証が必要。",
+          "nextReads": [
+            {
+              "label": "Audio Captioning: A Comprehensive Review (2022)",
+              "url": "https://arxiv.org/abs/2201.01250"
+            },
+            {
+              "label": "Audio-Visual Scene Analysis with Transformers (2021)",
+              "url": "https://arxiv.org/abs/2106.01353"
+            },
+            {
+              "label": "Dense-Captioning Events in Videos (2017)",
+              "url": "https://arxiv.org/abs/1705.00754"
+            },
+            {
+              "label": "Audio-Visual Scene-Aware Dialog (2020)",
+              "url": "https://arxiv.org/abs/2006.01601"
+            }
+          ]
+        },
+        {
+          "id": "2602.15307v1",
+          "date": "Feb 17",
+          "title": "What Do Neurons Listen To? A Neuron-level Dissection of a General-purpose Audio Model",
+          "titleJa": "ニューロンは何を聴いているのか？汎用音声モデルのニューロンレベル解析",
+          "org": "東京工業大学",
+          "url": "https://arxiv.org/abs/2602.15307v1",
+          "category": "foundation",
+          "what": "① 汎用音声自己教師あり学習モデルの内部表現をニューロンレベルで解析し、そのメカニズムを明らかにする研究。",
+          "novel": "② クラス特異的なニューロンの出現を特定し、それらが新しいタスククラスに対しても広範なカバレッジを提供することを示した。",
+          "method": "③ ニューロンの条件付き活性化パターンを解析し、音声特徴や音楽的ピッチなどの意味的カテゴリ間で共有される応答を明らかに。",
+          "validation": "④ 分類性能に対するニューロンの機能的影響を確認し、SSLモデルの内部表現の有効性を実証。",
+          "discussion": "⑤ ニューロンレベルでの解析に基づくが、モデル全体の挙動や他の要因との相互作用についてのさらなる研究が必要。",
+          "nextReads": [
+            {
+              "label": "Self-Supervised Learning for Audio: A Review (2021)",
+              "url": "https://arxiv.org/abs/2103.01988"
+            },
+            {
+              "label": "Understanding Neural Networks Through Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.01427"
+            },
+            {
+              "label": "Exploring the Role of Neurons in Deep Learning (2019)",
+              "url": null
+            },
+            {
+              "label": "Mechanistic Interpretability of Neural Networks (2022)",
+              "url": "https://arxiv.org/abs/2207.00020"
+            }
+          ]
+        },
+        {
+          "id": "2602.23387v1",
+          "date": "Feb 16",
+          "title": "Hello-Chat: Towards Realistic Social Audio Interactions",
+          "titleJa": "Hello-Chat: リアルな社会的音声対話の実現に向けて",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.23387v1",
+          "category": "foundation",
+          "what": "① リアルな社会的シナリオにおける自然な音声対話を可能にするエンドツーエンドの音声言語モデルHello-Chatを提案。",
+          "novel": "② 実生活の会話データセットとモダリティを交互に訓練する戦略を活用し、人間らしい生成と感情的な共鳴を実現。",
+          "method": "③ 大規模な実生活会話データセットを用い、モダリティ交互訓練戦略を採用して、音声の自然さと感情的な一致を向上。",
+          "validation": "④ 音声理解タスクでSOTA性能を達成し、韻律の自然さや感情的な一致で既存のベースラインを大幅に上回ることを実証。",
+          "discussion": "⑤ 実生活での多様なシナリオにおける性能や、より複雑な感情表現への対応が今後の課題。",
+          "nextReads": [
+            {
+              "label": "Empathetic Dialogue Systems (2021)",
+              "url": "https://arxiv.org/abs/2104.00020"
+            },
+            {
+              "label": "Conversational AI for Social Interaction (2020)",
+              "url": null
+            },
+            {
+              "label": "Prosody in Speech Synthesis (2019)",
+              "url": null
+            },
+            {
+              "label": "Large Audio Language Models: A Survey (2022)",
+              "url": "https://arxiv.org/abs/2205.00010"
+            }
+          ]
+        },
+        {
+          "id": "2602.14224v1",
+          "date": "Feb 15",
+          "title": "The Interspeech 2026 Audio Reasoning Challenge: Evaluating Reasoning Process Quality for Audio Reasoning Models and Agents",
+          "titleJa": "Interspeech 2026 オーディオ推論チャレンジ: オーディオ推論モデルとエージェントの推論プロセス品質の評価",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.14224v1",
+          "category": "foundation",
+          "what": "① 音声推論モデルの透明性向上を目指し、オーディオ推論におけるChain-of-Thought（CoT）品質を評価する初の共有タスクを提案。",
+          "novel": "② MMAR-Rubricsという新しいプロトコルを導入し、事実性と論理性をインスタンスレベルで評価する方法を開発。",
+          "method": "③ シングルモデルとエージェントトラックを設け、反復的なツールの統合やクロスモーダル分析を活用して推論品質を向上。",
+          "validation": "④ 156チームによる競争結果を分析し、エージェントシステムが推論品質でリードしていることを確認。",
+          "discussion": "⑤ シングルモデルの性能向上が見られるが、さらなる強化学習やデータパイプラインの改善が必要。",
+          "nextReads": [
+            {
+              "label": "Chain-of-Thought Prompting Elicits Reasoning in LLMs (2022)",
+              "url": "https://arxiv.org/abs/2201.11903"
+            },
+            {
+              "label": "Explainable AI for Audio (2021)",
+              "url": null
+            },
+            {
+              "label": "Cross-Modal Reasoning in AI Systems (2020)",
+              "url": null
+            },
+            {
+              "label": "Evaluating Reasoning in AI Models (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.13954v1",
+          "date": "Feb 15",
+          "title": "Eureka-Audio: Triggering Audio Intelligence in Compact Language Models",
+          "titleJa": "Eureka-Audio: コンパクトな言語モデルによる音声知能の引き出し",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.13954v1",
+          "category": "foundation",
+          "what": "① 1.7Bパラメータの軽量な音声言語モデルEureka-Audioを提案し、ASRや音声理解タスクで大規模モデルに匹敵する性能を実現。",
+          "novel": "② Mixture-of-Experts（MoE）アダプターを活用し、音声の多様性に対応しつつ、計算コストを抑えた高性能モデルを開発。",
+          "method": "③ Whisperベースの音声エンコーダと軽量な言語バックボーン、MoEアダプターを組み合わせた統一的なエンドツーエンドアーキテクチャを採用。",
+          "validation": "④ ASR、知識推論、安全性、指示追従、パラリンガル推論のベンチマークで大規模モデルを上回る性能を実証。",
+          "discussion": "⑤ モデルの軽量化と性能のバランスを達成したが、さらなる汎用性の向上が課題。",
+          "nextReads": [
+            {
+              "label": "Mixture of Experts in Deep Learning (2021)",
+              "url": "https://arxiv.org/abs/2106.05984"
+            },
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Efficient Audio Models (2020)",
+              "url": null
+            },
+            {
+              "label": "Audio Instruction Tuning for AI (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.13835v1",
+          "date": "Feb 14",
+          "title": "Audiocards: Structured Metadata Improves Audio Language Models For Sound Design",
+          "titleJa": "Audiocards: 構造化メタデータによるサウンドデザイン向け音声言語モデルの改善",
+          "org": "Adobe Research",
+          "url": "https://arxiv.org/abs/2602.13835v1",
+          "category": "foundation",
+          "what": "① サウンドデザインにおける音声検索を改善するため、音響属性や音響記述子に基づいた構造化メタデータ「Audiocards」を提案し、その効果を検証した研究です。",
+          "novel": "② 従来の単一文キャプション方式を超え、音響属性に基づいた構造化メタデータを活用することで、音声キャプション生成やテキスト-音声検索の性能を向上させた点が新規性です。",
+          "method": "③ LLM（大規模言語モデル）の知識を活用して、音響属性や音響記述子に基づいた「Audiocards」を生成し、これを用いて音声キャプション生成や検索タスクを学習しました。",
+          "validation": "④ プロフェッショナルなサウンドエフェクトライブラリを用いた実験で、テキスト-音声検索、キャプション生成、メタデータ生成の性能向上を確認しました。また、一般的な音声キャプション生成や検索タスクでもベースラインを上回る結果を示しました。",
+          "discussion": "⑤ Audiocardsの有効性は示されたものの、特定の音響属性や記述子の選定基準や、他の音声データセットへの適用可能性についてはさらなる研究が必要です。",
+          "nextReads": [
+            {
+              "label": "AudioCaps: Generating Captions for Audios (2019)",
+              "url": "https://arxiv.org/abs/1907.12761"
+            },
+            {
+              "label": "Clotho: An Audio Captioning Dataset (2020)",
+              "url": "https://arxiv.org/abs/2002.12261"
+            },
+            {
+              "label": "Wav2CLIP: Learning Robust Audio Representations From CLIP (2022)",
+              "url": "https://arxiv.org/abs/2110.11499"
+            },
+            {
+              "label": "Audio Retrieval with Natural Language Queries (2021)",
+              "url": "https://arxiv.org/abs/2106.08352"
+            }
+          ]
+        },
+        {
+          "id": "2602.13685v1",
+          "date": "Feb 14",
+          "title": "AuTAgent: A Reinforcement Learning Framework for Tool-Augmented Audio Reasoning",
+          "titleJa": "AuTAgent: ツール拡張型音声推論のための強化学習フレームワーク",
+          "org": "University of California, Berkeley",
+          "url": "https://arxiv.org/abs/2602.13685v1",
+          "category": "foundation",
+          "what": "① 音声言語モデル（LALMs）の推論能力を強化するため、外部ツールを適切に活用する強化学習フレームワーク「AuTAgent」を提案した研究です。",
+          "novel": "② 外部ツールの選択と使用タイミングを学習する強化学習戦略を導入し、LALMsの表現力の限界を補完する点が新規性です。",
+          "method": "③ Sparse-feedbackトレーニングと新しい差分報酬メカニズムを採用し、文脈に応じて最適なツールを選択・活用するエージェントを訓練しました。",
+          "validation": "④ MMAU Test-miniとMMARベンチマークで、オープンソースおよびクローズドソースのバックボーンモデルに対し、精度がそれぞれ4.20% / 6.20%および9.80% / 8.00%向上することを確認しました。",
+          "discussion": "⑤ 外部ツールの選択と使用が有効であることを示しましたが、ツールの選定基準や計算コストの最適化など、さらなる研究が必要です。",
+          "nextReads": [
+            {
+              "label": "Toolformer: Language Models Can Teach Themselves to Use Tools (2023)",
+              "url": "https://arxiv.org/abs/2302.04761"
+            },
+            {
+              "label": "Audio Spectrogram Transformer (2021)",
+              "url": "https://arxiv.org/abs/2104.01778"
+            },
+            {
+              "label": "Self-Supervised Learning for General-Purpose Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2104.12807"
+            },
+            {
+              "label": "HEAR: Holistic Evaluation of Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2111.00032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2602.16334v1",
+          "date": "Feb 18",
+          "title": "Spatial Audio Question Answering and Reasoning on Dynamic Source Movements",
+          "titleJa": "動的な音源移動に基づく空間音声質問応答と推論",
+          "org": "University of Amsterdam",
+          "url": "https://arxiv.org/abs/2602.16334v1",
+          "category": "separation",
+          "what": "動的な音源移動を含む複雑な音響シーンを理解するための空間音声質問応答（Spatial AQA）を研究。",
+          "novel": "動き中心の空間音声拡張フレームワークを提案し、制御可能でスケーラブルなトレーニングデータ生成を実現。",
+          "method": "音声と言語のマルチモーダルなファインチューニング手法を採用し、推論前に中間的な思考ステップを生成する「思考モード」を導入。",
+          "validation": "動き推論の精度を評価し、特に単一イベントの質問において思考モードが+5.1%の改善を示した。",
+          "discussion": "複雑な音響シーンでの推論精度向上や、実世界での適用可能性が課題として残る。",
+          "nextReads": [
+            {
+              "label": "Listen to Learn: Audio-Visual Object Localization (2021)",
+              "url": "https://arxiv.org/abs/2104.01605"
+            },
+            {
+              "label": "Audio-Visual Scene Analysis with Self-Supervised Multisensory Features (2020)",
+              "url": "https://arxiv.org/abs/2006.04724"
+            },
+            {
+              "label": "Learning to Separate Object Sounds by Watching Unlabeled Video (2018)",
+              "url": "https://arxiv.org/abs/1804.01665"
+            },
+            {
+              "label": "Self-Supervised Learning of Audio-Visual Objects from Video (2021)",
+              "url": "https://arxiv.org/abs/2104.01601"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2602.16253v1",
+          "date": "Feb 18",
+          "title": "How Much Does Machine Identity Matter in Anomalous Sound Detection at Test Time?",
+          "titleJa": "異常音検出におけるテスト時の機械識別の重要性",
+          "org": "Aalborg University",
+          "url": "https://arxiv.org/abs/2602.16253v1",
+          "category": "anomaly",
+          "what": "異常音検出（ASD）において、テスト時に機械識別が利用できない場合の性能劣化とロバスト性の違いを調査。",
+          "novel": "従来の機械別評価プロトコルを修正し、複数機械の録音を統合して評価する新しいプロトコルを提案。",
+          "method": "機械識別なしでの評価を行い、異常音検出手法の性能劣化とロバスト性の違いを分析。",
+          "validation": "代表的なASD手法を用いて実験を行い、従来の評価では見えなかった性能劣化やロバスト性の違いを明らかにした。",
+          "discussion": "現実的なシナリオでのASDの性能向上や、機械識別を必要としない手法の開発が課題。",
+          "nextReads": [
+            {
+              "label": "Anomalous Sound Detection based on Deep Learning (2020)",
+              "url": "https://arxiv.org/abs/2006.05822"
+            },
+            {
+              "label": "DCASE 2020 Challenge Task 2: Unsupervised Detection of Anomalous Sounds (2020)",
+              "url": null
+            },
+            {
+              "label": "Anomalous Sound Detection Based on Autoencoder with Decision Boundary (2021)",
+              "url": "https://arxiv.org/abs/2106.05629"
+            },
+            {
+              "label": "Deep Feature Learning for Anomalous Sound Detection (2021)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音声、音響、テキストを統合的に扱う基盤モデルや埋め込みベンチマーク（MAEB、離散音声モデル）のスケーリングと評価が進展。",
+    "② 音響シーン理解や推論能力を向上させる新しいフレームワーク（AudioChat、Spatial AQA、AuTAgent）や課題（Interspeech 2026 Challenge）が提案。",
+    "③ 音声キャプション生成（TAC）、音声対話（Hello-Chat）、音声検索（Audiocards）など、応用領域でのモデル性能向上を目指した研究が活発化。"
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "date": "2026-0123",
+  "generated_at": "2026-01-23T00:00:00+00:00",
+  "total": 9,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2601.14046v1",
+          "date": "Jan 20",
+          "title": "PRiSM: Benchmarking Phone Realization in Speech Models",
+          "titleJa": "PRiSM: 音声モデルにおける音素実現のベンチマーク",
+          "org": "Google",
+          "url": "https://arxiv.org/abs/2601.14046v1",
+          "category": "foundation",
+          "what": "音声モデルの音素認識性能を評価するための初のオープンソースベンチマークPRiSMを提案し、音声認識の盲点を明らかにする研究。",
+          "novel": "音素認識システムの評価を表面的な文字起こし精度にとどまらず、臨床、教育、多言語環境での実用性を評価する新たな基準を提供した点。",
+          "method": "音素認識システムを内的および外的に評価するための標準化されたベンチマークを構築し、転写と表現プローブを用いた評価を実施。",
+          "validation": "多言語データセットを用いて、エンコーダ-CTCモデルの安定性や多言語トレーニングの重要性を実験的に確認。",
+          "discussion": "多言語音声モデルのさらなる改善には、より多様な言語データセットの収集と、音素認識システムの性能向上が必要。",
+          "nextReads": [
+            {
+              "label": "Phoneme Recognition with Deep Neural Networks (2013)",
+              "url": null
+            },
+            {
+              "label": "Multilingual and Crosslingual Speech Recognition (2017)",
+              "url": null
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "SpeechStew: Simply Mix All Available Speech Recognition Data to Train One Large Neural Network (2021)",
+              "url": "https://arxiv.org/abs/2104.02133"
+            }
+          ]
+        },
+        {
+          "id": "2601.12494v2",
+          "date": "Jan 18",
+          "title": "Multi-Task Instruction Tuning via Data Scheduling for Low-Resource Arabic AudioLLMs",
+          "titleJa": "低リソースのアラビア語音声LLMのためのデータスケジューリングを用いたマルチタスク指示調整",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.12494v2",
+          "category": "foundation",
+          "what": "アラビア語中心の音声大規模言語モデル（Audio LLM）を、ASRや音声・テキスト要約、方言認識、感情認識などの生成・識別タスクに適応させるためのマルチタスク指示調整手法を提案しています。",
+          "novel": "アラビア語音声要約のための初のリソース「AraMega-SSum」を導入し、低リソース環境における音声LLMの効率的な適応方法を示しました。",
+          "method": "タスクのバッチ構築において、均一タスク混合、タスク進行型カリキュラム（TPC）、アライナーに基づく多様なサンプリング（ADS）、および2段階のTPC->ADS戦略の4つのトレーニング戦略を比較しました。",
+          "validation": "AraMega-SSumを用いた実験で、ADSが早期収束を促進し、パラ言語タスクの性能を向上させる一方で、他のタスクには悪影響を与えることが示されました。TPC->ADS戦略が全体的なバランスを最もよく保つことが分かりました。",
+          "discussion": "ADS戦略のタスク間のトレードオフが課題であり、特に低リソース環境でのさらなる最適化が必要です。",
+          "nextReads": [
+            {
+              "label": "Multilingual Speech Translation with LLMs (2022)",
+              "url": null
+            },
+            {
+              "label": "Instruction Tuning for Multilingual Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Speech Summarization for Low-Resource Languages (2020)",
+              "url": null
+            },
+            {
+              "label": "Cross-Lingual Transfer in Audio Models (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.11039v1",
+          "date": "Jan 16",
+          "title": "SonicBench: Dissecting the Physical Perception Bottleneck in Large Audio Language Models",
+          "titleJa": "SonicBench: 大規模音声言語モデルにおける物理的知覚ボトルネックの解明",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.11039v1",
+          "category": "foundation",
+          "what": "大規模音声言語モデル（LALMs）の物理的音響属性（ピッチ、音量、空間位置など）の知覚能力を評価するためのベンチマーク「SonicBench」を提案しています。",
+          "novel": "心理物理学に基づいたベンチマークを構築し、LALMsが物理的音響属性を正確に知覚する能力に欠けていることを明らかにしました。",
+          "method": "12の物理的属性を5つの知覚次元で評価するため、認識（絶対判断）と比較（相対判断）の2つのパラダイムを持つ刺激生成ツールを使用しました。",
+          "validation": "評価により、LALMsが物理的音響属性の知覚においてランダム推測に近い性能しか示さず、比較タスクでの人間のパフォーマンスに劣ることが明らかになりました。",
+          "discussion": "音声エンコーダは物理的手がかりを捉える能力を持つが、アライメントとデコード段階でその情報を活用できていないことが課題です。",
+          "nextReads": [
+            {
+              "label": "Audio Perception in LLMs (2022)",
+              "url": null
+            },
+            {
+              "label": "Psychophysics and AI Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Evaluation Benchmarks for Audio Models (2020)",
+              "url": null
+            },
+            {
+              "label": "Relational Reasoning in AI (2021)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2601.14684v1",
+          "date": "Jan 21",
+          "title": "Dissecting Performance Degradation in Audio Source Separation under Sampling Frequency Mismatch",
+          "titleJa": "サンプリング周波数の不一致による音源分離性能の劣化を解明する",
+          "org": "早稲田大学",
+          "url": "https://arxiv.org/abs/2601.14684v1",
+          "category": "separation",
+          "what": "音源分離モデルがサンプリング周波数の不一致により性能劣化を起こす原因を解明し、新しいリサンプリング手法を提案する研究。",
+          "novel": "従来のリサンプリング手法の問題点を明確化し、ノイズ追加や学習可能なカーネルを用いたリサンプリング手法を提案し、性能向上を実証した点。",
+          "method": "ノイズを加えたリサンプリングや学習可能なカーネルを用いたリサンプリングを導入し、高周波成分の欠如を補完するアプローチを採用。",
+          "validation": "音楽音源分離タスクで提案手法を評価し、従来のリサンプリング手法に比べて性能劣化を軽減することを確認。",
+          "discussion": "提案手法の有効性を確認したが、他の音響タスクや異なる条件下での一般化性能についてはさらなる検証が必要。",
+          "nextReads": [
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation (2017)",
+              "url": "https://arxiv.org/abs/1706.08688"
+            },
+            {
+              "label": "Open-Unmix - A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            },
+            {
+              "label": "WavAugment: Data Augmentation for Raw Audio (2020)",
+              "url": null
+            },
+            {
+              "label": "Music Source Separation with Deep Learning: A Survey (2021)",
+              "url": "https://arxiv.org/abs/2109.12207"
+            }
+          ]
+        },
+        {
+          "id": "2601.13629v1",
+          "date": "Jan 20",
+          "title": "S$^2$Voice: Style-Aware Autoregressive Modeling with Enhanced Conditioning for Singing Style Conversion",
+          "titleJa": "S$^2$Voice: スタイル認識型自己回帰モデルを用いた歌唱スタイル変換",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.13629v1",
+          "category": "separation",
+          "what": "歌唱スタイル変換のための自己回帰モデルS$^2$Voiceを提案し、スタイル制御と頑健性を向上させる手法を開発した研究。",
+          "novel": "スタイル埋め込みやグローバルスピーカー埋め込みを用いた新しいアーキテクチャと、質の高い歌唱データセットの自動収集パイプラインを導入した点。",
+          "method": "自己回帰型大規模言語モデルにスタイル埋め込みを統合し、さらにフローマッチングトランスフォーマーにグローバルスピーカー埋め込みを追加。",
+          "validation": "歌唱スタイル変換チャレンジ2025で優勝し、主観的評価でスタイル類似性や自然性において高い性能を示した。",
+          "discussion": "提案手法は高い性能を示したが、他の歌唱スタイルや未学習の条件下での一般化性能についてはさらなる研究が必要。",
+          "nextReads": [
+            {
+              "label": "Neural Singing Voice Conversion with Pitch and Timbre Conditioning (2021)",
+              "url": null
+            },
+            {
+              "label": "Singing Voice Conversion with Disentangled Representations (2022)",
+              "url": null
+            },
+            {
+              "label": "DiffSinger: Singing Voice Synthesis via Shallow Diffusion Mechanism (2022)",
+              "url": "https://arxiv.org/abs/2205.09164"
+            },
+            {
+              "label": "Cross-Lingual Singing Voice Conversion with Neural Networks (2023)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.12802v1",
+          "date": "Jan 19",
+          "title": "UNMIXX: Untangling Highly Correlated Singing Voices Mixtures",
+          "titleJa": "UNMIXX: 高度に相関する歌声混合の分離",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.12802v1",
+          "category": "separation",
+          "what": "複数の歌声分離（MSVS）に特化した新しいフレームワークUNMIXXを提案し、データ不足と高い相関性の課題に対処する研究。",
+          "novel": "音楽的知識に基づく混合戦略や逆注意機構を活用して、歌声分離の性能を大幅に向上させた点。",
+          "method": "音楽的知識を活用した混合戦略、逆注意機構による分離表現の強化、干渉エネルギーを抑制する損失関数を組み合わせたアプローチ。",
+          "validation": "提案手法が既存の手法に比べてSDRiで2.2 dB以上の性能向上を達成したことを実験で確認。",
+          "discussion": "データ不足を補うためのシミュレーションデータの有効性を示したが、実際のデータにおける性能や他の音楽ジャンルでの適用可能性についてはさらなる検証が必要。",
+          "nextReads": [
+            {
+              "label": "Deep Clustering for Monaural Speech Separation (2016)",
+              "url": "https://arxiv.org/abs/1609.07432"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": null
+            },
+            {
+              "label": "Music Source Separation with Deep Learning: A Survey (2021)",
+              "url": "https://arxiv.org/abs/2109.12207"
+            }
+          ]
+        },
+        {
+          "id": "2601.12757v1",
+          "date": "Jan 19",
+          "title": "CodeSep: Low-Bitrate Codec-Driven Speech Separation with Base-Token Disentanglement and Auxiliary-Token Serial Prediction",
+          "titleJa": "CodeSep: 基本トークン分離と補助トークン逐次予測を用いた低ビットレートコーデック駆動音声分離",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.12757v1",
+          "category": "separation",
+          "what": "音声分離と音声圧縮を統合した新しいシナリオを対象とし、低ビットレートで効率的な音声分離を実現するCodeSepを提案する研究。",
+          "novel": "音声分離と圧縮を同時に行う新しいモデルを開発し、1 kbpsという低ビットレートで高い分離性能を達成した点。",
+          "method": "残差ベクトル量子化を用いたニューラル音声コーデック、基本トークン分離モジュール、補助トークン逐次予測モジュールを組み合わせたアーキテクチャ。",
+          "validation": "提案手法が1 kbpsの低ビットレートで既存手法と比較して優れた分離性能を示すことを実験で確認。",
+          "discussion": "低ビットレートでの性能向上を実現したが、リアルタイム処理や他の音声タスクへの応用可能性についてはさらなる研究が必要。",
+          "nextReads": [
+            {
+              "label": "TasNet: Time-Domain Audio Separation Network for Real-Time, Single-Channel Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "SoundStream: An End-to-End Neural Audio Codec (2021)",
+              "url": "https://arxiv.org/abs/2107.03312"
+            },
+            {
+              "label": "SepFormer: Jointly Optimized Transformer for Speech Separation (2021)",
+              "url": "https://arxiv.org/abs/2010.13154"
+            },
+            {
+              "label": "Neural Speech Coding with Scalable Vector Quantization (2022)",
+              "url": "https://arxiv.org/abs/2203.16640"
+            }
+          ]
+        },
+        {
+          "id": "2601.12485v1",
+          "date": "Jan 18",
+          "title": "Robust Online Overdetermined Independent Vector Analysis Based on Bilinear Decomposition",
+          "titleJa": "双線形分解に基づくロバストなオンライン過剰決定独立ベクトル解析",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.12485v1",
+          "category": "separation",
+          "what": "大規模マイクロフォンアレイを用いたオンライン盲信号分離のために、双線形分解を活用した新しい独立ベクトル解析（OverIVA）手法を提案しています。",
+          "novel": "分離フィルタを双線形形式で分解し、パラメータ数を削減しつつ性能とロバスト性を向上させる新しい手法を開発しました。",
+          "method": "長い分離フィルタを2つの短いフィルタに分解し、交互反復投影アルゴリズムを設計してそれらを更新する手法を採用しました。",
+          "validation": "シミュレーション結果により、提案手法が大幅に少ないパラメータで性能とロバスト性を向上させることを確認しました。",
+          "discussion": "提案手法はパラメータ数を削減しつつ性能を向上させるが、大規模な実環境での適用可能性についてはさらなる検証が必要です。",
+          "nextReads": [
+            {
+              "label": "Independent Vector Analysis for Audio (2019)",
+              "url": null
+            },
+            {
+              "label": "Blind Source Separation with OverIVA (2020)",
+              "url": null
+            },
+            {
+              "label": "Efficient Algorithms for IVA (2021)",
+              "url": null
+            },
+            {
+              "label": "Bilinear Models in Signal Processing (2020)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2601.12660v1",
+          "date": "Jan 19",
+          "title": "Toward Faithful Explanations in Acoustic Anomaly Detection",
+          "titleJa": "音響異常検出における信頼性の高い説明を目指して",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.12660v1",
+          "category": "anomaly",
+          "what": "音響異常検出におけるオートエンコーダ（AE）とマスクオートエンコーダ（MAE）の解釈可能性と性能を比較し、異常検出の説明性を向上させる方法を提案しています。",
+          "novel": "MAEを用いることで、若干の性能低下を伴いながらも、より信頼性が高く時間的に精密な説明を提供できることを示し、新しい説明の評価指標として摂動ベースの信頼性メトリクスを提案しています。",
+          "method": "AEとMAEを比較し、エラーマップやサリエンシーマップ、SmoothGrad、Integrated Gradients、GradSHAP、Grad-CAMなどの属性手法を適用して解釈可能性を評価しました。",
+          "validation": "実際の産業シナリオで実験を行い、提案手法が解釈可能性を向上させつつ、性能を大きく損なわないことを確認しました。",
+          "discussion": "MAEは解釈可能性を向上させるが、検出性能がわずかに低下する点が課題として残ります。また、提案した信頼性メトリクスの一般化可能性についてはさらなる検証が必要です。",
+          "nextReads": [
+            {
+              "label": "Explainable AI for Anomaly Detection (2021)",
+              "url": null
+            },
+            {
+              "label": "Autoencoders for Anomaly Detection in Audio (2020)",
+              "url": null
+            },
+            {
+              "label": "Grad-CAM: Visual Explanations from Deep Networks (2017)",
+              "url": null
+            },
+            {
+              "label": "SmoothGrad: Removing Noise by Adding Noise (2017)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音源分離や歌唱スタイル変換において、サンプリング周波数の不一致やデータ不足、高い相関性への対策として新しい手法（UNMIXXやS$^2$Voiceなど）が提案され、性能向上が図られています。",
+    "② 音声モデルの評価基準や解釈性向上に焦点を当てた研究（PRiSMやToward Faithful Explanations）が進展し、音声認識や異常検出の精度と説明性の向上が目指されています。",
+    "③ 大規模音声言語モデル（Audio LLMs）の多言語対応や物理的音響属性の知覚能力を向上させるためのベンチマーク（SonicBench）や調整手法が提案され、応用範囲の拡大が進んでいます。"
+  ]
+}

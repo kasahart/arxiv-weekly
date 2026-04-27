@@ -1,0 +1,333 @@
+{
+  "date": "2026-0320",
+  "generated_at": "2026-03-20T00:00:00+00:00",
+  "total": 10,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.19195v1",
+          "date": "Mar 19",
+          "title": "How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation",
+          "titleJa": "LLMの聴覚知識が音声言語モデルに与える影響の包括的評価",
+          "org": "Georgia Institute of Technology",
+          "url": "https://arxiv.org/abs/2603.19195v1",
+          "category": "foundation",
+          "what": "① 大規模言語モデル（LLM）が音声言語モデル（LALM）の基盤としてどの程度聴覚知識を持つかを評価し、その影響を分析する研究。",
+          "novel": "② LLMが持つ聴覚知識の多様性と、テキストのみの学習が音声処理性能に与える影響を定量的に評価した点。",
+          "method": "③ テキストベースの直接評価、音声キャプショニングを用いたカスケード評価、音声エンコーダを用いた音声基盤評価の3つの手法を用いて比較分析を行った。",
+          "validation": "④ AKB-2000ベンチマークを用いた評価や、音声キャプショニングと音声エンコーダを組み合わせた実験で、LLMの聴覚知識と音声性能の相関を確認した。",
+          "discussion": "⑤ 聴覚知識のばらつきや、テキストベースの学習が音声性能に与える影響を明らかにしたが、具体的な改善方法や応用例の検討が課題として残る。",
+          "nextReads": [
+            {
+              "label": "AudioGPT: Understanding Audio with GPT (2023)",
+              "url": "https://arxiv.org/abs/2303.03322"
+            },
+            {
+              "label": "Whisper: OpenAI's Automatic Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "SpeechLM: Large-Scale Pre-trained Model for Speech Understanding (2022)",
+              "url": "https://arxiv.org/abs/2210.00190"
+            }
+          ]
+        },
+        {
+          "id": "2603.18678v1",
+          "date": "Mar 19",
+          "title": "Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models",
+          "titleJa": "言葉遊び: 大規模音声言語モデルにおける音声ダジャレ理解のベンチマーク",
+          "org": "Tencent AI Lab",
+          "url": "https://arxiv.org/abs/2603.18678v1",
+          "category": "foundation",
+          "what": "① 音声ダジャレの認識、位置特定、意味推論を評価するための初のベンチマークAPUN-Benchを提案し、LALMの性能を分析。",
+          "novel": "② 音声ダジャレという未踏の領域に焦点を当て、4,434の音声サンプルを含むベンチマークを構築し、LALMの課題を明らかにした点。",
+          "method": "③ APUN-Benchを用いて、10種類の最先端LALMを評価し、音声ダジャレの認識、位置特定、意味推論の各段階での性能を分析。",
+          "validation": "④ APUN-Benchの3つの評価タスクを通じて、LALMの性能ギャップや課題を定量的に評価。",
+          "discussion": "⑤ 音声ダジャレの位置特定における位置バイアスや意味推論のエラーケースを指摘し、ユーモア認識の向上に向けた課題を提起。",
+          "nextReads": [
+            {
+              "label": "Audio-Linguistic Models for Humor Understanding (2023)",
+              "url": null
+            },
+            {
+              "label": "Humor in NLP: Challenges and Opportunities (2022)",
+              "url": null
+            },
+            {
+              "label": "Understanding Multimodal Humor (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.17822v1",
+          "date": "Mar 18",
+          "title": "Multi-Source Evidence Fusion for Audio Question Answering",
+          "titleJa": "音声質問応答のためのマルチソース証拠統合",
+          "org": "Tallinn University of Technology",
+          "url": "https://arxiv.org/abs/2603.17822v1",
+          "category": "foundation",
+          "what": "① 音声質問応答における推論過程の質を評価するため、マルチソース証拠を統合するシステムを提案。",
+          "novel": "② 音響ツールから得られる信頼性の異なる証拠を統合し、検証可能な推論チェーンを生成する手法を開発した点。",
+          "method": "③ 2つのLALMと25の音響ツールを使用し、信頼性タグ付きの証拠を基に推論を行うマルチソースアンサンブルパイプラインを構築。",
+          "validation": "④ Interspeech 2026 Audio Reasoning Challengeでの評価において、推論の質で他のシステムを大きく上回る性能を示した。",
+          "discussion": "⑤ 推論の透明性を高める成果を示したが、リアルタイム処理やスケーラビリティの課題が残る。",
+          "nextReads": [
+            {
+              "label": "Explainable AI for Audio Processing (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio Reasoning with Multimodal Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Transparent AI in Speech Processing (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.18048v2",
+          "date": "Mar 17",
+          "title": "DEAF: A Benchmark for Diagnostic Evaluation of Acoustic Faithfulness in Audio Language Models",
+          "titleJa": "DEAF: 音声言語モデルの音響忠実性を診断評価するためのベンチマーク",
+          "org": "Tsinghua University",
+          "url": "https://arxiv.org/abs/2603.18048v2",
+          "category": "foundation",
+          "what": "① 音声マルチモーダル大規模言語モデル（Audio MLLM）の音響信号処理能力を評価するためのベンチマークDEAFを提案。",
+          "novel": "② 音響信号とテキストの影響を分離して評価するための制御された評価フレームワークを導入した点。",
+          "method": "③ 感情的イントネーション、背景音、話者のアイデンティティの3つの音響次元に基づく2,700以上の刺激を用いて、モデルのバイアスを診断。",
+          "validation": "④ 7つのAudio MLLMを評価し、音響変化に敏感である一方で、テキスト入力に依存する傾向があることを明らかにした。",
+          "discussion": "⑤ 音響信号の理解とテキストバイアスの克服が今後の課題として残る。",
+          "nextReads": [
+            {
+              "label": "Audio Multimodal Models: Challenges and Benchmarks (2023)",
+              "url": null
+            },
+            {
+              "label": "Faithfulness in Multimodal AI (2022)",
+              "url": null
+            },
+            {
+              "label": "Acoustic Understanding in AI Models (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.16966v1",
+          "date": "Mar 17",
+          "title": "CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization",
+          "titleJa": "CineSRD: 視覚、音響、言語的手がかりを活用したオープンワールド視覚メディア話者ダイアリゼーション",
+          "org": "Tencent",
+          "url": "https://arxiv.org/abs/2603.16966v1",
+          "category": "foundation",
+          "what": "映画やテレビシリーズなどの複雑な視覚メディアにおける話者ダイアリゼーションを行うためのマルチモーダルフレームワークCineSRDを提案。",
+          "novel": "視覚、音響、言語的手がかりを統合的に活用し、長時間動画や多人数話者、クロスモーダル非同期性といった課題に対応する新しい手法を開発。",
+          "method": "視覚的アンカークラスタリングで初期話者を登録し、音声言語モデルを用いて話者ターンを検出、未登録のオフスクリーン話者を補完。",
+          "validation": "中国語と英語のプログラムを含む新しいベンチマークを構築し、提案手法が従来のデータセットにおいても競争力のある性能を示すことを実験で確認。",
+          "discussion": "クロスモーダル非同期性や多様な視覚メディア環境における課題に対応しているが、さらなる改良が必要な可能性がある。",
+          "nextReads": [
+            {
+              "label": "Multimodal Speaker Diarization in Movies (2022)",
+              "url": null
+            },
+            {
+              "label": "End-to-End Neural Diarization (2019)",
+              "url": "https://arxiv.org/abs/1909.06247"
+            },
+            {
+              "label": "AVA ActiveSpeaker: An Audio-Visual Dataset for Speaker Diarization (2019)",
+              "url": "https://arxiv.org/abs/1901.01342"
+            },
+            {
+              "label": "Deep Learning for Speaker Diarization (2021)",
+              "url": "https://arxiv.org/abs/2106.03635"
+            }
+          ]
+        },
+        {
+          "id": "2603.13768v1",
+          "date": "Mar 14",
+          "title": "Causal Tracing of Audio-Text Fusion in Large Audio Language Models",
+          "titleJa": "大規模音声言語モデルにおける音声とテキストの融合の因果的トレーシング",
+          "org": "National Taiwan University",
+          "url": "https://arxiv.org/abs/2603.13768v1",
+          "category": "foundation",
+          "what": "大規模音声言語モデル（LALMs）が音響特徴とテキスト文脈をどのように統合するかを因果的トレーシング手法で解析。",
+          "novel": "音声理解の過程での内部情報フローを層ごとおよびトークンごとに詳細に分析し、モデルの融合戦略を明らかにした。",
+          "method": "因果的トレーシングを適用し、DeSTA、Qwen、Voxtralの各モデルで層ごと・トークンごとの因果効果を評価。",
+          "validation": "層ごとの進行的統合や後期段階での融合戦略など、各モデルの異なる統合戦略を実験的に特定。",
+          "discussion": "LALMsの内部動作を明らかにしたが、さらなるモデルやタスクへの適用が必要。",
+          "nextReads": [
+            {
+              "label": "Attention Is All You Need (2017)",
+              "url": "https://arxiv.org/abs/1706.03762"
+            },
+            {
+              "label": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (2020)",
+              "url": "https://arxiv.org/abs/1910.10683"
+            },
+            {
+              "label": "SpeechBERT: An Audio-and-Text Jointly Learned Language Model for End-to-End Spoken Question Answering (2020)",
+              "url": "https://arxiv.org/abs/2005.04290"
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2603.16668v1",
+          "date": "Mar 17",
+          "title": "HRTF-guided Binaural Target Speaker Extraction with Real-World Validation",
+          "titleJa": "HRTFを活用したバイノーラルターゲット話者抽出と実世界での検証",
+          "org": "Bar-Ilan University",
+          "url": "https://arxiv.org/abs/2603.16668v1",
+          "category": "separation",
+          "what": "① 頭部伝達関数（HRTF）を活用して、複数音源からターゲット話者を抽出する新しいフレームワークを提案。",
+          "novel": "② HRTFを空間的な事前情報として活用し、バイノーラル音声の空間的手がかりを保持しながら音質と明瞭性を向上させた点。",
+          "method": "③ マルチチャネル深層ブラインド音源分離バックボーンを基に、HRTF由来の空間情報を条件付けとして利用する手法を開発。",
+          "validation": "④ 頭部・胴体シミュレータ（HATS）を用いたシミュレーションと実録音で性能を検証し、音質と明瞭性の向上を確認。",
+          "discussion": "⑤ リスナー固有のHRTFを使用しないため汎用性が高いが、個別適応の可能性や計算コストの最適化が課題。",
+          "nextReads": [
+            {
+              "label": "Binaural Speech Separation with Deep Learning (2022)",
+              "url": null
+            },
+            {
+              "label": "HRTF-based Audio Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "Spatial Audio in Machine Learning (2023)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.14983v1",
+          "date": "Mar 16",
+          "title": "Cepstral Smoothing of Binary Masks for Convolutive Blind Separation of Speech Mixtures",
+          "titleJa": "音声混合物の畳み込み型ブラインド分離のためのバイナリマスクのケプストラム平滑化",
+          "org": "Université de Tunis El Manar",
+          "url": "https://arxiv.org/abs/2603.14983v1",
+          "category": "separation",
+          "what": "2つのマイク録音から2つの音声信号を抽出する新しい分離システムを提案。",
+          "novel": "バイナリ時間周波数マスクのケプストラム平滑化を導入し、音楽的ノイズを低減しつつ音声分離性能を向上。",
+          "method": "ブラインドソース分離アルゴリズムで分離した出力信号からバイナリマスクを推定し、その後ケプストラム平滑化を適用してノイズを低減。",
+          "validation": "人工的に混合された音声信号と実録音を用いた実験で、提案手法の有効性を確認。",
+          "discussion": "音楽的ノイズの低減に成功したが、実環境でのさらなる検証が必要。",
+          "nextReads": [
+            {
+              "label": "Blind Source Separation for Convolutive Mixtures (2006)",
+              "url": null
+            },
+            {
+              "label": "Time-Frequency Masking for Speech Enhancement (2005)",
+              "url": null
+            },
+            {
+              "label": "Deep Clustering for Monaural Speech Separation (2016)",
+              "url": "https://arxiv.org/abs/1609.07432"
+            },
+            {
+              "label": "A Review of Blind Source Separation Methods (2010)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.16926v1",
+          "date": "Mar 13",
+          "title": "Music Source Restoration with Ensemble Separation and Targeted Reconstruction",
+          "titleJa": "アンサンブル分離とターゲット再構成による音楽ソース復元",
+          "org": "Tsinghua University",
+          "url": "https://arxiv.org/abs/2603.16926v1",
+          "category": "separation",
+          "what": "ミキシングおよびマスタリングされた音楽から元の未処理ステムを復元する音楽ソース復元（MSR）システムを提案。",
+          "novel": "アンサンブル分離モデルとBSRNNベースの復元モデルを組み合わせた2段階のシステムで、複雑な音楽制作プロセスを逆転可能にした。",
+          "method": "事前学習済みの分離モデルで初期ソースを推定し、BSRNNベースの復元モデルでターゲット再構成を行う。",
+          "validation": "公式MSRベンチマークで全ての指標でベースラインを上回り、全体で2位の性能を達成。",
+          "discussion": "提案システムは高い性能を示したが、さらなる改善や他の音楽ジャンルへの適用が課題。",
+          "nextReads": [
+            {
+              "label": "Music Source Separation with Deep Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            },
+            {
+              "label": "A Review of Single-Channel Speech Enhancement Methods (2018)",
+              "url": null
+            },
+            {
+              "label": "BSRNN: Band-Split RNN for Music Source Separation (2022)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2603.13749v1",
+          "date": "Mar 14",
+          "title": "Sub-Band Spectral Matching with Localized Score Aggregation for Robust Anomalous Sound Detection",
+          "titleJa": "局所的スコア集約によるロバストな異常音検知のためのサブバンドスペクトルマッチング",
+          "org": "Tokyo Institute of Technology",
+          "url": "https://arxiv.org/abs/2603.13749v1",
+          "category": "anomaly",
+          "what": "ノイズの多い音響環境での微妙な偏差を検出するための新しい異常音検知（ASD）手法を提案。",
+          "novel": "サブバンドごとの近傍探索とスコアの均等集約により、通常スコアのばらつきを低減し、識別性能を向上。",
+          "method": "サブバンドごとに特徴ベクトルをメモリバンクに保存し、近傍を取得してスコアを均等に集約するBEAM手法を提案。",
+          "validation": "DCASE Task 2ベンチマークでの実験により、タスク特化型の学習なしで高い性能とノイズやドメインシフトへのロバスト性を実証。",
+          "discussion": "提案手法は強力だが、さらなるエンコーダの微調整や多様な環境での検証が求められる。",
+          "nextReads": [
+            {
+              "label": "Anomalous Sound Detection Based on Autoencoder (2018)",
+              "url": null
+            },
+            {
+              "label": "DCASE 2020 Challenge Task 2: Unsupervised Detection of Anomalous Sounds for Machine Condition Monitoring (2020)",
+              "url": null
+            },
+            {
+              "label": "Anomaly Detection with Robust Deep Autoencoders (2017)",
+              "url": null
+            },
+            {
+              "label": "A Study on Sub-band Based Anomaly Detection (2021)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 大規模音声言語モデル（LALM）の性能向上を目指し、音声データとテキストの統合や音響信号処理能力を評価する新たなベンチマークや解析手法が提案されている。",
+    "② 音声ダジャレ認識や複雑な視覚メディアでの話者ダイアリゼーションなど、音声と他モーダルの統合に焦点を当てたマルチモーダル技術が進展している。",
+    "③ 音声信号の分離や異常音検知、音楽ソース復元など、音響処理の精度向上を目指した新しいアルゴリズムや手法が開発されている。"
+  ]
+}

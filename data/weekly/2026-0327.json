@@ -1,0 +1,166 @@
+{
+  "date": "2026-0327",
+  "generated_at": "2026-03-27T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.25767v1",
+          "date": "Mar 26",
+          "title": "Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods",
+          "titleJa": "強い教師あり学習の解放: 汎用音声事前学習手法のデータ中心的研究",
+          "org": "University of Illinois Urbana-Champaign",
+          "url": "https://arxiv.org/abs/2603.25767v1",
+          "category": "foundation",
+          "what": "音声理解タスクのための統一的な表現を学習する事前学習手法において、強い教師データを活用する新しいデータ中心のパイプラインを提案しています。",
+          "novel": "高品質なキャプション生成器と、音声、音楽、環境音を統合する初の統一タグシステム（UTS）を導入し、データ品質とカバレッジが性能の主な要因であることを示しました。",
+          "method": "高精度なキャプション生成器を活用してデータ品質を向上させ、異なる事前学習目的を比較することで、強い教師データの有効性を検証しました。",
+          "validation": "複数の事前学習目的を用いた比較実験により、データ品質とカバレッジが性能向上に寄与することを示しました。",
+          "discussion": "提案手法は強い教師データの重要性を示しましたが、データ収集やキャプション生成のコストが課題として残ります。",
+          "nextReads": [
+            {
+              "label": "Audio Pre-training with Large-scale Data (2022)",
+              "url": null
+            },
+            {
+              "label": "Unified Representations for Audio Understanding (2021)",
+              "url": null
+            },
+            {
+              "label": "Self-supervised Learning for Audio (2020)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.23810v1",
+          "date": "Mar 25",
+          "title": "Rethinking Masking Strategies for Masked Prediction-based Audio Self-supervised Learning",
+          "titleJa": "マスキング戦略の再考: マスク予測ベースの音声自己教師あり学習のために",
+          "org": "Preferred Networks",
+          "url": "https://arxiv.org/abs/2603.23810v1",
+          "category": "foundation",
+          "what": "音声スペクトログラムを用いた自己教師あり学習におけるマスキング戦略を再考し、新たな軽量マスキング手法を提案しています。",
+          "novel": "計算コストを抑えつつ、スペクトルの疎性を活用した分散加重マスキング（DWM）を提案し、性能向上を実現しました。",
+          "method": "スペクトルの周波数構造に基づく分散加重マスキング（DWM）を導入し、計算効率と性能のバランスを最適化しました。",
+          "validation": "DWMを用いた実験で、従来の逆ブロックマスキングと比較して、計算コストを削減しつつ音声イベント理解性能を向上させました。",
+          "discussion": "DWMは計算効率が高い一方で、特定のタスクにおける一般化性能の限界が課題として残ります。",
+          "nextReads": [
+            {
+              "label": "Masked Autoencoders for Audio (2022)",
+              "url": null
+            },
+            {
+              "label": "Self-supervised Audio Representation Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Efficient Masking Strategies for SSL (2020)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.22728v1",
+          "date": "Mar 24",
+          "title": "The Interspeech 2026 Audio Encoder Capability Challenge for Large Audio Language Models",
+          "titleJa": "Interspeech 2026: 大規模音声言語モデルのためのオーディオエンコーダ能力チャレンジ",
+          "org": "Nanyang Technological University",
+          "url": "https://arxiv.org/abs/2603.22728v1",
+          "category": "foundation",
+          "what": "大規模音声言語モデル（LALMs）のフロントエンドモジュールとしての事前学習済み音声エンコーダの性能を評価するためのベンチマークを提案しています。",
+          "novel": "エンコーダ開発をLLMのファインチューニングから切り離し、統一的な生成評価フレームワークXARES-LLMを提供しました。",
+          "method": "多様な分類および生成タスクを通じてエンコーダを評価する統一的な生成評価フレームワークを設計しました。",
+          "validation": "提案フレームワークを用いて、提出されたエンコーダの性能を一貫したプロトコルで評価しました。",
+          "discussion": "エンコーダの性能向上を促進する一方で、評価フレームワークの適用範囲や基準のさらなる精緻化が必要です。",
+          "nextReads": [
+            {
+              "label": "Large Audio Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Unified Audio Representations for Multimodal Tasks (2022)",
+              "url": null
+            },
+            {
+              "label": "Benchmarking Pre-trained Audio Encoders (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.20638v1",
+          "date": "Mar 21",
+          "title": "OmniCodec: Low Frame Rate Universal Audio Codec with Semantic-Acoustic Disentanglement",
+          "titleJa": "OmniCodec: 意味-音響分離を備えた低フレームレート汎用音声コーデック",
+          "org": "Tsinghua University",
+          "url": "https://arxiv.org/abs/2603.20638v1",
+          "category": "foundation",
+          "what": "低フレームレートで動作する汎用音声コーデックOmniCodecを提案し、音声、音楽、一般音など多様な音声ドメインに対応可能な設計を行いました。",
+          "novel": "階層的マルチコードブック設計と意味-音響分離を採用し、再構成品質と下流生成タスクの性能を両立しました。",
+          "method": "事前学習済みの音声理解モデルを活用し、自己ガイダンス戦略を用いてコードブックの利用効率と再構成性能を向上させました。",
+          "validation": "Mimi codecと同じビットレートで比較し、再構成品質と下流生成タスクの性能で優れた結果を示しました。",
+          "discussion": "提案手法は汎用性と性能を両立しましたが、さらなる最適化や他の音声ドメインでの評価が必要です。",
+          "nextReads": [
+            {
+              "label": "Neural Audio Codecs for Speech and Music (2022)",
+              "url": null
+            },
+            {
+              "label": "Semantic Representations in Audio Codecs (2021)",
+              "url": null
+            },
+            {
+              "label": "Low Bitrate Audio Compression Techniques (2020)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2603.24385v1",
+          "date": "Mar 25",
+          "title": "ArrayDPS-Refine: Generative Refinement of Discriminative Multi-Channel Speech Enhancement",
+          "titleJa": "ArrayDPS-Refine: 判別的マルチチャネル音声強調の生成的リファインメント",
+          "org": "University of Illinois Urbana-Champaign",
+          "url": "https://arxiv.org/abs/2603.24385v1",
+          "category": "separation",
+          "what": "マルチチャネル音声強調のための新しい手法ArrayDPS-Refineを提案し、判別的モデルの出力を生成的に改善する方法を示しています。",
+          "novel": "判別的モデルの出力を再学習なしで直接改善可能な、トレーニング不要かつアレイ非依存の生成的手法を提案しました。",
+          "method": "判別的モデルの出力からノイズの空間共分散行列を推定し、それを用いて拡散後部サンプリングを行うことで音声をリファインします。",
+          "validation": "最先端の波形およびSTFTドメインモデルを含む複数の判別的モデルに対して、性能向上を一貫して示しました。",
+          "discussion": "提案手法は既存モデルの性能を向上させるが、拡散プロセスの計算コストが課題となる可能性があります。",
+          "nextReads": [
+            {
+              "label": "ArrayDPS: Unsupervised Multi-Channel Source Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Diffusion Models for Speech Enhancement (2021)",
+              "url": null
+            },
+            {
+              "label": "Generative Models in Audio Processing (2020)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音声理解や自己教師あり学習において、データ中心の事前学習や軽量なマスキング戦略の再考が進展し、効率的な学習手法が提案されています。",
+    "② マルチチャネル音声強調では、判別的モデルの出力を生成的に改善する新しいアプローチが注目されています。",
+    "③ 大規模音声言語モデルや汎用音声コーデックの性能向上を目指し、評価ベンチマークや多様な音声ドメイン対応技術が開発されています。"
+  ]
+}

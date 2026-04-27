@@ -1,0 +1,397 @@
+{
+  "date": "2026-0130",
+  "generated_at": "2026-01-30T00:00:00+00:00",
+  "total": 12,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2601.21463v2",
+          "date": "Jan 29",
+          "title": "Unifying Speech Editing Detection and Content Localization via Prior-Enhanced Audio LLMs",
+          "titleJa": "事前情報を活用した音声編集検出と内容特定の統一フレームワーク",
+          "org": "中国科学技術大学",
+          "url": "https://arxiv.org/abs/2601.21463v2",
+          "category": "foundation",
+          "what": "① 音声編集検出と内容特定を統一的に扱う生成モデルに基づく新しいフレームワークを提案。",
+          "novel": "② 大規模なバイリンガルデータセットAiEditを構築し、現実的な編集シナリオをカバーしつつ、生成タスクとして問題を再定義。",
+          "method": "③ Audio LLMを用いて編集タイプの識別と内容特定を同時に行い、フレームレベルの検出器からの確率的手がかりを統合するプロンプト戦略を提案。",
+          "validation": "④ AiEditデータセットを用いた実験で、既存手法を上回る検出・特定性能を示した。",
+          "discussion": "⑤ 編集検出の精度向上は確認されたが、より多様な編集シナリオやリアルタイム性の向上が課題。",
+          "nextReads": [
+            {
+              "label": "Audio LLMs for speech processing (2023)",
+              "url": null
+            },
+            {
+              "label": "Speech editing detection with deep learning (2022)",
+              "url": null
+            },
+            {
+              "label": "Generative models for audio tasks (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.19029v1",
+          "date": "Jan 26",
+          "title": "Audio Foundation Models Outperform Symbolic Representations for Piano Performance Evaluation",
+          "titleJa": "ピアノ演奏評価において音声基盤モデルは記号表現を上回る",
+          "org": "カリフォルニア大学サンディエゴ校（UCSD）",
+          "url": "https://arxiv.org/abs/2601.19029v1",
+          "category": "foundation",
+          "what": "ピアノ演奏の品質評価において、従来のMIDIベースの記号表現ではなく、事前学習された音声基盤モデル（MuQとMERT）を使用する手法を提案しています。",
+          "novel": "音声基盤モデルが記号表現を大幅に上回る性能を示し、19の知覚次元すべてで有意な改善を達成しました。また、音声表現のみで十分な性能を発揮することを示しました。",
+          "method": "MuQモデルの特定の層（9-12層）を使用し、Pianoteqサウンドフォントで拡張した音声データを用いて学習を行いました。",
+          "validation": "PercePiano MIDIファイルを用いた合成音声データで評価し、R^2 = 0.537を達成。記号表現ベースのベースライン（R^2 = 0.347）に比べて55%の改善を示しました。",
+          "discussion": "音声表現が記号表現を一貫して上回る一方で、音声と記号の融合が限定的な利益しかもたらさない理由についてさらなる研究が必要です。",
+          "nextReads": [
+            {
+              "label": "Perceiving Piano Performance Quality (2022)",
+              "url": null
+            },
+            {
+              "label": "MuQ: A Foundation Model for Music Understanding (2023)",
+              "url": null
+            },
+            {
+              "label": "MERT: Music Embedding Representations for Tasks (2023)",
+              "url": null
+            },
+            {
+              "label": "Symbolic Music Representations in AI (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.16547v1",
+          "date": "Jan 23",
+          "title": "CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation",
+          "titleJa": "CORD: 重み付けオンポリシーのクロスモーダル蒸留による音声-テキスト推論ギャップの橋渡し",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.16547v1",
+          "category": "foundation",
+          "what": "音声言語モデル（LALMs）の知識と推論能力の低下を解決するため、音声とテキストの意味的ギャップを埋める統一的なアライメントフレームワーク「CORD」を提案しています。",
+          "novel": "音声条件付き推論をテキスト条件付き推論と統一モデル内で整合させる新しいオンラインクロスモーダル自己蒸留手法を導入し、少量の合成データで高いデータ効率を実現しました。",
+          "method": "トークンレベルでは重要度に応じた重み付けと逆KLダイバージェンスを用い、シーケンスレベルではグループ相対ポリシー最適化（GRPO）を活用して推論軌跡全体を最適化する多粒度アライメントを行います。",
+          "validation": "複数のベンチマークでの実験により、CORDが音声条件付き推論を一貫して向上させ、80kの合成トレーニングサンプルのみで音声-テキスト間の性能ギャップを大幅に縮小することが確認されました。",
+          "discussion": "提案手法の有効性は示されたものの、実際の大規模データや多様な音声環境での性能検証が必要です。",
+          "nextReads": [
+            {
+              "label": "AudioGPT: Understanding and Generating Speech with LLMs (2023)",
+              "url": null
+            },
+            {
+              "label": "Cross-Modal Knowledge Distillation for Audio-Visual Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Bridging the Gap Between Text and Speech Representations (2022)",
+              "url": null
+            },
+            {
+              "label": "Self-Distillation in Multimodal Learning (2023)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.16540v2",
+          "date": "Jan 23",
+          "title": "Do Models Hear Like Us? Probing the Representational Alignment of Audio LLMs and Naturalistic EEG",
+          "titleJa": "モデルは私たちのように聞くのか？音声LLMと自然なEEGの表現アライメントの検証",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.16540v2",
+          "category": "foundation",
+          "what": "音声大規模言語モデル（Audio LLMs）の内部表現が、自然な聴覚中の人間の神経動態とどの程度一致するかを調査しました。",
+          "novel": "12のオープンソースAudio LLMとEEG信号の層ごとの表現アライメントを、8つの類似性指標を用いて体系的に分析し、音声LLMの表現メカニズムに関する新たな神経生物学的洞察を提供しました。",
+          "method": "スピアマンベースの表現類似性解析（RSA）などの指標を用いて、文内の表現幾何学を特徴付け、時間的および空間的なアライメントパターンを明らかにしました。",
+          "validation": "2つのデータセットを用いて、250-500msの時間窓でRSAが顕著に増加するなどのアライメントパターンを確認し、N400関連の神経動態と一致する結果を得ました。",
+          "discussion": "モデルの表現が人間の神経動態と一致する部分がある一方で、負の感情的プロソディが幾何学的類似性を低下させるなど、さらなる研究が必要な課題が残されています。",
+          "nextReads": [
+            {
+              "label": "Neural Dynamics of Speech Perception in Humans (2022)",
+              "url": null
+            },
+            {
+              "label": "Representational Similarity in Multimodal Models (2023)",
+              "url": null
+            },
+            {
+              "label": "EEG and Deep Learning: Bridging the Gap (2022)",
+              "url": null
+            },
+            {
+              "label": "Temporal Dynamics in Neural Representations of Language (2023)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2601.22260v1",
+          "date": "Jan 29",
+          "title": "Brain-Informed Speech Separation for Cochlear Implants",
+          "titleJa": "人工内耳のための脳情報を活用した音声分離",
+          "org": "ハノーファー医科大学",
+          "url": "https://arxiv.org/abs/2601.22260v1",
+          "category": "separation",
+          "what": "① EEG（脳波）由来の注意信号を活用して、人工内耳向けに注目話者の音声を分離・強調する手法を提案。",
+          "novel": "② 音声のみの分離器が抱えるラベル順序の曖昧性を解消し、注意信号の劣化に対しても堅牢な性能を実現。",
+          "method": "③ EEG特徴と音声混合信号を軽量な融合層で統合し、注目話者の電極図を生成するアテンション誘導型ネットワークを設計。",
+          "validation": "④ マルチトーカー環境での信号対干渉比（SIR）改善を評価し、音声のみのベースラインを上回る性能を確認。",
+          "discussion": "⑤ EEG信号の品質が低下した場合の性能限界や、実環境での適用可能性が今後の課題。",
+          "nextReads": [
+            {
+              "label": "EEG-based auditory attention decoding (2022)",
+              "url": null
+            },
+            {
+              "label": "Deep learning for cochlear implants (2021)",
+              "url": null
+            },
+            {
+              "label": "Attention-guided speech separation (2020)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.21114v1",
+          "date": "Jan 28",
+          "title": "DNN-Based Online Source Counting Based on Spatial Generalized Magnitude Squared Coherence",
+          "titleJa": "空間的な一般化された二乗コヒーレンスに基づくDNNによるオンライン音源数カウント",
+          "org": "オルデンブルク大学",
+          "url": "https://arxiv.org/abs/2601.21114v1",
+          "category": "separation",
+          "what": "① 空間的コヒーレンスを利用して、アクティブな音源数の変化をオンラインで検出する新しい手法を提案。",
+          "novel": "② 空間的ホワイトニングを活用し、音源数カウントを変化検出タスクとして再構成した点が新規性。",
+          "method": "③ 一般化された二乗コヒーレンスを特徴量として使用し、コンパクトなニューラルネットワークでフレームごとの音源数変化を検出。",
+          "validation": "④ 最大4人の話者と背景雑音を含む反響環境でシミュレーションを行い、有効性を実証。",
+          "discussion": "⑤ 実環境での性能や、より多人数の話者に対するスケーラビリティが課題。",
+          "nextReads": [
+            {
+              "label": "Online source counting in noisy environments (2022)",
+              "url": null
+            },
+            {
+              "label": "Spatial coherence for sound source localization (2021)",
+              "url": null
+            },
+            {
+              "label": "DNN-based acoustic scene analysis (2020)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.19533v1",
+          "date": "Jan 27",
+          "title": "SLM-SS: Speech Language Model for Generative Speech Separation",
+          "titleJa": "生成的音声分離のための音声言語モデル",
+          "org": "中国科学院",
+          "url": "https://arxiv.org/abs/2601.19533v1",
+          "category": "separation",
+          "what": "① 音声言語モデルを活用して、分離された音声信号の可聴性と一貫性を向上させる新しい音声分離手法を提案。",
+          "novel": "② 音声分離を離散的な多コードブックのシーケンス生成問題として定式化し、非自己回帰モデルを導入して効率を向上。",
+          "method": "③ エンコーダ-デコーダモデルを使用して量子化された音声混合をターゲットトークンにマッピングし、非自己回帰モードでデコード効率を改善。",
+          "validation": "④ LibriMixデータセットで実験を行い、既存手法と比較して音声の可聴性と下流タスクの一貫性が向上。",
+          "discussion": "⑤ 実環境での適用や、より多様な音声データへの対応が今後の課題。",
+          "nextReads": [
+            {
+              "label": "Speech separation with language models (2023)",
+              "url": null
+            },
+            {
+              "label": "Non-autoregressive sequence modeling (2022)",
+              "url": null
+            },
+            {
+              "label": "LibriMix: A dataset for speech separation (2020)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.19109v1",
+          "date": "Jan 27",
+          "title": "Interpretable and Perceptually-Aligned Music Similarity with Pretrained Embeddings",
+          "titleJa": "事前学習埋め込みを用いた解釈可能で知覚的に整合した音楽類似性",
+          "org": "東京大学",
+          "url": "https://arxiv.org/abs/2601.19109v1",
+          "category": "separation",
+          "what": "① 事前学習されたテキスト-オーディオ埋め込みを活用し、知覚的に整合した音楽類似性表現を実現する新しい手法を提案。",
+          "novel": "② CLAPやMuQ-MuLanなどの事前学習済み埋め込みを用い、追加のファインチューニングなしで知覚的整合性を実現。",
+          "method": "③ 音源分離と線形最適化を組み合わせ、リスニングテストのABXデータを用いて事前学習埋め込みを知覚的に整合させる新しい手法を提案。",
+          "validation": "④ 提案手法が音楽類似性タスクで従来手法を上回る性能を示し、楽器ごとの重み付けによる解釈性と制御性を提供。",
+          "discussion": "⑤ データセットの多様性や、より広範な音楽ジャンルへの適用が今後の課題。",
+          "nextReads": [
+            {
+              "label": "CLAP: Contrastive Language-Audio Pretraining (2022)",
+              "url": null
+            },
+            {
+              "label": "Self-supervised music similarity (2021)",
+              "url": null
+            },
+            {
+              "label": "MuQ-MuLan: Music embeddings for retrieval (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.18456v1",
+          "date": "Jan 26",
+          "title": "Geneses: Unified Generative Speech Enhancement and Separation",
+          "titleJa": "Geneses: 統一的な生成的音声強調と分離",
+          "org": "LINE株式会社",
+          "url": "https://arxiv.org/abs/2601.18456v1",
+          "category": "separation",
+          "what": "複数話者と複雑な劣化を含む現実世界の音声記録に対して、音声強調（SE）と音声分離（SS）を統一的に行う生成的フレームワークであるGenesesを提案します。",
+          "novel": "従来のマスクベースのSE-SS手法を超える性能を達成し、複雑な劣化に対しても高いロバスト性を示しました。",
+          "method": "自己教師あり学習表現を条件としたマルチモーダル拡散トランスフォーマーを用いて、各話者のクリーンな音声特徴を推定する新しい手法を提案しました。",
+          "validation": "LibriTTS-Rの2話者混合データセットを用いて評価を行い、様々な客観的指標で従来手法を大幅に上回る結果を示しました。",
+          "discussion": "提案手法は高い性能を示しましたが、より多様なデータセットやリアルタイム処理への適用可能性についてさらなる検討が必要です。",
+          "nextReads": [
+            {
+              "label": "Speech Enhancement with Diffusion Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Unified Speech Separation Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Latent Flow Matching for Audio (2023)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Learning for Speech (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.18037v1",
+          "date": "Jan 25",
+          "title": "SpatialEmb: Extract and Encode Spatial Information for 1-Stage Multi-channel Multi-speaker ASR on Arbitrary Microphone Arrays",
+          "titleJa": "SpatialEmb: 任意のマイクアレイでの1段階マルチチャネル・マルチスピーカーASR向け空間情報の抽出とエンコード",
+          "org": "ジョンズ・ホプキンス大学",
+          "url": "https://arxiv.org/abs/2601.18037v1",
+          "category": "separation",
+          "what": "マルチチャネル・マルチスピーカーASRにおいて、空間情報を直接エンコードする軽量な埋め込みモジュールSpatialEmbを提案しています。",
+          "novel": "従来の複雑なパイプラインを簡素化し、任意のマイクアレイ構成に適応可能な新しい手法を提供しました。",
+          "method": "SpatialEmbモジュールを使用して空間情報を直接ASRモデルにエンコードし、固定および任意のマイクアレイ構成の両方に対応可能な設計を採用しました。",
+          "validation": "AliMeetingデータセットを用いて評価を行い、105時間のトレーニングデータで最適化されたモデルがEvalセットで17.04%、Testセットで20.32%の文字誤り率（CER）を達成しました。",
+          "discussion": "新しいSOTA結果を達成しましたが、他のデータセットやさらに複雑なマイクアレイ構成での性能検証が必要です。",
+          "nextReads": [
+            {
+              "label": "Multi-channel ASR with Spatial Features (2022)",
+              "url": null
+            },
+            {
+              "label": "AliMeeting Corpus for ASR (2021)",
+              "url": null
+            },
+            {
+              "label": "End-to-End ASR for Multi-Speaker (2023)",
+              "url": null
+            },
+            {
+              "label": "Spatial Feature Extraction for Speech (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.16603v1",
+          "date": "Jan 23",
+          "title": "Omni-directional attention mechanism based on Mamba for speech separation",
+          "titleJa": "Mambaに基づく全方向注意メカニズムを用いた音声分離",
+          "org": "中国科学院",
+          "url": "https://arxiv.org/abs/2601.16603v1",
+          "category": "separation",
+          "what": "効率的な音声モデリングを可能にするMambaモデルを基盤とし、スペクトログラム上でのグローバルな依存関係を捉える全方向注意（OA）メカニズムを提案しています。",
+          "novel": "従来の1次元的なモデリングを超え、スペクトログラムの2次元的なグローバル依存関係を効率的に捉える新しい注意メカニズムを開発しました。",
+          "method": "Mambaを基盤とし、スペクトログラム上で10方向のグローバル依存関係をモデル化する全方向注意メカニズムを導入しました。",
+          "validation": "3つの公開データセットで評価を行い、ベースラインを一貫して上回る性能を示しつつ、線形複雑性を維持しました。",
+          "discussion": "提案手法は性能向上を示しましたが、他の音声分離タスクやリアルタイム処理への適用可能性についての検討が必要です。",
+          "nextReads": [
+            {
+              "label": "Mamba: State-Space Models for Speech (2022)",
+              "url": null
+            },
+            {
+              "label": "Attention Mechanisms in Speech Separation (2023)",
+              "url": null
+            },
+            {
+              "label": "2D Spectrogram Modeling (2022)",
+              "url": null
+            },
+            {
+              "label": "Efficient Speech Separation Techniques (2023)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2601.19017v1",
+          "date": "Jan 26",
+          "title": "A Framework for Evaluating Faithfulness in Explainable AI for Machine Anomalous Sound Detection Using Frequency-Band Perturbation",
+          "titleJa": "機械異常音検出の説明可能AIにおける忠実性評価のためのフレームワーク",
+          "org": "ラフバラー大学",
+          "url": "https://arxiv.org/abs/2601.19017v1",
+          "category": "anomaly",
+          "what": "異常音検出（ASD）モデルにおける説明可能AI（XAI）の忠実性を評価するための新しいフレームワークを提案しています。",
+          "novel": "周波数帯域の除去を通じて、XAI手法がモデルの予測に影響を与える周波数領域を正確に特定できるかを定量的に評価する方法を初めて提供しました。",
+          "method": "Integrated Gradients、Occlusion、Grad-CAM、SmoothGradの4つのXAI手法を用い、周波数帯域のシステマティックな除去を通じてモデルの感度とXAI手法の信頼性を比較しました。",
+          "validation": "提案手法を用いて、XAI手法の信頼性を評価し、Occlusionが最もモデルの感度と一致しており、勾配ベースの手法がスペクトル依存性を正確に捉えられないことを示しました。",
+          "discussion": "提案フレームワークは再現性のあるベンチマークを提供する一方で、他のXAI手法や異なるASDモデルへの適用可能性を検証する必要があります。",
+          "nextReads": [
+            {
+              "label": "Explainable AI for Audio (2021)",
+              "url": null
+            },
+            {
+              "label": "Saliency Maps in Audio Analysis (2022)",
+              "url": null
+            },
+            {
+              "label": "Occlusion-Based XAI Methods (2023)",
+              "url": null
+            },
+            {
+              "label": "Faithfulness in XAI (2022)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音声言語モデル（Audio LLMs）や生成モデルを活用した音声分離・編集検出・強調の統一的フレームワークが注目されている。",
+    "② 空間情報や脳波信号を活用した音源数検出や音声分離技術が進展しており、人工内耳やマルチスピーカーASRへの応用が期待される。",
+    "③ 音楽類似性評価や異常音検出における説明可能AIや事前学習モデルの活用が進み、知覚的整合性や忠実性の向上が図られている。"
+  ]
+}

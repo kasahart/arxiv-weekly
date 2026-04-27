@@ -1,0 +1,282 @@
+{
+  "date": "2026-0313",
+  "generated_at": "2026-03-13T00:00:00+00:00",
+  "total": 8,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.11947v1",
+          "date": "Mar 12",
+          "title": "Resurfacing Paralinguistic Awareness in Large Audio Language Models",
+          "titleJa": "大規模音声言語モデルにおけるパラ言語的認識の復活",
+          "org": "University of Illinois Urbana-Champaign",
+          "url": "https://arxiv.org/abs/2603.11947v1",
+          "category": "foundation",
+          "what": "音声言語モデル（LALMs）において、これまで軽視されてきたパラ言語的手がかりを再び重視し、モデルにこれらを認識する能力を付与するための新しいプロトコルを提案しています。",
+          "novel": "層ごとの分析を通じてパラ言語的層と意味理解層を特定し、選択的な層の微調整と補助的な分類ヘッドを導入することで、効率的かつ効果的にパラ言語的認識能力を向上させました。",
+          "method": "層ごとの分析を基に、選択的層の微調整と補助的な二重レベルの分類ヘッドを組み合わせたパラ言語的強化微調整（PE-FT）プロトコルを提案。",
+          "validation": "全層微調整戦略を上回る性能を示し、提案手法の有効性を実証しました。",
+          "discussion": "提案手法はパラ言語的認識を向上させるが、異なる音声データや状況での一般化能力についてはさらなる検証が必要です。",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Automatic Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing (2022)",
+              "url": "https://arxiv.org/abs/2202.03555"
+            },
+            {
+              "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Self-supervised Learning for Speech and Audio Processing (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.11661v1",
+          "date": "Mar 12",
+          "title": "Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models",
+          "titleJa": "Resonate: 大規模音声言語モデルからのオンラインフィードバックを活用したテキストから音声生成の強化",
+          "org": "Tencent AI Lab",
+          "url": "https://arxiv.org/abs/2603.11661v1",
+          "category": "foundation",
+          "what": "テキストから音声生成（TTA）において、オンライン強化学習を活用し、生成音声の品質と意味的整合性を向上させる新しい手法を提案しています。",
+          "novel": "オンラインのGroup Relative Policy Optimization（GRPO）をTTA生成に適応させ、LALMsから得られる報酬を活用して人間の知覚により一致したスコアリングを実現しました。",
+          "method": "Flow Matchingベースの音声モデルにGRPOアルゴリズムを適応させ、LALMsから得られる報酬を用いてオンライン強化学習を実施。",
+          "validation": "TTA-Benchで新たなSOTAを達成し、音声品質と意味的整合性の両面で優れた性能を実証しました。",
+          "discussion": "オンライン強化学習の適用は成功したが、さらなるスケーラビリティや多様なデータセットでの検証が必要です。",
+          "nextReads": [
+            {
+              "label": "Contrastive Language-Audio Pretraining (CLAP) (2022)",
+              "url": "https://arxiv.org/abs/2211.06687"
+            },
+            {
+              "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Direct Preference Optimization (DPO) (2023)",
+              "url": null
+            },
+            {
+              "label": "Deep Reinforcement Learning for Audio Generation (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.10725v2",
+          "date": "Mar 11",
+          "title": "Towards Robust Speech Deepfake Detection via Human-Inspired Reasoning",
+          "titleJa": "人間の推論に着想を得た頑健な音声ディープフェイク検出の実現に向けて",
+          "org": "Skolkovo Institute of Science and Technology",
+          "url": "https://arxiv.org/abs/2603.10725v2",
+          "category": "foundation",
+          "what": "音声ディープフェイク検出（SDD）の一般化性能と解釈可能性を向上させるために、人間の推論に基づいた新しいフレームワークHIR-SDDを提案しています。",
+          "novel": "LALMsと新たに提案した人手で注釈されたデータセットを活用し、チェーンオブソート推論を組み込むことで、予測の妥当性を説明可能にしました。",
+          "method": "LALMsとチェーンオブソート推論を統合し、音声が正規か偽装かを判断する際の人間らしい理由付けを提供するフレームワークを構築。",
+          "validation": "提案手法は新しい音声ドメインや生成モデルに対しても有効であり、予測の妥当性を示す説明を提供できることを実証しました。",
+          "discussion": "新しい生成モデルや多様な音声データに対するさらなる一般化性能の検証が必要です。",
+          "nextReads": [
+            {
+              "label": "Adversarial Attacks on Automatic Speaker Verification Systems (2020)",
+              "url": null
+            },
+            {
+              "label": "WaveFake: A Data Set to Facilitate Audio Deepfake Detection (2021)",
+              "url": "https://arxiv.org/abs/2111.09284"
+            },
+            {
+              "label": "Detecting Audio Deepfakes with Self-supervised Learning (2022)",
+              "url": null
+            },
+            {
+              "label": "FakeCatcher: Detection of Synthetic Media (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.10175v1",
+          "date": "Mar 10",
+          "title": "Calibration-Reasoning Framework for Descriptive Speech Quality Assessment",
+          "titleJa": "記述的音声品質評価のためのキャリブレーション推論フレームワーク",
+          "org": "École Polytechnique Fédérale de Lausanne (EPFL)",
+          "url": "https://arxiv.org/abs/2603.10175v1",
+          "category": "foundation",
+          "what": "音声品質評価において、平均意見スコア（MOS）を超えた説明可能な評価を目指し、音声の知覚次元を分析する新しいフレームワークを提案しています。",
+          "novel": "音声品質評価を多次元的に行うため、キャリブレーションと強化学習を組み合わせた新しい後処理手法を導入しました。",
+          "method": "キャリブレーション段階でモデルを知覚次元に合わせ、GRPOを用いた強化学習で次元特化型の報酬を活用して精度を向上。",
+          "validation": "QualiSpeechベンチマークで平均PCCスコア0.71を達成し、MOS予測精度を13%向上させる成果を示しました。",
+          "discussion": "提案手法は音声アーティファクトの分類と時間的局在化に優れるが、他のデータセットや実世界での適用可能性についてさらなる検証が必要です。",
+          "nextReads": [
+            {
+              "label": "Mean Opinion Score Prediction Using Deep Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Perceptual Audio Quality Assessment with Neural Networks (2021)",
+              "url": null
+            },
+            {
+              "label": "Group Relative Policy Optimization (GRPO) (2022)",
+              "url": null
+            },
+            {
+              "label": "QualiSpeech: A Benchmark for Multidimensional Speech Quality (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.09853v1",
+          "date": "Mar 10",
+          "title": "SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases",
+          "titleJa": "SCENEBench: 支援技術と産業用途に基づいた音声理解ベンチマーク",
+          "org": "Stanford University",
+          "url": "https://arxiv.org/abs/2603.09853v1",
+          "category": "foundation",
+          "what": "音声認識を超えた音声理解能力を測定するため、4つの実世界のカテゴリに基づく新しいベンチマークスイートSCENEBenchを提案しています。",
+          "novel": "背景音の理解やノイズの位置特定、言語横断的な音声理解など、これまであまり研究されてこなかった分野に焦点を当てた包括的なベンチマークを構築しました。",
+          "method": "合成音声サンプルを用いたタスクと、既存のデータセットから抽出した自然音声サンプルを組み合わせ、モデルの性能とレイテンシを評価。",
+          "validation": "5つの最先端LALMsを評価し、タスクごとに性能のばらつきがあることを確認し、モデル改善の方向性を示しました。",
+          "discussion": "いくつかのタスクでランダムな推測を下回る性能が観察され、モデルの能力向上が必要であることが示唆されました。",
+          "nextReads": [
+            {
+              "label": "AudioSet: An ontology and human-labeled dataset for audio events (2017)",
+              "url": null
+            },
+            {
+              "label": "Learning Sound Event Representations (2020)",
+              "url": null
+            },
+            {
+              "label": "Large Audio Language Models (LALMs): A Survey (2022)",
+              "url": null
+            },
+            {
+              "label": "Benchmarking Audio Understanding Tasks (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.09232v1",
+          "date": "Mar 10",
+          "title": "How Contrastive Decoding Enhances Large Audio Language Models?",
+          "titleJa": "コントラストデコーディングは大規模音声言語モデルをどのように強化するのか？",
+          "org": "National Taiwan University",
+          "url": "https://arxiv.org/abs/2603.09232v1",
+          "category": "foundation",
+          "what": "① コントラストデコーディング（CD）が大規模音声言語モデル（LALMs）を強化する仕組みを解明し、4つの異なるCD戦略を評価した研究。",
+          "novel": "② CDの効果をモデルごとに比較し、エラー修正のメカニズムを明らかにした点が新規性。特に、エラーパターンを可視化するための遷移行列フレームワークを提案した。",
+          "method": "③ Audio-Aware DecodingとAudio Contrastive Decodingを中心に、エラー修正能力を評価し、モデルのエラー傾向を遷移行列で分析。",
+          "validation": "④ 多様なLALMアーキテクチャを用いて、CDの有効性を実験的に検証し、エラー修正の成功と失敗のパターンを特定。",
+          "discussion": "⑤ CDは不確実性駆動の推測や音声不在の誤認を修正するが、論理的な誤りや確信を持った誤認には効果が限定的である。",
+          "nextReads": [
+            {
+              "label": "Contrastive Decoding for Language Models (2022)",
+              "url": "https://arxiv.org/abs/2210.15000"
+            },
+            {
+              "label": "Large Audio Language Models: A Survey (2023)",
+              "url": null
+            },
+            {
+              "label": "Error Patterns in Audio Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Improving Audio Decoding with Contrastive Learning (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.05852v1",
+          "date": "Mar 06",
+          "title": "How Well Do Current Speech Deepfake Detection Methods Generalize to the Real World?",
+          "titleJa": "現在の音声ディープフェイク検出手法は現実世界にどれだけ一般化できるか？",
+          "org": "National University of Defense Technology",
+          "url": "https://arxiv.org/abs/2603.05852v1",
+          "category": "foundation",
+          "what": "① 音声ディープフェイク検出手法の現実世界での一般化能力を評価するため、14言語、7つの主要プラットフォーム、180人の公人を含む新しいデータセットML-ITWを提案。",
+          "novel": "② 現実世界の多様な音響条件下での検出性能の低下を明らかにし、既存手法の一般化能力の限界を示した点が新規性。",
+          "method": "③ エンドツーエンドニューラルモデル、自己教師あり特徴ベース手法（SSL）、音声大規模言語モデル（Audio LLMs）の3つの検出パラダイムを比較。",
+          "validation": "④ ML-ITWデータセットを用いて、現実世界の条件下での検出性能を評価し、言語やプラットフォームによる性能のばらつきを実証。",
+          "discussion": "⑤ 現実世界での検出性能向上には、より代表的な評価ベンチマークと新しい手法の開発が必要であると指摘。",
+          "nextReads": [
+            {
+              "label": "Deepfake Detection in Audio (2022)",
+              "url": null
+            },
+            {
+              "label": "Multilingual Audio Datasets for AI (2023)",
+              "url": null
+            },
+            {
+              "label": "Robustness of Deepfake Detection Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio LLMs: Challenges and Opportunities (2023)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2603.09187v1",
+          "date": "Mar 10",
+          "title": "The Costs of Reproducibility in Music Separation Research: a Replication of Band-Split RNN",
+          "titleJa": "音楽分離研究における再現性のコスト：Band-Split RNNの再現実験",
+          "org": "Université de Lorraine",
+          "url": "https://arxiv.org/abs/2603.09187v1",
+          "category": "separation",
+          "what": "① Band-Split RNN (BSRNN) モデルの再現性を検証し、音楽分離研究における再現性の課題を明らかにした研究。",
+          "novel": "② 元のBSRNNモデルを再現できなかった結果を踏まえ、改良版モデルを提案し、元のモデルを上回る性能を達成した点が新規性。",
+          "method": "③ 元のBSRNNモデルを再現するための試行錯誤を行い、設計や学習パイプラインの改善点を特定。最終的に改良版BSRNNを開発。",
+          "validation": "④ 公開データセットを用いて改良版BSRNNの性能を評価し、元のモデルを大幅に上回る結果を報告。",
+          "discussion": "⑤ 再現性の課題として、完全なコードの公開がないことが研究の効率化を妨げている点を指摘。再現可能な研究の重要性を強調。",
+          "nextReads": [
+            {
+              "label": "Band-Split RNN for Music Separation (2020)",
+              "url": null
+            },
+            {
+              "label": "Reproducibility in Machine Learning Research (2021)",
+              "url": null
+            },
+            {
+              "label": "Advances in Music Source Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Transparent Practices in AI Research (2023)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音声言語モデルの性能向上に向け、パラ言語的手がかりの活用やコントラストデコーディングの効果を解明する研究が進展しています。",
+    "② 音声生成や品質評価では、オンライン強化学習や新しいフレームワークを活用し、生成音声の品質向上や説明可能性の向上が注目されています。",
+    "③ 音声ディープフェイク検出や音声理解の分野では、実世界での一般化性能や新しいベンチマークの提案が焦点となっています。"
+  ]
+}

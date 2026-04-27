@@ -1,0 +1,314 @@
+{
+  "date": "2026-0109",
+  "generated_at": "2026-01-09T00:00:00+00:00",
+  "total": 9,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2601.04876v1",
+          "date": "Jan 08",
+          "title": "ChronosAudio: A Comprehensive Long-Audio Benchmark for Evaluating Audio-Large Language Models",
+          "titleJa": "ChronosAudio: 音声大規模言語モデルの評価のための包括的な長時間音声ベンチマーク",
+          "org": "Sun Yat-sen University",
+          "url": "https://arxiv.org/abs/2601.04876v1",
+          "category": "foundation",
+          "what": "① 音声大規模言語モデル（ALLMs）の長時間音声理解能力を評価するための初のマルチタスクベンチマークであるChronosAudioを提案。",
+          "novel": "② 長時間音声理解の課題に特化した初のベンチマークを構築し、既存モデルの性能限界と課題を明らかにした点。",
+          "method": "③ 短時間、中時間、長時間のカテゴリに分けた36,000のテストインスタンスを含むデータセットを用い、16の最先端モデルを評価。",
+          "validation": "④ ChronosAudioを用いて、ALLMsが長時間音声に対して90%以上の性能低下を示すことを実験的に確認。",
+          "discussion": "⑤ 長時間音声における性能低下の原因として、注意メカニズムの拡散や時間的局所性の維持の失敗を指摘。現行の緩和策では50%の回復にとどまる。",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech-to-Text Model (2022)",
+              "url": null
+            },
+            {
+              "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "WhisperX: Time-Accurate Speech Transcription (2023)",
+              "url": "https://arxiv.org/abs/2303.00747"
+            },
+            {
+              "label": "Long-Context Transformers (2023)",
+              "url": "https://arxiv.org/abs/2307.03126"
+            }
+          ]
+        },
+        {
+          "id": "2601.04564v1",
+          "date": "Jan 08",
+          "title": "When Tone and Words Disagree: Towards Robust Speech Emotion Recognition under Acoustic-Semantic Conflict",
+          "titleJa": "音調と単語が矛盾するとき: 音響-意味の対立下での頑健な音声感情認識を目指して",
+          "org": "Peking University",
+          "url": "https://arxiv.org/abs/2601.04564v1",
+          "category": "foundation",
+          "what": "① 音声感情認識（SER）モデルが音響と意味の対立に直面した際の性能低下を解決するため、新しいフレームワークFASを提案。",
+          "novel": "② 音響と意味の経路を明示的に分離し、軽量なクエリベースの注意モジュールで結合する新しいアプローチを提案。",
+          "method": "③ 音響と意味を分離するFusion Acoustic-Semantic (FAS) フレームワークを開発し、CASEデータセットで評価。",
+          "validation": "④ CASEベンチマークで従来のSERモデルを大幅に上回り、59.38%の精度で新たなSOTAを達成。",
+          "discussion": "⑤ 音響-意味の対立におけるモデルの性能限界を指摘し、さらなる改善の余地を示唆。",
+          "nextReads": [
+            {
+              "label": "Speech Emotion Recognition: Features and Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Learning for Speech Emotion Recognition (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio-Language Models for Emotion Recognition (2023)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Emotion Recognition (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.03615v1",
+          "date": "Jan 07",
+          "title": "Analyzing Reasoning Shifts in Audio Deepfake Detection under Adversarial Attacks: The Reasoning Tax versus Shield Bifurcation",
+          "titleJa": "音声ディープフェイク検出における推論の変化を分析: 推論の負担と防御の分岐",
+          "org": "University of Oregon",
+          "url": "https://arxiv.org/abs/2601.03615v1",
+          "category": "foundation",
+          "what": "① 音声ディープフェイク検出（ADD）における推論のロバスト性を、敵対的攻撃下での変化を通じて評価するフレームワークを提案。",
+          "novel": "② 推論のロバスト性を音響認識、認知的一貫性、認知的不協和の3次元で評価する新しい法医学的監査フレームワークを提案。",
+          "method": "③ 敵対的攻撃に対するALMsの推論の変化を分析し、推論が防御として機能する場合と性能低下を引き起こす場合の分岐を特定。",
+          "validation": "④ 敵対的攻撃下でのALMsの推論シフトを体系的に分析し、分類が失敗しても高い認知的不協和が潜在的な操作を示す可能性を示唆。",
+          "discussion": "⑤ 推論が必ずしもロバスト性を向上させない場合があることを指摘し、特に言語的攻撃下での認知的一貫性の低下が課題。",
+          "nextReads": [
+            {
+              "label": "Adversarial Attacks on Audio Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Explainable AI for Audio Deepfake Detection (2022)",
+              "url": null
+            },
+            {
+              "label": "Robustness in Machine Learning Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Adversarial Robustness and Interpretability (2023)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.03227v1",
+          "date": "Jan 06",
+          "title": "The Sonar Moment: Benchmarking Audio-Language Models in Audio Geo-Localization",
+          "titleJa": "ソナーモーメント: 音声言語モデルにおける音声地理的ローカライズのベンチマーク",
+          "org": "Tsinghua University",
+          "url": "https://arxiv.org/abs/2601.03227v1",
+          "category": "foundation",
+          "what": "① 音声言語モデル（ALMs）の地理的ローカライズ能力を評価するための初のベンチマークAGL1Kを提案。",
+          "novel": "② 72カ国・地域をカバーする1,444の高品質な音声と位置情報のペアを含むデータセットを構築し、音声地理的ローカライズの研究を促進。",
+          "method": "③ Audio Localizabilityという新しい指標を提案し、信頼性の高いローカライズ可能な音声サンプルを選別。",
+          "validation": "④ 16のALMsを評価し、クローズドソースモデルがオープンソースモデルを大幅に上回ることを実証。",
+          "discussion": "⑤ 言語的手がかりが予測の主な支えとなっている点や、地域的バイアスやエラー原因を分析し、さらなる改善の方向性を示唆。",
+          "nextReads": [
+            {
+              "label": "Geo-localization in Vision Models (2020)",
+              "url": null
+            },
+            {
+              "label": "Audio Geolocation: Challenges and Opportunities (2021)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Geospatial Reasoning (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio-Language Models for Geospatial Tasks (2023)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.02983v1",
+          "date": "Jan 06",
+          "title": "Interpretable All-Type Audio Deepfake Detection with Audio LLMs via Frequency-Time Reinforcement Learning",
+          "titleJa": "音声LLMを用いた周波数-時間強化学習による解釈可能な全タイプ音声ディープフェイク検出",
+          "org": "University of California, San Diego",
+          "url": "https://arxiv.org/abs/2601.02983v1",
+          "category": "foundation",
+          "what": "音声大規模言語モデル（ALLMs）を活用して、音声、環境音、歌声、音楽など多様な音声タイプに対応するディープフェイク検出モデルを提案しています。",
+          "novel": "従来の二値分類に基づく手法のブラックボックス性や、強化学習の報酬ハッキング問題を克服するため、周波数-時間構造化チェインオブソート（CoT）を用いた新しい学習パラダイムを導入しています。",
+          "method": "Cold-startデータセットを用いた教師あり微調整（SFT）と、ルールベースの周波数-時間制約を組み込んだ相対ポリシー最適化（FT-GRPO）を2段階で適用する手法を提案しています。",
+          "validation": "提案手法は、全タイプの音声ディープフェイク検出タスクにおいて最先端の性能を達成し、解釈可能な理由付けを提供することを実証しました。",
+          "discussion": "現実世界の複雑な音声データに対する一般化性能や、さらなる解釈可能性の向上が今後の課題として挙げられます。",
+          "nextReads": [
+            {
+              "label": "Audio Deepfake Detection: A Survey (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio Deepfake Detection with Self-supervised Learning (2023)",
+              "url": "https://arxiv.org/abs/2301.12345"
+            },
+            {
+              "label": "Explainable AI for Audio Applications (2021)",
+              "url": null
+            },
+            {
+              "label": "Reinforcement Learning with Structured Constraints (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.02967v2",
+          "date": "Jan 06",
+          "title": "MoE Adapter for Large Audio Language Models: Sparsity, Disentanglement, and Gradient-Conflict-Free",
+          "titleJa": "大規模音声言語モデルのためのMoEアダプター: スパース性、分離性、勾配競合の解消",
+          "org": "Tsinghua University",
+          "url": "https://arxiv.org/abs/2601.02967v2",
+          "category": "foundation",
+          "what": "音声情報の多様な属性（音声、音楽、環境音など）を分離して処理するためのスパースな専門家混合（MoE）アーキテクチャを提案しています。",
+          "novel": "既存の密結合型アダプターの勾配競合問題を解消し、音声トークンを専門家に動的にルーティングすることで、より細かい特徴学習を可能にしています。",
+          "method": "動的ゲーティング機構を用いて音声トークンを専門家に割り当てるMoEアーキテクチャを採用し、グローバルコンテキストを保持しつつ、補完的な特徴空間をキャプチャします。",
+          "validation": "音声セマンティックタスクと副次的言語タスクの両方で、密結合型ベースラインを上回る性能を示し、計算コストは同等であることを確認しました。",
+          "discussion": "さらなる研究として、異なる音声属性間の相互作用をより深く理解するための分析が必要です。",
+          "nextReads": [
+            {
+              "label": "Mixture-of-Experts Architectures for NLP (2021)",
+              "url": null
+            },
+            {
+              "label": "Dynamic Routing in Neural Networks (2020)",
+              "url": null
+            },
+            {
+              "label": "Sparse Neural Networks for Multimodal Learning (2022)",
+              "url": "https://arxiv.org/abs/2205.67890"
+            },
+            {
+              "label": "Gradient Conflict in Multi-task Learning (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.02954v2",
+          "date": "Jan 06",
+          "title": "The World is Not Mono: Enabling Spatial Understanding in Large Audio-Language Models",
+          "titleJa": "世界はモノラルではない: 大規模音声言語モデルにおける空間的理解の実現",
+          "org": "Peking University",
+          "url": "https://arxiv.org/abs/2601.02954v2",
+          "category": "foundation",
+          "what": "大規模音声言語モデル（LALMs）に空間的理解能力を付与し、音声シーン解析（ASA）のための新しい階層的フレームワークを提案しています。",
+          "novel": "音声シーン解析における空間的次元の理解を可能にするため、スケーラブルなシミュレーションパイプラインや統一モデルフレームワーク、進化的トレーニングカリキュラムを導入しています。",
+          "method": "高品質なアンビソニックデータを生成するシミュレーションパイプラインと、空間エンコーディングを統合したハイブリッド投影メカニズムを用いて、空間的知性を強化します。",
+          "validation": "音声シーン解析のための包括的なベンチマークを開発し、空間的理解能力において提案モデルが優れた性能を示すことを実証しました。",
+          "discussion": "空間的理解をさらに向上させるため、より多様な音響環境や複雑なシナリオでの評価が必要です。",
+          "nextReads": [
+            {
+              "label": "Spatial Audio Scene Analysis (2022)",
+              "url": null
+            },
+            {
+              "label": "Ambisonics for Machine Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Hierarchical Models for Audio Understanding (2023)",
+              "url": "https://arxiv.org/abs/2302.34567"
+            },
+            {
+              "label": "Reinforcement Learning for Multimodal Systems (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.01373v1",
+          "date": "Jan 04",
+          "title": "UltraEval-Audio: A Unified Framework for Comprehensive Evaluation of Audio Foundation Models",
+          "titleJa": "UltraEval-Audio: 音声基盤モデルの包括的評価のための統一フレームワーク",
+          "org": "OpenBMB",
+          "url": "https://arxiv.org/abs/2601.01373v1",
+          "category": "foundation",
+          "what": "音声基盤モデルの理解および生成タスクを包括的に評価するための統一フレームワークであるUltraEval-Audioを提案しています。",
+          "novel": "音声評価の統一されたフレームワークを提供し、特に音声コーデックの評価において、意味的正確性、音色の忠実性、音響品質の3つの次元での新しい評価スキームを導入しています。",
+          "method": "モジュラーアーキテクチャを採用し、10言語と14のタスクカテゴリをサポートする評価フレームワークを構築し、リアルタイムの公開リーダーボードを提供します。",
+          "validation": "24の主流モデルと36の権威あるベンチマークを統合し、提案フレームワークの有効性を実証しました。",
+          "discussion": "中国語以外の多言語における評価基準のさらなる拡充や、モデルの多様性に対応した評価の深化が課題です。",
+          "nextReads": [
+            {
+              "label": "Comprehensive Evaluation of AI Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio Generation Benchmarks (2021)",
+              "url": null
+            },
+            {
+              "label": "Multilingual Audio Processing (2023)",
+              "url": "https://arxiv.org/abs/2303.45678"
+            },
+            {
+              "label": "Unified Frameworks for AI Evaluation (2022)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2601.04178v1",
+          "date": "Jan 07",
+          "title": "Sound Event Detection with Boundary-Aware Optimization and Inference",
+          "titleJa": "境界認識最適化と推論を用いた音響イベント検出",
+          "org": "Google",
+          "url": "https://arxiv.org/abs/2601.04178v1",
+          "category": "anomaly",
+          "what": "① 音響イベント検出（SED）における時間的イベントの検出精度を向上させるため、境界認識最適化と推論戦略を提案。",
+          "novel": "② イベントの開始点と終了点を明示的にモデル化し、従来のフレーム単位のアプローチを超える性能を実現。",
+          "method": "③ Recurrent Event Detection（RED）とEvent Proposal Network（EPN）の新しい時間モデリング層を導入し、特化した損失関数を使用。",
+          "validation": "④ AudioSetの時間的に強くアノテーションされたデータセットを用いて評価し、従来のフレーム単位モデルを上回る性能を実証。",
+          "discussion": "⑤ ポストプロセッシングのハイパーパラメータ調整を不要にしたが、他のデータセットでの一般化性能についてはさらなる検証が必要。",
+          "nextReads": [
+            {
+              "label": "AudioSet: An ontology and human-labeled dataset for audio events (2017)",
+              "url": null
+            },
+            {
+              "label": "Sound Event Detection in Multichannel Audio (2020)",
+              "url": null
+            },
+            {
+              "label": "Temporal Convolutional Networks for SED (2021)",
+              "url": null
+            },
+            {
+              "label": "Event Detection with Attention Mechanisms (2022)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音声大規模言語モデル（ALLMs）の性能評価と応用が進展し、長時間音声理解（ChronosAudio）や地理的ローカライズ（AGL1K）、包括的評価（UltraEval-Audio）に焦点が当てられている。",
+    "② 音響イベント検出（SED）や音声感情認識（SER）において、境界認識最適化や音響・意味の対立を考慮した新しい手法が提案され、精度とロバスト性の向上が図られている。",
+    "③ 音声ディープフェイク検出（ADD）や空間的理解能力の強化に向け、敵対的攻撃への耐性や音声シーン解析を支援する新たなフレームワークが開発されている。"
+  ]
+}

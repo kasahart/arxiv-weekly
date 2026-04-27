@@ -1,0 +1,385 @@
+{
+  "date": "2026-0403",
+  "generated_at": "2026-04-03T00:00:00+00:00",
+  "total": 11,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.29263v1",
+          "date": "Mar 31",
+          "title": "Audio Hallucination Attacks: Probing the Reliability of Large Audio Language Models",
+          "titleJa": "音声幻覚攻撃: 大規模音声言語モデルの信頼性の検証",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2603.29263v1",
+          "category": "foundation",
+          "what": "大規模音声言語モデル（LALMs）の信頼性を評価するために、Audio Hallucination Attacks（AHA）と呼ばれる攻撃スイートを提案しています。",
+          "novel": "AHA-Evalという6.5KのQAペアからなる攻撃スイートを開発し、LALMsが音声入力に基づいて応答を生成しているかを検証する新しい手法を提案しています。",
+          "method": "質問構造を利用したクエリベースの攻撃と、非実在のイベントを記述する合成音声を注入する音声ベースの攻撃という2つの攻撃手法を組み合わせて評価を行いました。",
+          "validation": "Audio Flamingo 3やGemini 3 ProといったSOTA LALMsを評価し、それぞれ95.35%と79.65%の高い攻撃成功率を記録しました。",
+          "discussion": "提案手法はLALMsの信頼性に課題があることを示しましたが、AHA-Guardデータセットを用いることで攻撃成功率を最大49%削減できる可能性を示唆しています。",
+          "nextReads": [
+            {
+              "label": "Audio-Language Models: A Survey (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio-Visual Scene-Aware Dialog (2021)",
+              "url": "https://arxiv.org/abs/2102.01786"
+            },
+            {
+              "label": "Adversarial Attacks on Speech Recognition Systems (2020)",
+              "url": "https://arxiv.org/abs/2007.03418"
+            },
+            {
+              "label": "Robustness of Speech Recognition Models to Adversarial Attacks (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.28378v1",
+          "date": "Mar 30",
+          "title": "Membership Inference Attacks against Large Audio Language Models",
+          "titleJa": "大規模音声言語モデルに対するメンバーシップ推論攻撃",
+          "org": "National Taiwan University",
+          "url": "https://arxiv.org/abs/2603.28378v1",
+          "category": "foundation",
+          "what": "大規模音声言語モデル（LALMs）に対するメンバーシップ推論攻撃（MIA）を初めて体系的に評価しました。音声データの特性を考慮した新しい評価基準を提案しています。",
+          "novel": "音声データ特有の非セマンティック情報がMIAの性能に与える影響を分析し、分布の不一致を排除した信頼性のある評価基準を確立しました。",
+          "method": "テキスト、スペクトル、韻律的特徴を用いたマルチモーダルなブラインドベースラインを構築し、分布の一致性を考慮したデータセットでMIAを評価しました。",
+          "validation": "複数のMIA手法を比較し、分布一致データセットでの評価が信頼性の高い結果をもたらすことを実証しました。",
+          "discussion": "LALMの記憶が話者の音声アイデンティティとテキストの結びつきに起因することを示しましたが、さらなる研究が必要です。",
+          "nextReads": [
+            {
+              "label": "Membership Inference Attacks on Neural Networks (2017)",
+              "url": null
+            },
+            {
+              "label": "Auditing Deep Learning Models for Privacy Leaks (2019)",
+              "url": null
+            },
+            {
+              "label": "Privacy Risks in Machine Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Speech Data Privacy in AI Models (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2604.19782v1",
+          "date": "Mar 30",
+          "title": "KoALa-Bench: Evaluating Large Audio Language Models on Korean Speech Understanding and Faithfulness",
+          "titleJa": "KoALa-Bench: 韓国語音声理解と忠実性評価のための大規模音声言語モデルのベンチマーク",
+          "org": "KAIST",
+          "url": "https://arxiv.org/abs/2604.19782v1",
+          "category": "foundation",
+          "what": "韓国語音声理解と忠実性を評価するための包括的なベンチマークKoALa-Benchを提案しました。6つのタスクを通じて、LALMsの性能を評価します。",
+          "novel": "韓国語に特化した初の包括的な音声理解ベンチマークを提供し、韓国の文化的要素や大学入試問題を含む独自のデータセットを構築しました。",
+          "method": "音声認識、翻訳、質問応答などの基本的な音声理解タスクと、音声の忠実性を評価するタスクを組み合わせたベンチマークを設計しました。",
+          "validation": "6つのモデルを用いて広範な実験を行い、白箱および黒箱モデルの性能を比較しました。",
+          "discussion": "韓国語以外の言語への適用可能性や、さらなるタスクの追加が今後の課題です。",
+          "nextReads": [
+            {
+              "label": "Multilingual Speech Understanding Benchmarks (2022)",
+              "url": null
+            },
+            {
+              "label": "Evaluating LALMs on Non-English Languages (2021)",
+              "url": null
+            },
+            {
+              "label": "Speech Faithfulness in Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Korean NLP Benchmarks (2020)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.28021v2",
+          "date": "Mar 30",
+          "title": "Audio Language Model for Deepfake Detection Grounded in Acoustic Chain-of-Thought",
+          "titleJa": "音響的思考の連鎖に基づくディープフェイク検出のための音声言語モデル",
+          "org": "University of Illinois Urbana-Champaign",
+          "url": "https://arxiv.org/abs/2603.28021v2",
+          "category": "foundation",
+          "what": "ディープフェイク音声検出において、解釈可能な推論と文脈に基づいた説明を提供する新しい音声言語モデルCoLMbo-DFを提案しました。",
+          "novel": "低レベルの音響特徴を明示的にモデルに組み込むことで、解釈可能性を向上させ、既存の音声言語モデルを上回る性能を達成しました。",
+          "method": "低レベルの音響特徴をテキスト表現としてモデルのプロンプトに直接注入し、構造化された音響的証拠を活用した推論を可能にしました。",
+          "validation": "新規データセットを用いた実験で、既存の音声言語モデルを上回るディープフェイク検出精度を確認しました。",
+          "discussion": "モデルのスケールが小さいため、さらなるスケーラビリティの向上が課題です。",
+          "nextReads": [
+            {
+              "label": "Explainable AI for Deepfake Detection (2021)",
+              "url": null
+            },
+            {
+              "label": "Acoustic Features in Speech Deepfake Detection (2022)",
+              "url": null
+            },
+            {
+              "label": "Chain-of-Thought Reasoning in AI Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Interpretable Machine Learning for Audio (2020)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.27667v1",
+          "date": "Mar 29",
+          "title": "EvA: An Evidence-First Audio Understanding Paradigm for LALMs",
+          "titleJa": "EvA: LALMsのための証拠優先型音声理解パラダイム",
+          "org": "Tsinghua University",
+          "url": "https://arxiv.org/abs/2603.27667v1",
+          "category": "foundation",
+          "what": "大規模音声言語モデル（LALMs）が複雑な音響シーンを理解する際の課題を解決するため、証拠優先型の音声理解パラダイムEvAを提案しました。",
+          "novel": "音響的証拠を保持しながら推論を行う新しいアーキテクチャを提案し、既存のオープンソースモデルを上回る性能を達成しました。",
+          "method": "WhisperとCED-Baseを非圧縮の時間整列型融合で組み合わせ、マルチスケールの音響的手がかりを保持しつつ推論を行うデュアルパスアーキテクチャを採用しました。",
+          "validation": "約54,000のイベント順序付きキャプションと約50万のQAペアを含む大規模データセットを用い、複数のベンチマークで最高性能を達成しました。",
+          "discussion": "証拠優先型アプローチの有効性を示しましたが、さらなるスケールアップや他のタスクへの適用が課題です。",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": null
+            },
+            {
+              "label": "CED-Base: Multi-scale Acoustic Feature Extraction (2021)",
+              "url": null
+            },
+            {
+              "label": "Zero-Shot Learning in Audio Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Evidence Bottleneck in AI Models (2022)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2604.01120v2",
+          "date": "Apr 01",
+          "title": "Diff-VS: Efficient Audio-Aware Diffusion U-Net for Vocals Separation",
+          "titleJa": "Diff-VS: ボーカル分離のための効率的な音声対応型拡散U-Net",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2604.01120v2",
+          "category": "separation",
+          "what": "拡散モデルを用いて音楽ソース分離の性能を向上させる新しいボーカル分離モデルを提案しています。",
+          "novel": "Elucidated Diffusion Model (EDM) フレームワークを基盤とし、音楽に特化した設計を取り入れた改良型U-Netアーキテクチャを採用することで、従来の生成モデルを超える性能を達成しています。",
+          "method": "短時間フーリエ変換スペクトログラムを処理し、音楽情報に基づいた設計を取り入れたU-Netアーキテクチャを使用して、生成的なボーカル分離を実現しています。",
+          "validation": "客観的指標で識別的ベースラインに匹敵する性能を示し、代理主観的指標でSOTAシステムに匹敵する知覚品質を達成しました。",
+          "discussion": "生成的アプローチの可能性を示した一方で、現実の音楽分離タスクにおけるさらなる検証が必要です。",
+          "nextReads": [
+            {
+              "label": "Singing Voice Separation with Deep U-Net Convolutional Networks (2017)",
+              "url": null
+            },
+            {
+              "label": "Music Source Separation with Deep Learning: A Survey (2021)",
+              "url": "https://arxiv.org/abs/2109.05472"
+            },
+            {
+              "label": "DiffWave: A Versatile Diffusion Model for Audio Synthesis (2021)",
+              "url": "https://arxiv.org/abs/2009.09761"
+            },
+            {
+              "label": "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition (2019)",
+              "url": "https://arxiv.org/abs/1904.08779"
+            }
+          ]
+        },
+        {
+          "id": "2603.29097v1",
+          "date": "Mar 31",
+          "title": "Asymmetric Encoder-Decoder Based on Time-Frequency Correlation for Speech Separation",
+          "titleJa": "音声分離のための時間周波数相関に基づく非対称エンコーダ-デコーダ",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2603.29097v1",
+          "category": "separation",
+          "what": "現実的な音響環境での音声分離の課題を解決するため、非対称エンコーダ-デコーダフレームワークSR-CorrNetを提案しています。",
+          "novel": "時間周波数（TF）領域の分離-再構築（SepRe）戦略と相関に基づくフィルタ推定を組み合わせ、従来のモデルを超える性能を実現しました。",
+          "method": "エンコーダで混合観測から粗い分離を行い、デコーダで段階的に話者識別可能な特徴を再構築するアーキテクチャを採用し、動的分割モジュールを統合しました。",
+          "validation": "WSJ0-2/3/4/5Mix、WHAMR!、LibriCSSといったデータセットで、無響、騒音-残響、実録音条件下での音声分離性能を一貫して向上させました。",
+          "discussion": "提案手法は有効性を示しましたが、計算コストや他の音声分離タスクへの適用可能性が課題として残ります。",
+          "nextReads": [
+            {
+              "label": "Dual-Path RNN: Efficient Long Sequence Modeling for Time-Domain Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/1910.06379"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation (2017)",
+              "url": null
+            },
+            {
+              "label": "Multi-Channel Speech Separation with Deep Attractor Network (2018)",
+              "url": "https://arxiv.org/abs/1804.11266"
+            }
+          ]
+        },
+        {
+          "id": "2603.28757v1",
+          "date": "Mar 30",
+          "title": "SonoWorld: From One Image to a 3D Audio-Visual Scene",
+          "titleJa": "SonoWorld: 1枚の画像から3Dオーディオビジュアルシーンを生成",
+          "org": "University of Maryland",
+          "url": "https://arxiv.org/abs/2603.28757v1",
+          "category": "separation",
+          "what": "1枚の画像から360°パノラマを生成し、ナビゲート可能な3Dシーンを構築し、空間オーディオをレンダリングするフレームワークSonoWorldを提案しています。この手法により、視覚と音響が統合された没入型の体験を提供します。",
+          "novel": "画像から3Dオーディオビジュアルシーンを生成する新しいタスクImage2AVSceneを提案し、初めてこの課題に取り組むフレームワークを開発しました。シーンの幾何学と意味に整合した空間オーディオを生成する点が新規性です。",
+          "method": "画像を360°パノラマに変換し、3Dシーンを構築、その中に言語ガイド付きの音源を配置し、空間オーディオをレンダリングするパイプラインを採用しています。",
+          "validation": "新たに作成した実世界のデータセットとユーザースタディを用いて、定量的評価を実施し、有効性を確認しました。",
+          "discussion": "さらなる改良の余地として、異なる環境やシナリオでの適用性や、計算コストの削減が課題として挙げられます。",
+          "nextReads": [
+            {
+              "label": "Neural Scene Representations for Audio-Visual Synthesis (2022)",
+              "url": null
+            },
+            {
+              "label": "3D Scene Understanding with Audio-Visual Cues (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio-Visual Navigation in 3D Environments (2020)",
+              "url": null
+            },
+            {
+              "label": "360° Image to 3D Scene Reconstruction (2023)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.26113v1",
+          "date": "Mar 27",
+          "title": "Cinematic Audio Source Separation Using Visual Cues",
+          "titleJa": "視覚的手がかりを用いた映画音声ソース分離",
+          "org": "Google",
+          "url": "https://arxiv.org/abs/2603.26113v1",
+          "category": "separation",
+          "what": "① 映画の音声を音声、音楽、効果音に分離するCinematic Audio Source Separation (CASS)において、視覚的手がかりを活用する新しいフレームワークを提案しています。この手法は、映画の視覚的コンテキストを利用して分離の質を向上させることを目的としています。",
+          "novel": "② 従来の音声のみを用いたCASS手法と異なり、視覚情報を統合することで、映画の音声分離の精度を向上させる点が新規性です。また、合成データを用いたトレーニングで実世界の映画音声にも適用可能な汎化性能を実現しています。",
+          "method": "③ 条件付き生成モデリング（conditional flow matching）を用いてマルチモーダルな音声ソース分離を実現しています。また、合成データを生成するパイプラインを開発し、音声と映像のペアを作成して学習に利用しています。",
+          "validation": "④ 合成データ、実世界の映画データ、および音声のみのCASSベンチマークで評価を行い、提案手法が高い性能を示すことを確認しました。",
+          "discussion": "⑤ 提案手法は合成データで学習しているため、実世界のデータにおけるさらなる検証が必要です。また、視覚情報が乏しいシーンでの性能低下が課題となる可能性があります。",
+          "nextReads": [
+            {
+              "label": "Visual Sound Separation (2020)",
+              "url": "https://arxiv.org/abs/2002.07878"
+            },
+            {
+              "label": "Audio-Visual Scene Analysis with Self-Supervised Multisensory Features (2020)",
+              "url": "https://arxiv.org/abs/2006.09661"
+            },
+            {
+              "label": "Deep Audio Prior for Audio Source Separation (2021)",
+              "url": "https://arxiv.org/abs/2106.07541"
+            },
+            {
+              "label": "Looking to Listen at the Cocktail Party (2018)",
+              "url": "https://arxiv.org/abs/1804.03619"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2604.01155v1",
+          "date": "Apr 01",
+          "title": "FineLAP: Taming Heterogeneous Supervision for Fine-grained Language-Audio Pretraining",
+          "titleJa": "FineLAP: 微細な言語-音声事前学習のための異種監督の制御",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2604.01155v1",
+          "category": "anomaly",
+          "what": "CLAPのような音声と言語のコントラスト事前学習モデルがクリップレベルの理解に優れる一方で、フレームレベルのタスクに弱い問題を解決するため、FineLAPという新しい学習パラダイムを提案しています。",
+          "novel": "クリップレベルとフレームレベルの両方のデータを活用するための二重ストリームシグモイド損失とクラスターベースのサンプリング戦略を導入し、さらに大規模な合成データセットFineLAP-100kを構築してデータ不足問題を緩和しています。",
+          "method": "自己教師付きエンコーダの上にデカップルされた音声プロジェクタを使用し、グローバルな意味とローカルな詳細を同時に捉える設計を採用しています。",
+          "validation": "複数の音声理解タスク（検索、分類、音声イベント検出、テキストから音声へのグラウンディング）でSOTA性能を達成し、アブレーション研究により粗粒度と微粒度のアラインメントが相互に有益であることを示しました。",
+          "discussion": "提案手法は有望ですが、実際のデータセットでのさらなる検証や、異なる音声データ分布への適用可能性が課題として残ります。",
+          "nextReads": [
+            {
+              "label": "CLAP: Learning Audio-Text Embeddings (2022)",
+              "url": "https://arxiv.org/abs/2206.04769"
+            },
+            {
+              "label": "AudioCLIP: Extending CLIP to Audio (2021)",
+              "url": "https://arxiv.org/abs/2106.13043"
+            },
+            {
+              "label": "Learning Audio Representations via Masked Contrastive Predictive Coding (2021)",
+              "url": "https://arxiv.org/abs/2106.12096"
+            },
+            {
+              "label": "Wav2CLIP: Learning Audio Representations from Textual Annotations (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2603.29956v1",
+          "date": "Mar 31",
+          "title": "An Information-Theoretic Method for Dynamic System Identification With Output-Only Damping Estimation",
+          "titleJa": "出力のみの減衰推定による動的システム同定のための情報理論的手法",
+          "org": "University of Bath",
+          "url": "https://arxiv.org/abs/2603.29956v1",
+          "category": "anomaly",
+          "what": "機械システムの減衰推定精度を向上させるために、情報理論的手法を用いた新しいシステム同定手法を提案しています。",
+          "novel": "ShannonエントロピーとKullback-Leiblerダイバージェンスを活用し、振動レベルをリアルタイムで監視し、しきい値を超えた場合に即座に警告を出す新しいアプローチを提案しています。",
+          "method": "振動ベースの測定値を情報理論的指標で解析し、最適なモデルを選択することで、正確な警告時間を計算するシステムを構築しています。",
+          "validation": "University of Bathのマルチアクシスシミュレーションテーブルの実データと、IASC-ASCE構造健康モニタリング問題のベンチマークデータを用いて検証を行い、提案手法の有効性を示しました。",
+          "discussion": "提案手法は有効性を示しましたが、他の環境やシステムでの適用性や、リアルタイム性の向上が今後の課題です。",
+          "nextReads": [
+            {
+              "label": "Information-Theoretic Approaches to System Identification (2020)",
+              "url": null
+            },
+            {
+              "label": "Structural Health Monitoring Using Vibration-Based Methods (2019)",
+              "url": null
+            },
+            {
+              "label": "Entropy-Based Damage Detection in Structures (2021)",
+              "url": null
+            },
+            {
+              "label": "System Identification: Theory for the User (1999)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音声と言語の統合モデルの進化として、FineLAPやEvAのようにタスク特化型の学習パラダイムが提案され、音響シーン理解やフレームレベルのタスク精度向上が進展しています。",
+    "② 音楽や音声分離技術では、Diff-VSやSR-CorrNet、CASSのように、拡散モデルや視覚的手がかりを活用した新しいアプローチが注目されています。",
+    "③ 大規模音声言語モデル（LALMs）の信頼性やセキュリティを評価する取り組みとして、AHAやMIA、KoALa-Benchなどの新しい評価手法や攻撃手法が提案されています。"
+  ]
+}

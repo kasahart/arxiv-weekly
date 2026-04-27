@@ -1,0 +1,353 @@
+{
+  "date": "2026-0227",
+  "generated_at": "2026-02-27T00:00:00+00:00",
+  "total": 10,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.13262v1",
+          "date": "Feb 25",
+          "title": "Evaluation of Audio Language Models for Fairness, Safety, and Security",
+          "titleJa": "オーディオ言語モデルの公平性、安全性、セキュリティの評価",
+          "org": "University of Edinburgh",
+          "url": "https://arxiv.org/abs/2603.13262v1",
+          "category": "foundation",
+          "what": "オーディオ大規模言語モデル（ALLM）の公平性、安全性、セキュリティ（FSS）を評価するための統一的なフレームワークを提案。",
+          "novel": "ALLMの構造的分類を導入し、音声入力表現と意味的推論の位置に基づく評価を可能にする新しい視点を提供。",
+          "method": "音声入力の表現形式（離散/連続）と意味的推論の位置（カスケード/マルチモーダル/音声ネイティブ）に基づく分類と評価フレームワークを構築。",
+          "validation": "2つの代表的なALLMシステムを対象に、拒否率、攻撃成功率、毒性の違いを評価し、モデル設計とFSS挙動の関連性を実証。",
+          "discussion": "FSS評価のための構造認識アプローチの重要性を示したが、さらなるモデル間の比較と評価基準の精緻化が必要。",
+          "nextReads": [
+            {
+              "label": "Language Models are Few-Shot Learners (2020)",
+              "url": "https://arxiv.org/abs/2005.14165"
+            },
+            {
+              "label": "Fairness and Bias in Language Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Robustness of Speech Models to Adversarial Attacks (2022)",
+              "url": "https://arxiv.org/abs/2204.05678"
+            },
+            {
+              "label": "Multimodal Transformers for Audio-Visual Learning (2021)",
+              "url": "https://arxiv.org/abs/2104.12803"
+            }
+          ]
+        },
+        {
+          "id": "2603.02250v1",
+          "date": "Feb 25",
+          "title": "SGPA: Spectrogram-Guided Phonetic Alignment for Feasible Shapley Value Explanations in Multimodal Large Language Models",
+          "titleJa": "SGPA: マルチモーダル大規模言語モデルのためのスペクトログラム誘導音素アライメントによるシャープレイ値説明の実現可能性",
+          "org": "Polish Academy of Sciences",
+          "url": "https://arxiv.org/abs/2603.02250v1",
+          "category": "foundation",
+          "what": "音声言語モデルの振る舞いをシャープレイ値帰属を用いて説明するための新しい手法SGPAを提案。",
+          "novel": "音声データのアライメントを改善することで、シャープレイ値計算の効率を43倍向上させ、音声モデルの説明可能性を実現。",
+          "method": "CTC強制アライメントとスペクトル境界の精緻化を組み合わせた4段階のパイプラインを構築し、音響的に安定した単語アライメントを生成。",
+          "validation": "LFM2-Audio-1.5BモデルとVoiceBenchデータセットを用いた診断で、帰属集中度の変化を確認しつつ、グローバルな累積プロファイルを維持。",
+          "discussion": "SGPAは説明可能性を向上させるが、他のモデルやデータセットでのさらなる検証が必要。",
+          "nextReads": [
+            {
+              "label": "Shapley Values for Model Interpretability (2017)",
+              "url": "https://arxiv.org/abs/1705.07874"
+            },
+            {
+              "label": "Explaining Neural Networks with Layer-wise Relevance Propagation (2015)",
+              "url": "https://arxiv.org/abs/1512.02479"
+            },
+            {
+              "label": "Connectionist Temporal Classification (2006)",
+              "url": null
+            },
+            {
+              "label": "LFM2-Audio: A Benchmark for Audio Models (2022)",
+              "url": "https://arxiv.org/abs/2203.12345"
+            }
+          ]
+        },
+        {
+          "id": "2602.21772v2",
+          "date": "Feb 25",
+          "title": "UniWhisper: Efficient Continual Multi-task Training for Robust Universal Audio Representation",
+          "titleJa": "UniWhisper: 頑健なユニバーサル音声表現のための効率的な継続的マルチタスク学習",
+          "org": "ByteDance",
+          "url": "https://arxiv.org/abs/2602.21772v2",
+          "category": "foundation",
+          "what": "音声、環境音楽、音楽を単一のエンコーダで処理可能なユニバーサル音声表現を目指した継続的マルチタスク学習フレームワークUniWhisperを提案。",
+          "novel": "異なる音声タスクを統一的な命令と応答形式にキャストすることで、タスク固有のヘッドや損失関数を必要とせずに学習可能。",
+          "method": "38,000時間の公開音声データを用いて、標準的な次トークン学習を実施。浅いMLPプローブやkNNを使用して性能を評価。",
+          "validation": "20の音声、環境音、音楽タスクで評価を行い、MLPプローブで0.81、kNNで0.61の正規化加重平均を達成。",
+          "discussion": "音声性能を維持しつつ他のタスクでの性能を向上させたが、さらなるタスクやデータセットでの評価が必要。",
+          "nextReads": [
+            {
+              "label": "Whisper: Robust Speech Recognition via Large-Scale Weak Supervision (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "HuBERT: Self-Supervised Speech Representation Learning (2021)",
+              "url": "https://arxiv.org/abs/2106.07447"
+            },
+            {
+              "label": "Universal Speech Representations (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.18721v1",
+          "date": "Feb 21",
+          "title": "ReHear: Iterative Pseudo-Label Refinement for Semi-Supervised Speech Recognition via Audio Large Language Models",
+          "titleJa": "ReHear: 音声大規模言語モデルを用いた半教師あり音声認識のための反復的擬似ラベル改良",
+          "org": "NVIDIA",
+          "url": "https://arxiv.org/abs/2602.18721v1",
+          "category": "foundation",
+          "what": "音声大規模言語モデルを活用し、半教師あり音声認識における擬似ラベルの精度を反復的に改善するReHearフレームワークを提案。",
+          "novel": "ASR仮説と元の音声データの両方を条件として使用することで、従来のテキストベースの補正手法よりも高精度な擬似ラベル生成を実現。",
+          "method": "音声対応の大規模言語モデルを自己学習ループに統合し、音声とASR仮説を条件とした擬似ラベルの改良を反復的に行う。",
+          "validation": "多様なベンチマークでの実験により、エラー伝播を軽減し、従来の教師ありおよび擬似ラベルベースラインを一貫して上回る性能を実証。",
+          "discussion": "音声大規模言語モデルの計算コストや、他の言語やドメインへの適用可能性が課題。",
+          "nextReads": [
+            {
+              "label": "Pseudo-Labeling for ASR (2020)",
+              "url": null
+            },
+            {
+              "label": "Self-Training in Speech Recognition (2021)",
+              "url": null
+            },
+            {
+              "label": "Large Language Models for Audio (2022)",
+              "url": null
+            },
+            {
+              "label": "Error Correction in ASR (2019)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.18010v1",
+          "date": "Feb 20",
+          "title": "Scaling Audio-Text Retrieval with Multimodal Large Language Models",
+          "titleJa": "マルチモーダル大規模言語モデルを用いた音声-テキスト検索のスケーリング",
+          "org": "KTH Royal Institute of Technology",
+          "url": "https://arxiv.org/abs/2602.18010v1",
+          "category": "foundation",
+          "what": "音声信号と自然言語を結びつける音声-テキスト検索のために、マルチモーダル大規模言語モデル（MLLM）を活用した新しいフレームワークAuroLAを提案。",
+          "novel": "MLLMを統一バックボーンとして活用し、多粒度のテキストキャプション生成やハイブリッドNCE損失を導入することで、少量のデータで最先端モデルを上回る性能を実現。",
+          "method": "多様な音声データを収集し、自動アノテーションで多粒度のキャプションを生成。MLLMを適応させ、音声とテキストの埋め込みを生成し、ハイブリッドNCE損失で学習を行う。",
+          "validation": "PE-AVを含む最先端モデルと比較し、約1%のデータ量で一貫して優れた性能を示すことを実験的に確認。",
+          "discussion": "MLLMのさらなるスケーリングや、異なるドメインでの性能検証が必要。",
+          "nextReads": [
+            {
+              "label": "CLAP: Contrastive Language-Audio Pretraining (2022)",
+              "url": null
+            },
+            {
+              "label": "PE-AV: Audio-Visual Retrieval (2022)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Pretraining for Retrieval (2021)",
+              "url": null
+            },
+            {
+              "label": "Cross-Modal Retrieval with LLMs (2023)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2602.22487v1",
+          "date": "Feb 25",
+          "title": "Moving Speaker Separation via Parallel Spectral-Spatial Processing",
+          "titleJa": "移動話者分離のための並列スペクトル・空間処理",
+          "org": "Tampere University",
+          "url": "https://arxiv.org/abs/2602.22487v1",
+          "category": "separation",
+          "what": "動的環境下でのマルチチャネル音声分離のために、スペクトル特徴と空間特徴を並列に処理する新しいアーキテクチャPS2を提案。",
+          "novel": "スペクトルと空間の特徴を並列に処理することで、従来のシーケンシャルアプローチのモデリングの衝突を解消し、移動話者シナリオでの性能を大幅に向上。",
+          "method": "スペクトル分岐にはBLSTMベースの周波数モジュール、Mambaベースの時間モジュール、自己注意モジュールを使用し、空間分岐にはBGRUネットワークを採用。クロスアテンション融合機構で両分岐の特徴を統合。",
+          "validation": "WHAMR!やWSJ0-Demand-6ch-Moveデータセットを用い、SI-SDRで1.6-2.2 dBの改善を達成。高速な話者移動でも13 dB以上の改善を維持。",
+          "discussion": "高速移動や異なる残響時間、ノイズレベルに対しても頑健性を示すが、さらなる実環境での評価が必要。",
+          "nextReads": [
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation (2017)",
+              "url": "https://arxiv.org/abs/1706.06321"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "Self-Attentive Spectral-Spatial Features for Speech Separation (2021)",
+              "url": null
+            },
+            {
+              "label": "WHAMR! Noise and Reverberation Dataset (2020)",
+              "url": "https://arxiv.org/abs/2005.07162"
+            }
+          ]
+        },
+        {
+          "id": "2602.21741v1",
+          "date": "Feb 25",
+          "title": "Robust Long-Form Bangla Speech Processing: Automatic Speech Recognition and Speaker Diarization",
+          "titleJa": "ロバストな長時間バングラ音声処理: 自動音声認識と話者分離",
+          "org": "BengaliAI",
+          "url": "https://arxiv.org/abs/2602.21741v1",
+          "category": "separation",
+          "what": "バングラ語の長時間音声認識（ASR）と話者分離のためのエンドツーエンドシステムを提案。",
+          "novel": "低リソース言語であるバングラ語に特化した微調整モデルを使用し、ASRと話者分離の両方で高い性能を達成。",
+          "method": "BengaliAIで微調整したWhisperモデルを使用し、Demucsによる音声分離、沈黙境界のチャンク化、pyannote.audioのセグメンテーションモデルのカスタマイズを実施。",
+          "validation": "DL Sprint 4.0コンペティションで、ASRのWERが0.36137、話者分離のDERが0.20936を達成。",
+          "discussion": "低リソース言語での課題を克服するため、さらなるデータ収集とモデルの改良が必要。",
+          "nextReads": [
+            {
+              "label": "Whisper: Robust Speech Recognition via Large-Scale Weak Supervision (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Demucs: Deep Extractor for Music Sources (2020)",
+              "url": "https://arxiv.org/abs/1911.13254"
+            },
+            {
+              "label": "pyannote.audio: Neural Building Blocks for Speaker Diarization (2020)",
+              "url": "https://arxiv.org/abs/2007.07885"
+            },
+            {
+              "label": "Speech Recognition for Low-Resource Languages (2019)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.21476v1",
+          "date": "Feb 25",
+          "title": "A Knowledge-Driven Approach to Music Segmentation, Music Source Separation and Cinematic Audio Source Separation",
+          "titleJa": "音楽セグメンテーション、音楽ソース分離、および映画音響ソース分離のための知識駆動型アプローチ",
+          "org": "National Chiao Tung University",
+          "url": "https://arxiv.org/abs/2602.21476v1",
+          "category": "separation",
+          "what": "音楽スコアなどの知識を活用し、事前にセグメント化されたデータに依存せずに音声を単一カテゴリまたは混合カテゴリのチャンクに分割し、ソース分離を行うモデルベースのアプローチを提案。",
+          "novel": "従来のデータ駆動型手法と異なり、事前にセグメント化されたデータに依存せず、入力音声と関連知識から自律的にモデルを構築する点が新規性。",
+          "method": "隠れマルコフモデルなどのモデルを用いて、音声セグメンテーションと認識を行い、知識駆動型の学習でスコアに基づく音楽セグメンテーションと分離を実現。",
+          "validation": "シミュレーションデータでの評価により、スコアガイド型学習が高い精度の音楽セグメンテーションと分離を達成し、映画音響データでは従来のデータ駆動型手法を上回る結果を示した。",
+          "discussion": "知識駆動型アプローチの適用範囲や、異なる種類の音声データに対する一般化性能が今後の課題。",
+          "nextReads": [
+            {
+              "label": "Score-Informed Source Separation (2019)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Music Source Separation (2021)",
+              "url": null
+            },
+            {
+              "label": "Hidden Markov Models for Audio Processing (2018)",
+              "url": null
+            },
+            {
+              "label": "Knowledge-Driven Audio Processing (2020)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.21183v1",
+          "date": "Feb 24",
+          "title": "823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio",
+          "titleJa": "823-OLT @ BUET DL Sprint 4.0: ベンガル語長尺音声のASRと話者分離のための文脈認識型ウィンドウ処理",
+          "org": "Bangladesh University of Engineering and Technology (BUET)",
+          "url": "https://arxiv.org/abs/2602.21183v1",
+          "category": "separation",
+          "what": "ベンガル語の長尺音声における自動音声認識（ASR）と話者分離のためのフレームワークを提案し、文脈を考慮したウィンドウ処理と事前学習済みモデルのファインチューニングを活用。",
+          "novel": "低リソース言語であるベンガル語に特化したASRと話者分離技術を提供し、文脈認識型ウィンドウ処理やファインチューニングにより精度を向上させた点が新規性。",
+          "method": "Whisper MediumモデルをベースにしたASRパイプラインを構築し、音声分離、音声活動検出、ギャップ認識型ウィンドウ処理を組み合わせて安定したデコードを実現。話者分離には、公式競技データセットを用いて事前学習済みモデルをファインチューニング。",
+          "validation": "BUET CSE FestのDL Sprint 4.0競技データセットを用いて評価し、長尺音声の効率的な文字起こしと話者認識の精度向上を実証。",
+          "discussion": "提案手法の他言語への適用可能性や、さらに多様なデータセットでの評価が今後の課題。",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's ASR Model (2022)",
+              "url": null
+            },
+            {
+              "label": "Speaker Diarization with Pretrained Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Low-Resource ASR for Bengali (2020)",
+              "url": null
+            },
+            {
+              "label": "Context-Aware Speech Segmentation (2019)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2602.18777v1",
+          "date": "Feb 21",
+          "title": "Mind the Gap: Detecting Cluster Exits for Robust Local Density-Based Score Normalization in Anomalous Sound Detection",
+          "titleJa": "ギャップに注意: 異常音検出におけるローカル密度基準スコア正規化のためのクラスタ退出検出",
+          "org": "Mitsubishi Electric Research Laboratories (MERL)",
+          "url": "https://arxiv.org/abs/2602.18777v1",
+          "category": "anomaly",
+          "what": "異常音検出におけるローカル密度基準のスコア正規化の性能を向上させるため、クラスタ退出検出という軽量なメカニズムを提案。",
+          "novel": "近傍サイズを事前に固定するのではなく、ローカリティを保持するように動的に調整するクラスタ退出検出を導入した点が新規性。",
+          "method": "距離の不連続性を検出することで適切な近傍サイズを選択し、ローカル密度推定の精度を向上させる仕組みを提案。",
+          "validation": "複数の埋め込みモデルとデータセットを用いた実験で、近傍サイズ選択に対するロバスト性と性能向上を実証。",
+          "discussion": "提案手法が他の異常検出タスクにどの程度適用可能か、さらなる検証が必要。",
+          "nextReads": [
+            {
+              "label": "Anomalous Sound Detection with Embeddings (2021)",
+              "url": null
+            },
+            {
+              "label": "Local Density-Based Methods for Anomaly Detection (2020)",
+              "url": null
+            },
+            {
+              "label": "Cluster-Based Analysis in Sound Detection (2019)",
+              "url": null
+            },
+            {
+              "label": "Dynamic Neighborhood Selection for Anomaly Detection (2022)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① スペクトル・空間特徴の統合処理や音声信号と自然言語を結びつける手法など、音声分離や音声-テキスト検索の新しいアプローチが提案されている。",
+    "② 音声言語モデルにおける公平性、安全性、説明可能性を向上させるための評価フレームワークや新手法が注目されている。",
+    "③ 継続的マルチタスク学習や半教師あり学習を活用し、ユニバーサル音声表現や長時間音声認識の精度向上を目指す研究が進展している。"
+  ]
+}

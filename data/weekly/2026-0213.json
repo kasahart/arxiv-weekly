@@ -1,0 +1,321 @@
+{
+  "date": "2026-0213",
+  "generated_at": "2026-02-13T00:00:00+00:00",
+  "total": 9,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2602.11909v2",
+          "date": "Feb 12",
+          "title": "Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning",
+          "titleJa": "Echo: オーディオ交互推論による高度な音声理解の実現に向けて",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.11909v2",
+          "category": "foundation",
+          "what": "人間の認知に着想を得て、オーディオを積極的な推論要素として扱い、持続的な音声認識と分析を可能にする新しい音声理解モデルEchoを提案しています。",
+          "novel": "音声を一度だけエンコードする従来の方法では情報の損失が発生する問題を解決するため、音声を動的に再聴取しながら推論を行う新しいアプローチを提案しています。",
+          "method": "2段階の学習フレームワークを採用し、まず教師あり微調整で重要な音声セグメントを特定し、その後強化学習を用いて再聴取能力を向上させる手法を開発しています。",
+          "validation": "音声理解ベンチマークにおいて、専門的なタスクと一般的なタスクの両方で優れた性能を示し、効率性と汎用性を包括的に分析しています。",
+          "discussion": "オーディオ交互推論が有望な方向性であることを示す一方で、実世界の複雑な音声データへの適用可能性やスケーラビリティに関するさらなる研究が必要です。",
+          "nextReads": [
+            {
+              "label": "Listen, Attend and Spell (2016)",
+              "url": null
+            },
+            {
+              "label": "WaveNet: A Generative Model for Raw Audio (2016)",
+              "url": null
+            },
+            {
+              "label": "SpeechStew: Simply Mix All Available Speech Recognition Data to Train One Large Neural Network (2021)",
+              "url": null
+            },
+            {
+              "label": "Whisper: OpenAI's Speech-to-Text Model (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.10934v2",
+          "date": "Feb 11",
+          "title": "MOSS-Audio-Tokenizer: Scaling Audio Tokenizers for Future Audio Foundation Models",
+          "titleJa": "MOSS-Audio-Tokenizer: 次世代音声基盤モデルのためのスケーラブルな音声トークナイザー",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.10934v2",
+          "category": "foundation",
+          "what": "純粋なTransformerアーキテクチャを用いたエンドツーエンドの音声トークナイザーCATを提案し、その拡張版としてMOSS-Audio-Tokenizerを開発しました。",
+          "novel": "既存の手法が持つ固定的な帰納バイアスを排除し、エンドツーエンドで学習可能な均一なTransformerアーキテクチャを採用することで、高忠実度な音声再構成とスケーラビリティを実現しています。",
+          "method": "TransformerベースのCATアーキテクチャを使用し、エンコーダ、量子化器、デコーダを統合的に最適化する手法を採用しています。",
+          "validation": "300万時間の多様な音声データで事前学習を行い、音声、音楽、スピーチの各ドメインでの高忠実度な再構成と、既存のコーデックを上回る性能を示しました。",
+          "discussion": "提案手法はスケーラビリティと性能向上を示す一方で、大規模な事前学習データセットの必要性が課題として残ります。",
+          "nextReads": [
+            {
+              "label": "Vector Quantized Variational Autoencoders (2017)",
+              "url": null
+            },
+            {
+              "label": "WaveNet: A Generative Model for Raw Audio (2016)",
+              "url": null
+            },
+            {
+              "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
+              "url": null
+            },
+            {
+              "label": "HuBERT: Self-Supervised Speech Representation Learning (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.10439v1",
+          "date": "Feb 11",
+          "title": "AudioRouter: Data Efficient Audio Understanding via RL based Dual Reasoning",
+          "titleJa": "AudioRouter: 強化学習に基づくデュアル推論によるデータ効率的な音声理解",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.10439v1",
+          "category": "foundation",
+          "what": "LALMsの音声理解能力を向上させるために、外部音声ツールの使用を学習する強化学習フレームワークAudioRouterを提案しています。",
+          "novel": "ツールの使用を明示的な意思決定問題として定式化し、従来のデータ集約型のアプローチと比較して最大600倍のデータ効率を達成しています。",
+          "method": "強化学習を用いて軽量なルーティングポリシーを最適化し、基盤となる推論モデルを固定したまま外部ツールの使用を学習する手法を採用しています。",
+          "validation": "標準的な音声理解ベンチマークで大幅な性能向上を示し、従来のトレーニングパラダイムに比べてデータ効率が大幅に向上したことを実験結果で示しています。",
+          "discussion": "外部ツールの使用を学習する新しいアプローチを提案する一方で、ツール選択の最適化やモデルの汎用性に関するさらなる研究が必要です。",
+          "nextReads": [
+            {
+              "label": "Reinforcement Learning with External Tools (2020)",
+              "url": null
+            },
+            {
+              "label": "Few-shot Learning for Audio Understanding (2019)",
+              "url": null
+            },
+            {
+              "label": "Large Language Models are Few-Shot Learners (2020)",
+              "url": null
+            },
+            {
+              "label": "Audio Understanding with Pretrained Models (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.10230v1",
+          "date": "Feb 10",
+          "title": "Frame-Level Internal Tool Use for Temporal Grounding in Audio LMs",
+          "titleJa": "音声言語モデルにおける時間的グラウンディングのためのフレームレベル内部ツール使用",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.10230v1",
+          "category": "foundation",
+          "what": "音声言語モデルが時間的グラウンディングを直接行えるようにするため、内部音声表現を活用したフレームレベルの予測手法を提案しています。",
+          "novel": "従来のトークンベースのアプローチに比べ、推論速度を50倍以上向上させ、長さの一般化性能を強化する新しい内部ツール使用手法を開発しました。",
+          "method": "バイナリフレーム分類器と非一様ポアソン過程（IHP）損失を用いた軽量な予測メカニズムを導入し、時間的イベントの強度をモデル化しています。",
+          "validation": "単語の位置特定、話者分離、イベント位置特定タスクでトークンベースのベースラインを上回る性能を示し、長さの一般化性能も向上しました。",
+          "discussion": "提案手法は効率的な推論と高い精度を示す一方で、複雑な音声データやさらなる応用範囲の拡大が課題です。",
+          "nextReads": [
+            {
+              "label": "Temporal Grounding in Audio Models (2020)",
+              "url": null
+            },
+            {
+              "label": "Speaker Diarization with Neural Networks (2019)",
+              "url": null
+            },
+            {
+              "label": "Event Localization in Audio Streams (2021)",
+              "url": null
+            },
+            {
+              "label": "Efficient Audio Processing with Transformers (2022)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2602.11896v1",
+          "date": "Feb 12",
+          "title": "Musical Metamerism with Time--Frequency Scattering",
+          "titleJa": "時間周波数散乱を用いた音楽的メタメリズム",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.11896v1",
+          "category": "separation",
+          "what": "音楽的メタメリズムという新しい概念を提案し、異なる波形を持ちながらも聴覚的に類似している音楽フラグメントを生成する手法を説明しています。",
+          "novel": "音楽的メタメリズムという新しい概念を導入し、手動の前処理を必要とせず、時間周波数散乱を用いて音楽メタマーを生成する効率的な方法を提示しています。",
+          "method": "PythonのオープンソースソフトウェアKymatioを用いて、時間周波数散乱（JTFS）を実装し、GPU計算と自動微分を活用する手法を採用しています。",
+          "validation": "JTFSの数学的記述とKymatioのソースコードの抜粋を提供し、関連アルゴリズムとの比較を通じて手法の有効性を議論しています。",
+          "discussion": "提案手法の理論的背景と関連研究との関係性を示す一方で、実際の音楽生成や応用における具体的な性能評価は限定的です。",
+          "nextReads": [
+            {
+              "label": "Time-Frequency Scattering (2014)",
+              "url": null
+            },
+            {
+              "label": "Kymatio: Scattering Transforms in Python (2019)",
+              "url": null
+            },
+            {
+              "label": "Modulation Power Spectrum in Audio Analysis (2002)",
+              "url": null
+            },
+            {
+              "label": "Gabor Filterbank for Audio Processing (1992)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.08671v1",
+          "date": "Feb 09",
+          "title": "Input-Adaptive Spectral Feature Compression by Sequence Modeling for Source Separation",
+          "titleJa": "音源分離のためのシーケンスモデリングによる入力適応型スペクトル特徴圧縮",
+          "org": "NTT",
+          "url": "https://arxiv.org/abs/2602.08671v1",
+          "category": "separation",
+          "what": "① 音源分離タスクにおける計算効率と性能を向上させるため、入力適応型のスペクトル特徴圧縮（SFC）モジュールを提案しました。",
+          "novel": "② 従来のバンド分割（BS）モジュールの欠点を克服し、入力依存型でパラメータ効率の高い圧縮手法を実現した点が新規性です。",
+          "method": "③ SFCはシーケンスモデリングを用いてスペクトル情報を圧縮し、クロスアテンションやMambaを活用した2つのバリエーションを提案しました。",
+          "validation": "④ 音楽音源分離（MSS）と映画音源分離（CASS）のタスクで実験を行い、SFCがBSモジュールを一貫して上回る性能を示しました。",
+          "discussion": "⑤ 入力適応型の特性が有効性を示しましたが、さらなる圧縮率の向上や他のタスクへの適用が課題です。",
+          "nextReads": [
+            {
+              "label": "Dual-Path Networks for Speech Separation (2020)",
+              "url": null
+            },
+            {
+              "label": "Attention Mechanisms in Audio Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "Music Source Separation with Deep Learning (2022)",
+              "url": null
+            },
+            {
+              "label": "Efficient Audio Feature Extraction (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.07211v1",
+          "date": "Feb 06",
+          "title": "Equipping LLM with Directional Multi-Talker Speech Understanding Capabilities",
+          "titleJa": "LLMに方向性を持つマルチトーカー音声理解能力を付与する",
+          "org": "Microsoft",
+          "url": "https://arxiv.org/abs/2602.07211v1",
+          "category": "separation",
+          "what": "① スマートグラスのユースケースを想定し、大規模言語モデル（LLM）に方向性を持つマルチトーカー音声理解能力を付与する手法を提案しました。",
+          "novel": "② 音源分離フロントエンドモジュールを用いたカスケードシステムと、シリアライズド出力学習を利用したエンドツーエンドシステムという2つの新しいアプローチを提案しました。",
+          "method": "③ マルチマイクアレイを活用し、音源分離や方向性の解釈を最適化することで、LLMがマルチトーカー環境で音声を理解できるようにしました。",
+          "validation": "④ 音声認識と音声翻訳タスクで実験を行い、提案手法が方向性を持つ音声理解能力を向上させることを実証しました。",
+          "discussion": "⑤ スマートグラスのような特定のユースケースに特化しているため、他の応用分野への汎用性が課題です。",
+          "nextReads": [
+            {
+              "label": "Speech Understanding with LLMs (2022)",
+              "url": null
+            },
+            {
+              "label": "Multi-Microphone Speech Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "End-to-End Speech Separation (2020)",
+              "url": null
+            },
+            {
+              "label": "Smart Glasses for Audio Applications (2021)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2602.09210v1",
+          "date": "Feb 09",
+          "title": "AI-Driven Cardiorespiratory Signal Processing: Separation, Clustering, and Anomaly Detection",
+          "titleJa": "AI駆動の心肺信号処理: 分離、クラスタリング、異常検出",
+          "org": "University of Toronto",
+          "url": "https://arxiv.org/abs/2602.09210v1",
+          "category": "anomaly",
+          "what": "① AIを用いて心肺音を分離、クラスタリング、解析する研究で、新しいデータセットHLS-CMDSを収録し、複数のAIモデルを開発しました。",
+          "novel": "② 大規模言語モデル（LLM）を活用した生成AIや量子畳み込みニューラルネットワーク（QCNN）など、先進的な技術を組み合わせて心肺信号処理を行う点が新規性です。",
+          "method": "③ 変分オートエンコーダ（VAE）による波形分離、化学に着想を得た非負値行列因子分解（NMF）によるクラスタリング、QCNNによる異常検出を組み合わせた手法を提案しています。",
+          "validation": "④ 新規データセットHLS-CMDSを用い、各AIモデルの性能を検証し、次世代センサー技術のレビューも行いました。",
+          "discussion": "⑤ 信号の品質がモデル性能に大きく影響するため、センサー技術のさらなる向上が必要です。",
+          "nextReads": [
+            {
+              "label": "Deep Learning for Biomedical Signal Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "Quantum Machine Learning for Signal Processing (2022)",
+              "url": null
+            },
+            {
+              "label": "Explainable AI in Healthcare (2020)",
+              "url": null
+            },
+            {
+              "label": "Advances in MEMS Acoustic Sensors (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.06271v1",
+          "date": "Feb 06",
+          "title": "Misophonia Trigger Sound Detection on Synthetic Soundscapes Using a Hybrid Model with a Frozen Pre-Trained CNN and a Time-Series Module",
+          "titleJa": "凍結済み事前学習CNNと時系列モジュールを用いた合成音響上のミソフォニア誘発音検出",
+          "org": "The University of Tokyo",
+          "url": "https://arxiv.org/abs/2602.06271v1",
+          "category": "anomaly",
+          "what": "① ミソフォニアの引き金となる音（トリガー音）を検出するため、合成音響データを用いた音響イベント検出（SED）モデルを提案しました。",
+          "novel": "② 凍結された事前学習済みCNNと軽量な時系列モジュール（例: BiGRU, BiESN）を組み合わせ、少数のデータでの個別適応を可能にした点が新規性です。",
+          "method": "③ 事前学習済みCNNで特徴を抽出し、GRUやESNなどの時系列モジュールでトリガー音を検出するハイブリッドモデルを構築しました。",
+          "validation": "④ 合成音響データを用いてPSDS1などの指標で評価し、BiGRUが最高精度を達成、BiESNは少数データでの安定した性能を示しました。",
+          "discussion": "⑤ 実世界のミソフォニアデータが不足しているため、現実の応用に向けたさらなるデータ収集が必要です。",
+          "nextReads": [
+            {
+              "label": "Sound Event Detection with Pre-Trained Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Misophonia and Machine Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Lightweight Neural Networks for SED (2022)",
+              "url": null
+            },
+            {
+              "label": "Few-Shot Learning for Audio Applications (2021)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音声理解の高度化に向けて、音声推論（Echo）や音声トークナイザー（MOSS-Audio-Tokenizer）など、音声データを効率的に処理・分析する新しいモデルが提案されています。",
+    "② 音楽的メタメリズムや音源分離のためのスペクトル特徴圧縮など、音響信号の特性を活用した新しい生成・処理手法が注目されています。",
+    "③ 強化学習や内部表現を用いた時間的グラウンディングや方向性を持つ音声理解など、音声AIの応用範囲を広げる技術が進展しています。"
+  ]
+}

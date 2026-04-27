@@ -1,0 +1,250 @@
+{
+  "date": "2026-0116",
+  "generated_at": "2026-01-16T00:00:00+00:00",
+  "total": 7,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2601.10547v2",
+          "date": "Jan 15",
+          "title": "HeartMuLa: A Family of Open Sourced Music Foundation Models",
+          "titleJa": "HeartMuLa: オープンソースの音楽基盤モデルファミリー",
+          "org": "Microsoft Research",
+          "url": "https://arxiv.org/abs/2601.10547v2",
+          "category": "foundation",
+          "what": "音楽の理解と生成を多様なタスクやモダリティにわたって向上させるためのオープンソース音楽基盤モデルのファミリーを提案。",
+          "novel": "学術規模のデータとGPUリソースを使用して、商業レベルの音楽生成システムを再現可能にした点が革新的。",
+          "method": "音声-テキストアライメントモデル（HeartCLAP）、歌詞認識モデル（HeartTranscriptor）、高忠実度音楽コーデックトークナイザー（HeartCodec）、およびLLMベースの楽曲生成モデル（HeartMuLa）を含む4つの主要コンポーネントを統合。",
+          "validation": "HeartMuLaの性能を7Bパラメータにスケールアップすることで、商業レベルのシステムに匹敵する性能を実現したことを示した。",
+          "discussion": "学術規模のリソースで商業レベルのシステムを再現可能にしたが、さらなるスケーラビリティや多様な音楽ジャンルへの適応性が課題。",
+          "nextReads": [
+            {
+              "label": "MusicLM: Generating Music From Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            },
+            {
+              "label": "Jukebox: A Generative Model for Music (2020)",
+              "url": "https://arxiv.org/abs/2005.00341"
+            },
+            {
+              "label": "MuLan: A Joint Embedding of Music Audio and Natural Language (2022)",
+              "url": "https://arxiv.org/abs/2208.12415"
+            },
+            {
+              "label": "Riffusion: Music Generation with Stable Diffusion (2022)",
+              "url": "https://arxiv.org/abs/2211.13737"
+            }
+          ]
+        },
+        {
+          "id": "2601.10770v1",
+          "date": "Jan 15",
+          "title": "Unifying Speech Recognition, Synthesis and Conversion with Autoregressive Transformers",
+          "titleJa": "音声認識、合成、変換を統一する自己回帰型トランスフォーマー",
+          "org": "Microsoft Research",
+          "url": "https://arxiv.org/abs/2601.10770v1",
+          "category": "foundation",
+          "what": "音声認識（ASR）、音声合成（TTS）、音声変換（VC）を統一的に処理できるオーディオ基盤モデルGPAを提案。",
+          "novel": "単一の自己回帰モデルで複数の音声タスクを統一的に処理できる設計を実現し、効率性とスケーラビリティを向上させた点が新規性。",
+          "method": "離散オーディオトークンスペースを共有し、タスク誘導型の自己回帰モデルを用いてマルチタスク学習を行うアーキテクチャ。",
+          "validation": "ASR、TTS、VCタスクにおいて、軽量な0.3Bパラメータのモデルでも競争力のある性能を示し、低遅延での実用的展開が可能であることを確認。",
+          "discussion": "統一的なアーキテクチャの有効性を示したが、さらなる性能向上や特定タスクへの最適化が課題。",
+          "nextReads": [
+            {
+              "label": "SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing (2022)",
+              "url": "https://arxiv.org/abs/2202.03555"
+            },
+            {
+              "label": "Whisper: Robust Speech Recognition via Large-Scale Weak Supervision (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "VALL-E: Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers (2023)",
+              "url": "https://arxiv.org/abs/2301.02111"
+            },
+            {
+              "label": "SpeechStew: Simply Mix All Available Speech Recognition Data to Train One Large Neural Network (2021)",
+              "url": "https://arxiv.org/abs/2104.02133"
+            }
+          ]
+        },
+        {
+          "id": "2601.10272v1",
+          "date": "Jan 15",
+          "title": "MoST: Mixing Speech and Text with Modality-Aware Mixture of Experts",
+          "titleJa": "MoST: 音声とテキストを統合するモダリティ対応エキスパート混合モデル",
+          "org": "National University of Singapore",
+          "url": "https://arxiv.org/abs/2601.10272v1",
+          "category": "foundation",
+          "what": "音声とテキストをシームレスに統合する新しいマルチモーダル大規模言語モデルMoSTを提案。",
+          "novel": "モダリティに応じた専門家グループと共有専門家を組み合わせた新しいルーティングメカニズムを導入し、モダリティ固有の学習とクロスモーダル理解を向上。",
+          "method": "Modality-Aware Mixture of Experts (MAMoE)アーキテクチャを採用し、ASRやTTSデータセットでの後処理と音声-テキスト指示データセットでの微調整を行う効率的な変換パイプラインを構築。",
+          "validation": "ASR、TTS、音声言語モデリング、音声質問応答ベンチマークで既存モデルを上回る性能を示し、モダリティ固有のルーティングメカニズムの有効性を確認。",
+          "discussion": "オープンソースデータセットのみを用いて高性能を達成したが、さらなるスケーラビリティや他のモダリティへの適用可能性が課題。",
+          "nextReads": [
+            {
+              "label": "SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing (2022)",
+              "url": "https://arxiv.org/abs/2202.03555"
+            },
+            {
+              "label": "Whisper: Robust Speech Recognition via Large-Scale Weak Supervision (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Flamingo: A Visual Language Model for Few-Shot Learning (2022)",
+              "url": "https://arxiv.org/abs/2204.14198"
+            },
+            {
+              "label": "Gato: A Generalist Agent (2022)",
+              "url": "https://arxiv.org/abs/2205.06175"
+            }
+          ]
+        },
+        {
+          "id": "2601.08516v1",
+          "date": "Jan 13",
+          "title": "Robust CAPTCHA Using Audio Illusions in the Era of Large Language Models: from Evaluation to Advances",
+          "titleJa": "大規模言語モデル時代における音声錯覚を利用した堅牢なCAPTCHA: 評価から進展まで",
+          "org": "University of Electronic Science and Technology of China",
+          "url": "https://arxiv.org/abs/2601.08516v1",
+          "category": "foundation",
+          "what": "音声CAPTCHAの堅牢性を評価し、音声錯覚を活用した新しいCAPTCHA手法IllusionAudioを提案。",
+          "novel": "音声錯覚を利用して人間には容易だが自動化された攻撃には困難なCAPTCHAを設計し、既存の音声CAPTCHAの脆弱性を克服。",
+          "method": "AI-CAPTCHAフレームワークを構築し、LALMやASRベースの攻撃に対する評価ツールACEvalと、新しい音声CAPTCHA手法IllusionAudioを提案。",
+          "validation": "7種類の既存音声CAPTCHAを評価し、IllusionAudioがすべての攻撃を防ぎつつ100%の人間通過率を達成することを実証。",
+          "discussion": "音声錯覚を活用した新手法の有効性を示したが、より多様な攻撃シナリオへの対応が今後の課題。",
+          "nextReads": [
+            {
+              "label": "Audio CAPTCHA: Existing Solutions and Future Directions (2021)",
+              "url": null
+            },
+            {
+              "label": "ReCAPTCHA: Human-Based Character Recognition via Web Security Measures (2008)",
+              "url": null
+            },
+            {
+              "label": "Adversarial Examples for Automatic Speech Recognition: Attacks and Countermeasures (2019)",
+              "url": "https://arxiv.org/abs/1904.04483"
+            },
+            {
+              "label": "Audio CAPTCHA Security in the Era of AI (2020)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.07367v2",
+          "date": "Jan 12",
+          "title": "FOCAL: A Novel Benchmarking Technique for Multi-modal Agents",
+          "titleJa": "FOCAL: マルチモーダルエージェントのための新しいベンチマーク手法",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.07367v2",
+          "category": "foundation",
+          "what": "音声とテキストをサポートするマルチモーダルエージェントのエンドツーエンドの推論能力やエラー伝播を評価するための新しいベンチマークフレームワークFOCALを提案。",
+          "novel": "エージェントの推論能力とエラー分析を評価するための新しい指標（ReasoningスコアとSemanticスコア）を導入し、音声モードでの会話の有効性を測定可能にした点が新規性。",
+          "method": "FOCALは、エージェントのエンドツーエンド推論、コンポーネントごとのエラー伝播、およびエラー分析を自動化または人間支援によるテストで評価するフレームワーク。",
+          "validation": "提案したReasoningスコアとSemanticスコアを用いて、マルチモーダルエージェントの音声モードでの会話能力を評価する実験を実施。",
+          "discussion": "エラー伝播の詳細な分析が可能だが、実際の産業応用におけるさらなる検証が必要。",
+          "nextReads": [
+            {
+              "label": "Towards Unified Multimodal Conversational Agents (2022)",
+              "url": null
+            },
+            {
+              "label": "Evaluating Conversational Agents with Multi-modal Inputs (2021)",
+              "url": null
+            },
+            {
+              "label": "Error Propagation in Cascading Pipelines for NLP (2020)",
+              "url": null
+            },
+            {
+              "label": "Advances in Audio-Language Models (2023)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.07331v1",
+          "date": "Jan 12",
+          "title": "SEE: Signal Embedding Energy for Quantifying Noise Interference in Large Audio Language Models",
+          "titleJa": "SEE: 大規模音声言語モデルにおけるノイズ干渉を定量化するための信号埋め込みエネルギー",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2601.07331v1",
+          "category": "foundation",
+          "what": "大規模音声言語モデル（LALM）のノイズ干渉に対するロバスト性を定量的に評価する新しい手法であるSignal Embedding Energy（SEE）を提案。",
+          "novel": "SEEは、モデルの内部表現から構造化された活性化部分空間に基づき、ノイズの影響をより正確に捉える新しい視点を提供し、従来の直感的なアプローチを超える点が新規性。",
+          "method": "SEEは、LALMの内部表現を解析し、ノイズ強度がモデルの性能に与える影響を定量化する指標を提供。これに基づき、ノイズ軽減のための新しい戦略を提案。",
+          "validation": "SEEがLALMの性能と0.98の高い相関を持つことを実験で確認し、従来の音声ノイズ除去手法よりも優れた結果を示した。",
+          "discussion": "従来の音声中心のノイズ除去手法がLALMに適合しない場合があることを指摘し、LALM特有のノイズ感受性に基づく新たなアプローチの必要性を提言。",
+          "nextReads": [
+            {
+              "label": "Robustness of Audio Language Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Noise Robustness in Speech Recognition Systems (2021)",
+              "url": null
+            },
+            {
+              "label": "Understanding Noise Sensitivity in Neural Networks (2020)",
+              "url": null
+            },
+            {
+              "label": "Advances in Large Audio Language Models (2023)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2601.08480v1",
+          "date": "Jan 13",
+          "title": "Quantitative Analysis of Proxy Tasks for Anomalous Sound Detection",
+          "titleJa": "異常音検知のための代理タスクの定量的分析",
+          "org": "Korea Advanced Institute of Science and Technology (KAIST)",
+          "url": "https://arxiv.org/abs/2601.08480v1",
+          "category": "separation",
+          "what": "異常音検知（ASD）の性能向上に向けて、自己教師付き代理タスクの有効性を定量的に分析。",
+          "novel": "代理タスクの性能とASD性能の関係を体系的に分析し、特定のタスクが有効性を持つ理由を明らかにした点が新規性。",
+          "method": "自己教師付き学習の5つの設定（オートエンコーダ、分類、音源分離、コントラスト学習、事前学習モデル）を用いて、線形分離性や分布のコンパクト性を評価。",
+          "validation": "代理タスクの性能とASD性能の相関を実験的に検証し、特に音源分離タスクが最も高い相関を持つことを確認。",
+          "discussion": "代理タスクの難易度や目標との整合性が重要であることを示したが、他のタスクの改良や新しいタスクの提案が必要。",
+          "nextReads": [
+            {
+              "label": "Anomalous Sound Detection Based on Autoencoder with Regularization (2020)",
+              "url": "https://arxiv.org/abs/2002.05822"
+            },
+            {
+              "label": "Self-supervised Learning for Audio Anomaly Detection (2021)",
+              "url": "https://arxiv.org/abs/2103.03432"
+            },
+            {
+              "label": "Anomaly Detection with Machine Learning: A Survey (2020)",
+              "url": "https://arxiv.org/abs/2007.02500"
+            },
+            {
+              "label": "Contrastive Learning for Anomaly Detection in Time Series Data (2022)",
+              "url": "https://arxiv.org/abs/2201.08993"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音声とテキストを統合するマルチモーダル技術が進展しており、MoSTやGPAが音声認識、合成、変換を統一的に処理する新たな基盤モデルとして注目されている。",
+    "② 音楽や音声の生成・理解を支援する基盤モデル（HeartMuLa）や異常音検知の性能向上を目指す代理タスク分析が進み、応用範囲が拡大している。",
+    "③ 音声CAPTCHA（IllusionAudio）やノイズ干渉評価（SEE）など、音声AIの堅牢性や評価手法に関する研究が進展している。"
+  ]
+}

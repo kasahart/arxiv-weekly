@@ -1,0 +1,186 @@
+{
+  "date": "2026-0410",
+  "generated_at": "2026-04-10T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2604.08184v1",
+          "date": "Apr 09",
+          "title": "AT-ADD: All-Type Audio Deepfake Detection Challenge Evaluation Plan",
+          "titleJa": "AT-ADD: オールタイプ音声ディープフェイク検出チャレンジ評価計画",
+          "org": "University of Southern California",
+          "url": "https://arxiv.org/abs/2604.08184v1",
+          "category": "foundation",
+          "what": "① 本研究は、音声ディープフェイク検出のための包括的な評価基準とデータセットを提供するAT-ADDチャレンジを提案しています。",
+          "novel": "② 提案されたチャレンジは、従来の音声中心のディープフェイク検出を超え、音声以外の多様な音声タイプ（音響効果、歌声、音楽など）にも対応する汎用的な検出技術の開発を目指しています。",
+          "method": "③ AT-ADDは、2つのトラック（音声ディープフェイク検出とオールタイプ音声ディープフェイク検出）を設け、標準化されたデータセットと評価プロトコルを提供します。",
+          "validation": "④ 提案されたチャレンジは、現実世界のシナリオや未知の音声生成技術に対する検出器の性能を評価するための基盤を提供します。",
+          "discussion": "⑤ 現在のディープフェイク検出技術の限界を克服するための新しい方向性を示していますが、未知の音声タイプや新しいスプーフィング技術への適応性が課題として残ります。",
+          "nextReads": [
+            {
+              "label": "Audio Deepfake Detection: A Survey (2022)",
+              "url": "https://arxiv.org/abs/2203.09188"
+            },
+            {
+              "label": "DeepSonar: Towards Effective and Robust Detection of AI-Synthesized Fake Voices (2020)",
+              "url": "https://arxiv.org/abs/2009.01437"
+            },
+            {
+              "label": "Audio Deepfake Detection Using Convolutional Neural Networks (2020)",
+              "url": null
+            },
+            {
+              "label": "Adversarial Attacks on Voice Conversion Systems (2021)",
+              "url": "https://arxiv.org/abs/2103.17129"
+            }
+          ]
+        },
+        {
+          "id": "2604.06694v1",
+          "date": "Apr 08",
+          "title": "AudioKV: KV Cache Eviction in Efficient Large Audio Language Models",
+          "titleJa": "AudioKV: 効率的な大規模音声言語モデルにおけるKVキャッシュ削除",
+          "org": "Tencent AI Lab",
+          "url": "https://arxiv.org/abs/2604.06694v1",
+          "category": "foundation",
+          "what": "① 本研究は、大規模音声言語モデル（LALMs）の長文コンテキスト推論時におけるKVキャッシュのメモリ負荷を軽減するためのAudioKVフレームワークを提案しています。",
+          "novel": "② 提案手法は、音響信号の時間的連続性を考慮した新しいKVキャッシュ削除メカニズムを導入し、従来の技術が抱える性能劣化を克服しています。",
+          "method": "③ 音声に特化した注意ヘッドを特定し、それらに優先的にKVキャッシュを割り当てるハードウェアフレンドリーなセマンティック音響整列メカニズムを採用しています。",
+          "validation": "④ QwenやGemmaシリーズなどの複数のLALMを用いた評価で、40%の圧縮率でも性能をほぼ維持しつつ、計算効率を向上させることを実証しました。",
+          "discussion": "⑤ 提案手法は効率性を向上させますが、さらなる圧縮率向上や異なるモデルへの適用可能性が課題として残ります。",
+          "nextReads": [
+            {
+              "label": "Efficient Attention Mechanisms for Neural Networks (2021)",
+              "url": "https://arxiv.org/abs/2105.13219"
+            },
+            {
+              "label": "Long-Context Speech Recognition with Memory-Augmented Transformer (2022)",
+              "url": "https://arxiv.org/abs/2204.05424"
+            },
+            {
+              "label": "Compressing Large Language Models with Structured Pruning (2021)",
+              "url": "https://arxiv.org/abs/2106.09770"
+            },
+            {
+              "label": "Efficient Transformers: A Survey (2020)",
+              "url": "https://arxiv.org/abs/2009.06732"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2604.08415v1",
+          "date": "Apr 09",
+          "title": "Ring Mixing with Auxiliary Signal-to-Consistency-Error Ratio Loss for Unsupervised Denoising in Speech Separation",
+          "titleJa": "音声分離における教師なしノイズ除去のための補助的な信号対一貫性誤差比損失を用いたリングミキシング",
+          "org": "University of Cambridge",
+          "url": "https://arxiv.org/abs/2604.08415v1",
+          "category": "separation",
+          "what": "① 本研究は、音声分離システムの教師なしノイズ除去を目的として、新しいリングミキシング手法と補助的な信号対一貫性誤差比（SCER）損失を提案しています。",
+          "novel": "② 提案手法は、従来のノイズ混入データでの学習が抱える背景ノイズの分離困難性を克服し、ノイズ除去を促進する新しい損失関数を導入した点で新規性があります。",
+          "method": "③ リングミキシングでは、各音源を2つの異なる混合音声に使用し、SCER損失を用いて異なる混合音声からの同一音源の不一致をペナルティ化することで、対称性を破りノイズ除去を促進します。",
+          "validation": "④ WHAM!データセットを用いたベンチマークで、提案手法が残留ノイズを半分以上削減できることを示し、自然なノイズを含む音声データを用いた学習の有効性を実証しました。",
+          "discussion": "⑤ 提案手法はノイズ除去の性能を向上させる一方で、さらなる一般化や異なるデータセットへの適用可能性については今後の課題として残されています。",
+          "nextReads": [
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2019)",
+              "url": "https://arxiv.org/abs/1811.07488"
+            },
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": "https://arxiv.org/abs/1806.03185"
+            },
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation: Strong Together (2017)",
+              "url": "https://arxiv.org/abs/1706.08688"
+            },
+            {
+              "label": "Deep Attractor Network for Single-Microphone Speaker Separation (2017)",
+              "url": "https://arxiv.org/abs/1707.01161"
+            }
+          ]
+        },
+        {
+          "id": "2604.06810v2",
+          "date": "Apr 08",
+          "title": "EvoTSE: Evolving Enrollment for Target Speaker Extraction",
+          "titleJa": "EvoTSE: ターゲットスピーカー抽出のための進化的エンロールメント",
+          "org": "Tsinghua University",
+          "url": "https://arxiv.org/abs/2604.06810v2",
+          "category": "separation",
+          "what": "① 本研究は、ターゲットスピーカー抽出（TSE）の性能向上を目指し、エンロールメントを進化的に更新するEvoTSEフレームワークを提案しています。",
+          "novel": "② 提案手法は、信頼性の高い過去の推定値を利用してエンロールメントを動的に更新することで、スピーカーの混乱を軽減し、固定エンロールメントに依存しない柔軟なアプローチを実現しています。",
+          "method": "③ 信頼性フィルタリングを用いた履歴推定値の動的な取得と更新を組み込むことで、エンロールメントの質を向上させ、スピーカー混乱を低減します。",
+          "validation": "④ 複数のベンチマークデータセットを用いた実験で、特にドメイン外（OOD）シナリオにおいて、提案手法が一貫して性能向上を示すことを確認しました。",
+          "discussion": "⑤ 提案手法はエンロールメントの質に依存しない柔軟性を提供しますが、さらなる一般化や計算コストの削減が課題として残ります。",
+          "nextReads": [
+            {
+              "label": "VoiceFilter: Targeted Voice Separation by Speaker-Conditioned Spectrogram Masking (2019)",
+              "url": "https://arxiv.org/abs/1810.04826"
+            },
+            {
+              "label": "SpeakerBeam: A Speaker-aware Neural Network for Target Speaker Extraction in Speech Mixtures (2018)",
+              "url": null
+            },
+            {
+              "label": "Personal VAD: Speaker-Conditioned Voice Activity Detection (2020)",
+              "url": null
+            },
+            {
+              "label": "SpEx: Multi-Scale Time Domain Speaker Extraction Network (2020)",
+              "url": "https://arxiv.org/abs/2004.04862"
+            }
+          ]
+        },
+        {
+          "id": "2604.04973v1",
+          "date": "Apr 04",
+          "title": "StrADiff: A Structured Source-Wise Adaptive Diffusion Framework for Linear and Nonlinear Blind Source Separation",
+          "titleJa": "StrADiff: 線形および非線形ブラインド音源分離のための構造化ソース別適応拡散フレームワーク",
+          "org": "National Taiwan University",
+          "url": "https://arxiv.org/abs/2604.04973v1",
+          "category": "separation",
+          "what": "① 本研究は、線形および非線形ブラインド音源分離のための構造化ソース別適応拡散フレームワーク（StrADiff）を提案しています。",
+          "novel": "② 提案手法は、各潜在次元を音源成分として解釈し、個別の適応拡散メカニズムを割り当てることで、ソースごとの潜在モデリングを実現しています。",
+          "method": "③ 各音源に適応的なガウス過程（GP）事前分布を割り当て、潜在軌跡にソースごとの時間的構造を付与し、統一的なエンドツーエンドの目標で学習を行います。",
+          "validation": "④ 提案手法は、複数のベンチマークデータセットを用いた実験で、線形および非線形の音源分離タスクにおいて一貫した性能向上を示しました。",
+          "discussion": "⑤ 提案フレームワークは柔軟性が高い一方で、計算コストや他の構造化事前分布の適用可能性についての検討が必要です。",
+          "nextReads": [
+            {
+              "label": "Score-Based Generative Modeling through Stochastic Differential Equations (2021)",
+              "url": "https://arxiv.org/abs/2011.13456"
+            },
+            {
+              "label": "Deep Unsupervised Learning using Nonequilibrium Thermodynamics (2019)",
+              "url": "https://arxiv.org/abs/1906.01749"
+            },
+            {
+              "label": "Deep Generative Modeling for Speech Separation (2020)",
+              "url": null
+            },
+            {
+              "label": "Nonlinear ICA using Auxiliary Variables (2019)",
+              "url": "https://arxiv.org/abs/1905.09346"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音声分離とノイズ除去分野では、リングミキシング手法やSCER損失を活用した教師なし学習が注目されています（例: Ring Mixing）。",
+    "② 音声ディープフェイク検出の分野では、AT-ADDチャレンジのような包括的評価基準とデータセットが進展を促しています。",
+    "③ 大規模音声言語モデルやターゲットスピーカー抽出では、メモリ効率化技術（AudioKV）や進化的エンロールメント更新（EvoTSE）が研究されています。"
+  ]
+}

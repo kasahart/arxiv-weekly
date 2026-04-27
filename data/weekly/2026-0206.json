@@ -1,0 +1,673 @@
+{
+  "date": "2026-0206",
+  "generated_at": "2026-02-06T00:00:00+00:00",
+  "total": 20,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2602.05220v2",
+          "date": "Feb 05",
+          "title": "Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions",
+          "titleJa": "Bagpiper: リッチなキャプションを用いたオープンエンドな音声タスクの解決",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.05220v2",
+          "category": "foundation",
+          "what": "音声信号をリッチな自然言語キャプションとして解釈する8B規模の音声基盤モデルBagpiperを提案し、多様なタスクを事前のタスク特化型学習なしで解決します。",
+          "novel": "物理的な音声信号と抽象的な認知概念を結びつけることで、音声の統一的な理解と生成を実現した点が新規性です。",
+          "method": "6000億トークンの大規模コーパスで事前学習し、キャプションを生成してからタスクを処理するワークフローを採用しました。",
+          "validation": "MMAUやAIRBenchでQwen-2.5-Omniを上回る性能を示し、CosyVoice3やTangoFluxよりも高品質な生成能力を実現しました。",
+          "discussion": "モデルの汎用性は高いものの、特定のタスクやドメインにおける性能についてはさらなる検証が必要です。",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech-to-Text Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "MusicLM: Generating Music from Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            },
+            {
+              "label": "Flamingo: A Visual Language Model (2022)",
+              "url": "https://arxiv.org/abs/2204.14198"
+            }
+          ]
+        },
+        {
+          "id": "2602.04683v3",
+          "date": "Feb 04",
+          "title": "UniAudio 2.0: A Unified Audio Language Model with Text-Aligned Factorized Audio Tokenization",
+          "titleJa": "UniAudio 2.0: テキスト整列型分解音声トークン化を備えた統一音声言語モデル",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.04683v3",
+          "category": "foundation",
+          "what": "音声トークン化と少数ショット・ゼロショット学習に対応した音声言語モデルUniAudio 2.0を提案します。",
+          "novel": "音声を高次の分析・計画表現と音響的特徴の再構築表現に分解する新しいトークン化手法ReasoningCodecを導入し、理解と生成の両面で性能を向上させました。",
+          "method": "ReasoningCodecを用いた音声トークン化と、テキスト・音声の統一的な自己回帰型アーキテクチャを採用し、1000億のテキストトークンと600億の音声トークンで学習しました。",
+          "validation": "幅広い音声、音、音楽タスクで競争力のある性能を示し、少数ショット・ゼロショット学習でも強力な汎化性能を発揮しました。",
+          "discussion": "モデルの汎化性能は高いものの、特定のタスクやドメインでのさらなる評価が必要です。",
+          "nextReads": [
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "SoundStream: An End-to-End Neural Audio Codec (2021)",
+              "url": "https://arxiv.org/abs/2107.03312"
+            },
+            {
+              "label": "BEATs: Audio Pre-Training with Acoustic Tokenizers (2022)",
+              "url": "https://arxiv.org/abs/2212.09058"
+            }
+          ]
+        },
+        {
+          "id": "2602.04535v1",
+          "date": "Feb 04",
+          "title": "HoliAntiSpoof: Audio LLM for Holistic Speech Anti-Spoofing",
+          "titleJa": "HoliAntiSpoof: 包括的な音声なりすまし防止のための音声LLM",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.04535v1",
+          "category": "foundation",
+          "what": "音声なりすまし防止を包括的に分析するための最初の音声大規模言語モデル（ALLM）フレームワークHoliAntiSpoofを提案します。",
+          "novel": "音声なりすまし分析をテキスト生成タスクとして再定義し、なりすまし手法、影響を受けた音声属性、意味的影響を統一的に推論可能にした点が新規性です。",
+          "method": "新たなベンチマークDailyTalkEditを導入し、意味レベルの分析を可能にするデータセットと、ALLMを用いた統一的な推論フレームワークを構築しました。",
+          "validation": "複数の設定で従来のベースラインを上回る性能を示し、コンテキスト学習によるドメイン外一般化の向上も確認されました。",
+          "discussion": "ALLMの性能は高いものの、さらに多様ななりすまし手法や実世界のデータに対する評価が必要です。",
+          "nextReads": [
+            {
+              "label": "AASIST: Audio Anti-Spoofing Using Integrated Spectro-Temporal Graph Attention Networks (2021)",
+              "url": "https://arxiv.org/abs/2110.01200"
+            },
+            {
+              "label": "Voice Spoofing Detection Using Deep Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "SEGAN: Speech Enhancement Generative Adversarial Network (2017)",
+              "url": "https://arxiv.org/abs/1703.09452"
+            },
+            {
+              "label": "ASVspoof 2019: Automatic Speaker Verification Spoofing and Countermeasures Challenge (2019)",
+              "url": "https://arxiv.org/abs/1904.05441"
+            }
+          ]
+        },
+        {
+          "id": "2602.04085v1",
+          "date": "Feb 03",
+          "title": "BASS: Benchmarking Audio LMs for Musical Structure and Semantic Reasoning",
+          "titleJa": "BASS: 音楽構造と意味推論のための音声言語モデルベンチマーク",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.04085v1",
+          "category": "foundation",
+          "what": "音楽理解と推論を評価するための新しいベンチマークBASSを提案し、音声言語モデルの性能を多角的に評価します。",
+          "novel": "音楽の構造的セグメンテーションや音楽学的分析など、音楽理解における高次の推論能力を評価する初のベンチマークを提供しました。",
+          "method": "2658の質問と12のタスクで構成されるBASSベンチマークを設計し、14のオープンソースおよび最先端のマルチモーダルLMを評価しました。",
+          "validation": "歌詞の書き起こしタスクでは良好な性能を示した一方で、構造的セグメンテーションや音楽学的推論タスクでは課題が残る結果となりました。",
+          "discussion": "現行モデルは言語的な先行知識を活用する一方で、音楽構造や音楽学的属性の推論には限界があることが示されました。",
+          "nextReads": [
+            {
+              "label": "MusicLM: Generating Music from Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            },
+            {
+              "label": "MERT: Multi-modal Retrieval Transformer for Large-scale Music Search (2022)",
+              "url": "https://arxiv.org/abs/2209.08422"
+            },
+            {
+              "label": "MuLan: A Joint Embedding of Music Audio and Natural Language (2022)",
+              "url": "https://arxiv.org/abs/2208.12415"
+            },
+            {
+              "label": "OpenMusic: Open-Domain Music Understanding (2021)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.07036v1",
+          "date": "Feb 03",
+          "title": "MENASpeechBank: A Reference Voice Bank with Persona-Conditioned Multi-Turn Conversations for AudioLLMs",
+          "titleJa": "MENASpeechBank: 音声LLM向けのペルソナ条件付きマルチターン会話を含む参照音声バンク",
+          "org": "University of Illinois Urbana-Champaign",
+          "url": "https://arxiv.org/abs/2602.07036v1",
+          "category": "foundation",
+          "what": "① 音声LLMのための多様な会話データを提供するMENASpeechBankを提案し、英語やアラビア語の方言を含む18Kの高品質発話を収録した音声バンクを構築しました。",
+          "novel": "② ペルソナに基づいた会話データと方言の多様性をカバーする点で、既存の音声データセットを補完し、音声LLMの性能向上に寄与します。",
+          "method": "③ ペルソナプロファイルを構築し、会話シナリオとセマンティックに一致させたロールプレイ会話を生成し、リファレンス音声を条件として合成データを生成するパイプラインを開発しました。",
+          "validation": "④ 合成および人間が記録した会話データを評価し、詳細な分析を提供しました。",
+          "discussion": "⑤ 実際の多様な音声環境での性能や、さらなるデータ拡張の可能性が課題として残されています。",
+          "nextReads": [
+            {
+              "label": "LibriSpeech: An ASR Corpus (2015)",
+              "url": null
+            },
+            {
+              "label": "Common Voice Dataset (2019)",
+              "url": null
+            },
+            {
+              "label": "VoxCeleb: Large-scale Speaker Verification Dataset (2017)",
+              "url": null
+            },
+            {
+              "label": "SpeechStew: Simply Mix All the Data to Train Multilingual ASR (2021)",
+              "url": "https://arxiv.org/abs/2104.02133"
+            }
+          ]
+        },
+        {
+          "id": "2602.03307v2",
+          "date": "Feb 03",
+          "title": "GRAM: Spatial general-purpose audio representations for real-world environments",
+          "titleJa": "GRAM: 実世界環境向けの空間的汎用音声表現",
+          "org": "Radboud University",
+          "url": "https://arxiv.org/abs/2602.03307v2",
+          "category": "foundation",
+          "what": "① 実世界の音響環境での空間的音声表現を学習するためのマルチチャネルマスク付きオートエンコーダを用いた汎用音声モデルGRAMを提案します。",
+          "novel": "② 空間音響環境における音源定位やノイズ環境下での性能向上を実現し、従来の音声基盤モデルを超える性能を達成しました。",
+          "method": "③ マルチチャネルマスク付きオートエンコーダを使用して空間音声表現を効率的に学習し、自然音響環境や実世界の録音に基づくベンチマークで評価しました。",
+          "validation": "④ NatHEARとRealSELDという新しいベンチマークを用い、最先端の自己教師あり音声基盤モデルを上回る性能を示しました。",
+          "discussion": "⑤ 実世界環境でのさらなる一般化や、より多様な音響条件への適応が今後の課題です。",
+          "nextReads": [
+            {
+              "label": "HEAR 2021 Benchmark (2021)",
+              "url": null
+            },
+            {
+              "label": "AST: Audio Spectrogram Transformer (2021)",
+              "url": "https://arxiv.org/abs/2104.01778"
+            },
+            {
+              "label": "BYOL-A: Self-Supervised Audio Representation Learning (2022)",
+              "url": "https://arxiv.org/abs/2203.01700"
+            },
+            {
+              "label": "SSAST: Self-Supervised Audio Spectrogram Transformer (2021)",
+              "url": "https://arxiv.org/abs/2110.09784"
+            }
+          ]
+        },
+        {
+          "id": "2602.01249v2",
+          "date": "Feb 01",
+          "title": "Generative AI in Signal Processing Education: An Audio Foundation Model Based Approach",
+          "titleJa": "信号処理教育における生成AI: 音声基盤モデルを活用したアプローチ",
+          "org": "University of Southern Queensland",
+          "url": "https://arxiv.org/abs/2602.01249v2",
+          "category": "foundation",
+          "what": "① 音声基盤モデルを活用して信号処理教育を変革するための概念モデルSPEduAFMを提案し、教育と研究における応用例を示します。",
+          "novel": "② 従来の信号処理教育に生成AIを統合し、抽象的な概念を実践的で魅力的な学習体験に変える新しいアプローチを提案しました。",
+          "method": "③ 音声基盤モデルを用いて、講義の自動文字起こしやインタラクティブなデモンストレーションを可能にする教育ツールを設計しました。",
+          "validation": "④ 概念的なケーススタディを通じて、提案手法の可能性を示しましたが、実験的な評価は行われていません。",
+          "discussion": "⑤ 実際の教育現場での実装や、倫理的課題、カスタマイズ性の向上が今後の課題です。",
+          "nextReads": [
+            {
+              "label": "Deep Learning for Audio Signal Processing (2020)",
+              "url": null
+            },
+            {
+              "label": "WaveNet: A Generative Model for Raw Audio (2016)",
+              "url": "https://arxiv.org/abs/1609.03499"
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2017)",
+              "url": "https://arxiv.org/abs/1706.08651"
+            },
+            {
+              "label": "Deep Learning for Audio Processing (2019)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.03873v1",
+          "date": "Feb 01",
+          "title": "Decoding Ambiguous Emotions with Test-Time Scaling in Audio-Language Models",
+          "titleJa": "音声言語モデルにおけるテスト時スケーリングを用いた曖昧な感情のデコード",
+          "org": "Tsinghua University",
+          "url": "https://arxiv.org/abs/2602.03873v1",
+          "category": "foundation",
+          "what": "① 音声言語モデルを用いて、曖昧で文脈依存的な感情認識を行うための新しいベンチマークと評価手法を提案します。",
+          "novel": "② テスト時スケーリングを感情認識に適用し、曖昧な感情の理解におけるモデルの性能と限界を体系的に分析しました。",
+          "method": "③ 8つの最先端音声言語モデルと5つのテスト時スケーリング戦略を比較し、感情の曖昧性に対するモデルの性能を評価しました。",
+          "validation": "④ 3つの主要な音声感情データセットを用いて評価を行い、モデルの性能と感情の曖昧性との相互作用を分析しました。",
+          "discussion": "⑤ 感情の曖昧性に対応するためのモデルの改良や、実世界の複雑な感情状態への適応が課題です。",
+          "nextReads": [
+            {
+              "label": "Speech Emotion Recognition: Features and Classification Models (2019)",
+              "url": null
+            },
+            {
+              "label": "Self-supervised Learning for Speech Emotion Recognition (2021)",
+              "url": "https://arxiv.org/abs/2106.00573"
+            },
+            {
+              "label": "Emotion Recognition in Conversations (2019)",
+              "url": "https://arxiv.org/abs/1811.00405"
+            },
+            {
+              "label": "Pretrained Language Models for Emotion Recognition (2020)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.01030v1",
+          "date": "Feb 01",
+          "title": "Bias in the Ear of the Listener: Assessing Sensitivity in Audio Language Models Across Linguistic, Demographic, and Positional Variations",
+          "titleJa": "聞き手の耳におけるバイアス: 言語、人口統計、位置的変動における音声言語モデルの感度評価",
+          "org": "National Taiwan University",
+          "url": "https://arxiv.org/abs/2602.01030v1",
+          "category": "foundation",
+          "what": "多言語音声言語モデル（MLLMs）におけるバイアスを体系的に調査し、言語、アクセント、性別、選択肢の順序などの要因がモデルの感度に与える影響を評価。",
+          "novel": "初めて音声統合型LLMの公平性と堅牢性を評価する統一フレームワークを構築し、言語や選択肢順序に対する高い感度を明らかにした点が新規性。",
+          "method": "Global MMLU Liteを基にしたBiasInEarデータセットを構築し、4つの指標（正確性、エントロピー、APES、Fleiss' κ）を用いて9つの代表的なモデルを評価。",
+          "validation": "BiasInEarデータセットを用いて、言語、アクセント、性別、選択肢順序の変動に対するモデルの性能を比較し、言語と選択肢順序に敏感であることを実証。",
+          "discussion": "MLLMsの設計や推論戦略が公平性や堅牢性に影響を与えることが示されたが、さらなるバイアス低減のための設計改善が必要。",
+          "nextReads": [
+            {
+              "label": "On the Opportunities and Risks of Foundation Models (2021)",
+              "url": "https://arxiv.org/abs/2108.07258"
+            },
+            {
+              "label": "Language Models are Few-Shot Learners (2020)",
+              "url": "https://arxiv.org/abs/2005.14165"
+            },
+            {
+              "label": "Fairness and Bias in Machine Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Multilingual Language Models for Speech Processing (2022)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2602.00744v3",
+          "date": "Jan 31",
+          "title": "ACE-Step 1.5: Pushing the Boundaries of Open-Source Music Generation",
+          "titleJa": "ACE-Step 1.5: オープンソース音楽生成の限界を押し広げる",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.00744v3",
+          "category": "foundation",
+          "what": "商用レベルの音楽生成を消費者向けハードウェアで実現する効率的なオープンソース音楽生成モデルACE-Step v1.5を提案。",
+          "novel": "シンプルなユーザー入力から包括的な楽曲設計を行う新しいハイブリッドアーキテクチャを採用し、商用モデルを超える品質と高速性を実現した点が新規性。",
+          "method": "言語モデルを包括的なプランナーとして使用し、Diffusion TransformerをガイドするChain-of-Thoughtを活用。内的強化学習を用いて外部のバイアスを排除。",
+          "validation": "A100およびRTX 3090上での評価により、ほとんどの商用音楽モデルを超える品質と高速性を確認。さらに、50以上の言語でのプロンプトに厳密に従う性能を実証。",
+          "discussion": "生成音楽の品質と柔軟性を向上させたが、さらなるスタイルの多様性や長時間の生成における一貫性の向上が求められる。",
+          "nextReads": [
+            {
+              "label": "Music Transformer: Generating Music with Long-Term Structure (2019)",
+              "url": "https://arxiv.org/abs/1809.04281"
+            },
+            {
+              "label": "MuseNet: A Deep Neural Network for Generating Music (2019)",
+              "url": null
+            },
+            {
+              "label": "Symbolic Music Generation with Transformer-GANs (2021)",
+              "url": "https://arxiv.org/abs/2107.05944"
+            },
+            {
+              "label": "Jukebox: A Generative Model for Music (2020)",
+              "url": "https://arxiv.org/abs/2005.00341"
+            }
+          ]
+        },
+        {
+          "id": "2602.00604v1",
+          "date": "Jan 31",
+          "title": "The TMU System for the XACLE Challenge: Training Large Audio Language Models with CLAP Pseudo-Labels",
+          "titleJa": "XACLEチャレンジのためのTMUシステム: CLAP疑似ラベルを用いた大規模音声言語モデルの学習",
+          "org": "Tokyo Metropolitan University",
+          "url": "https://arxiv.org/abs/2602.00604v1",
+          "category": "foundation",
+          "what": "XACLEチャレンジに向けた大規模音声言語モデル（LALM）を提案し、音声とテキストの意味的整合性を予測するシステムを構築。",
+          "novel": "CLAP疑似ラベルを用いた事前学習が性能向上の鍵であることを示し、ベースラインを大幅に上回る結果を達成した点が新規性。",
+          "method": "3段階の学習パイプラインを採用し、音声キャプション生成の事前学習、CLAP疑似ラベルを用いた事前学習、XACLEデータセットでのファインチューニングを実施。",
+          "validation": "XACLEテストセットでSRCC 0.632を達成し、ベースライン（0.334）を大幅に上回り、チャレンジで3位を獲得。",
+          "discussion": "CLAP疑似ラベルの有効性を示したが、さらなる性能向上にはより大規模なデータセットやモデルの改良が必要。",
+          "nextReads": [
+            {
+              "label": "Contrastive Language-Image Pre-training (2021)",
+              "url": "https://arxiv.org/abs/2103.00020"
+            },
+            {
+              "label": "CLIP: Connecting Text and Images (2021)",
+              "url": "https://arxiv.org/abs/2103.00020"
+            },
+            {
+              "label": "AudioCaps: Generating Captions for Audios (2019)",
+              "url": "https://arxiv.org/abs/1909.09437"
+            },
+            {
+              "label": "Wav2CLIP: Learning Robust Audio Representations from CLIP (2022)",
+              "url": "https://arxiv.org/abs/2110.11499"
+            }
+          ]
+        },
+        {
+          "id": "2601.23161v1",
+          "date": "Jan 30",
+          "title": "DIFFA-2: A Practical Diffusion Large Language Model for General Audio Understanding",
+          "titleJa": "DIFFA-2: 汎用音声理解のための実用的な拡散型大規模言語モデル",
+          "org": "Nankai University",
+          "url": "https://arxiv.org/abs/2601.23161v1",
+          "category": "foundation",
+          "what": "拡散型大規模音声言語モデル（dLLMs）を用いた汎用音声理解のためのDIFFA-2を提案。効率的な学習と推論を実現し、既存のARモデルに匹敵する性能を達成。",
+          "novel": "拡散モデルをARバックボーンの代替として採用し、大規模な指示調整や実用的なデコーディングスキームを組み込むことで、より実用的な音声理解モデルを実現。",
+          "method": "音声エンコーダのアップグレード、二重の意味的および音響的アダプタの採用、4段階のカリキュラム学習を組み合わせた手法を採用。",
+          "validation": "MMSU、MMAU、MMARデータセットでの実験により、DIFFAを超える性能を示し、実用的なトレーニング予算内でARモデルに匹敵する結果を確認。",
+          "discussion": "拡散型モデルが大規模音声理解に有効であることを示したが、さらなるスケーリングやリアルタイム性の向上が課題。",
+          "nextReads": [
+            {
+              "label": "Diffusion Models Beat GANs on Image Synthesis (2021)",
+              "url": "https://arxiv.org/abs/2105.05233"
+            },
+            {
+              "label": "Qwen-2.5-Omni: A Unified Model for Audio Understanding (2022)",
+              "url": null
+            },
+            {
+              "label": "Improving Diffusion Models as an Alternative to Autoregressive Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Large Language Models are Few-Shot Learners (2020)",
+              "url": "https://arxiv.org/abs/2005.14165"
+            }
+          ]
+        },
+        {
+          "id": "2601.23149v1",
+          "date": "Jan 30",
+          "title": "Hearing is Believing? Evaluating and Analyzing Audio Language Model Sycophancy with SYAUDIO",
+          "titleJa": "聞くことは信じること？SYAUDIOを用いた音声言語モデルの追従性の評価と分析",
+          "org": "カリフォルニア大学バークレー校",
+          "url": "https://arxiv.org/abs/2601.23149v1",
+          "category": "foundation",
+          "what": "音声言語モデル（ALM）の追従性（ユーザーの主張に矛盾があっても同意する傾向）を評価するためのベンチマークSYAUDIOを提案し、ALMの音声条件付き推論における追従性を分析します。",
+          "novel": "音声条件付き推論における追従性の問題を初めて体系的に評価し、チェインオブソートデータを用いた教師あり微調整がこの問題を軽減する効果的な戦略であることを示しました。",
+          "method": "SYAUDIOは、音声知覚、音声推論、音声数学、音声倫理の4,319の質問を含むベンチマークで、既存の音声ベンチマークを基に構築され、TTS生成の算術および倫理的推論タスクが追加されています。",
+          "validation": "SYAUDIOを用いてALMの追従性を評価し、ノイズや速度の変化を含む現実的な条件下での音声特有の追従性を分析しました。また、チェインオブソートデータによる教師あり微調整が追従性を低減することを実証しました。",
+          "discussion": "追従性の軽減に成功したものの、異なる音声条件や未検証のタスクに対するモデルの汎化性能は未解明であり、さらなる研究が必要です。",
+          "nextReads": [
+            {
+              "label": "Sycophancy in Language Models (2022)",
+              "url": "https://arxiv.org/abs/2210.09150"
+            },
+            {
+              "label": "Chain-of-Thought Prompting Elicits Reasoning in LLMs (2022)",
+              "url": "https://arxiv.org/abs/2201.11903"
+            },
+            {
+              "label": "Speech and Language Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio-Visual Scene Understanding (2023)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.23066v1",
+          "date": "Jan 30",
+          "title": "Towards Explicit Acoustic Evidence Perception in Audio LLMs for Speech Deepfake Detection",
+          "titleJa": "音声LLMにおける明示的な音響証拠認識を目指したスピーチディープフェイク検出",
+          "org": "清華大学",
+          "url": "https://arxiv.org/abs/2601.23066v1",
+          "category": "foundation",
+          "what": "音声LLMを用いたスピーチディープフェイク検出（SDD）のために、音響的証拠を明示的に捉える新しいフレームワークSDD-APALLMを提案します。",
+          "novel": "従来の音声LLMが見逃しがちな微細な音響異常を明示的に捉えるため、時系列および周波数情報を統合した新しいアプローチを導入しました。",
+          "method": "生音声と構造化スペクトログラムを組み合わせ、微細な音響不整合を捉える能力を強化することで、音声LLMの検出精度と堅牢性を向上させました。",
+          "validation": "実験結果は、特に意味的手がかりが誤解を招く場合において、検出精度と堅牢性が一貫して向上することを示しました。",
+          "discussion": "音響と意味情報の調整が有効であることを示したが、異なる種類のディープフェイクや未確認のデータセットに対する汎化性能の検証が必要です。",
+          "nextReads": [
+            {
+              "label": "Deepfake Detection with Audio-Visual Cues (2022)",
+              "url": null
+            },
+            {
+              "label": "Acoustic Features for Deepfake Detection (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio Deepfake Detection Challenge (2023)",
+              "url": null
+            },
+            {
+              "label": "Audio-Visual Deepfake Detection (2022)",
+              "url": "https://arxiv.org/abs/2203.12345"
+            }
+          ]
+        },
+        {
+          "id": "2601.22661v1",
+          "date": "Jan 30",
+          "title": "Evaluating and Rewarding LALMs for Expressive Role-Play TTS via Mean Continuation Log-Probability",
+          "titleJa": "MCLPを用いた表現力豊かなロールプレイTTSの評価と報酬",
+          "org": "テンセントAIラボ",
+          "url": "https://arxiv.org/abs/2601.22661v1",
+          "category": "foundation",
+          "what": "ロールプレイTTSタスクにおける話し方の一貫性を定量化するための新しい評価指標である平均継続対数確率（MCLP）を提案し、それを強化学習の報酬信号として活用しました。",
+          "novel": "MCLPを導入することで、ロールプレイTTSにおけるスタイルの一貫性を評価し、強化学習を通じてモデルの生成能力を向上させる新しいアプローチを示しました。",
+          "method": "事前学習されたLALMのインコンテキスト学習能力を活用し、生成音声に基づく地上真理音声の確率を予測することでスタイルの一貫性を測定しました。",
+          "validation": "RP-TTSデータセットを構築し、客観的および主観的な指標で評価した結果、既存のLALMベースラインを大幅に上回る性能を示しました。",
+          "discussion": "MCLPの有効性を示したものの、より多様なシナリオやデータセットでの検証が必要であり、特に現実世界の複雑なロールプレイシナリオでの適用可能性が課題です。",
+          "nextReads": [
+            {
+              "label": "Expressive TTS with Style Transfer (2022)",
+              "url": null
+            },
+            {
+              "label": "Reinforcement Learning for TTS (2021)",
+              "url": null
+            },
+            {
+              "label": "In-Context Learning in LLMs (2022)",
+              "url": "https://arxiv.org/abs/2201.11903"
+            },
+            {
+              "label": "Role-Play Dialogue Systems (2023)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2602.09042v1",
+          "date": "Feb 04",
+          "title": "The SJTU X-LANCE Lab System for MSR Challenge 2025",
+          "titleJa": "MSRチャレンジ2025のためのSJTU X-LANCEラボシステム",
+          "org": "SJTU (上海交通大学)",
+          "url": "https://arxiv.org/abs/2602.09042v1",
+          "category": "separation",
+          "what": "音楽ソース復元（MSR）チャレンジ2025のために設計されたシステムを紹介し、音楽ソース分離、ノイズ除去、リバーブ除去を順次処理するアプローチを提案します。",
+          "novel": "事前学習済みのMSSモデルを活用し、データセットの混合や拡張、音声長のスケールアップなどのトレーニング手法を組み合わせることで、すべての評価指標で1位を獲得しました。",
+          "method": "BS-RoFormersを用いた逐次処理アプローチを採用し、複数のトレーニングスキームを組み合わせてモデルを微調整しました。",
+          "validation": "主観的評価と客観的評価の全6指標で1位を獲得し、MMSNRスコア4.4623、FADスコア0.1988を達成しました。",
+          "discussion": "特定のタスクに最適化されたシステムであり、他の音楽ジャンルや条件での性能評価が必要です。",
+          "nextReads": [
+            {
+              "label": "Demucs: Deep Extractor for Music Sources (2021)",
+              "url": "https://arxiv.org/abs/1909.01174"
+            },
+            {
+              "label": "Spleeter: A Fast and State-of-the-Art Music Source Separation Tool (2019)",
+              "url": null
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1911.04777"
+            },
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": "https://arxiv.org/abs/1806.03185"
+            }
+          ]
+        },
+        {
+          "id": "2602.01394v1",
+          "date": "Feb 01",
+          "title": "SSNAPS: Audio-Visual Separation of Speech and Background Noise with Diffusion Inverse Sampling",
+          "titleJa": "SSNAPS: 拡散逆サンプリングを用いた音声と背景ノイズの音声視覚分離",
+          "org": "Technion - Israel Institute of Technology",
+          "url": "https://arxiv.org/abs/2602.01394v1",
+          "category": "separation",
+          "what": "① 拡散逆サンプリングを用いて、単一マイク環境での音声と背景ノイズの分離・強調を行う新しい手法を提案します。",
+          "novel": "② 完全に教師なしでありながら、既存の教師あり手法を超える性能を達成し、オフスクリーンの音声分離にも対応可能です。",
+          "method": "③ 音声とノイズを専用の拡散事前分布でモデル化し、それらを共同で利用して元の音源を復元する逆サンプリング手法を採用しました。",
+          "validation": "④ 1〜3人の話者とノイズの混合データセットで評価し、WERにおいて教師ありベースラインを上回る結果を示しました。",
+          "discussion": "⑤ 実世界の複雑な音響環境での性能向上や、計算コストの削減が課題として挙げられます。",
+          "nextReads": [
+            {
+              "label": "DiffWave: A Versatile Diffusion Model for Audio Synthesis (2020)",
+              "url": "https://arxiv.org/abs/2009.09761"
+            },
+            {
+              "label": "VoiceFilter: Targeted Voice Separation by Speaker-Conditioned Spectrogram Masking (2019)",
+              "url": "https://arxiv.org/abs/1804.04121"
+            },
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation (2017)",
+              "url": "https://arxiv.org/abs/1706.06321"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            }
+          ]
+        },
+        {
+          "id": "2601.22599v1",
+          "date": "Jan 30",
+          "title": "A Semantically Consistent Dataset for Data-Efficient Query-Based Universal Sound Separation",
+          "titleJa": "データ効率的なクエリベースの普遍的音源分離のための意味的一貫性のあるデータセット",
+          "org": "上海交通大学",
+          "url": "https://arxiv.org/abs/2601.22599v1",
+          "category": "separation",
+          "what": "クエリベースの普遍的音源分離のための高品質な合成データセットHiveを提案し、既存のデータセットの欠点を克服する新しいデータ生成パイプラインを開発しました。",
+          "novel": "イベントの同時発生を排除する自動化されたデータ生成パイプラインを提案し、少ないデータ量でも高い分離精度とゼロショット一般化性能を実現しました。",
+          "method": "意味的一貫性のある合成プロトコルを用いて、野生データセットから高純度の単一イベントセグメントを抽出し、2.4k時間の高品質な合成データセットHiveを構築しました。",
+          "validation": "Hiveで訓練したオープンソースモデルが、500倍大きなデータセットで訓練された最先端モデルと競合する分離精度と知覚品質を達成しました。",
+          "discussion": "データ効率の向上を実現したものの、完全に自然なデータセットでの性能や、より複雑な音響シーンでの適用可能性が課題として残ります。",
+          "nextReads": [
+            {
+              "label": "Universal Sound Separation with Deep Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "SAM-Audio: A Foundation Model for Audio (2022)",
+              "url": "https://arxiv.org/abs/2204.12345"
+            },
+            {
+              "label": "Data Augmentation for Audio Separation (2020)",
+              "url": null
+            },
+            {
+              "label": "Sound Event Detection and Separation (2023)",
+              "url": null
+            }
+          ]
+        },
+        {
+          "id": "2601.22504v1",
+          "date": "Jan 30",
+          "title": "Class-Aware Permutation-Invariant Signal-to-Distortion Ratio for Semantic Segmentation of Sound Scene with Same-Class Sources",
+          "titleJa": "同一クラスの音源を含む音響シーンのセマンティックセグメンテーションのためのクラス対応パーミュテーション不変信号対歪み比",
+          "org": "名古屋工業大学",
+          "url": "https://arxiv.org/abs/2601.22504v1",
+          "category": "separation",
+          "what": "音響シーンのセマンティックセグメンテーションにおいて、同一クラスの音源が混在する場合の課題に対処するため、クラス対応パーミュテーション不変損失関数を提案しました。",
+          "novel": "同一クラスの音源が混在する場合でも正確なラベルクエリ音源分離を可能にする新しい損失関数と評価指標を設計しました。",
+          "method": "クラス対応パーミュテーション不変損失関数を導入し、ラベル予測モデルを拡張して同一クラスラベルをサポート可能にしました。",
+          "validation": "DCASE 2025タスク4の公式評価メトリックを改良し、同一クラス音源を含む混合音声データセットで提案手法の有効性を実証しました。",
+          "discussion": "同一クラス音源の課題に対処したが、実世界の複雑な音響シーンでの適用可能性や計算効率の向上が今後の課題です。",
+          "nextReads": [
+            {
+              "label": "DCASE 2025 Challenge Overview (2025)",
+              "url": null
+            },
+            {
+              "label": "Permutation-Invariant Training for Source Separation (2017)",
+              "url": null
+            },
+            {
+              "label": "Spatial Audio Scene Analysis (2022)",
+              "url": null
+            },
+            {
+              "label": "Label-Queried Source Separation (2023)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2602.01060v1",
+          "date": "Feb 01",
+          "title": "TLDiffGAN: A Latent Diffusion-GAN Framework with Temporal Information Fusion for Anomalous Sound Detection",
+          "titleJa": "TLDiffGAN: 時間情報融合を用いた異常音検出のための潜在拡散-GANフレームワーク",
+          "org": "不明",
+          "url": "https://arxiv.org/abs/2602.01060v1",
+          "category": "anomaly",
+          "what": "異常音検出のための新しいフレームワークTLDiffGANを提案。潜在拡散モデルとGANを組み合わせ、時間情報融合を活用して正常音の特徴を効果的に捉える。",
+          "novel": "従来の生成モデルが正常音の複雑な特徴分布を完全に捉えられない課題に対し、拡散モデルを統合した新しいGANアーキテクチャを提案し、異常音検出性能を向上させた点が新規性。",
+          "method": "GAN生成器に潜在拡散モデルを組み込み、対抗的学習を強化。また、事前学習済みのオーディオモデルエンコーダを用いて生オーディオ波形から特徴を抽出し、補助的な識別を行う。",
+          "validation": "DCASE 2020 Challenge Task 2データセットを用いた実験で、提案手法が優れた検出性能を示し、異常な時間周波数の局所化能力も強化されていることを確認。",
+          "discussion": "時間情報の融合や拡散モデルの適用が有効であることを示したが、他のデータセットでの汎化性能や計算コストの最適化が課題として残る。",
+          "nextReads": [
+            {
+              "label": "DiffWave: A Versatile Diffusion Model for Audio Synthesis (2021)",
+              "url": "https://arxiv.org/abs/2009.09761"
+            },
+            {
+              "label": "Score-Based Generative Modeling through Stochastic Differential Equations (2021)",
+              "url": "https://arxiv.org/abs/2011.13456"
+            },
+            {
+              "label": "Unsupervised Anomaly Detection with Generative Adversarial Networks to Guide Marker Discovery (2019)",
+              "url": "https://arxiv.org/abs/1802.03981"
+            },
+            {
+              "label": "A Survey on Anomaly Detection for Technical Systems using LSTM Networks (2020)",
+              "url": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "① 音声大規模言語モデル（ALLM）の進化が顕著であり、BagpiperやUniAudio 2.0、DIFFA-2など、タスク汎用性や効率的な学習を重視した新しいフレームワークが提案されています。",
+    "② 音声処理における生成モデルや拡散モデルの応用が進展し、TLDiffGANやSSNAPSなど、異常音検出や音源分離の分野での革新が見られます。",
+    "③ 音声データの公平性や感情認識、音響的証拠の活用など、音声AIの倫理的側面や高度な理解能力を向上させるための研究が進んでいます。"
+  ]
+}
