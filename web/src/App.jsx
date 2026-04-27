@@ -290,7 +290,7 @@ export default function App() {
                 </span>
               </div>
 
-              <TrendSummary trend={week.trend} />
+              {activeCat === 'all' && <TrendSummary trend={week.trend} />}
 
               {filteredCats.map((cat, ci) => (
                 <div key={cat.id} style={{ marginBottom: 36 }}>
