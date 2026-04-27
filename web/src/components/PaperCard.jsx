@@ -1,13 +1,18 @@
 import { useState } from 'react'
 
 const SECTIONS = [
-  { key: 'what',       icon: '①', label: 'どんなもの？',        color: '#cbd5e1' },
-  { key: 'novel',      icon: '②', label: '先行研究より優れた点', color: '#38bdf8' },
-  { key: 'method',     icon: '③', label: '技術・手法のキモ',     color: '#a78bfa' },
-  { key: 'validation', icon: '④', label: '有効性の検証',         color: '#4ade80' },
-  { key: 'discussion', icon: '⑤', label: '議論・限界',           color: '#fb923c' },
-  { key: 'nextReads',  icon: '⑥', label: '次に読むべき論文',     color: '#f472b6' },
+  { key: 'what',       icon: '1.', label: 'どんなもの？',        color: '#cbd5e1' },
+  { key: 'novel',      icon: '2.', label: '先行研究より優れた点', color: '#38bdf8' },
+  { key: 'method',     icon: '3.', label: '技術・手法のキモ',     color: '#a78bfa' },
+  { key: 'validation', icon: '4.', label: '有効性の検証',         color: '#4ade80' },
+  { key: 'discussion', icon: '5.', label: '議論・限界',           color: '#fb923c' },
+  { key: 'nextReads',  icon: '6.', label: '次に読むべき論文',     color: '#f472b6' },
 ]
+
+// 先頭の丸数字プレフィックス（① など）を除去する
+function stripPrefix(text) {
+  return text?.replace(/^[①-⑨]\s*/, '') ?? ''
+}
 
 export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) {
   const [expanded, setExpanded] = useState(false)
@@ -44,7 +49,7 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) 
             <a href={paper.url} target="_blank" rel="noreferrer"
               onClick={e => e.stopPropagation()}
               style={{ fontSize: 9, color: '#475569', textDecoration: 'none' }}>
-              → arXiv ↗
+              arXiv
             </a>
             <span style={{ fontSize: 12, color: expanded ? cat.color : '#334155',
               transition: 'color 0.15s' }}>
@@ -61,7 +66,7 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) 
         {!expanded && paper.what && (
           <div style={{ fontSize: 11, color: '#64748b', lineHeight: 1.8, marginTop: 8,
             paddingLeft: 8, borderLeft: '2px solid #1e293b' }}>
-            {paper.what}
+            {stripPrefix(paper.what)}
           </div>
         )}
       </div>
@@ -81,7 +86,7 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
                   {(paper.nextReads ?? []).map((r, i) => (
                     <div key={i} style={{ fontSize: 11, lineHeight: 1.7 }}>
-                      <span style={{ color: sm.color, marginRight: 5, opacity: 0.6 }}>→</span>
+                      <span style={{ color: sm.color, marginRight: 5, opacity: 0.6 }}>-</span>
                       {r.url ? (
                         <a href={r.url} target="_blank" rel="noreferrer"
                           className="refLink" style={{ color: sm.color }}>
@@ -96,7 +101,7 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) 
               ) : (
                 <div style={{ fontSize: 11, color: '#cbd5e1', lineHeight: 1.9,
                   paddingLeft: 8, borderLeft: `2px solid ${sm.color}40` }}>
-                  {paper[sm.key]}
+                  {stripPrefix(paper[sm.key])}
                 </div>
               )}
             </div>
