@@ -8,6 +8,7 @@ import TrendSummary from './components/TrendSummary'
 const DATA_BASE = './data'
 const LS_TO_DATE = 'arxiv-to-date'
 const LS_FAVORITES = 'arxiv-favorites'
+const LS_READ = 'arxiv-read'
 
 async function fetchCitationsForPapers(papers) {
   const CHUNK = 10
@@ -75,7 +76,19 @@ export default function App() {
   const [favorites, setFavorites] = useState(
     () => new Set(JSON.parse(localStorage.getItem(LS_FAVORITES) || '[]'))
   )
+  const [readPapers, setReadPapers] = useState(
+    () => new Set(JSON.parse(localStorage.getItem(LS_READ) || '[]'))
+  )
   const sentinelRef = useRef(null)
+
+  const toggleRead = useCallback((arxivId) => {
+    setReadPapers(prev => {
+      const next = new Set(prev)
+      next.has(arxivId) ? next.delete(arxivId) : next.add(arxivId)
+      localStorage.setItem(LS_READ, JSON.stringify([...next]))
+      return next
+    })
+  }, [])
 
   const toggleFavorite = useCallback((arxivId) => {
     setFavorites(prev => {
@@ -297,7 +310,9 @@ export default function App() {
                           citationCount={citationMap[id]}
                           githubUrl={githubMap[id]}
                           isFavorite={favorites.has(id)}
-                          onToggleFavorite={() => toggleFavorite(id)} />
+                          onToggleFavorite={() => toggleFavorite(id)}
+                          isRead={readPapers.has(id)}
+                          onToggleRead={() => toggleRead(id)} />
                       )
                     })}
                   </div>

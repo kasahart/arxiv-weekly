@@ -13,7 +13,7 @@ function stripPrefix(text) {
   return text?.replace(/^[①-⑨]\s*/, '') ?? ''
 }
 
-export default function PaperCard({ paper, cat, animDelay = 0, citationCount, githubUrl, isFavorite, onToggleFavorite }) {
+export default function PaperCard({ paper, cat, animDelay = 0, citationCount, githubUrl, isFavorite, onToggleFavorite, isRead, onToggleRead }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -24,6 +24,8 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
       borderRadius: 4,
       boxShadow: expanded ? `0 0 20px rgba(0,0,0,0.3)` : 'none',
       animationDelay: `${animDelay}s`,
+      opacity: isRead && !expanded ? 0.45 : 1,
+      transition: 'opacity 0.2s',
     }}>
       <div onClick={() => setExpanded(e => !e)}
         style={{ padding: '13px 16px 11px', cursor: 'pointer', userSelect: 'none' }}>
@@ -54,6 +56,15 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
             </span>
           )}
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>
+            <button
+              onClick={e => { e.stopPropagation(); onToggleRead?.() }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0,
+                fontSize: 11, lineHeight: 1, color: isRead ? '#4ade80' : '#334155',
+                transition: 'color 0.15s', fontFamily: 'inherit' }}
+              title={isRead ? '未読に戻す' : '既読にする'}
+            >
+              {isRead ? '既読' : '未読'}
+            </button>
             <button
               onClick={e => { e.stopPropagation(); onToggleFavorite?.() }}
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0,
