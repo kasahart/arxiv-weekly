@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Header from './components/Header'
 import WeekSelector from './components/WeekSelector'
 import CategoryFilter from './components/CategoryFilter'
@@ -6,25 +6,54 @@ import PaperCard from './components/PaperCard'
 import TrendSummary from './components/TrendSummary'
 
 const DATA_BASE = './data'
-const LS_TO_DATE = 'arxiv-to-date'
 const LS_FAVORITES = 'arxiv-favorites'
-const LS_READ = 'arxiv-read'
+const LS_READ      = 'arxiv-read'
+// OpenAlex polite pool (higher rate limit)
+const OPENALEX_EMAIL = 'beinvoked66@gmail.com'
 
+// ── URL state helpers ──────────────────────────────────────────────────
+function readUrlState() {
+  const p = new URLSearchParams(window.location.search)
+  return {
+    toDate:           p.get('week') || null,
+    fromDate:         p.get('from') || null,
+    activeCat:        p.get('cat')  || 'all',
+    search:           p.get('q')    || '',
+    sortByCitations:  p.get('sort') === '1',
+    showFavoritesOnly: p.get('fav') === '1',
+  }
+}
+
+function pushUrlState({ toDate, fromDate, activeCat, search, sortByCitations, showFavoritesOnly }) {
+  const p = new URLSearchParams()
+  if (toDate)            p.set('week', toDate)
+  if (fromDate)          p.set('from', fromDate)
+  if (activeCat !== 'all') p.set('cat', activeCat)
+  if (search)            p.set('q', search)
+  if (sortByCitations)   p.set('sort', '1')
+  if (showFavoritesOnly) p.set('fav', '1')
+  const url = p.toString() ? `?${p}` : window.location.pathname
+  window.history.pushState({}, '', url)
+}
+
+// ── External API fetchers ──────────────────────────────────────────────
 async function fetchCitationsForPapers(papers) {
-  const CHUNK = 10
+  const CHUNK = 5
   const results = {}
   for (let i = 0; i < papers.length; i += CHUNK) {
     const chunk = papers.slice(i, i + CHUNK)
     await Promise.allSettled(chunk.map(async p => {
       const id = p.id.split('v')[0]
       try {
-        const res = await fetch(`https://api.openalex.org/works/https://doi.org/10.48550/arXiv.${id}?select=cited_by_count`)
+        const url = `https://api.openalex.org/works/https://doi.org/10.48550/arXiv.${id}` +
+                    `?select=cited_by_count&mailto=${OPENALEX_EMAIL}`
+        const res = await fetch(url)
         if (!res.ok) return
         const data = await res.json()
         if (data?.cited_by_count != null) results[id] = data.cited_by_count
       } catch {}
     }))
-    if (i + CHUNK < papers.length) await new Promise(r => setTimeout(r, 300))
+    if (i + CHUNK < papers.length) await new Promise(r => setTimeout(r, 500))
   }
   return results
 }
@@ -54,86 +83,141 @@ async function fetchWeekData(date) {
   return res.json()
 }
 
-function enrichWeek(weekData, citationMap, githubMap) {
-  return weekData
-}
-
+// ── App ────────────────────────────────────────────────────────────────
 export default function App() {
-  const [index, setIndex] = useState(null)
-  const [loadedWeeks, setLoadedWeeks] = useState([])
-  const [toDate, setToDate] = useState(null)
-  const [fromDate, setFromDate] = useState(null)
-  const [nextLoadIdx, setNextLoadIdx] = useState(0)
-  const [loading, setLoading] = useState(true)
-  const [loadingMore, setLoadingMore] = useState(false)
-  const [hasMore, setHasMore] = useState(true)
-  const [activeCat, setActiveCat] = useState('all')
-  const [citationMap, setCitationMap] = useState({})
-  const [githubMap, setGithubMap] = useState({})
-  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
-  const [search, setSearch] = useState('')
-  const [sortByCitations, setSortByCitations] = useState(false)
-  const [favorites, setFavorites] = useState(
+  const initial = readUrlState()
+
+  const [index,            setIndex]            = useState(null)
+  const [loadedWeeks,      setLoadedWeeks]      = useState([])
+  const [toDate,           setToDateRaw]        = useState(initial.toDate)
+  const [fromDate,         setFromDateRaw]      = useState(initial.fromDate)
+  const [nextLoadIdx,      setNextLoadIdx]      = useState(0)
+  const [loading,          setLoading]          = useState(true)
+  const [loadingMore,      setLoadingMore]      = useState(false)
+  const [hasMore,          setHasMore]          = useState(true)
+  const [activeCat,        setActiveCatRaw]     = useState(initial.activeCat)
+  const [search,           setSearchRaw]        = useState(initial.search)
+  const [sortByCitations,  setSortRaw]          = useState(initial.sortByCitations)
+  const [showFavoritesOnly,setFavRaw]           = useState(initial.showFavoritesOnly)
+  const [citationMap,      setCitationMap]      = useState({})
+  const [githubMap,        setGithubMap]        = useState({})
+  const [favorites,        setFavorites]        = useState(
     () => new Set(JSON.parse(localStorage.getItem(LS_FAVORITES) || '[]'))
   )
-  const [readPapers, setReadPapers] = useState(
+  const [readPapers,       setReadPapers]       = useState(
     () => new Set(JSON.parse(localStorage.getItem(LS_READ) || '[]'))
   )
-  const sentinelRef = useRef(null)
+  const sentinelRef   = useRef(null)
+  const filterRef     = useRef({ toDate: initial.toDate, fromDate: initial.fromDate,
+                                 activeCat: initial.activeCat, search: initial.search,
+                                 sortByCitations: initial.sortByCitations,
+                                 showFavoritesOnly: initial.showFavoritesOnly })
   const [showScrollTop, setShowScrollTop] = useState(false)
 
+  // URL に pushState するラッパー
+  const pushFilter = useCallback((patch) => {
+    const next = { ...filterRef.current, ...patch }
+    filterRef.current = next
+    pushUrlState(next)
+  }, [])
+
+  const setToDate = useCallback((v) => {
+    setToDateRaw(v); pushFilter({ toDate: v, fromDate: null }); setFromDateRaw(null)
+  }, [pushFilter])
+
+  const setFromDate = useCallback((v) => {
+    setFromDateRaw(v); pushFilter({ fromDate: v })
+  }, [pushFilter])
+
+  const setActiveCat = useCallback((v) => {
+    setActiveCatRaw(v); pushFilter({ activeCat: v })
+  }, [pushFilter])
+
+  const setSearch = useCallback((v) => {
+    setSearchRaw(v); pushFilter({ search: v })
+  }, [pushFilter])
+
+  const setSortByCitations = useCallback((fn) => {
+    setSortRaw(prev => {
+      const next = typeof fn === 'function' ? fn(prev) : fn
+      pushFilter({ sortByCitations: next })
+      return next
+    })
+  }, [pushFilter])
+
+  const setShowFavoritesOnly = useCallback((fn) => {
+    setFavRaw(prev => {
+      const next = typeof fn === 'function' ? fn(prev) : fn
+      pushFilter({ showFavoritesOnly: next })
+      return next
+    })
+  }, [pushFilter])
+
+  // popstate (ブラウザ戻る/進む)
+  useEffect(() => {
+    const onPop = () => {
+      const s = readUrlState()
+      filterRef.current = s
+      setToDateRaw(s.toDate)
+      setFromDateRaw(s.fromDate)
+      setActiveCatRaw(s.activeCat)
+      setSearchRaw(s.search)
+      setSortRaw(s.sortByCitations)
+      setFavRaw(s.showFavoritesOnly)
+    }
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+
+  // スクロールトップボタン
   useEffect(() => {
     const onScroll = () => setShowScrollTop(window.scrollY > 400)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const toggleRead = useCallback((arxivId) => {
-    setReadPapers(prev => {
-      const next = new Set(prev)
-      next.has(arxivId) ? next.delete(arxivId) : next.add(arxivId)
-      localStorage.setItem(LS_READ, JSON.stringify([...next]))
-      return next
-    })
-  }, [])
-
-  const toggleFavorite = useCallback((arxivId) => {
+  // お気に入り / 既読トグル
+  const toggleFavorite = useCallback((id) => {
     setFavorites(prev => {
       const next = new Set(prev)
-      next.has(arxivId) ? next.delete(arxivId) : next.add(arxivId)
+      next.has(id) ? next.delete(id) : next.add(id)
       localStorage.setItem(LS_FAVORITES, JSON.stringify([...next]))
       return next
     })
   }, [])
 
-  // Load index and restore saved week
+  const toggleRead = useCallback((id) => {
+    setReadPapers(prev => {
+      const next = new Set(prev)
+      next.has(id) ? next.delete(id) : next.add(id)
+      localStorage.setItem(LS_READ, JSON.stringify([...next]))
+      return next
+    })
+  }, [])
+
+  // index.json を取得
   useEffect(() => {
     fetch(`${DATA_BASE}/index.json`)
       .then(r => r.json())
       .then(data => {
         setIndex(data)
         const weeks = data.weeks ?? []
-        const hashDate = window.location.hash.slice(1)
-        const savedDate = localStorage.getItem(LS_TO_DATE)
+        const urlState = readUrlState()
         const startDate =
-          (hashDate && weeks.find(w => w.date === hashDate) ? hashDate : null) ||
-          (savedDate && weeks.find(w => w.date === savedDate) ? savedDate : null) ||
+          (urlState.toDate && weeks.find(w => w.date === urlState.toDate) ? urlState.toDate : null) ||
           weeks[0]?.date
-        if (startDate) setToDate(startDate)
+        if (startDate) setToDateRaw(startDate)
         else setLoading(false)
       })
       .catch(() => setLoading(false))
   }, [])
 
-  // When toDate changes: reset and load first week
+  // toDate 変更時: リセット & 最初の週を読み込み
   useEffect(() => {
     if (!toDate || !index) return
     const weeks = index.weeks
     const idx = weeks.findIndex(w => w.date === toDate)
     if (idx < 0) { setLoading(false); return }
-
-    localStorage.setItem(LS_TO_DATE, toDate)
-    window.history.replaceState(null, '', `#${toDate}`)
 
     setLoadedWeeks([])
     setCitationMap({})
@@ -152,20 +236,20 @@ export default function App() {
     }).catch(() => setLoading(false))
   }, [toDate, index])
 
-  // Load next (older) week
+  // 次の週を読み込む（無限スクロール）
   const loadNextWeek = useCallback(() => {
     if (!index || loadingMore || !hasMore) return
     const weeks = index.weeks
     if (nextLoadIdx >= weeks.length) { setHasMore(false); return }
-
-    // 期間の下限を超えたら停止
     const nextDate = weeks[nextLoadIdx].date
     if (fromDate && nextDate < fromDate) { setHasMore(false); return }
+
+    setLoadingMore(true)
     fetchWeekData(nextDate).then(data => {
       setLoadedWeeks(prev => [...prev, data])
       const newIdx = nextLoadIdx + 1
       setNextLoadIdx(newIdx)
-      setHasMore(newIdx < weeks.length)
+      setHasMore(newIdx < weeks.length && (!fromDate || weeks[newIdx]?.date >= fromDate))
       setLoadingMore(false)
       const papers = data.categories.flatMap(c => c.papers)
       fetchCitationsForPapers(papers).then(m => setCitationMap(prev => ({ ...prev, ...m })))
@@ -173,7 +257,6 @@ export default function App() {
     }).catch(() => setLoadingMore(false))
   }, [index, nextLoadIdx, loadingMore, hasMore, fromDate])
 
-  // IntersectionObserver: load more when sentinel is visible
   useEffect(() => {
     const sentinel = sentinelRef.current
     if (!sentinel) return
@@ -185,7 +268,7 @@ export default function App() {
     return () => observer.disconnect()
   }, [loadNextWeek])
 
-  // index.json のカテゴリ定義を基本とし、ロード済み週の論文数を付与
+  // カテゴリ一覧（index.json 定義 + ロード済み週の論文数）
   const paperCountById = Object.fromEntries(
     loadedWeeks.flatMap(w => w.categories).reduce((map, c) => {
       map.set(c.id, (map.get(c.id) ?? 0) + c.papers.length)
@@ -209,11 +292,11 @@ export default function App() {
         ::-webkit-scrollbar{width:4px}
         ::-webkit-scrollbar-thumb{background:#38bdf8;border-radius:2px}
         .catBtn{background:transparent;border:1px solid #1e293b;color:#64748b;
-          font-family:'IBM Plex Mono',monospace;font-size:10px;padding:5px 13px;
+          font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 13px;
           cursor:pointer;letter-spacing:1px;transition:all 0.15s;border-radius:2px;white-space:nowrap}
         .catBtn:hover{color:#94a3b8;border-color:#334155}
         .ctrlBtn{background:transparent;border:1px solid #1e293b;color:#64748b;
-          font-family:'IBM Plex Mono',monospace;font-size:10px;padding:5px 10px;
+          font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 10px;
           cursor:pointer;letter-spacing:1px;transition:all 0.15s;border-radius:2px}
         .ctrlBtn:hover{color:#94a3b8;border-color:#334155}
         .ctrlBtn.active{border-color:#38bdf8;color:#38bdf8;background:#38bdf810}
@@ -222,23 +305,21 @@ export default function App() {
         .refLink{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;
           opacity:0.85;transition:opacity 0.15s}
         .refLink:hover{opacity:1}
-
         .toolbar{border-bottom:1px solid #1e293b;padding:10px 26px;background:#0a0d14;
-          display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+          display:flex;flex-direction:column;gap:8px}
+        .toolbar-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
         .content{padding:24px 26px;max-width:960px;margin:0 auto}
         .search-input{background:#131720;border:1px solid #1e293b;color:#94a3b8;
           font-family:'IBM Plex Mono',monospace;font-size:13px;
           padding:4px 10px;border-radius:2px;outline:none;width:160px}
-
         @media(max-width:640px){
-          .toolbar{padding:8px 12px;gap:8px}
+          .toolbar{padding:8px 12px}
           .content{padding:14px 12px}
           .search-input{width:100%}
-          .catBtn{font-size:11px;padding:5px 10px}
-          .ctrlBtn{font-size:11px}
+          .catBtn,.ctrlBtn{font-size:12px}
         }
         @media(max-width:400px){
-          .toolbar{padding:6px 10px;gap:6px}
+          .toolbar{padding:6px 10px}
           .content{padding:12px 10px}
         }
       `}</style>
@@ -246,13 +327,12 @@ export default function App() {
       <Header total={totalPapers} loading={loading} />
 
       <div className="toolbar">
-        {/* 1行目: 期間セレクター + 検索 + コントロール */}
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', width: '100%' }}>
+        <div className="toolbar-row">
           <WeekSelector
             weeks={index?.weeks ?? []}
             toDate={toDate}
             fromDate={fromDate}
-            onToChange={date => { setFromDate(null); setToDate(date) }}
+            onToChange={setToDate}
             onFromChange={setFromDate}
           />
           <input
@@ -261,21 +341,16 @@ export default function App() {
             onChange={e => setSearch(e.target.value)}
             placeholder="キーワード検索..."
           />
-          <button
-            className={`ctrlBtn${sortByCitations ? ' active' : ''}`}
-            onClick={() => setSortByCitations(s => !s)}
-          >
+          <button className={`ctrlBtn${sortByCitations ? ' active' : ''}`}
+            onClick={() => setSortByCitations(s => !s)}>
             {sortByCitations ? '引用数順' : '日付順'}
           </button>
-          <button
-            className={`ctrlBtn${showFavoritesOnly ? ' active' : ''}`}
-            onClick={() => setShowFavoritesOnly(s => !s)}
-          >
+          <button className={`ctrlBtn${showFavoritesOnly ? ' active' : ''}`}
+            onClick={() => setShowFavoritesOnly(s => !s)}>
             {showFavoritesOnly ? '★ お気に入り' : '☆ お気に入り'}
           </button>
         </div>
-        {/* 2行目: カテゴリフィルター（専用行） */}
-        <div style={{ width: '100%' }}>
+        <div className="toolbar-row">
           <CategoryFilter categories={allCategories} active={activeCat} onChange={setActiveCat} />
         </div>
       </div>
@@ -323,7 +398,9 @@ export default function App() {
                 </span>
               </div>
 
-              {activeCat === 'all' && !showFavoritesOnly && !search && <TrendSummary trend={week.trend} />}
+              {activeCat === 'all' && !showFavoritesOnly && !search && (
+                <TrendSummary trend={week.trend} />
+              )}
 
               {filteredCats.map((cat, ci) => (
                 <div key={cat.id} style={{ marginBottom: 36 }}>
@@ -373,21 +450,14 @@ export default function App() {
       </div>
 
       {showScrollTop && (
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          style={{
-            position: 'fixed', bottom: 28, right: 28, zIndex: 100,
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          style={{ position: 'fixed', bottom: 28, right: 28, zIndex: 100,
             width: 44, height: 44, borderRadius: '50%',
             background: '#131720', border: '1px solid #334155',
             color: '#38bdf8', fontSize: 18, cursor: 'pointer',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
-            transition: 'opacity 0.2s, border-color 0.2s',
-          }}
-          title="トップへ戻る"
-        >
-          ▴
-        </button>
+            boxShadow: '0 4px 12px rgba(0,0,0,0.4)' }}
+          title="トップへ戻る">▴</button>
       )}
     </div>
   )
