@@ -25,6 +25,9 @@ SYSTEM_PROMPT = """あなたは音声・音響 AI 分野の論文アナリスト
 {
   "titleJa": "論文タイトルの日本語訳（自然な日本語で）",
   "org": "著者の主要所属機関（大学名・企業名を簡潔に、例: MIT / Google）",
+  "task": "タスク分類（例: TTS / ASR / 音源分離 / 異音検知 / 音楽生成 / 話者認識 / など、1〜2語）",
+  "proposedMethod": "提案手法の固有名詞・略称（例: SALMONN、AudioSep。ない場合は null）",
+  "datasets": ["使用したデータセット名1", "使用したデータセット名2"],
   "what": "どんなもの？（1〜2文で研究の全体像）",
   "novel": "先行研究と比べてすごい点（1〜2文で新規性・貢献）",
   "method": "技術・手法のキモ（1〜2文でアーキテクチャや学習の核心）",
@@ -36,6 +39,7 @@ SYSTEM_PROMPT = """あなたは音声・音響 AI 分野の論文アナリスト
 }
 
 nextReads は 3〜4 件。arXiv ID が不明な場合は null としてください。
+datasets は論文中で使用・評価に用いたデータセットを列挙してください（最大5件）。
 すべての説明は日本語で記述してください。"""
 
 
@@ -84,11 +88,14 @@ def build_batch_prompt(papers: list[dict]) -> str:
   "<paper_id>": {{
     "titleJa": "論文タイトルの日本語訳（自然な日本語で）",
     "org": "著者の主要所属機関（大学名・企業名を簡潔に、例: MIT / Google）",
-    "what": "① どんなもの？（1〜2文で研究の全体像）",
-    "novel": "② 先行研究と比べてすごい点（1〜2文で新規性・貢献）",
-    "method": "③ 技術・手法のキモ（1〜2文でアーキテクチャや学習の核心）",
-    "validation": "④ 有効性の検証（データセット・指標・比較実験を1〜2文で）",
-    "discussion": "⑤ 議論・限界（残課題・制約を1〜2文で）",
+    "task": "タスク分類（例: TTS / ASR / 音源分離 / 異音検知 / 音楽生成 など、1〜2語）",
+    "proposedMethod": "提案手法の固有名詞・略称（ない場合は null）",
+    "datasets": ["使用データセット名1", "使用データセット名2"],
+    "what": "どんなもの？（1〜2文で研究の全体像）",
+    "novel": "先行研究と比べてすごい点（1〜2文で新規性・貢献）",
+    "method": "技術・手法のキモ（1〜2文でアーキテクチャや学習の核心）",
+    "validation": "有効性の検証（データセット・指標・比較実験を1〜2文で）",
+    "discussion": "議論・限界（残課題・制約を1〜2文で）",
     "nextReads": [
       {{"label": "関連論文名 (年)", "id": "arXiv ID または null"}}
     ]
@@ -96,6 +103,7 @@ def build_batch_prompt(papers: list[dict]) -> str:
 }}
 
 nextReads は各論文 3〜4 件、arXiv ID が不明な場合は null としてください。
+datasets は使用・評価データセットを最大5件列挙してください。
 すべての説明は日本語で記述してください。
 
 {joined}"""
@@ -105,6 +113,9 @@ def fallback_result(paper: dict) -> dict:
     return {
         "titleJa": paper["title"],
         "org": paper.get("org", ""),
+        "task": None,
+        "proposedMethod": None,
+        "datasets": [],
         "what": "解析に失敗しました。",
         "novel": "",
         "method": "",
@@ -211,8 +222,15 @@ def main():
                     "titleJa": result.get("titleJa", paper["title"]),
                     "authors": paper.get("authors", []),
                     "org": result.get("org") or paper.get("org", ""),
+                    "abstract": paper.get("abstract", ""),
+                    "comment": paper.get("comment"),
+                    "journalRef": paper.get("journalRef"),
+                    "categories": paper.get("categories", []),
                     "url": paper["url"],
                     "category": paper.get("category", "other"),
+                    "task": result.get("task"),
+                    "proposedMethod": result.get("proposedMethod"),
+                    "datasets": result.get("datasets", []),
                     "what": result.get("what", ""),
                     "novel": result.get("novel", ""),
                     "method": result.get("method", ""),

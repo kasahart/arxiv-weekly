@@ -66,10 +66,15 @@ def parse_atom(xml_bytes: bytes) -> list[dict]:
         ]
         orgs = extract_orgs(entry)
 
+        comment = (entry.findtext("arxiv:comment", "", NS) or "").strip().replace("\n", " ")
+        journal_ref = (entry.findtext("arxiv:journal_ref", "", NS) or "").strip()
+
         papers.append({
             "id": arxiv_id,
             "title": (entry.findtext("atom:title", "", NS) or "").strip().replace("\n", " "),
             "abstract": (entry.findtext("atom:summary", "", NS) or "").strip().replace("\n", " "),
+            "comment": comment or None,
+            "journalRef": journal_ref or None,
             "date": date_str,
             "published_iso": published,
             "authors": authors[:5],

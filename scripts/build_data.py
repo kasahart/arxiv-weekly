@@ -101,22 +101,32 @@ def fetch_paper_meta(papers: list[dict]) -> dict[str, dict]:
         except Exception:
             pass
 
-        # HuggingFace Papers: GitHub リポジトリ
+        # HuggingFace Papers: GitHub リポジトリ・upvotes・projectPage
+        upvotes = None
+        project_page = None
         try:
             url = f"https://huggingface.co/api/papers/{arxiv_id}"
             req = urllib.request.Request(url, headers={"User-Agent": "arxiv-weekly/1.0"})
             with urllib.request.urlopen(req, timeout=10) as r:
                 data = json.loads(r.read())
                 github_repo = data.get("githubRepo") or None
+                upvotes = data.get("upvotes")
+                project_page = data.get("projectPage") or None
         except Exception:
             pass
 
-        meta[arxiv_id] = {"citationCount": citation_count, "githubRepo": github_repo}
+        meta[arxiv_id] = {
+            "citationCount": citation_count,
+            "githubRepo": github_repo,
+            "upvotes": upvotes,
+            "projectPage": project_page,
+        }
         time.sleep(0.5)  # レート制限対策
 
     found_citations = sum(1 for v in meta.values() if v["citationCount"] is not None)
     found_repos = sum(1 for v in meta.values() if v["githubRepo"])
-    print(f"[build] Meta: citations={found_citations}/{len(papers)}, repos={found_repos}/{len(papers)}")
+    found_hf = sum(1 for v in meta.values() if v["upvotes"] is not None)
+    print(f"[build] Meta: citations={found_citations}/{len(papers)}, repos={found_repos}/{len(papers)}, hf={found_hf}/{len(papers)}")
     return meta
 
 
@@ -148,8 +158,11 @@ def main(date_str: str | None = None):
     meta = fetch_paper_meta(papers)
     for p in papers:
         arxiv_id = p["id"].split("v")[0]
-        p["citationCount"] = meta.get(arxiv_id, {}).get("citationCount")
-        p["githubRepo"] = meta.get(arxiv_id, {}).get("githubRepo")
+        m = meta.get(arxiv_id, {})
+        p["citationCount"] = m.get("citationCount")
+        p["githubRepo"] = m.get("githubRepo")
+        p["upvotes"] = m.get("upvotes")
+        p["projectPage"] = m.get("projectPage")
 
     # GitHub Models でトレンド生成
     token = os.environ.get("GITHUB_TOKEN")
