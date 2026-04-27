@@ -58,6 +58,12 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) 
         <div style={{ fontSize: 12, color: '#94a3b8', lineHeight: 1.6, marginTop: 3 }}>
           {paper.titleJa}
         </div>
+        {!expanded && paper.what && (
+          <div style={{ fontSize: 11, color: '#64748b', lineHeight: 1.8, marginTop: 8,
+            paddingLeft: 8, borderLeft: '2px solid #1e293b' }}>
+            {paper.what}
+          </div>
+        )}
       </div>
 
       {expanded && (
