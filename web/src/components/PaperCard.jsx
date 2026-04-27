@@ -14,7 +14,7 @@ function stripPrefix(text) {
   return text?.replace(/^[①-⑨]\s*/, '') ?? ''
 }
 
-export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) {
+export default function PaperCard({ paper, cat, animDelay = 0, citationCount, githubUrl }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -39,6 +39,15 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) 
           </span>
           <span style={{ fontSize: 10, color: '#94a3b8', fontWeight: 500 }}>{paper.org}</span>
           <span style={{ fontSize: 9, color: '#334155' }}>arXiv:{paper.id}</span>
+          {githubUrl && (
+            <a href={githubUrl} target="_blank" rel="noreferrer"
+              onClick={e => e.stopPropagation()}
+              style={{ fontSize: 9, padding: '2px 7px', textDecoration: 'none',
+                border: '1px solid #4ade8060', color: '#4ade80',
+                background: '#4ade8010', borderRadius: 2, fontWeight: 600 }}>
+              Code
+            </a>
+          )}
           {citationCount != null && citationCount > 0 && (
             <span style={{ fontSize: 9, padding: '2px 7px',
               border: '1px solid #475569', color: '#94a3b8', borderRadius: 2 }}>
