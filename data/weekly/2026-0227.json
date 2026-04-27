@@ -132,15 +132,15 @@
           "id": "2602.18721v1",
           "date": "Feb 21",
           "title": "ReHear: Iterative Pseudo-Label Refinement for Semi-Supervised Speech Recognition via Audio Large Language Models",
-          "titleJa": "ReHear: 音声大規模言語モデルを用いた半教師あり音声認識のための反復的擬似ラベル改良",
+          "titleJa": "ReHear: 音響大規模言語モデルを用いた半教師あり音声認識のための反復的擬似ラベル改良",
           "org": "NVIDIA",
           "url": "https://arxiv.org/abs/2602.18721v1",
           "category": "foundation",
-          "what": "音声大規模言語モデルを活用し、半教師あり音声認識における擬似ラベルの精度を反復的に改善するReHearフレームワークを提案。",
+          "what": "音響大規模言語モデルを活用し、半教師あり音声認識における擬似ラベルの精度を反復的に改善するReHearフレームワークを提案。",
           "novel": "ASR仮説と元の音声データの両方を条件として使用することで、従来のテキストベースの補正手法よりも高精度な擬似ラベル生成を実現。",
           "method": "音声対応の大規模言語モデルを自己学習ループに統合し、音声とASR仮説を条件とした擬似ラベルの改良を反復的に行う。",
           "validation": "多様なベンチマークでの実験により、エラー伝播を軽減し、従来の教師ありおよび擬似ラベルベースラインを一貫して上回る性能を実証。",
-          "discussion": "音声大規模言語モデルの計算コストや、他の言語やドメインへの適用可能性が課題。",
+          "discussion": "音響大規模言語モデルの計算コストや、他の言語やドメインへの適用可能性が課題。",
           "nextReads": [
             {
               "label": "Pseudo-Labeling for ASR (2020)",
