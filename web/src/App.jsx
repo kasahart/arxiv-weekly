@@ -142,6 +142,7 @@ export default function App() {
             error: {error}
           </div>
         )}
+        {!loading && !error && weekData && <TrendSummary trend={weekData.trend} />}
         {!loading && !error && filtered.map((cat, ci) => (
           <div key={cat.id} style={{ marginBottom: 36 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
@@ -161,7 +162,6 @@ export default function App() {
             </div>
           </div>
         ))}
-        {!loading && !error && weekData && <TrendSummary trend={weekData.trend} />}
         <div style={{ marginTop: 22, fontSize: 9, color: '#1e293b', letterSpacing: 1,
           borderTop: '1px solid #1e293b', paddingTop: 14 }}>
           SOURCE: arXiv cs.SD / eess.AS - POWERED BY GitHub Models (GPT-4o) - 毎週金曜更新
