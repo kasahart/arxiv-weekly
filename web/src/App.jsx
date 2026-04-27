@@ -7,6 +7,50 @@ import TrendSummary from './components/TrendSummary'
 
 const DATA_BASE = './data'
 
+async function fetchAllCitationCounts(papers) {
+  const CHUNK = 10
+  const results = {}
+  for (let i = 0; i < papers.length; i += CHUNK) {
+    const chunk = papers.slice(i, i + CHUNK)
+    await Promise.allSettled(
+      chunk.map(async p => {
+        const id = p.id.split('v')[0]
+        try {
+          const res = await fetch(
+            `https://api.openalex.org/works/https://doi.org/10.48550/arXiv.${id}?select=cited_by_count`
+          )
+          if (!res.ok) return
+          const data = await res.json()
+          if (data?.cited_by_count != null) results[id] = data.cited_by_count
+        } catch {}
+      })
+    )
+    if (i + CHUNK < papers.length) await new Promise(r => setTimeout(r, 300))
+  }
+  return results
+}
+
+async function fetchAllGithubRepos(papers) {
+  const CHUNK = 10
+  const results = {}
+  for (let i = 0; i < papers.length; i += CHUNK) {
+    const chunk = papers.slice(i, i + CHUNK)
+    await Promise.allSettled(
+      chunk.map(async p => {
+        const id = p.id.split('v')[0]
+        try {
+          const res = await fetch(`https://huggingface.co/api/papers/${id}`)
+          if (!res.ok) return
+          const data = await res.json()
+          if (data?.githubRepo) results[id] = data.githubRepo
+        } catch {}
+      })
+    )
+    if (i + CHUNK < papers.length) await new Promise(r => setTimeout(r, 300))
+  }
+  return results
+}
+
 export default function App() {
   const [index, setIndex] = useState(null)
   const [weekData, setWeekData] = useState(null)
@@ -14,6 +58,8 @@ export default function App() {
   const [activeCat, setActiveCat] = useState('all')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [citationMap, setCitationMap] = useState({})
+  const [githubMap, setGithubMap] = useState({})
 
   useEffect(() => {
     fetch(`${DATA_BASE}/index.json`)
@@ -30,6 +76,8 @@ export default function App() {
     setLoading(true)
     setError(null)
     setActiveCat('all')
+    setCitationMap({})
+    setGithubMap({})
 
     const url = selectedDate === 'latest'
       ? `${DATA_BASE}/latest.json`
@@ -40,6 +88,14 @@ export default function App() {
       .then(data => { setWeekData(data); setLoading(false) })
       .catch(e => { setError(e.message); setLoading(false) })
   }, [selectedDate])
+
+  useEffect(() => {
+    if (!weekData) return
+    const allPapers = weekData.categories.flatMap(c => c.papers)
+    if (allPapers.length === 0) return
+    fetchAllCitationCounts(allPapers).then(map => setCitationMap(map))
+    fetchAllGithubRepos(allPapers).then(map => setGithubMap(map))
+  }, [weekData])
 
   const categories = weekData?.categories ?? []
   const filtered = activeCat === 'all'
@@ -98,7 +154,9 @@ export default function App() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               {cat.papers.map((paper, pi) => (
                 <PaperCard key={paper.id} paper={paper} cat={cat}
-                  animDelay={ci * 0.05 + pi * 0.04} />
+                  animDelay={ci * 0.05 + pi * 0.04}
+                  citationCount={citationMap[paper.id.split('v')[0]]}
+                  githubUrl={githubMap[paper.id.split('v')[0]]} />
               ))}
             </div>
           </div>

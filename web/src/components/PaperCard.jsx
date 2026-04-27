@@ -13,7 +13,7 @@ function stripPrefix(text) {
   return text?.replace(/^[①-⑨]\s*/, '') ?? ''
 }
 
-export default function PaperCard({ paper, cat, animDelay = 0 }) {
+export default function PaperCard({ paper, cat, animDelay = 0, citationCount, githubUrl }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -38,8 +38,8 @@ export default function PaperCard({ paper, cat, animDelay = 0 }) {
           </span>
           <span style={{ fontSize: 10, color: '#94a3b8', fontWeight: 500 }}>{paper.org}</span>
           <span style={{ fontSize: 9, color: '#334155' }}>arXiv:{paper.id}</span>
-          {paper.githubRepo && (
-            <a href={paper.githubRepo} target="_blank" rel="noreferrer"
+          {githubUrl && (
+            <a href={githubUrl} target="_blank" rel="noreferrer"
               onClick={e => e.stopPropagation()}
               style={{ fontSize: 9, padding: '2px 7px', textDecoration: 'none',
                 border: '1px solid #4ade8060', color: '#4ade80',
@@ -47,10 +47,10 @@ export default function PaperCard({ paper, cat, animDelay = 0 }) {
               Code
             </a>
           )}
-          {paper.citationCount != null && paper.citationCount > 0 && (
+          {citationCount != null && citationCount > 0 && (
             <span style={{ fontSize: 9, padding: '2px 7px',
               border: '1px solid #475569', color: '#94a3b8', borderRadius: 2 }}>
-              cited {paper.citationCount}
+              cited {citationCount}
             </span>
           )}
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>
