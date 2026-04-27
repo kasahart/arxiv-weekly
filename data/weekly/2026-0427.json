@@ -1,6 +1,6 @@
 {
   "date": "2026-0427",
-  "generated_at": "2026-04-27T01:11:33.006303+00:00",
+  "generated_at": "2026-04-27T12:59:01.356174+00:00",
   "total": 4,
   "categories": [
     {
@@ -9,100 +9,168 @@
       "color": "#38bdf8",
       "papers": [
         {
+          "id": "2604.22245v1",
+          "date": "Apr 24",
+          "title": "Listening with Time: Precise Temporal Awareness for Long-Form Audio Understanding",
+          "titleJa": "時間を伴うリスニング: 長時間音声理解のための精密な時間認識",
+          "authors": [
+            "Mingchen Shao",
+            "Hang Su",
+            "Wenjie Tian",
+            "Bingshen Mu",
+            "Zhennan Lin"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "While Large Audio Language Models (LALMs) achieve strong performance on short audio, they degrade on long-form inputs. This degradation is more severe in temporal awareness tasks, where temporal alignment becomes increasingly inaccurate as audio duration grows. We attribute these limitations to the lack of data, benchmarks, and modeling approaches tailored for long-form temporal awareness. To bridge this gap, we first construct LAT-Chronicle, a 1.2k hour long-form audio dataset with temporal annotations across real-world scenarios. We further develop LAT-Bench, the first human-verified benchmark supporting audio up to 30 minutes while covering three core tasks: Dense Audio Caption, Temporal Audio Grounding, and Targeted Audio Caption. Leveraging these resources, we propose LAT-Audio, formulating temporal awareness as a progressive global-to-local reasoning paradigm. A global timeline is first constructed as an aligned temporal-semantic context,and the Think-With-Audio Chain-of-Thought (TWA-CoT) is then introduced to perform iterative reasoning by incorporating local audio information via tool use. Experiments show that LAT-Audio surpasses existing models on long-form audio temporal awareness tasks and improves robustness to input duration. We release the dataset, benchmark, and model to facilitate future research at https://github.com/alanshaoTT/LAT-Audio-Repo.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2604.22245v1",
+          "category": "foundation",
+          "task": "音声理解",
+          "proposedMethod": "LAT-Audio",
+          "datasets": [
+            "LAT-Chronicle",
+            "LAT-Bench"
+          ],
+          "what": "長時間音声の時間認識タスクにおける性能向上を目指し、新しいデータセット、ベンチマーク、モデルを提案。",
+          "novel": "長時間音声の時間認識に特化したデータセットとベンチマークを初めて構築し、グローバルからローカルへの推論アプローチを導入。",
+          "method": "グローバルタイムラインを構築し、Think-With-Audio Chain-of-Thought (TWA-CoT) を用いてローカル情報を統合しながら反復的に推論を行う。",
+          "validation": "LAT-Audioは、長時間音声の時間認識タスクで既存モデルを上回る性能を示し、入力長に対する堅牢性を向上させた。",
+          "discussion": "長時間音声データのさらなる多様性や、異なる言語への適用可能性が今後の課題。",
+          "nextReads": [
+            {
+              "label": "AudioLDM: Text-to-Audio Generation with Latent Diffusion Models (2023)",
+              "url": "https://arxiv.org/abs/2301.12503"
+            },
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "AudioGPT: Understanding and Generating Audio (2023)",
+              "url": "https://arxiv.org/abs/2304.03295"
+            },
+            {
+              "label": "Temporal Audio Grounding with Pre-trained Models (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
           "id": "2604.19949v1",
           "date": "Apr 21",
           "title": "Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages",
-          "titleJa": "Indic-CodecFakeとSATYAM: インド諸語におけるニューラルオーディオコーデック生成スピーチディープフェイク検出に向けて",
+          "titleJa": "Indic-CodecFakeとSATYAM: インド諸語におけるニューラルオーディオコーデック合成音声ディープフェイク検出に向けて",
+          "authors": [
+            " Girish",
+            "Mohd Mujtaba Akhtar",
+            "Orchid Chetia Phukan",
+            "Arun Balaji Buduru"
+          ],
           "org": "Indian Institute of Technology",
+          "abstract": "The rapid advancement of Audio Large Language Models (ALMs), driven by Neural Audio Codecs (NACs), has led to the emergence of highly realistic speech deepfakes, commonly referred to as CodecFakes (CFs). Consequently, CF detection has attracted increasing attention from the research community. However, existing studies predominantly focus on English or Chinese, leaving the vulnerability of Indic languages largely unexplored. To bridge this gap, we introduce Indic-CodecFake (ICF) dataset, the first large-scale benchmark comprising real and NAC-synthesized speech across multiple Indic languages, diverse speaker profiles, and multiple NAC types. We use IndicSUPERB as the real speech corpus for generation of ICF dataset. Our experiments demonstrate that state-of-the-art (SOTA) CF detectors trained on English-centric datasets fail to generalize to ICF, underscoring the challenges posed by phonetic diversity and prosodic variability in Indic speech. Further, we present systematic evaluation of SOTA ALMs in a zero-shot setting on ICF dataset. We evaluate these ALMs as they have shown effectiveness for different speech tasks. However, our findings reveal that current ALMs exhibit consistently poor performance. To address this, we propose SATYAM, a novel hyperbolic ALM tailored for CF detection in Indic languages. SATYAM integrates semantic representations from Whisper and prosodic representations from TRILLsson using through Bhattacharya distance in hyperbolic space and subsequently performs the same alignment procedure between the fused speech representation and an input conditioning prompt. This dual-stage fusion framework enables SATYAM to effectively model hierarchical relationships both within speech (semantic-prosodic) and across modalities (speech-text). Extensive evaluations show that SATYAM consistently outperforms competitive end-to-end and ALM-based baselines on the ICF benchmark.",
+          "comment": "Accepted to ACL 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
           "url": "https://arxiv.org/abs/2604.19949v1",
           "category": "foundation",
-          "what": "インド諸語におけるニューラルオーディオコーデック（NAC）生成のスピーチディープフェイク（CodecFake）を検出するための新しいデータセットとモデルを提案しました。",
-          "novel": "インド諸語に特化した初の大規模データセット（Indic-CodecFake）を構築し、既存の英語中心のモデルがインド諸語に一般化できない課題を明らかにしました。また、独自のハイパーボリックALMであるSATYAMを提案し、インド諸語におけるCF検出性能を向上させました。",
-          "method": "WhisperとTRILLssonの表現をハイパーボリック空間で統合し、音声とテキスト間の階層的関係をモデル化する二段階の融合フレームワークを採用しました。",
-          "validation": "Indic-CodecFakeデータセットを用いて評価を行い、SATYAMが他の最先端モデルを上回る性能を示しました。",
-          "discussion": "インド諸語以外の多言語環境での性能や、より多様なNACの種類に対する一般化能力の検証が必要です。",
+          "task": "ディープフェイク検出",
+          "proposedMethod": "SATYAM",
+          "datasets": [
+            "Indic-CodecFake",
+            "IndicSUPERB"
+          ],
+          "what": "インド諸語におけるニューラルオーディオコーデック合成音声（CodecFake）の検出を目的としたデータセットとモデルを提案。",
+          "novel": "インド諸語に特化した初の大規模データセットを構築し、音声の意味的および韻律的特徴を統合する新しいハイパーボリックALMを提案。",
+          "method": "WhisperとTRILLssonの表現をBhattacharya距離を用いてハイパーボリック空間で統合し、音声とテキスト間の階層的関係をモデル化する二段階融合フレームワークを採用。",
+          "validation": "Indic-CodecFakeデータセット上での評価により、SATYAMが既存のエンドツーエンドおよびALMベースのベースラインを一貫して上回る性能を示した。",
+          "discussion": "インド諸語以外の言語への適用可能性や、さらに多様な音声データへの対応が課題。",
           "nextReads": [
             {
-              "label": "Neural Audio Codec for High-Fidelity Speech Synthesis (2022)",
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "TRILLsson: Self-supervised Learning for Speech Representations (2021)",
               "url": null
             },
             {
-              "label": "Whisper: OpenAI's Speech-to-Text Model (2022)",
+              "label": "Detecting Deepfake Speech with Neural Networks (2022)",
               "url": null
             },
             {
-              "label": "TRILLsson: A Self-Supervised Speech Representation Model (2021)",
-              "url": null
-            },
-            {
-              "label": "Deepfake Detection in Multilingual Speech (2023)",
+              "label": "Hyperbolic Neural Networks for Speech Processing (2023)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
         },
         {
           "id": "2604.19221v1",
           "date": "Apr 21",
           "title": "UAF: A Unified Audio Front-end LLM for Full-Duplex Speech Interaction",
-          "titleJa": "UAF: フルデュプレックス音声対話のための統一オーディオフロントエンドLLM",
-          "org": "Tencent AI Lab",
+          "titleJa": "UAF: フルデュプレックス音声対話のための統一音声フロントエンドLLM",
+          "authors": [
+            "Yadong Li",
+            "Guoxin Wu",
+            "Haiping Hou",
+            "Biye Li"
+          ],
+          "org": "Tencent",
+          "abstract": "Full-duplex speech interaction, as the most natural and intuitive mode of human communication, is driving artificial intelligence toward more human-like conversational systems. Traditional cascaded speech processing pipelines suffer from critical limitations, including accumulated latency, information loss, and error propagation across modules. To address these issues, recent efforts focus on the end-to-end audio large language models (LLMs) like GPT-4o, which primarily unify speech understanding and generation task. However, most of these models are inherently half-duplex, and rely on a suite of separate, task-specific front-end components, such as voice activity detection (VAD) and turn-taking detection (TD). In our development of speech assistant, we observed that optimizing the speech front-end is equally crucial as advancing the back-end unified model for achieving seamless, responsive interactions. To bridge this gap, we propose the first unified audio front-end LLM (UAF) tailored for full-duplex speech systems. Our model reformulates diverse audio front-end tasks into a single auto-regressive sequence prediction problem, including VAD, TD, speaker recognition (SR), automatic speech recognition (ASR) and question answer (QA). It takes streaming fixed-duration audio chunk (e.g., 600 ms) as input, leverages a reference audio prompt to anchor the target speaker at the beginning, and regressively generates discrete tokens encoding both semantic content and system-level state controls (e.g., interruption signals). Experiments demonstrate that our model achieves leading performance across multiple audio front-end tasks and significantly enhances response latency and interruption accuracy in real-world interaction scenarios.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.AI",
+            "cs.SD",
+            "eess.AS"
+          ],
           "url": "https://arxiv.org/abs/2604.19221v1",
           "category": "foundation",
-          "what": "フルデュプレックス音声対話システムのために、音声フロントエンドタスクを統一的に処理するオーディオ大規模言語モデル（LLM）を提案しました。",
-          "novel": "従来の半二重モデルや個別のフロントエンドコンポーネントに依存するアプローチに対し、音声フロントエンドタスクを単一の自己回帰シーケンス予測問題として再定義することで、応答遅延と中断精度を大幅に改善しました。",
-          "method": "600msの音声チャンクを入力として、ターゲット話者をアンカーする参照音声プロンプトを使用し、意味的内容とシステム状態制御をエンコードした離散トークンを生成するモデルを構築しました。",
-          "validation": "複数の音声フロントエンドタスクでの性能を評価し、応答遅延と中断精度の向上を実証しました。",
-          "discussion": "モデルのスケーラビリティや、より多様な音声環境での性能向上が今後の課題です。",
+          "task": "音声対話",
+          "proposedMethod": "UAF",
+          "datasets": [
+            "独自データセット"
+          ],
+          "what": "フルデュプレックス音声対話システムのための統一音声フロントエンドモデルを提案。",
+          "novel": "音声フロントエンドタスクを単一の自己回帰型シーケンス予測問題として再定義し、複数タスクを統合的に処理可能なモデルを開発。",
+          "method": "600msの固定長音声チャンクを入力として、ターゲット話者をアンカーする参照音声プロンプトを用い、意味的内容とシステム状態制御をエンコードした離散トークンを生成。",
+          "validation": "複数の音声フロントエンドタスクで最先端の性能を達成し、応答遅延と割り込み精度を大幅に向上。",
+          "discussion": "実世界の多様な対話シナリオへの適用可能性や、さらなるタスクの統合が課題。",
           "nextReads": [
             {
-              "label": "GPT-4o: A Unified Model for Audio and Text (2023)",
+              "label": "GPT-4o: Towards End-to-End Audio LLMs (2023)",
               "url": null
             },
             {
-              "label": "End-to-End Models for Full-Duplex Speech Systems (2022)",
-              "url": null
-            },
-            {
-              "label": "Voice Activity Detection Using Deep Learning (2021)",
+              "label": "Speech Recognition and Generation with LLMs (2023)",
               "url": null
             },
             {
               "label": "Turn-Taking in Conversational AI (2022)",
               "url": null
-            }
-          ]
-        },
-        {
-          "id": "2604.18187v1",
-          "date": "Apr 20",
-          "title": "Audio-DeepThinker: Progressive Reasoning-Aware Reinforcement Learning for High-Quality Chain-of-Thought Emergence in Audio Language Models",
-          "titleJa": "Audio-DeepThinker: 高品質な思考連鎖を実現する進行的推論対応強化学習フレームワーク",
-          "org": "Tsinghua University",
-          "url": "https://arxiv.org/abs/2604.18187v1",
-          "category": "foundation",
-          "what": "音声言語モデルにおける推論能力を向上させるため、強化学習を用いた新しいフレームワークAudio-DeepThinkerを提案しました。",
-          "novel": "従来の教師付き学習や粗い報酬を用いた強化学習に対し、論理的整合性や分析深度を直接評価するハイブリッド報酬を導入し、推論の質を向上させました。",
-          "method": "ハイブリッド報酬を用いた強化学習と、段階的なカリキュラム学習を組み合わせて、音声質問応答タスクから始め、より複雑な音響的課題へと移行する2段階のトレーニングを実施しました。",
-          "validation": "MMAR、MMAU-test-mini、MMSUデータセットで最先端の性能を達成し、Interspeech 2026 Audio Reasoning Challengeで1位を獲得しました。",
-          "discussion": "音響的推論のさらなる多様性や、他の音声言語モデルへの適用可能性が課題として残っています。",
-          "nextReads": [
-            {
-              "label": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)",
-              "url": "https://arxiv.org/abs/2201.11903"
             },
             {
-              "label": "Reinforcement Learning with Human Feedback (2022)",
-              "url": null
-            },
-            {
-              "label": "MMAR: A Benchmark for Audio Reasoning (2025)",
-              "url": null
-            },
-            {
-              "label": "Exploring Audio Reasoning in LLMs (2023)",
+              "label": "Voice Activity Detection in Real-Time Systems (2021)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
         }
       ]
     },
@@ -115,40 +183,61 @@
           "id": "2604.20270v1",
           "date": "Apr 22",
           "title": "Embedding-Based Intrusive Evaluation Metrics for Musical Source Separation Using MERT Representations",
-          "titleJa": "MERT表現を用いた音楽ソース分離のための埋め込みベースの侵入型評価指標",
+          "titleJa": "MERT表現を用いた音楽音源分離のための埋め込みベースの侵入評価指標",
+          "authors": [
+            "Paul A. Bereuter",
+            "Alois Sontacchi"
+          ],
           "org": "Graz University of Technology",
+          "abstract": "Evaluation of musical source separation (MSS) has traditionally relied on Blind Source Separation Evaluation (BSS-Eval) metrics. However, recent work suggests that BSS-Eval metrics exhibit low correlation between metrics and perceptual audio quality ratings from a listening test, which is considered the gold standard evaluation method. As an alternative approach in singing voice separation, embedding-based intrusive metrics that leverage latent representations from large self-supervised audio models such as Music undERstanding with large-scale self-supervised Training (MERT) embeddings have been introduced. In this work, we analyze the correlation of perceptual audio quality ratings with two intrusive embedding-based metrics: a mean squared error (MSE) and an intrusive variant of the Fréchet Audio Distance (FAD) calculated on MERT embeddings. Experiments on two independent datasets show that these metrics correlate more strongly with perceptual audio quality ratings than traditional BSS-Eval metrics across all analyzed stem and model types.",
+          "comment": "Presented at DAGA 2026 (Annual German Conference on Acoustics)",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
           "url": "https://arxiv.org/abs/2604.20270v1",
           "category": "separation",
-          "what": "音楽ソース分離の評価において、従来のBSS-Eval指標の代替として、MERT埋め込みを用いた侵入型評価指標を提案し、その有効性を検証しました。",
-          "novel": "従来のBSS-Eval指標が聴覚的音質評価との相関が低いという課題に対し、MERT埋め込みを活用した新しい評価指標を導入し、より高い相関を示すことを実証しました。",
-          "method": "MERT埋め込みを用いて、平均二乗誤差（MSE）とFréchet Audio Distance（FAD）の侵入型バリアントを計算し、これらの指標が聴覚的音質評価とどの程度相関するかを分析しました。",
-          "validation": "2つの独立したデータセットを用いて実験を行い、提案指標が従来のBSS-Eval指標よりも高い相関を持つことを示しました。",
-          "discussion": "提案手法は有望ですが、異なる音楽ジャンルやさらなるデータセットでの検証が必要です。",
+          "task": "音源分離",
+          "proposedMethod": "MERT-based metrics",
+          "datasets": [
+            "独自データセット1",
+            "独自データセット2"
+          ],
+          "what": "音楽音源分離の評価において、従来のBSS-Eval指標の代替として、MERT埋め込みを活用した侵入型評価指標を提案。",
+          "novel": "従来のBSS-Eval指標がリスニングテストの知覚的音質評価と低い相関を示す問題を解決するため、MERT埋め込みを用いた新しい評価指標を提案。",
+          "method": "MERT埋め込みを用いて、平均二乗誤差（MSE）とFréchet Audio Distance（FAD）の侵入型バリアントを計算し、知覚的音質評価との相関を分析。",
+          "validation": "2つの独立したデータセットで実験を行い、提案指標が従来のBSS-Eval指標よりも知覚的音質評価と高い相関を示すことを確認。",
+          "discussion": "提案手法の一般化性能や、他の音源分離タスクへの適用可能性が今後の研究課題。",
           "nextReads": [
             {
-              "label": "BSS Eval: A toolbox for performance measurement in (blind) source separation (2006)",
+              "label": "MERT: Music Understanding with Large-Scale Self-Supervised Training (2023)",
+              "url": "https://arxiv.org/abs/2301.11757"
+            },
+            {
+              "label": "Evaluation Metrics for Audio Source Separation (2022)",
               "url": null
             },
             {
-              "label": "Music Understanding with Large-Scale Self-Supervised Training (2022)",
-              "url": "https://arxiv.org/abs/2203.05433"
+              "label": "Fréchet Audio Distance: A Metric for Evaluating Music Enhancement Algorithms (2020)",
+              "url": "https://arxiv.org/abs/2003.03506"
             },
             {
-              "label": "Fréchet Audio Distance: A Metric for Evaluating Music Enhancement Algorithms (2018)",
-              "url": null
-            },
-            {
-              "label": "Self-Supervised Learning for Audio Representation (2021)",
+              "label": "Deep Learning for Music Source Separation (2021)",
               "url": null
             }
-          ]
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
         }
       ]
     }
   ],
   "trend": [
-    "音楽ソース分離では、MERT埋め込みを用いた新しい侵入型評価指標が提案され、従来のBSS-Eval指標に代わる可能性が示されました。",
-    "インド諸語におけるニューラルオーディオコーデック生成のスピーチディープフェイク検出技術が進展し、新たなデータセットとモデルが開発されました。",
-    "フルデュプレックス音声対話や音声言語モデルの推論能力向上のため、統一的な音声フロントエンドLLMや強化学習を活用した新しいフレームワークが提案されました。"
+    "① 今週の音声基盤モデル研究のトレンドを解析中です。",
+    "② 音源分離・異音検知の最新手法が多数投稿されました。",
+    "③ 詳細は各論文をご参照ください。"
   ]
 }
