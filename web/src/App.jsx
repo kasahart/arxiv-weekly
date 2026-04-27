@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import Header from './components/Header'
 import WeekSelector from './components/WeekSelector'
 import CategoryFilter from './components/CategoryFilter'
@@ -7,6 +7,7 @@ import TrendSummary from './components/TrendSummary'
 
 const DATA_BASE = './data'
 const LS_TO_DATE = 'arxiv-to-date'
+const LS_FAVORITES = 'arxiv-favorites'
 
 async function fetchCitationsForPapers(papers) {
   const CHUNK = 10
@@ -68,7 +69,20 @@ export default function App() {
   const [activeCat, setActiveCat] = useState('all')
   const [citationMap, setCitationMap] = useState({})
   const [githubMap, setGithubMap] = useState({})
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
+  const [favorites, setFavorites] = useState(
+    () => new Set(JSON.parse(localStorage.getItem(LS_FAVORITES) || '[]'))
+  )
   const sentinelRef = useRef(null)
+
+  const toggleFavorite = useCallback((arxivId) => {
+    setFavorites(prev => {
+      const next = new Set(prev)
+      next.has(arxivId) ? next.delete(arxivId) : next.add(arxivId)
+      localStorage.setItem(LS_FAVORITES, JSON.stringify([...next]))
+      return next
+    })
+  }, [])
 
   // Load index and restore saved week
   useEffect(() => {
@@ -194,6 +208,12 @@ export default function App() {
           onFromChange={setFromDate}
         />
         <CategoryFilter categories={allCategories} active={activeCat} onChange={setActiveCat} />
+        <button
+          className={`ctrlBtn${showFavoritesOnly ? ' active' : ''}`}
+          onClick={() => setShowFavoritesOnly(s => !s)}
+        >
+          {showFavoritesOnly ? '★ お気に入り' : '☆ お気に入り'}
+        </button>
       </div>
 
       <div style={{ padding: '24px 26px', maxWidth: 960 }}>
@@ -206,6 +226,12 @@ export default function App() {
         {loadedWeeks.map((week) => {
           const filteredCats = week.categories
             .filter(c => activeCat === 'all' || c.id === activeCat)
+            .map(c => ({
+              ...c,
+              papers: showFavoritesOnly
+                ? c.papers.filter(p => favorites.has(p.id.split('v')[0]))
+                : c.papers,
+            }))
             .filter(c => c.papers.length > 0)
 
           return (
@@ -238,7 +264,9 @@ export default function App() {
                         <PaperCard key={paper.id} paper={paper} cat={cat}
                           animDelay={ci * 0.05 + pi * 0.04}
                           citationCount={citationMap[id]}
-                          githubUrl={githubMap[id]} />
+                          githubUrl={githubMap[id]}
+                          isFavorite={favorites.has(id)}
+                          onToggleFavorite={() => toggleFavorite(id)} />
                       )
                     })}
                   </div>

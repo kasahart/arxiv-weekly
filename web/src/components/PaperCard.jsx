@@ -13,7 +13,7 @@ function stripPrefix(text) {
   return text?.replace(/^[①-⑨]\s*/, '') ?? ''
 }
 
-export default function PaperCard({ paper, cat, animDelay = 0, citationCount, githubUrl }) {
+export default function PaperCard({ paper, cat, animDelay = 0, citationCount, githubUrl, isFavorite, onToggleFavorite }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -54,6 +54,15 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
             </span>
           )}
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>
+            <button
+              onClick={e => { e.stopPropagation(); onToggleFavorite?.() }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0,
+                fontSize: 14, lineHeight: 1, color: isFavorite ? '#f59e0b' : '#334155',
+                transition: 'color 0.15s' }}
+              title={isFavorite ? 'お気に入り解除' : 'お気に入りに追加'}
+            >
+              {isFavorite ? '★' : '☆'}
+            </button>
             <a href={paper.url} target="_blank" rel="noreferrer"
               onClick={e => e.stopPropagation()}
               style={{ fontSize: 9, color: '#475569', textDecoration: 'none' }}>
