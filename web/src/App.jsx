@@ -6,31 +6,6 @@ import PaperCard from './components/PaperCard'
 import TrendSummary from './components/TrendSummary'
 
 const DATA_BASE = './data'
-const S2_BATCH = 'https://api.semanticscholar.org/graph/v1/paper/batch?fields=citationCount,externalIds'
-
-async function fetchCitationCounts(papers) {
-  const ids = papers.map(p => `arXiv:${p.id.split('v')[0]}`)
-  try {
-    const res = await fetch(S2_BATCH, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ids }),
-    })
-    if (!res.ok) return {}
-    const items = await res.json()
-    const map = {}
-    for (const item of items) {
-      if (!item) continue
-      const arxivId = item.externalIds?.ArXiv
-      if (arxivId != null && item.citationCount != null) {
-        map[arxivId] = item.citationCount
-      }
-    }
-    return map
-  } catch {
-    return {}
-  }
-}
 
 export default function App() {
   const [index, setIndex] = useState(null)
@@ -39,7 +14,6 @@ export default function App() {
   const [activeCat, setActiveCat] = useState('all')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [citationMap, setCitationMap] = useState({})
 
   // インデックス取得
   useEffect(() => {
@@ -62,7 +36,6 @@ export default function App() {
     setLoading(true)
     setError(null)
     setActiveCat('all')
-    setCitationMap({})
 
     const url = selectedDate === 'latest'
       ? `${DATA_BASE}/latest.json`
@@ -73,14 +46,6 @@ export default function App() {
       .then(data => { setWeekData(data); setLoading(false) })
       .catch(e => { setError(e.message); setLoading(false) })
   }, [selectedDate])
-
-  // 週データロード後に被引用数を非同期取得
-  useEffect(() => {
-    if (!weekData) return
-    const allPapers = weekData.categories.flatMap(c => c.papers)
-    if (allPapers.length === 0) return
-    fetchCitationCounts(allPapers).then(map => setCitationMap(map))
-  }, [weekData])
 
   const categories = weekData?.categories ?? []
   const filtered = activeCat === 'all'
@@ -151,8 +116,7 @@ export default function App() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               {cat.papers.map((paper, pi) => (
                 <PaperCard key={paper.id} paper={paper} cat={cat}
-                  animDelay={ci * 0.05 + pi * 0.04}
-                  citationCount={citationMap[paper.id.split('v')[0]]} />
+                  animDelay={ci * 0.05 + pi * 0.04} />
               ))}
             </div>
           </div>

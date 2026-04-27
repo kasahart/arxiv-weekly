@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const SECTIONS = [
   { key: 'what',       icon: '①', label: 'どんなもの？',        color: '#cbd5e1' },
@@ -9,8 +9,26 @@ const SECTIONS = [
   { key: 'nextReads',  icon: '⑥', label: '次に読むべき論文',     color: '#f472b6' },
 ]
 
-export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) {
+function useCitationCount(arxivId, expanded) {
+  const [count, setCount] = useState(null)
+  const [fetched, setFetched] = useState(false)
+
+  useEffect(() => {
+    if (!expanded || fetched) return
+    setFetched(true)
+    const id = arxivId.split('v')[0]
+    fetch(`https://api.semanticscholar.org/graph/v1/paper/arXiv:${id}?fields=citationCount`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => { if (data?.citationCount != null) setCount(data.citationCount) })
+      .catch(() => {})
+  }, [expanded, fetched, arxivId])
+
+  return count
+}
+
+export default function PaperCard({ paper, cat, animDelay = 0 }) {
   const [expanded, setExpanded] = useState(false)
+  const citationCount = useCitationCount(paper.id, expanded)
 
   return (
     <div className="fd" style={{
@@ -35,9 +53,9 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) 
           </span>
           <span style={{ fontSize: 10, color: '#94a3b8', fontWeight: 500 }}>{paper.org}</span>
           <span style={{ fontSize: 9, color: '#334155' }}>arXiv:{paper.id}</span>
-          {citationCount != null && (
+          {citationCount != null && citationCount > 0 && (
             <span style={{ fontSize: 9, padding: '2px 7px',
-              border: '1px solid #334155', color: '#64748b', borderRadius: 2 }}>
+              border: '1px solid #475569', color: '#94a3b8', borderRadius: 2 }}>
               cited {citationCount}
             </span>
           )}
