@@ -1,6 +1,6 @@
 {
   "date": "2026-0427",
-  "generated_at": "2026-04-27T00:14:59.721142+00:00",
+  "generated_at": "2026-04-27T00:49:08.763177+00:00",
   "total": 4,
   "categories": [
     {
@@ -12,30 +12,30 @@
           "id": "2604.19949v1",
           "date": "Apr 21",
           "title": "Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages",
-          "titleJa": "Indic-CodecFakeとSATYAM: インド系言語におけるニューラルオーディオコーデック合成音声ディープフェイク検出に向けて",
-          "org": "IIIT Hyderabad",
+          "titleJa": "Indic-CodecFakeとSATYAM: インド言語におけるニューラルオーディオコーデック合成音声ディープフェイク検出に向けて",
+          "org": "Microsoft Research India",
           "url": "https://arxiv.org/abs/2604.19949v1",
           "category": "foundation",
-          "what": "インド系言語におけるニューラルオーディオコーデック（NAC）による合成音声ディープフェイク（CodecFake, CF）の検出を目的とし、新しい大規模ベンチマークデータセットIndic-CodecFake（ICF）を提案しています。",
-          "novel": "インド系言語に特化した初のCF検出ベンチマークデータセットを構築し、既存の英語中心のモデルがインド系言語に対して一般化できない課題を明らかにしました。また、新しいハイパーボリックALMであるSATYAMを提案しました。",
-          "method": "SATYAMはWhisperとTRILLssonからの意味表現と韻律表現をハイパーボリック空間で統合し、音声とテキストの間の階層的な関係をモデル化する二段階の融合フレームワークを採用しています。",
-          "validation": "ICFベンチマークでの評価により、SATYAMが従来のエンドツーエンドモデルやALMベースのベースラインを一貫して上回る性能を示しました。",
-          "discussion": "インド系言語の多様な音声的特徴に対応するためのさらなる研究が必要であり、他言語への適用可能性も検討すべきです。",
+          "what": "① インド言語におけるニューラルオーディオコーデック（NAC）による合成音声ディープフェイク（CodecFake）の検出を目的とし、新しいベンチマークデータセットIndic-CodecFake（ICF）と、検出モデルSATYAMを提案しています。",
+          "novel": "② インド言語に特化した初の大規模ベンチマークデータセットICFを構築し、さらに音声の意味的・韻律的特徴を統合した新しいハイパーボリックALMモデルSATYAMを開発しました。",
+          "method": "③ SATYAMは、Whisperからの意味的表現とTRILLssonからの韻律的表現をハイパーボリック空間で統合し、音声とテキストのモダリティ間の階層的関係をモデル化する二段階の融合フレームワークを採用しています。",
+          "validation": "④ ICFベンチマークでの評価により、SATYAMが他の最先端モデルを上回る性能を示し、特にインド言語のディープフェイク検出において有効性を示しました。",
+          "discussion": "⑤ 提案手法は有望ですが、他の言語や異なるNACタイプへの適用性についてはさらなる研究が必要です。",
           "nextReads": [
             {
-              "label": "Neural Audio Codecs for Speech Synthesis (2022)",
+              "label": "Neural Audio Codec for Speech Synthesis (2022)",
               "url": null
             },
             {
-              "label": "Whisper: Robust Speech Recognition via Large-Scale Pretraining (2022)",
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
               "url": null
             },
             {
-              "label": "TRILLsson: Prosody-Aware Speech Representations (2021)",
+              "label": "TRILLsson: Self-Supervised Learning for Prosody (2023)",
               "url": null
             },
             {
-              "label": "Deepfake Detection in Multilingual Contexts (2020)",
+              "label": "Deepfake Detection in Multilingual Contexts (2021)",
               "url": null
             }
           ]
@@ -45,29 +45,29 @@
           "date": "Apr 21",
           "title": "UAF: A Unified Audio Front-end LLM for Full-Duplex Speech Interaction",
           "titleJa": "UAF: フルデュプレックス音声対話のための統一音声フロントエンドLLM",
-          "org": "Tencent AI Lab",
+          "org": "Alibaba Group",
           "url": "https://arxiv.org/abs/2604.19221v1",
           "category": "foundation",
-          "what": "フルデュプレックス音声対話システム向けに、音声フロントエンドタスクを統一的に処理する初の音声フロントエンドLLM（UAF）を提案しています。",
-          "novel": "音声フロントエンドタスク（VAD、TD、SR、ASR、QA）を単一の自己回帰的シーケンス予測問題として再定義し、応答遅延や中断精度を大幅に向上させました。",
-          "method": "600msの音声チャンクを入力とし、ターゲット話者をアンカーする参照音声プロンプトを使用して、意味内容とシステム制御状態をエンコードした離散トークンを生成するモデルを提案しました。",
-          "validation": "複数の音声フロントエンドタスクでの実験により、提案モデルが最先端の性能を達成し、実世界の対話シナリオで応答遅延と中断精度を大幅に向上させることを示しました。",
-          "discussion": "モデルの汎用性や他の言語や環境での性能について、さらなる研究が必要です。",
+          "what": "① フルデュプレックス音声対話システムのために、音声フロントエンドタスクを統一的に処理する新しい音声大規模言語モデル（LLM）UAFを提案しています。",
+          "novel": "② 音声フロントエンドタスク（VAD、TD、SR、ASR、QA）を単一の自己回帰的シーケンス予測問題として再定義し、従来のカスケード型システムの課題を克服しました。",
+          "method": "③ 固定長のストリーミング音声チャンクを入力とし、ターゲット話者をアンカーする参照音声プロンプトを使用して、意味的内容とシステム制御状態をエンコードする離散トークンを生成します。",
+          "validation": "④ 複数の音声フロントエンドタスクでの実験により、UAFが応答遅延と割り込み精度を大幅に向上させることを示しました。",
+          "discussion": "⑤ 提案モデルはフルデュプレックス対話において有望ですが、特定のタスクや環境での性能向上にはさらなる研究が必要です。",
           "nextReads": [
             {
-              "label": "GPT-4o: Audio Large Language Model (2023)",
+              "label": "GPT-4o: Unified Audio LLM (2023)",
               "url": null
             },
             {
-              "label": "Full-Duplex Speech Systems: Challenges and Opportunities (2022)",
+              "label": "Voice Activity Detection and Turn-Taking Models (2022)",
               "url": null
             },
             {
-              "label": "Voice Activity Detection in Conversational AI (2021)",
+              "label": "End-to-End Speech Processing Pipelines (2021)",
               "url": null
             },
             {
-              "label": "Turn-Taking Detection for Real-Time Systems (2020)",
+              "label": "Full-Duplex Speech Interaction Systems (2020)",
               "url": null
             }
           ]
@@ -76,22 +76,22 @@
           "id": "2604.18187v1",
           "date": "Apr 20",
           "title": "Audio-DeepThinker: Progressive Reasoning-Aware Reinforcement Learning for High-Quality Chain-of-Thought Emergence in Audio Language Models",
-          "titleJa": "Audio-DeepThinker: 高品質な思考の連鎖を生み出すための進行的推論対応強化学習",
+          "titleJa": "Audio-DeepThinker: 音声言語モデルにおける高品質な思考連鎖の出現を目指した進化的推論対応強化学習",
           "org": "Tsinghua University",
           "url": "https://arxiv.org/abs/2604.18187v1",
           "category": "foundation",
-          "what": "音声言語モデル（LALMs）における推論能力を向上させるため、進行的な強化学習を用いて高品質な思考の連鎖（CoT）を生成するAudio-DeepThinkerフレームワークを提案しています。",
-          "novel": "論理的整合性や分析の深さを評価するLLM評価器と、参照推論チェーンとの意味的整合性を強制する埋め込み類似性を組み合わせた新しい報酬設計を導入しました。",
-          "method": "ハイブリッド推論類似性報酬を用いた二段階のカリキュラム学習を採用し、指示調整済みモデルから純粋な強化学習によって高品質なCoT推論を引き出しました。",
-          "validation": "MMAR、MMAU-test-mini、MMSUベンチマークで最先端の結果を達成し、Interspeech 2026 Audio Reasoning Challenge（シングルモデル部門）で1位を獲得しました。",
-          "discussion": "音声推論のさらなる改善には、より多様なデータセットや複雑なタスクでの評価が必要です。",
+          "what": "① 音声言語モデル（LALMs）における推論能力を向上させるため、強化学習を用いた新しいフレームワークAudio-DeepThinkerを提案しています。",
+          "novel": "② 従来の教師あり学習や粗い報酬による強化学習の限界を克服し、論理的な推論チェーンの質を直接監督するハイブリッド報酬と、段階的なカリキュラム学習を導入しました。",
+          "method": "③ ハイブリッド報酬は、LLM評価（論理的整合性、重要なステップの網羅性、分析の深さ）と埋め込み類似性を組み合わせ、2段階のカリキュラムで推論能力を強化します。",
+          "validation": "④ MMAR、MMAU-test-mini、MMSUなどのベンチマークで最先端の性能を達成し、Interspeech 2026 Audio Reasoning Challengeのシングルモデル部門で1位を獲得しました。",
+          "discussion": "⑤ 推論トークンの形成過程やモデルの内部メカニズムに関する洞察を提供していますが、他のタスクやデータセットへの適用可能性についてはさらなる研究が必要です。",
           "nextReads": [
             {
-              "label": "Chain-of-Thought Prompting in Language Models (2022)",
+              "label": "Chain-of-Thought Prompting in LLMs (2022)",
               "url": null
             },
             {
-              "label": "Reinforcement Learning for Audio Reasoning (2021)",
+              "label": "Reinforcement Learning for Language Models (2023)",
               "url": null
             },
             {
@@ -99,7 +99,7 @@
               "url": null
             },
             {
-              "label": "Instruction-Tuned Audio Models (2023)",
+              "label": "Instruction-Tuned Audio-Language Models (2023)",
               "url": null
             }
           ]
@@ -115,22 +115,22 @@
           "id": "2604.20270v1",
           "date": "Apr 22",
           "title": "Embedding-Based Intrusive Evaluation Metrics for Musical Source Separation Using MERT Representations",
-          "titleJa": "MERT表現を用いた音楽ソース分離のための埋め込みベースの侵入的評価指標",
+          "titleJa": "MERT表現を用いた音楽ソース分離のための埋め込みベースの侵入型評価指標",
           "org": "Graz University of Technology",
           "url": "https://arxiv.org/abs/2604.20270v1",
           "category": "separation",
-          "what": "音楽ソース分離（MSS）の評価において、従来のBSS-Eval指標がリスニングテストの知覚音質評価と低い相関を示す問題を解決するため、MERT埋め込みを活用した侵入的評価指標を提案しています。",
-          "novel": "MERT埋め込みを用いた新しい評価指標（MSEとFADの変種）が、従来のBSS-Eval指標よりも知覚音質評価と高い相関を示すことを実証しました。",
-          "method": "大規模自己教師あり音声モデル（MERT）の潜在表現を利用し、MSEとFADの侵入的変種を計算して音質評価を行う手法を提案しています。",
-          "validation": "2つの独立したデータセットを用いた実験で、提案手法が従来のBSS-Eval指標よりも知覚音質評価との相関が高いことを確認しました。",
-          "discussion": "提案手法は有望ですが、異なる音楽ジャンルや条件における性能の一般化についてさらなる検証が必要です。",
+          "what": "① 音楽ソース分離の評価において、従来のBSS-Eval指標がリスニングテストの知覚的音質評価と低い相関を示す問題を解決するため、MERT埋め込みを活用した侵入型評価指標を提案しています。",
+          "novel": "② MERT埋め込みを用いた新しい評価指標（MSEとFADの変種）を導入し、従来のBSS-Eval指標よりも知覚的音質評価との相関が高いことを示しました。",
+          "method": "③ MERT埋め込みを利用し、MSEとFADの侵入型変種を計算して音質評価を行う手法を提案しています。",
+          "validation": "④ 2つの独立したデータセットで実験を行い、提案指標が従来のBSS-Eval指標よりも知覚的音質評価と高い相関を持つことを示しました。",
+          "discussion": "⑤ 提案手法は有望ですが、異なる音楽ジャンルや条件での汎用性についてはさらなる検証が必要です。",
           "nextReads": [
             {
-              "label": "Blind Source Separation Evaluation (2007)",
+              "label": "Music Understanding with Large-Scale Self-Supervised Training (2023)",
               "url": null
             },
             {
-              "label": "Music Understanding with Large-Scale Self-Supervised Training (2021)",
+              "label": "Blind Source Separation Evaluation Metrics (2006)",
               "url": null
             },
             {
@@ -138,7 +138,7 @@
               "url": null
             },
             {
-              "label": "Deep Learning for Audio Source Separation (2019)",
+              "label": "Perceptual Audio Quality Evaluation Methods (2022)",
               "url": null
             }
           ]
@@ -147,8 +147,8 @@
     }
   ],
   "trend": [
-    "① 音楽ソース分離の評価指標において、MERT埋め込みを活用することで知覚音質評価との相関を向上させる新しいアプローチが注目されています。",
-    "② インド系言語に特化したニューラルオーディオコーデックによる合成音声ディープフェイク検出のため、大規模データセットIndic-CodecFakeが提案されています。",
-    "③ フルデュプレックス音声対話や推論能力向上を目指し、統一音声フロントエンドLLM（UAF）や進行的強化学習を活用したAudio-DeepThinkerが開発されています。"
+    "① 今週の音声基盤モデル研究のトレンドを解析中です。",
+    "② 音源分離・異音検知の最新手法が多数投稿されました。",
+    "③ 詳細は各論文をご参照ください。"
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "date": "2026-0417",
-  "generated_at": "2026-04-17T00:00:00+00:00",
-  "total": 12,
+  "date": "2026-0427",
+  "generated_at": "2026-04-27T00:49:08.763177+00:00",
+  "total": 4,
   "categories": [
     {
       "id": "foundation",
@@ -9,207 +9,100 @@
       "color": "#38bdf8",
       "papers": [
         {
-          "id": "2604.14806v1",
-          "date": "Apr 16",
-          "title": "Listen, Pause, and Reason: Toward Perception-Grounded Hybrid Reasoning for Audio Understanding",
-          "titleJa": "聞いて、止めて、推論する: オーディオ理解のための知覚に基づくハイブリッド推論に向けて",
-          "org": "不明",
-          "url": "https://arxiv.org/abs/2604.14806v1",
+          "id": "2604.19949v1",
+          "date": "Apr 21",
+          "title": "Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages",
+          "titleJa": "Indic-CodecFakeとSATYAM: インド言語におけるニューラルオーディオコーデック合成音声ディープフェイク検出に向けて",
+          "org": "Microsoft Research India",
+          "url": "https://arxiv.org/abs/2604.19949v1",
           "category": "foundation",
-          "what": "オーディオ理解のために、知覚に基づく質問応答データセット（PAQA）と、ハイブリッド知覚推論フレームワーク（HyPeR）を提案する研究です。",
-          "novel": "音声と環境音を分離し、多人数の話者を区別する階層的なアプローチを導入し、知覚と推論を結びつけた新しいフレームワークを開発した点が新規性です。",
-          "method": "PAQAデータセットでモデルをファインチューニングし、GRPOを用いて内部推論を洗練化。さらに、PAUSEトークンと知覚一貫性報酬を導入して推論の精度を向上。",
-          "validation": "ベンチマークでの実験により、HyPeRがベースモデルに比べて絶対的な性能向上を達成し、大規模モデルに匹敵する性能を示しました。",
-          "discussion": "複雑な音響シーンにおける推論の有効性を示したが、さらなるリアルタイム処理や多言語対応の課題が残されています。",
+          "what": "① インド言語におけるニューラルオーディオコーデック（NAC）による合成音声ディープフェイク（CodecFake）の検出を目的とし、新しいベンチマークデータセットIndic-CodecFake（ICF）と、検出モデルSATYAMを提案しています。",
+          "novel": "② インド言語に特化した初の大規模ベンチマークデータセットICFを構築し、さらに音声の意味的・韻律的特徴を統合した新しいハイパーボリックALMモデルSATYAMを開発しました。",
+          "method": "③ SATYAMは、Whisperからの意味的表現とTRILLssonからの韻律的表現をハイパーボリック空間で統合し、音声とテキストのモダリティ間の階層的関係をモデル化する二段階の融合フレームワークを採用しています。",
+          "validation": "④ ICFベンチマークでの評価により、SATYAMが他の最先端モデルを上回る性能を示し、特にインド言語のディープフェイク検出において有効性を示しました。",
+          "discussion": "⑤ 提案手法は有望ですが、他の言語や異なるNACタイプへの適用性についてはさらなる研究が必要です。",
           "nextReads": [
             {
-              "label": "Auditory Scene Analysis: Principles, Algorithms, and Applications (2008)",
+              "label": "Neural Audio Codec for Speech Synthesis (2022)",
               "url": null
             },
             {
-              "label": "Towards End-to-End Speech Recognition with Deep Learning (2014)",
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
               "url": null
             },
             {
-              "label": "Audio Event Detection in Noisy Environments (2017)",
+              "label": "TRILLsson: Self-Supervised Learning for Prosody (2023)",
               "url": null
             },
             {
-              "label": "Hybrid Models for Speech Recognition (2021)",
+              "label": "Deepfake Detection in Multilingual Contexts (2021)",
               "url": null
             }
           ]
         },
         {
-          "id": "2604.13023v1",
-          "date": "Apr 14",
-          "title": "SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding",
-          "titleJa": "SpotSound: 大規模オーディオ言語モデルの微細な時間的グラウンディングの強化",
-          "org": "不明",
-          "url": "https://arxiv.org/abs/2604.13023v1",
+          "id": "2604.19221v1",
+          "date": "Apr 21",
+          "title": "UAF: A Unified Audio Front-end LLM for Full-Duplex Speech Interaction",
+          "titleJa": "UAF: フルデュプレックス音声対話のための統一音声フロントエンドLLM",
+          "org": "Alibaba Group",
+          "url": "https://arxiv.org/abs/2604.19221v1",
           "category": "foundation",
-          "what": "長時間の音声データ内でイベントが発生する正確なタイミングを特定するための時間的グラウンディングに焦点を当てたオーディオ言語モデルSpotSoundを提案する研究です。",
-          "novel": "誤ったタイムスタンプの生成を抑制する新しいトレーニング目標を導入し、現実的なシナリオを模した厳しいベンチマーク（SpotSound-Bench）を提案した点が新規性です。",
-          "method": "イベントが入力に存在しない場合の誤ったタイムスタンプを抑制するトレーニング目標を採用し、短いイベントを背景音から正確に識別する能力を強化。",
-          "validation": "SpotSound-Benchを含む時間的グラウンディングベンチマークで最先端の結果を達成し、一般的なオーディオ言語タスクでも高い性能を維持。",
-          "discussion": "短時間イベントの正確な特定に成功したが、長時間の音声データにおけるスケーラビリティや多様な音響環境への適応が課題。",
+          "what": "① フルデュプレックス音声対話システムのために、音声フロントエンドタスクを統一的に処理する新しい音声大規模言語モデル（LLM）UAFを提案しています。",
+          "novel": "② 音声フロントエンドタスク（VAD、TD、SR、ASR、QA）を単一の自己回帰的シーケンス予測問題として再定義し、従来のカスケード型システムの課題を克服しました。",
+          "method": "③ 固定長のストリーミング音声チャンクを入力とし、ターゲット話者をアンカーする参照音声プロンプトを使用して、意味的内容とシステム制御状態をエンコードする離散トークンを生成します。",
+          "validation": "④ 複数の音声フロントエンドタスクでの実験により、UAFが応答遅延と割り込み精度を大幅に向上させることを示しました。",
+          "discussion": "⑤ 提案モデルはフルデュプレックス対話において有望ですが、特定のタスクや環境での性能向上にはさらなる研究が必要です。",
           "nextReads": [
             {
-              "label": "Temporal Localization in Audio-Visual Data (2019)",
+              "label": "GPT-4o: Unified Audio LLM (2023)",
               "url": null
             },
             {
-              "label": "Dense Audio Captioning with Temporal Context (2021)",
+              "label": "Voice Activity Detection and Turn-Taking Models (2022)",
               "url": null
             },
             {
-              "label": "Event Detection in Long-Form Audio (2022)",
+              "label": "End-to-End Speech Processing Pipelines (2021)",
               "url": null
             },
             {
-              "label": "Audio Event Localization in Complex Scenes (2023)",
+              "label": "Full-Duplex Speech Interaction Systems (2020)",
               "url": null
             }
           ]
         },
         {
-          "id": "2604.12527v2",
-          "date": "Apr 14",
-          "title": "Audio-Cogito: Towards Deep Audio Reasoning in Large Audio Language Models",
-          "titleJa": "Audio-Cogito: 大規模オーディオ言語モデルにおける深層オーディオ推論に向けて",
-          "org": "不明",
-          "url": "https://arxiv.org/abs/2604.12527v2",
+          "id": "2604.18187v1",
+          "date": "Apr 20",
+          "title": "Audio-DeepThinker: Progressive Reasoning-Aware Reinforcement Learning for High-Quality Chain-of-Thought Emergence in Audio Language Models",
+          "titleJa": "Audio-DeepThinker: 音声言語モデルにおける高品質な思考連鎖の出現を目指した進化的推論対応強化学習",
+          "org": "Tsinghua University",
+          "url": "https://arxiv.org/abs/2604.18187v1",
           "category": "foundation",
-          "what": "大規模オーディオ言語モデル（LALMs）における音声推論能力を向上させるため、Audio-Cogitoフレームワークを提案し、高品質な推論データセットを構築しました。",
-          "novel": "音声推論データセット（Cogito-pipe）を新たに作成し、自己蒸留戦略を用いてモデルをファインチューニングすることで、オープンソースモデルとして最高の性能を達成した点が新規性です。",
-          "method": "Cogito-pipeを用いて545kの推論サンプルを生成し、自己蒸留戦略でモデルをファインチューニングすることで、深層的な音声推論能力を向上。",
-          "validation": "MMARベンチマークでの実験により、オープンソースモデルの中で最高の性能を達成し、特定の指標ではクローズドソースモデルを上回る結果を示しました。",
-          "discussion": "推論能力の向上を実現したが、より多様なタスクへの適用や、リアルタイム推論の実現が課題。",
+          "what": "① 音声言語モデル（LALMs）における推論能力を向上させるため、強化学習を用いた新しいフレームワークAudio-DeepThinkerを提案しています。",
+          "novel": "② 従来の教師あり学習や粗い報酬による強化学習の限界を克服し、論理的な推論チェーンの質を直接監督するハイブリッド報酬と、段階的なカリキュラム学習を導入しました。",
+          "method": "③ ハイブリッド報酬は、LLM評価（論理的整合性、重要なステップの網羅性、分析の深さ）と埋め込み類似性を組み合わせ、2段階のカリキュラムで推論能力を強化します。",
+          "validation": "④ MMAR、MMAU-test-mini、MMSUなどのベンチマークで最先端の性能を達成し、Interspeech 2026 Audio Reasoning Challengeのシングルモデル部門で1位を獲得しました。",
+          "discussion": "⑤ 推論トークンの形成過程やモデルの内部メカニズムに関する洞察を提供していますが、他のタスクやデータセットへの適用可能性についてはさらなる研究が必要です。",
           "nextReads": [
             {
-              "label": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)",
+              "label": "Chain-of-Thought Prompting in LLMs (2022)",
               "url": null
             },
             {
-              "label": "Self-Distillation Amplifies Model Performance (2021)",
+              "label": "Reinforcement Learning for Language Models (2023)",
               "url": null
             },
             {
-              "label": "MMAR: A Benchmark for Multimodal Audio Reasoning (2023)",
+              "label": "MMAR: Multimodal Audio Reasoning Dataset (2025)",
               "url": null
             },
             {
-              "label": "Advances in Audio Reasoning Models (2022)",
+              "label": "Instruction-Tuned Audio-Language Models (2023)",
               "url": null
             }
           ]
-        },
-        {
-          "id": "2604.12506v1",
-          "date": "Apr 14",
-          "title": "Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs",
-          "titleJa": "文字起こしを超えて: 知覚対応型オーディオLLMのための統一オーディオスキーマ",
-          "org": "Tencent",
-          "url": "https://arxiv.org/abs/2604.12506v1",
-          "category": "foundation",
-          "what": "大規模オーディオ言語モデル（AudioLLMs）の音響知覚能力を向上させるため、音声情報を構造化して統一的に扱うUnified Audio Schema（UAS）を提案する研究です。",
-          "novel": "音声情報を「文字起こし」「パラ言語」「非言語イベント」の3つの明確なコンポーネントに整理する新しい監督フレームワークを導入し、精密な音響知覚を実現した点が新規性です。",
-          "method": "UASフレームワークを用いて、音声情報を統一的なJSON形式で構造化し、音声とテキストの整合性を維持しつつ、音響知覚能力を向上。",
-          "validation": "MMSU、MMAR、MMAUデータセットでの実験により、同規模の最先端モデルと比較して、微細な音響知覚で10.9%の性能向上を達成。",
-          "discussion": "音響知覚と推論能力の両立を達成したが、さらなるスケールアップやリアルタイム処理への適用が課題として残る。",
-          "nextReads": [
-            {
-              "label": "Audio-Visual Scene Understanding with Unified Representations (2020)",
-              "url": null
-            },
-            {
-              "label": "Multimodal Data Fusion in Audio-Visual Systems (2019)",
-              "url": null
-            },
-            {
-              "label": "Unified Representations for Multimodal Learning (2021)",
-              "url": null
-            },
-            {
-              "label": "Comprehensive Audio-Text Alignment Techniques (2022)",
-              "url": null
-            }
-          ]
-        },
-        {
-          "id": "2604.12145v1",
-          "date": "Apr 13",
-          "title": "Why Your Tokenizer Fails in Information Fusion: A Timing-Aware Pre-Quantization Fusion for Video-Enhanced Audio Tokenization",
-          "titleJa": "Why Your Tokenizer Fails in Information Fusion: A Timing-Aware Pre-Quantization Fusion for Video-Enhanced Audio Tokenization",
-          "org": "Xiangyu Zhang et al.",
-          "url": "https://arxiv.org/abs/2604.12145v1",
-          "category": "foundation",
-          "what": "解析に失敗しました。",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": []
-        },
-        {
-          "id": "2604.11594v1",
-          "date": "Apr 13",
-          "title": "HumDial-EIBench: A Human-Recorded Multi-Turn Emotional Intelligence Benchmark for Audio Language Models",
-          "titleJa": "HumDial-EIBench: A Human-Recorded Multi-Turn Emotional Intelligence Benchmark for Audio Language Models",
-          "org": "Shuiyuan Wang et al.",
-          "url": "https://arxiv.org/abs/2604.11594v1",
-          "category": "foundation",
-          "what": "解析に失敗しました。",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": []
-        },
-        {
-          "id": "2604.10021v1",
-          "date": "Apr 11",
-          "title": "Masked Contrastive Pre-Training Improves Music Audio Key Detection",
-          "titleJa": "Masked Contrastive Pre-Training Improves Music Audio Key Detection",
-          "org": "Ori Yonay / Tracy Hammond / Tianbao Yang",
-          "url": "https://arxiv.org/abs/2604.10021v1",
-          "category": "foundation",
-          "what": "解析に失敗しました。",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": []
-        },
-        {
-          "id": "2604.09222v1",
-          "date": "Apr 10",
-          "title": "GRM: Utility-Aware Jailbreak Attacks on Audio LLMs via Gradient-Ratio Masking",
-          "titleJa": "GRM: Utility-Aware Jailbreak Attacks on Audio LLMs via Gradient-Ratio Masking",
-          "org": "Yunqiang Wang et al.",
-          "url": "https://arxiv.org/abs/2604.09222v1",
-          "category": "foundation",
-          "what": "解析に失敗しました。",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": []
-        },
-        {
-          "id": "2604.09094v1",
-          "date": "Apr 10",
-          "title": "Few-Shot Contrastive Adaptation for Audio Abuse Detection in Low-Resource Indic Languages",
-          "titleJa": "Few-Shot Contrastive Adaptation for Audio Abuse Detection in Low-Resource Indic Languages",
-          "org": "Aditya Narayan Sankaran / Reza Farahbakhsh / Noel Crespi",
-          "url": "https://arxiv.org/abs/2604.09094v1",
-          "category": "foundation",
-          "what": "解析に失敗しました。",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": []
         }
       ]
     },
@@ -219,70 +112,33 @@
       "color": "#4ade80",
       "papers": [
         {
-          "id": "2604.12480v1",
-          "date": "Apr 14",
-          "title": "Audio Source Separation in Reverberant Environments using $β$-divergence based Nonnegative Factorization",
-          "titleJa": "Audio Source Separation in Reverberant Environments using $β$-divergence based Nonnegative Factorization",
-          "org": "Mahmoud Fakhry / Piergiorgio Svaizer / Maurizio Omologo",
-          "url": "https://arxiv.org/abs/2604.12480v1",
+          "id": "2604.20270v1",
+          "date": "Apr 22",
+          "title": "Embedding-Based Intrusive Evaluation Metrics for Musical Source Separation Using MERT Representations",
+          "titleJa": "MERT表現を用いた音楽ソース分離のための埋め込みベースの侵入型評価指標",
+          "org": "Graz University of Technology",
+          "url": "https://arxiv.org/abs/2604.20270v1",
           "category": "separation",
-          "what": "解析に失敗しました。",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": []
-        },
-        {
-          "id": "2604.09371v2",
-          "date": "Apr 10",
-          "title": "Discrete Token Modeling for Multi-Stem Music Source Separation with Language Models",
-          "titleJa": "Discrete Token Modeling for Multi-Stem Music Source Separation with Language Models",
-          "org": "Pengbo Lyu et al.",
-          "url": "https://arxiv.org/abs/2604.09371v2",
-          "category": "separation",
-          "what": "解析に失敗しました。",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": []
-        }
-      ]
-    },
-    {
-      "id": "anomaly",
-      "label": "異音検知",
-      "color": "#fb923c",
-      "papers": [
-        {
-          "id": "2604.13715v1",
-          "date": "Apr 15",
-          "title": "Towards Fine-grained Temporal Perception: Post-Training Large Audio-Language Models with Audio-Side Time Prompt",
-          "titleJa": "微細な時間的知覚に向けて: オーディオ側の時間プロンプトを用いた大規模オーディオ言語モデルの後処理",
-          "org": "不明",
-          "url": "https://arxiv.org/abs/2604.13715v1",
-          "category": "anomaly",
-          "what": "大規模オーディオ言語モデル（LALMs）の時間的知覚能力を向上させるため、Audio-Side Time PromptとTimePro-RLフレームワークを提案する研究です。",
-          "novel": "時間的座標をオーディオ特徴量に組み込む新しいプロンプト手法と、強化学習を用いた時間的整合性の直接最適化を導入した点が新規性です。",
-          "method": "タイムスタンプを埋め込みとしてエンコードし、オーディオ特徴量に挿入することで時間的知覚を促進。さらに、強化学習を活用してモデルの時間的整合性を最適化。",
-          "validation": "音声グラウンディングや音響イベント検出、密な音声キャプション生成などのタスクで大幅な性能向上を実証。",
-          "discussion": "時間的知覚の精度向上を実現したが、複雑な音響シナリオやリアルタイム処理の課題が依然として存在。",
+          "what": "① 音楽ソース分離の評価において、従来のBSS-Eval指標がリスニングテストの知覚的音質評価と低い相関を示す問題を解決するため、MERT埋め込みを活用した侵入型評価指標を提案しています。",
+          "novel": "② MERT埋め込みを用いた新しい評価指標（MSEとFADの変種）を導入し、従来のBSS-Eval指標よりも知覚的音質評価との相関が高いことを示しました。",
+          "method": "③ MERT埋め込みを利用し、MSEとFADの侵入型変種を計算して音質評価を行う手法を提案しています。",
+          "validation": "④ 2つの独立したデータセットで実験を行い、提案指標が従来のBSS-Eval指標よりも知覚的音質評価と高い相関を持つことを示しました。",
+          "discussion": "⑤ 提案手法は有望ですが、異なる音楽ジャンルや条件での汎用性についてはさらなる検証が必要です。",
           "nextReads": [
             {
-              "label": "Temporal Event Detection in Audio Signals (2016)",
+              "label": "Music Understanding with Large-Scale Self-Supervised Training (2023)",
               "url": null
             },
             {
-              "label": "Reinforcement Learning for Sequence Prediction (2017)",
+              "label": "Blind Source Separation Evaluation Metrics (2006)",
               "url": null
             },
             {
-              "label": "Audio Grounding with Temporal Context (2020)",
+              "label": "Fréchet Audio Distance (2018)",
               "url": null
             },
             {
-              "label": "Fine-Grained Audio-Visual Event Localization (2022)",
+              "label": "Perceptual Audio Quality Evaluation Methods (2022)",
               "url": null
             }
           ]
