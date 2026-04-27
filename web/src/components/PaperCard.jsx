@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const SECTIONS = [
   { key: 'what',       icon: '①', label: 'どんなもの？',        color: '#cbd5e1' },
@@ -9,26 +9,8 @@ const SECTIONS = [
   { key: 'nextReads',  icon: '⑥', label: '次に読むべき論文',     color: '#f472b6' },
 ]
 
-function useCitationCount(arxivId, expanded) {
-  const [count, setCount] = useState(null)
-  const [fetched, setFetched] = useState(false)
-
-  useEffect(() => {
-    if (!expanded || fetched) return
-    setFetched(true)
-    const id = arxivId.split('v')[0]
-    fetch(`https://api.semanticscholar.org/graph/v1/paper/arXiv:${id}?fields=citationCount`)
-      .then(r => r.ok ? r.json() : null)
-      .then(data => { if (data?.citationCount != null) setCount(data.citationCount) })
-      .catch(() => {})
-  }, [expanded, fetched, arxivId])
-
-  return count
-}
-
-export default function PaperCard({ paper, cat, animDelay = 0 }) {
+export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) {
   const [expanded, setExpanded] = useState(false)
-  const citationCount = useCitationCount(paper.id, expanded)
 
   return (
     <div className="fd" style={{
@@ -39,7 +21,6 @@ export default function PaperCard({ paper, cat, animDelay = 0 }) {
       boxShadow: expanded ? `0 0 20px rgba(0,0,0,0.3)` : 'none',
       animationDelay: `${animDelay}s`,
     }}>
-      {/* ヘッダー — クリックで一括展開 */}
       <div onClick={() => setExpanded(e => !e)}
         style={{ padding: '13px 16px 11px', cursor: 'pointer', userSelect: 'none' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 7, flexWrap: 'wrap' }}>
@@ -79,7 +60,6 @@ export default function PaperCard({ paper, cat, animDelay = 0 }) {
         </div>
       </div>
 
-      {/* 6観点 — 展開時に一括表示 */}
       {expanded && (
         <div style={{ borderTop: `1px solid ${cat.color}18`, animation: 'fd 0.2s ease both' }}>
           {SECTIONS.map((sm, si) => (

@@ -7,6 +7,31 @@ import TrendSummary from './components/TrendSummary'
 
 const DATA_BASE = './data'
 
+async function fetchAllCitationCounts(papers) {
+  const CHUNK = 10
+  const results = {}
+
+  for (let i = 0; i < papers.length; i += CHUNK) {
+    const chunk = papers.slice(i, i + CHUNK)
+    await Promise.allSettled(
+      chunk.map(async p => {
+        const id = p.id.split('v')[0]
+        try {
+          const res = await fetch(
+            `https://api.semanticscholar.org/graph/v1/paper/arXiv:${id}?fields=citationCount`
+          )
+          if (!res.ok) return
+          const data = await res.json()
+          if (data?.citationCount != null) results[id] = data.citationCount
+        } catch {}
+      })
+    )
+    // チャンク間で少し待機してレート制限を回避
+    if (i + CHUNK < papers.length) await new Promise(r => setTimeout(r, 500))
+  }
+  return results
+}
+
 export default function App() {
   const [index, setIndex] = useState(null)
   const [weekData, setWeekData] = useState(null)
@@ -14,6 +39,7 @@ export default function App() {
   const [activeCat, setActiveCat] = useState('all')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [citationMap, setCitationMap] = useState({})
 
   // インデックス取得
   useEffect(() => {
@@ -21,13 +47,9 @@ export default function App() {
       .then(r => r.json())
       .then(data => {
         setIndex(data)
-        if (data.weeks?.length > 0) {
-          setSelectedDate(data.weeks[0].date)
-        }
+        if (data.weeks?.length > 0) setSelectedDate(data.weeks[0].date)
       })
-      .catch(() => {
-        setSelectedDate('latest')
-      })
+      .catch(() => setSelectedDate('latest'))
   }, [])
 
   // 週データ取得
@@ -36,6 +58,7 @@ export default function App() {
     setLoading(true)
     setError(null)
     setActiveCat('all')
+    setCitationMap({})
 
     const url = selectedDate === 'latest'
       ? `${DATA_BASE}/latest.json`
@@ -46,6 +69,14 @@ export default function App() {
       .then(data => { setWeekData(data); setLoading(false) })
       .catch(e => { setError(e.message); setLoading(false) })
   }, [selectedDate])
+
+  // 週データロード後に被引用数を非同期取得（表示をブロックしない）
+  useEffect(() => {
+    if (!weekData) return
+    const allPapers = weekData.categories.flatMap(c => c.papers)
+    if (allPapers.length === 0) return
+    fetchAllCitationCounts(allPapers).then(map => setCitationMap(map))
+  }, [weekData])
 
   const categories = weekData?.categories ?? []
   const filtered = activeCat === 'all'
@@ -73,24 +104,12 @@ export default function App() {
         .refLink:hover{opacity:1}
       `}</style>
 
-      <Header
-        date={weekData?.date}
-        total={totalPapers}
-        loading={loading}
-      />
+      <Header date={weekData?.date} total={totalPapers} loading={loading} />
 
       <div style={{ borderBottom: '1px solid #1e293b', padding: '10px 26px',
         background: '#0a0d14', display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-        <WeekSelector
-          weeks={index?.weeks ?? []}
-          selected={selectedDate}
-          onChange={setSelectedDate}
-        />
-        <CategoryFilter
-          categories={categories}
-          active={activeCat}
-          onChange={setActiveCat}
-        />
+        <WeekSelector weeks={index?.weeks ?? []} selected={selectedDate} onChange={setSelectedDate} />
+        <CategoryFilter categories={categories} active={activeCat} onChange={setActiveCat} />
       </div>
 
       <div style={{ padding: '24px 26px', maxWidth: 960 }}>
@@ -116,14 +135,13 @@ export default function App() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               {cat.papers.map((paper, pi) => (
                 <PaperCard key={paper.id} paper={paper} cat={cat}
-                  animDelay={ci * 0.05 + pi * 0.04} />
+                  animDelay={ci * 0.05 + pi * 0.04}
+                  citationCount={citationMap[paper.id.split('v')[0]]} />
               ))}
             </div>
           </div>
         ))}
-        {!loading && !error && weekData && (
-          <TrendSummary trend={weekData.trend} />
-        )}
+        {!loading && !error && weekData && <TrendSummary trend={weekData.trend} />}
         <div style={{ marginTop: 22, fontSize: 9, color: '#1e293b', letterSpacing: 1,
           borderTop: '1px solid #1e293b', paddingTop: 14 }}>
           ◦ SOURCE: arXiv cs.SD · eess.AS ◦ POWERED BY GitHub Models (GPT-4o) ◦ 毎週金曜更新
