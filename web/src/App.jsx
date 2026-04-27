@@ -229,7 +229,7 @@ export default function App() {
           placeholder="キーワード検索..."
           style={{
             background: '#131720', border: '1px solid #1e293b', color: '#94a3b8',
-            fontFamily: "'IBM Plex Mono',monospace", fontSize: 11,
+            fontFamily: "'IBM Plex Mono',monospace", fontSize: 13,
             padding: '4px 10px', borderRadius: 2, outline: 'none', width: 160,
           }}
         />
@@ -282,10 +282,10 @@ export default function App() {
             <div key={week.date} style={{ marginBottom: 56 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16,
                 paddingBottom: 10, borderBottom: '1px solid #1e293b' }}>
-                <span style={{ fontSize: 11, color: '#38bdf8', fontWeight: 600, letterSpacing: 2 }}>
+                <span style={{ fontSize: 13, color: '#38bdf8', fontWeight: 600, letterSpacing: 2 }}>
                   WEEK {week.date}
                 </span>
-                <span style={{ fontSize: 9, color: '#334155' }}>
+                <span style={{ fontSize: 11, color: '#334155' }}>
                   {week.categories.reduce((s, c) => s + c.papers.length, 0)} papers
                 </span>
               </div>
@@ -295,11 +295,11 @@ export default function App() {
               {filteredCats.map((cat, ci) => (
                 <div key={cat.id} style={{ marginBottom: 36 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-                    <span style={{ fontSize: 13, color: cat.color, fontWeight: 600, letterSpacing: 2 }}>
+                    <span style={{ fontSize: 15, color: cat.color, fontWeight: 600, letterSpacing: 2 }}>
                       {cat.label}
                     </span>
                     <div style={{ flex: 1, height: 1, background: `${cat.color}25` }} />
-                    <span style={{ fontSize: 9, color: '#334155' }}>{cat.papers.length} papers</span>
+                    <span style={{ fontSize: 11, color: '#334155' }}>{cat.papers.length} papers</span>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                     {cat.papers.map((paper, pi) => {
@@ -324,16 +324,16 @@ export default function App() {
 
         <div ref={sentinelRef} style={{ height: 1 }} />
         {loadingMore && (
-          <div style={{ textAlign: 'center', padding: '24px 0', color: '#334155', fontSize: 10, letterSpacing: 2 }}>
+          <div style={{ textAlign: 'center', padding: '24px 0', color: '#334155', fontSize: 12, letterSpacing: 2 }}>
             loading older weeks...
           </div>
         )}
         {!hasMore && loadedWeeks.length > 0 && (
-          <div style={{ textAlign: 'center', padding: '24px 0', color: '#1e293b', fontSize: 9, letterSpacing: 2 }}>
+          <div style={{ textAlign: 'center', padding: '24px 0', color: '#1e293b', fontSize: 11, letterSpacing: 2 }}>
             - all weeks loaded -
           </div>
         )}
-        <div style={{ marginTop: 22, fontSize: 9, color: '#1e293b', letterSpacing: 1,
+        <div style={{ marginTop: 22, fontSize: 11, color: '#1e293b', letterSpacing: 1,
           borderTop: '1px solid #1e293b', paddingTop: 14 }}>
           SOURCE: arXiv cs.SD / eess.AS - POWERED BY GitHub Models (GPT-4o) - 毎週金曜更新
         </div>
