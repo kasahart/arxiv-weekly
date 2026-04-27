@@ -71,28 +71,39 @@ def fetch_citation_count(arxiv_id: str) -> int | None:
         return None
 
 
-AI_PROMPT = """以下の論文を分析し、必ず JSON 形式のみで回答してください。コードブロック不要。
+BATCH_SIZE = 5
+
+BATCH_PROMPT_TMPL = """以下の複数論文を分析し、必ず JSON オブジェクトのみで回答してください。コードブロック不要。
+キーは論文 ID、値は次の形式です。
 
 {{
-  "abstractJa": "アブストラクト全文の自然な日本語訳",
-  "task": "タスク分類（例: TTS / ASR / 音源分離 / 異音検知 / 音楽生成 など、1〜2語）",
-  "proposedMethod": "提案手法の固有名詞・略称（ない場合は null）",
-  "datasets": ["使用データセット名1", "使用データセット名2"]
+  "<paper_id>": {{
+    "abstractJa": "アブストラクト全文の自然な日本語訳",
+    "task": "タスク分類（例: TTS / ASR / 音源分離 / 異音検知 / 音楽生成 など、1〜2語）",
+    "proposedMethod": "提案手法の固有名詞・略称（ない場合は null）",
+    "datasets": ["使用データセット名1", "使用データセット名2"]
+  }}
 }}
 
 datasets は最大5件。すべて日本語で記述してください。
 
-タイトル: {title}
-アブストラクト: {abstract}
+{papers}
 """
 
 
-def fetch_ai_fields(client: OpenAI, paper: dict) -> dict:
+def build_batch_prompt(papers: list[dict]) -> str:
+    blocks = []
+    for p in papers:
+        blocks.append(f"ID: {p['id'].split('v')[0]}\nタイトル: {p['title']}\nアブストラクト: {p.get('abstract', '')}")
+    return BATCH_PROMPT_TMPL.format(papers="\n\n---\n\n".join(blocks))
+
+
+def fetch_ai_fields_batch(client: OpenAI, papers: list[dict]) -> dict[str, dict]:
     cfg = SETTINGS["github_models"]
-    prompt = AI_PROMPT.format(
-        title=paper.get("title", ""),
-        abstract=paper.get("abstract", ""),
-    )
+    prompt = build_batch_prompt(papers)
+    paper_ids = [p["id"].split("v")[0] for p in papers]
+    fallback = {pid: {"abstractJa": "", "task": None, "proposedMethod": None, "datasets": []} for pid in paper_ids}
+
     for attempt in range(cfg["retry_max"]):
         try:
             resp = client.chat.completions.create(
@@ -101,29 +112,23 @@ def fetch_ai_fields(client: OpenAI, paper: dict) -> dict:
                     {"role": "system", "content": "JSONのみで返答してください。"},
                     {"role": "user", "content": prompt},
                 ],
-                max_tokens=800,
+                max_tokens=800 * len(papers),
                 temperature=0.3,
             )
             raw = (resp.choices[0].message.content or "").strip()
             raw = raw.lstrip("```json").lstrip("```").rstrip("```").strip()
             result = json.loads(raw)
-            return {
-                "abstractJa": result.get("abstractJa", ""),
-                "task": result.get("task"),
-                "proposedMethod": result.get("proposedMethod"),
-                "datasets": result.get("datasets", []),
-            }
+            if isinstance(result, dict):
+                return result
         except Exception as e:
             print(f"  [warn] AI error (attempt {attempt + 1}): {e}")
             time.sleep(cfg["retry_interval"] * (2 ** attempt))
-    return {"abstractJa": "", "task": None, "proposedMethod": None, "datasets": []}
+    return fallback
 
 
-def enrich_file(path: Path, ai_client: OpenAI | None) -> bool:
+def enrich_file(path: Path, ai_client: OpenAI | None, ai_results: dict) -> bool:
     data = json.loads(path.read_text())
     changed = False
-    last_ai_call = 0.0
-    AI_INTERVAL = 3.0
 
     for cat in data.get("categories", []):
         for paper in cat.get("papers", []):
@@ -154,18 +159,13 @@ def enrich_file(path: Path, ai_client: OpenAI | None) -> bool:
                 paper_changed = True
                 time.sleep(0.3)
 
-            # AI フィールド
-            if ai_client and any(f not in paper for f in AI_FIELDS):
-                if paper.get("abstract"):
-                    elapsed = time.monotonic() - last_ai_call
-                    if elapsed < AI_INTERVAL:
-                        time.sleep(AI_INTERVAL - elapsed)
-                    result = fetch_ai_fields(ai_client, paper)
-                    for k, v in result.items():
-                        if k not in paper:
-                            paper[k] = v
-                            paper_changed = True
-                    last_ai_call = time.monotonic()
+            # AI フィールド（バッチ処理済みの結果を適用）
+            if arxiv_id in ai_results:
+                result = ai_results[arxiv_id]
+                for k, v in result.items():
+                    if k not in paper:
+                        paper[k] = v
+                        paper_changed = True
 
             if paper_changed:
                 changed = True
@@ -189,13 +189,37 @@ def main():
     if token:
         cfg = SETTINGS["github_models"]
         ai_client = OpenAI(base_url=cfg["endpoint"], api_key=token)
-        print("[enrich] GPT-4o によるAIフィールド補完を有効化")
+        print("[enrich] GPT-4o によるAIフィールド補完を有効化（バッチ処理）")
     else:
         print("[enrich] GITHUB_TOKEN 未設定: AIフィールドをスキップ")
 
+    # 全週次ファイルから AI フィールドが不足している論文を収集
+    ai_results: dict[str, dict] = {}
+    if ai_client:
+        papers_needing_ai = []
+        for path in weekly_files:
+            data = json.loads(path.read_text())
+            for cat in data.get("categories", []):
+                for paper in cat.get("papers", []):
+                    if any(f not in paper for f in AI_FIELDS) and paper.get("abstract"):
+                        papers_needing_ai.append(paper)
+
+        print(f"[enrich] AI補完が必要な論文: {len(papers_needing_ai)} 件")
+
+        # バッチ処理
+        for i in range(0, len(papers_needing_ai), BATCH_SIZE):
+            batch = papers_needing_ai[i:i + BATCH_SIZE]
+            ids = [p["id"].split("v")[0] for p in batch]
+            print(f"[enrich] AI batch ({i // BATCH_SIZE + 1}/{(len(papers_needing_ai) + BATCH_SIZE - 1) // BATCH_SIZE}) ids={', '.join(ids)}")
+            result = fetch_ai_fields_batch(ai_client, batch)
+            ai_results.update(result)
+            if i + BATCH_SIZE < len(papers_needing_ai):
+                time.sleep(3.0)
+
+    # 各ファイルにメタデータを書き込み
     for path in weekly_files:
         print(f"\n[enrich] --- {path.name} ---")
-        enrich_file(path, ai_client)
+        enrich_file(path, ai_client, ai_results)
 
     print("\n[enrich] 完了。")
 
