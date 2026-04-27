@@ -368,7 +368,7 @@ export default function App() {
         )}
         <div style={{ marginTop: 22, fontSize: 11, color: '#1e293b', letterSpacing: 1,
           borderTop: '1px solid #1e293b', paddingTop: 14 }}>
-          SOURCE: arXiv cs.SD / eess.AS - POWERED BY GitHub Models (GPT-4o) - 毎週金曜更新
+          音響AI週報 - arXiv cs.SD / eess.AS - POWERED BY GitHub Models (GPT-4o) - 毎週金曜更新
         </div>
       </div>
 
