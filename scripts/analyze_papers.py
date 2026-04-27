@@ -33,6 +33,7 @@ SYSTEM_PROMPT = """あなたは音声・音響 AI 分野の論文アナリスト
   "method": "技術・手法のキモ（1〜2文でアーキテクチャや学習の核心）",
   "validation": "有効性の検証（データセット・指標・比較実験を1〜2文で）",
   "discussion": "議論・限界（残課題・制約を1〜2文で）",
+  "abstractJa": "アブストラクト全文の自然な日本語訳",
   "nextReads": [
     {"label": "関連論文名 (年)", "id": "arXiv ID（例: 2310.13289）または null"}
   ]
@@ -96,6 +97,7 @@ def build_batch_prompt(papers: list[dict]) -> str:
     "method": "技術・手法のキモ（1〜2文でアーキテクチャや学習の核心）",
     "validation": "有効性の検証（データセット・指標・比較実験を1〜2文で）",
     "discussion": "議論・限界（残課題・制約を1〜2文で）",
+    "abstractJa": "アブストラクト全文の自然な日本語訳",
     "nextReads": [
       {{"label": "関連論文名 (年)", "id": "arXiv ID または null"}}
     ]
@@ -121,6 +123,7 @@ def fallback_result(paper: dict) -> dict:
         "method": "",
         "validation": "",
         "discussion": "",
+        "abstractJa": "",
         "nextReads": [],
     }
 
@@ -236,6 +239,7 @@ def main():
                     "method": result.get("method", ""),
                     "validation": result.get("validation", ""),
                     "discussion": result.get("discussion", ""),
+                    "abstractJa": result.get("abstractJa", ""),
                     "nextReads": build_next_reads(result.get("nextReads", [])),
                 }
             )

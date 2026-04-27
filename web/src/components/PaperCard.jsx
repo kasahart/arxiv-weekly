@@ -160,15 +160,23 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
           ))}
 
           {/* アブストラクト */}
-          {paper.abstract && (
+          {(paper.abstractJa || paper.abstract) && (
             <div style={{ borderTop: `1px solid ${cat.color}10`, padding: '11px 18px' }}>
               <div style={{ fontSize: 11, color: '#475569', fontWeight: 600, letterSpacing: 1.5, marginBottom: 6 }}>
                 Abstract
               </div>
-              <div style={{ fontSize: 12, color: '#475569', lineHeight: 1.9,
-                paddingLeft: 8, borderLeft: '2px solid #1e293b40' }}>
-                {paper.abstract}
-              </div>
+              {paper.abstractJa && (
+                <div style={{ fontSize: 13, color: '#94a3b8', lineHeight: 1.9,
+                  paddingLeft: 8, borderLeft: '2px solid #38bdf840', marginBottom: 10 }}>
+                  {paper.abstractJa}
+                </div>
+              )}
+              {paper.abstract && (
+                <div style={{ fontSize: 12, color: '#475569', lineHeight: 1.9,
+                  paddingLeft: 8, borderLeft: '2px solid #1e293b40' }}>
+                  {paper.abstract}
+                </div>
+              )}
             </div>
           )}
         </div>
