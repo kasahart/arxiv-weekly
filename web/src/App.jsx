@@ -71,6 +71,7 @@ export default function App() {
   const [githubMap, setGithubMap] = useState({})
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
   const [search, setSearch] = useState('')
+  const [sortByCitations, setSortByCitations] = useState(false)
   const [favorites, setFavorites] = useState(
     () => new Set(JSON.parse(localStorage.getItem(LS_FAVORITES) || '[]'))
   )
@@ -220,6 +221,12 @@ export default function App() {
           }}
         />
         <button
+          className={`ctrlBtn${sortByCitations ? ' active' : ''}`}
+          onClick={() => setSortByCitations(s => !s)}
+        >
+          {sortByCitations ? '引用数順' : '日付順'}
+        </button>
+        <button
           className={`ctrlBtn${showFavoritesOnly ? ' active' : ''}`}
           onClick={() => setShowFavoritesOnly(s => !s)}
         >
@@ -248,6 +255,13 @@ export default function App() {
                 }
                 return true
               }),
+            }))
+            .map(c => ({
+              ...c,
+              papers: sortByCitations
+                ? [...c.papers].sort((a, b) =>
+                    (citationMap[b.id.split('v')[0]] ?? 0) - (citationMap[a.id.split('v')[0]] ?? 0))
+                : c.papers,
             }))
             .filter(c => c.papers.length > 0)
 
