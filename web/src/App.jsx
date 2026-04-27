@@ -209,12 +209,30 @@ export default function App() {
         .refLink{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;
           opacity:0.85;transition:opacity 0.15s}
         .refLink:hover{opacity:1}
+
+        .toolbar{border-bottom:1px solid #1e293b;padding:10px 26px;background:#0a0d14;
+          display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+        .content{padding:24px 26px;max-width:960px}
+        .search-input{background:#131720;border:1px solid #1e293b;color:#94a3b8;
+          font-family:'IBM Plex Mono',monospace;font-size:13px;
+          padding:4px 10px;border-radius:2px;outline:none;width:160px}
+
+        @media(max-width:640px){
+          .toolbar{padding:8px 12px;gap:8px}
+          .content{padding:14px 12px}
+          .search-input{width:100%}
+          .catBtn{font-size:11px;padding:5px 10px}
+          .ctrlBtn{font-size:11px}
+        }
+        @media(max-width:400px){
+          .toolbar{padding:6px 10px;gap:6px}
+          .content{padding:12px 10px}
+        }
       `}</style>
 
       <Header total={totalPapers} loading={loading} />
 
-      <div style={{ borderBottom: '1px solid #1e293b', padding: '10px 26px',
-        background: '#0a0d14', display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+      <div className="toolbar">
         <WeekSelector
           weeks={index?.weeks ?? []}
           toDate={toDate}
@@ -224,14 +242,10 @@ export default function App() {
         />
         <CategoryFilter categories={allCategories} active={activeCat} onChange={setActiveCat} />
         <input
+          className="search-input"
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder="キーワード検索..."
-          style={{
-            background: '#131720', border: '1px solid #1e293b', color: '#94a3b8',
-            fontFamily: "'IBM Plex Mono',monospace", fontSize: 13,
-            padding: '4px 10px', borderRadius: 2, outline: 'none', width: 160,
-          }}
         />
         <button
           className={`ctrlBtn${sortByCitations ? ' active' : ''}`}
@@ -247,7 +261,7 @@ export default function App() {
         </button>
       </div>
 
-      <div style={{ padding: '24px 26px', maxWidth: 960 }}>
+      <div className="content">
         {loading && (
           <div style={{ textAlign: 'center', padding: '80px 0', color: '#38bdf8', letterSpacing: 3 }}>
             loading...

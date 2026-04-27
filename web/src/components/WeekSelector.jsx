@@ -6,7 +6,7 @@ export default function WeekSelector({ weeks, toDate, fromDate, onToChange, onFr
     padding: '4px 10px', borderRadius: 2, cursor: 'pointer', outline: 'none',
   }
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap', width: '100%' }}>
       <span style={{ fontSize: 12, color: '#475569', letterSpacing: 1, whiteSpace: 'nowrap' }}>
         期間:
       </span>

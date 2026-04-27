@@ -43,10 +43,10 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
       transition: 'opacity 0.2s',
     }}>
       <div onClick={() => setExpanded(e => !e)}
-        style={{ padding: '13px 16px 11px', cursor: 'pointer', userSelect: 'none' }}>
+        style={{ padding: 'clamp(10px,3vw,13px) clamp(10px,3vw,16px) 11px', cursor: 'pointer', userSelect: 'none' }}>
 
         {/* --- バッジ行 --- */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 7, flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 7, flexWrap: 'wrap' }}>
           <span style={{ fontSize: 13, padding: '2px 10px', background: cat.color,
             color: '#080c14', fontWeight: 700, letterSpacing: 1, borderRadius: 2, flexShrink: 0 }}>
             {paper.date}
@@ -98,8 +98,8 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
 
         {/* --- タイトル・著者行 --- */}
         <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>{paper.org}</div>
-        <div style={{ fontSize: 15, color: '#e2e8f0', lineHeight: 1.6, fontWeight: 500 }}>{paper.title}</div>
-        <div style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6, marginTop: 3 }}>{paper.titleJa}</div>
+        <div style={{ fontSize: 'clamp(13px,3.5vw,15px)', color: '#e2e8f0', lineHeight: 1.6, fontWeight: 500 }}>{paper.title}</div>
+        <div style={{ fontSize: 'clamp(12px,3vw,14px)', color: '#94a3b8', lineHeight: 1.6, marginTop: 3 }}>{paper.titleJa}</div>
         {paper.authors?.length > 0 && (
           <div style={{ fontSize: 11, color: '#475569', lineHeight: 1.6, marginTop: 4 }}>
             {paper.authors.join(', ')}
