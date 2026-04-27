@@ -59,7 +59,7 @@ Error generating stack: `+o.message+`
 
         .toolbar{border-bottom:1px solid #1e293b;padding:10px 26px;background:#0a0d14;
           display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-        .content{padding:24px 26px;max-width:960px}
+        .content{padding:24px 26px;max-width:960px;margin:0 auto}
         .search-input{background:#131720;border:1px solid #1e293b;color:#94a3b8;
           font-family:'IBM Plex Mono',monospace;font-size:13px;
           padding:4px 10px;border-radius:2px;outline:none;width:160px}
