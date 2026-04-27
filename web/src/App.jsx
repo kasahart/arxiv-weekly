@@ -60,6 +60,7 @@ export default function App() {
   const [index, setIndex] = useState(null)
   const [loadedWeeks, setLoadedWeeks] = useState([])
   const [toDate, setToDate] = useState(null)
+  const [fromDate, setFromDate] = useState(null)
   const [nextLoadIdx, setNextLoadIdx] = useState(0)
   const [loading, setLoading] = useState(true)
   const [loadingMore, setLoadingMore] = useState(false)
@@ -121,8 +122,9 @@ export default function App() {
     const weeks = index.weeks
     if (nextLoadIdx >= weeks.length) { setHasMore(false); return }
 
-    setLoadingMore(true)
+    // 期間の下限を超えたら停止
     const nextDate = weeks[nextLoadIdx].date
+    if (fromDate && nextDate < fromDate) { setHasMore(false); return }
     fetchWeekData(nextDate).then(data => {
       setLoadedWeeks(prev => [...prev, data])
       const newIdx = nextLoadIdx + 1
@@ -133,7 +135,7 @@ export default function App() {
       fetchCitationsForPapers(papers).then(m => setCitationMap(prev => ({ ...prev, ...m })))
       fetchGithubReposForPapers(papers).then(m => setGithubMap(prev => ({ ...prev, ...m })))
     }).catch(() => setLoadingMore(false))
-  }, [index, nextLoadIdx, loadingMore, hasMore])
+  }, [index, nextLoadIdx, loadingMore, hasMore, fromDate])
 
   // IntersectionObserver: load more when sentinel is visible
   useEffect(() => {
@@ -187,7 +189,9 @@ export default function App() {
         <WeekSelector
           weeks={index?.weeks ?? []}
           toDate={toDate}
-          onToChange={setToDate}
+          fromDate={fromDate}
+          onToChange={date => { setFromDate(null); setToDate(date) }}
+          onFromChange={setFromDate}
         />
         <CategoryFilter categories={allCategories} active={activeCat} onChange={setActiveCat} />
       </div>
