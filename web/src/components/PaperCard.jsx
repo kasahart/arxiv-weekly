@@ -47,7 +47,7 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
               Code
             </a>
           )}
-          {citationCount != null && citationCount > 0 && (
+          {citationCount != null && (
             <span style={{ fontSize: 9, padding: '2px 7px',
               border: '1px solid #475569', color: '#94a3b8', borderRadius: 2 }}>
               cited {citationCount}
