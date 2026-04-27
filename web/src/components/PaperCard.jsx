@@ -9,12 +9,11 @@ const SECTIONS = [
   { key: 'nextReads',  icon: '6.', label: '次に読むべき論文',     color: '#f472b6' },
 ]
 
-// 先頭の丸数字プレフィックス（① など）を除去する
 function stripPrefix(text) {
   return text?.replace(/^[①-⑨]\s*/, '') ?? ''
 }
 
-export default function PaperCard({ paper, cat, animDelay = 0, citationCount, githubUrl }) {
+export default function PaperCard({ paper, cat, animDelay = 0 }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -39,8 +38,8 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
           </span>
           <span style={{ fontSize: 10, color: '#94a3b8', fontWeight: 500 }}>{paper.org}</span>
           <span style={{ fontSize: 9, color: '#334155' }}>arXiv:{paper.id}</span>
-          {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noreferrer"
+          {paper.githubRepo && (
+            <a href={paper.githubRepo} target="_blank" rel="noreferrer"
               onClick={e => e.stopPropagation()}
               style={{ fontSize: 9, padding: '2px 7px', textDecoration: 'none',
                 border: '1px solid #4ade8060', color: '#4ade80',
@@ -48,10 +47,10 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
               Code
             </a>
           )}
-          {citationCount != null && citationCount > 0 && (
+          {paper.citationCount != null && paper.citationCount > 0 && (
             <span style={{ fontSize: 9, padding: '2px 7px',
               border: '1px solid #475569', color: '#94a3b8', borderRadius: 2 }}>
-              cited {citationCount}
+              cited {paper.citationCount}
             </span>
           )}
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>

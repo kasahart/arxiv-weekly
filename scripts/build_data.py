@@ -7,6 +7,7 @@ build_data.py
 import json
 import os
 import time
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -82,6 +83,43 @@ def load_index() -> dict:
     return {"weeks": [], "generated_at": ""}
 
 
+def fetch_paper_meta(papers: list[dict]) -> dict[str, dict]:
+    """Semantic Scholar と HuggingFace から被引用数・GitHub リポジトリを取得する"""
+    meta: dict[str, dict] = {}
+    for p in papers:
+        arxiv_id = p["id"].split("v")[0]
+        citation_count = None
+        github_repo = None
+
+        # Semantic Scholar: 被引用数
+        try:
+            url = f"https://api.semanticscholar.org/graph/v1/paper/arXiv:{arxiv_id}?fields=citationCount"
+            req = urllib.request.Request(url, headers={"User-Agent": "arxiv-weekly/1.0"})
+            with urllib.request.urlopen(req, timeout=10) as r:
+                data = json.loads(r.read())
+                citation_count = data.get("citationCount")
+        except Exception:
+            pass
+
+        # HuggingFace Papers: GitHub リポジトリ
+        try:
+            url = f"https://huggingface.co/api/papers/{arxiv_id}"
+            req = urllib.request.Request(url, headers={"User-Agent": "arxiv-weekly/1.0"})
+            with urllib.request.urlopen(req, timeout=10) as r:
+                data = json.loads(r.read())
+                github_repo = data.get("githubRepo") or None
+        except Exception:
+            pass
+
+        meta[arxiv_id] = {"citationCount": citation_count, "githubRepo": github_repo}
+        time.sleep(0.5)  # レート制限対策
+
+    found_citations = sum(1 for v in meta.values() if v["citationCount"] is not None)
+    found_repos = sum(1 for v in meta.values() if v["githubRepo"])
+    print(f"[build] Meta: citations={found_citations}/{len(papers)}, repos={found_repos}/{len(papers)}")
+    return meta
+
+
 def save_index(index: dict):
     index_path = ROOT / SETTINGS["data"]["index_file"]
     index["generated_at"] = datetime.now(timezone.utc).isoformat()
@@ -104,6 +142,14 @@ def main(date_str: str | None = None):
     date_key = now.strftime("%Y-%m%d")  # 例: 2026-0425
     filename = f"{date_key}.json"
     weekly_path = ROOT / SETTINGS["data"]["weekly_dir"] / filename
+
+    # 被引用数・GitHub リポジトリを取得してpapersに追加
+    print("[build] Fetching citation counts and GitHub repos ...")
+    meta = fetch_paper_meta(papers)
+    for p in papers:
+        arxiv_id = p["id"].split("v")[0]
+        p["citationCount"] = meta.get(arxiv_id, {}).get("citationCount")
+        p["githubRepo"] = meta.get(arxiv_id, {}).get("githubRepo")
 
     # GitHub Models でトレンド生成
     token = os.environ.get("GITHUB_TOKEN")
