@@ -9,7 +9,7 @@ const SECTIONS = [
   { key: 'nextReads',  icon: '⑥', label: '次に読むべき論文',     color: '#f472b6' },
 ]
 
-export default function PaperCard({ paper, cat, animDelay = 0 }) {
+export default function PaperCard({ paper, cat, animDelay = 0, citationCount }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -35,6 +35,12 @@ export default function PaperCard({ paper, cat, animDelay = 0 }) {
           </span>
           <span style={{ fontSize: 10, color: '#94a3b8', fontWeight: 500 }}>{paper.org}</span>
           <span style={{ fontSize: 9, color: '#334155' }}>arXiv:{paper.id}</span>
+          {citationCount != null && (
+            <span style={{ fontSize: 9, padding: '2px 7px',
+              border: '1px solid #334155', color: '#64748b', borderRadius: 2 }}>
+              cited {citationCount}
+            </span>
+          )}
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>
             <a href={paper.url} target="_blank" rel="noreferrer"
               onClick={e => e.stopPropagation()}
