@@ -70,6 +70,7 @@ export default function App() {
   const [citationMap, setCitationMap] = useState({})
   const [githubMap, setGithubMap] = useState({})
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
+  const [search, setSearch] = useState('')
   const [favorites, setFavorites] = useState(
     () => new Set(JSON.parse(localStorage.getItem(LS_FAVORITES) || '[]'))
   )
@@ -208,6 +209,16 @@ export default function App() {
           onFromChange={setFromDate}
         />
         <CategoryFilter categories={allCategories} active={activeCat} onChange={setActiveCat} />
+        <input
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          placeholder="キーワード検索..."
+          style={{
+            background: '#131720', border: '1px solid #1e293b', color: '#94a3b8',
+            fontFamily: "'IBM Plex Mono',monospace", fontSize: 11,
+            padding: '4px 10px', borderRadius: 2, outline: 'none', width: 160,
+          }}
+        />
         <button
           className={`ctrlBtn${showFavoritesOnly ? ' active' : ''}`}
           onClick={() => setShowFavoritesOnly(s => !s)}
@@ -228,9 +239,15 @@ export default function App() {
             .filter(c => activeCat === 'all' || c.id === activeCat)
             .map(c => ({
               ...c,
-              papers: showFavoritesOnly
-                ? c.papers.filter(p => favorites.has(p.id.split('v')[0]))
-                : c.papers,
+              papers: c.papers.filter(p => {
+                const id = p.id.split('v')[0]
+                if (showFavoritesOnly && !favorites.has(id)) return false
+                if (search) {
+                  const q = search.toLowerCase()
+                  return `${p.title} ${p.titleJa ?? ''} ${p.what ?? ''}`.toLowerCase().includes(q)
+                }
+                return true
+              }),
             }))
             .filter(c => c.papers.length > 0)
 
