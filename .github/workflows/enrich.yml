@@ -5,15 +5,17 @@ on:
 
 permissions:
   contents: write
+  models: read
 
 jobs:
   enrich:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 360
     permissions:
       contents: write
       pages: write
       id-token: write
+      models: read
     steps:
       - uses: actions/checkout@v4
 
@@ -37,7 +39,9 @@ jobs:
           echo "Weekly files:"
           ls data/weekly/
 
-      - name: Enrich weekly data with citations and GitHub repos
+      - name: Enrich weekly data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/enrich_data.py
 
       - uses: actions/setup-node@v4
@@ -46,9 +50,15 @@ jobs:
           cache: 'npm'
           cache-dependency-path: web/package-lock.json
 
-      - name: Copy enriched data to web/public
+      - name: Fetch existing data from gh-pages for merge
         run: |
           mkdir -p web/public/data/weekly
+          for f in $(git ls-tree -r --name-only origin/gh-pages 2>/dev/null | grep '^data/weekly/.*\.json$'); do
+            git show origin/gh-pages:$f > web/public/$f 2>/dev/null || true
+          done
+
+      - name: Copy enriched data to web/public
+        run: |
           find data/weekly -name '*.json' -exec cp {} web/public/data/weekly/ \;
           cp data/index.json web/public/data/
           cp data/latest.json web/public/data/
@@ -65,4 +75,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: web/dist
           publish_branch: gh-pages
-          commit_message: "deploy: enriched with citation counts and GitHub repos"
+          commit_message: "deploy: enrich all weekly data with full metadata"
