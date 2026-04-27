@@ -58,7 +58,7 @@
           "org": "Tencent AI Lab",
           "url": "https://arxiv.org/abs/2603.11661v1",
           "category": "foundation",
-          "what": "テキストから音声生成（TTA）において、オンライン強化学習を活用し、生成音声の品質と意味的整合性を向上させる新しい手法を提案しています。",
+          "what": "テキストから音響生成（TTA）において、オンライン強化学習を活用し、生成音声の品質と意味的整合性を向上させる新しい手法を提案しています。",
           "novel": "オンラインのGroup Relative Policy Optimization（GRPO）をTTA生成に適応させ、LALMsから得られる報酬を活用して人間の知覚により一致したスコアリングを実現しました。",
           "method": "Flow Matchingベースの音声モデルにGRPOアルゴリズムを適応させ、LALMsから得られる報酬を用いてオンライン強化学習を実施。",
           "validation": "TTA-Benchで新たなSOTAを達成し、音声品質と意味的整合性の両面で優れた性能を実証しました。",
