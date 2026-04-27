@@ -197,7 +197,6 @@ def main(date_str: str | None = None):
 
     # index.json を更新
     index = load_index()
-    # 同一 date_key のエントリがあれば削除してから先頭に追加
     index["weeks"] = [w for w in index["weeks"] if w["date"] != date_key]
     index["weeks"].insert(
         0,
@@ -208,6 +207,11 @@ def main(date_str: str | None = None):
             "generated_at": now.isoformat(),
         },
     )
+    # カテゴリ定義を常に最新の keywords.yaml から書き込む
+    index["categories"] = [
+        {"id": c["id"], "label": c["label"], "color": c["color"]}
+        for c in KEYWORDS["ui_categories"]
+    ]
     save_index(index)
 
     # 中間ファイルを削除

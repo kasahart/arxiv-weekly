@@ -178,10 +178,16 @@ export default function App() {
     return () => observer.disconnect()
   }, [loadNextWeek])
 
-  // All unique categories across loaded weeks
-  const allCategories = [...new Map(
+  // index.json のカテゴリ定義を基本とし、ロード済み週の論文数を付与
+  const paperCountById = Object.fromEntries(
+    loadedWeeks.flatMap(w => w.categories).reduce((map, c) => {
+      map.set(c.id, (map.get(c.id) ?? 0) + c.papers.length)
+      return map
+    }, new Map())
+  )
+  const allCategories = (index?.categories ?? [...new Map(
     loadedWeeks.flatMap(w => w.categories).map(c => [c.id, c])
-  ).values()]
+  ).values()]).map(c => ({ ...c, papers: Array(paperCountById[c.id] ?? 0).fill(null) }))
 
   const totalPapers = loadedWeeks.reduce(
     (sum, w) => sum + w.categories.reduce((s, c) => s + c.papers.length, 0), 0
