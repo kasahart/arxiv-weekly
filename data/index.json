@@ -115,5 +115,22 @@
       "generated_at": "2026-01-02T00:00:00+00:00"
     }
   ],
-  "generated_at": "2026-04-27T12:59:45.984940+00:00"
+  "generated_at": "2026-04-27T12:59:45.984940+00:00",
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "color": "#38bdf8"
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "color": "#4ade80"
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "color": "#fb923c"
+    }
+  ]
 }
