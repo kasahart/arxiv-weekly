@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { stripPrefix } from '../utils.js'
 
 const SECTIONS = [
   { key: 'what',       icon: '1.', label: 'どんなもの？',        color: '#cbd5e1' },
@@ -9,9 +10,6 @@ const SECTIONS = [
   { key: 'nextReads',  icon: '6.', label: '次に読むべき論文',     color: '#f472b6' },
 ]
 
-function stripPrefix(text) {
-  return text?.replace(/^[①-⑨]\s*/, '') ?? ''
-}
 
 function Badge({ href, onClick, color, bg, children }) {
   const style = {

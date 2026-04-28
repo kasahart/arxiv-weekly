@@ -11,28 +11,10 @@ const LS_READ      = 'arxiv-read'
 // OpenAlex polite pool (higher rate limit)
 const OPENALEX_EMAIL = 'beinvoked66@gmail.com'
 
-// ── URL state helpers ──────────────────────────────────────────────────
-function readUrlState() {
-  const p = new URLSearchParams(window.location.search)
-  return {
-    toDate:           p.get('week') || null,
-    fromDate:         p.get('from') || null,
-    activeCat:        p.get('cat')  || 'all',
-    search:           p.get('q')    || '',
-    sortByCitations:  p.get('sort') === '1',
-    showFavoritesOnly: p.get('fav') === '1',
-  }
-}
+import { readUrlState, buildUrlSearch } from './utils.js'
 
-function pushUrlState({ toDate, fromDate, activeCat, search, sortByCitations, showFavoritesOnly }) {
-  const p = new URLSearchParams()
-  if (toDate)            p.set('week', toDate)
-  if (fromDate)          p.set('from', fromDate)
-  if (activeCat !== 'all') p.set('cat', activeCat)
-  if (search)            p.set('q', search)
-  if (sortByCitations)   p.set('sort', '1')
-  if (showFavoritesOnly) p.set('fav', '1')
-  const url = p.toString() ? `?${p}` : window.location.pathname
+function pushUrlState(state) {
+  const url = buildUrlSearch(state) || window.location.pathname
   window.history.pushState({}, '', url)
 }
 
