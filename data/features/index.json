@@ -1,6 +1,37 @@
 {
   "features": [
     {
+      "slug": "2026-07-28-debate-multi-stage-audio-processing-vs-fusion",
+      "type": "debate",
+      "date": "2026-07-28",
+      "readTimeMinutes": 8,
+      "readTimeMinutesEn": 4,
+      "sourceCount": 8,
+      "title": "オーディオAIにおけるアーキテクチャの分断：マルチステージ・リファインメント対エンドツーエンドの融合",
+      "titleEn": "The Architectural Divide in Audio AI: Multi-Stage Refinement versus End-to-End Fusion",
+      "dek": "音声分離およびオーディオ生成の領域における、モジュール式カスケードパイプラインと、統合・内部融合されたニューラルネットワークの批判的評価。",
+      "dekEn": "A critical evaluation of modular cascading pipelines versus unified, internally fused neural networks in the landscape of speech separation and audio generation.",
+      "file": "2026-07-28-debate-multi-stage-audio-processing-vs-fusion.json",
+      "topicKey": "multi-stage-audio-processing-vs-fusion",
+      "searchTerms": [
+        "post-processing",
+        "feature fusion",
+        "source separation",
+        "multi-stage"
+      ],
+      "sourcePaperIds": [
+        "2606.21670",
+        "2607.11096",
+        "2606.24512",
+        "2607.06088",
+        "1810.12187",
+        "2305.11727",
+        "2008.07645",
+        "1906.06909"
+      ],
+      "generatedAt": "2026-07-28T04:03:41.879171+00:00"
+    },
+    {
       "slug": "2026-07-14-primer-human-preference-reward-text-to-music",
       "type": "primer",
       "date": "2026-07-14",
@@ -31,5 +62,5 @@
       "generatedAt": "2026-07-16T03:02:00.739750+00:00"
     }
   ],
-  "generatedAt": "2026-07-16T03:02:00.739750+00:00"
+  "generatedAt": "2026-07-28T04:03:41.879171+00:00"
 }
