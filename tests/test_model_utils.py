@@ -49,7 +49,7 @@ class TestProviderConfiguration:
             "api_key_env": "GEMINI_API_KEY",
             "endpoint": "https://generativelanguage.googleapis.com/v1beta/openai/",
             "model": "gemini-3.5-flash",
-            "request_limit_per_run": 30,
+            "request_limit_per_run": 80,
             "feature_max_tokens": 64000,
             "max_tokens": 16000,
             "batch_size": 5,
