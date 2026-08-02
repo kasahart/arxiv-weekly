@@ -10,11 +10,21 @@ from analyze_papers import (
     SYSTEM_PROMPT,
     chunk_papers,
     get_analysis_providers,
+    is_retryable_api_error,
     sanitize_json_text,
     normalize_arxiv_id,
     verify_related_papers,
     trusted_affiliation,
 )
+
+
+@pytest.mark.parametrize(
+    ("status_code", "expected"),
+    [(None, True), (408, True), (429, True), (503, True), (400, False), (410, False)],
+)
+def test_api_error_retryability(status_code, expected):
+    error = type("Error", (), {"status_code": status_code})()
+    assert is_retryable_api_error(error) is expected
 
 
 def test_analyze_batch_uses_selected_provider_model(monkeypatch):
@@ -41,6 +51,10 @@ def test_analyze_batch_uses_selected_provider_model(monkeypatch):
         },
     }
     monkeypatch.setattr(analyze_papers, "SETTINGS", settings)
+    monkeypatch.setattr(analyze_papers, "ANALYSIS_SETTINGS", {
+        "temperature": 0.3,
+        "prompt_authors": 3,
+    })
     paper = {"id": "1234.5678", "title": "Title", "abstract": "Abstract"}
 
     analyze_papers.analyze_batch(client, [paper], None)
@@ -77,6 +91,12 @@ def test_analyze_batch_fails_closed_after_empty_response(monkeypatch, capsys):
             "min_request_interval": 0,
             "batch_max_tokens": 1000,
         },
+    })
+    monkeypatch.setattr(analyze_papers, "ANALYSIS_SETTINGS", {
+        "temperature": 0.3,
+        "prompt_authors": 3,
+        "retry_max": 1,
+        "retry_interval": 0,
     })
     paper = {"id": "1234.5678", "title": "Title", "abstract": "Abstract"}
 
@@ -125,6 +145,10 @@ def test_analyze_batch_uses_explicit_fallback_provider(monkeypatch):
             "batch_max_tokens": 1000,
         },
     })
+    monkeypatch.setattr(analyze_papers, "ANALYSIS_SETTINGS", {
+        "temperature": 0.3,
+        "prompt_authors": 3,
+    })
 
     analyze_papers.analyze_batch(
         client,
@@ -134,6 +158,46 @@ def test_analyze_batch_uses_explicit_fallback_provider(monkeypatch):
     )
 
     assert calls[0]["model"] == "openai/gpt-4.1"
+
+
+def test_analysis_overrides_reduce_request_size_and_reasoning(monkeypatch):
+    calls = []
+
+    class Completions:
+        def create(self, **kwargs):
+            calls.append(kwargs)
+            message = type(
+                "Message", (), {"content": json.dumps({"1234.5678": {}})}
+            )()
+            choice = type("Choice", (), {"message": message})()
+            return type("Response", (), {"choices": [choice]})()
+
+    client = type(
+        "Client", (), {"chat": type("Chat", (), {"completions": Completions()})()}
+    )()
+    monkeypatch.setattr(analyze_papers, "SETTINGS", {
+        "ai": {"provider": "gemini"},
+        "gemini": {
+            "model": "gemini-3.5-flash",
+            "retry_max": 1,
+            "retry_interval": 0,
+            "min_request_interval": 0,
+            "batch_max_tokens": 32000,
+        },
+    })
+    monkeypatch.setattr(analyze_papers, "ANALYSIS_SETTINGS", {
+        "temperature": 0.3,
+        "prompt_authors": 3,
+        "batch_max_tokens": 12000,
+        "reasoning_effort": "low",
+    })
+
+    analyze_papers.analyze_batch(
+        client, [{"id": "1234.5678", "title": "Title", "abstract": "Abstract"}], None
+    )
+
+    assert calls[0]["max_tokens"] == 12000
+    assert calls[0]["reasoning_effort"] == "low"
 
 
 def test_system_prompt_preserves_exact_japanese_terminology():

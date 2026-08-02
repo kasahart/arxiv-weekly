@@ -5,6 +5,7 @@ Analyze each paper in Japanese from six perspectives using the configured AI pro
 """
 
 import json
+import random
 import re
 import time
 import unicodedata
@@ -42,6 +43,11 @@ def wait_for_next_request(last_request_at: float | None, min_interval: float):
         time.sleep(remaining)
 
 
+def is_retryable_api_error(error: APIError) -> bool:
+    status_code = getattr(error, "status_code", None)
+    return status_code is None or status_code in {408, 409, 429} or status_code >= 500
+
+
 def build_batch_prompt(papers: list[dict]) -> str:
     paper_blocks = []
     for paper in papers:
@@ -68,8 +74,20 @@ def analyze_batch(
     provider, cfg = get_ai_config(SETTINGS, provider)
     prompt = build_batch_prompt(papers)
     paper_ids = {paper["id"] for paper in papers}
+    retry_max = int(ANALYSIS_SETTINGS.get("retry_max", cfg["retry_max"]))
+    retry_interval = float(
+        ANALYSIS_SETTINGS.get("retry_interval", cfg["retry_interval"])
+    )
+    retry_max_interval = float(
+        ANALYSIS_SETTINGS.get("retry_max_interval", retry_interval * 8)
+    )
+    max_tokens = min(
+        int(ANALYSIS_SETTINGS.get("batch_max_tokens", cfg["batch_max_tokens"])),
+        int(cfg["batch_max_tokens"]),
+    )
+    reasoning_effort = ANALYSIS_SETTINGS.get("reasoning_effort")
 
-    for attempt in range(cfg["retry_max"]):
+    for attempt in range(retry_max):
         request_started_at = None
         try:
             wait_for_next_request(last_request_at, cfg["min_request_interval"])
@@ -82,8 +100,9 @@ def analyze_batch(
                 ],
                 response_format={"type": "json_object"},
                 **build_chat_kwargs(
-                    cfg["model"], cfg["batch_max_tokens"],
+                    cfg["model"], max_tokens,
                     temperature=ANALYSIS_SETTINGS["temperature"],
+                    reasoning_effort=reasoning_effort,
                 ),
             )
             last_request_at = time.monotonic()
@@ -119,10 +138,22 @@ def analyze_batch(
             if request_started_at is not None:
                 last_request_at = request_started_at
             print(f"  [warn] API error (attempt {attempt + 1}): {e}")
-        time.sleep(cfg["retry_interval"] * (2**attempt))
+            if not is_retryable_api_error(e):
+                raise RuntimeError(
+                    f"AI analysis with {provider} received non-retryable "
+                    f"HTTP {getattr(e, 'status_code', 'error')}"
+                ) from e
+        if attempt + 1 < retry_max:
+            base_delay = min(retry_interval * (2**attempt), retry_max_interval)
+            delay = min(
+                base_delay * random.uniform(0.8, 1.2),
+                retry_max_interval,
+            )
+            print(f"[analyze] retrying in {delay:.1f}s ...")
+            time.sleep(delay)
 
     raise RuntimeError(
-        f"AI analysis with {provider} failed after {cfg['retry_max']} attempts"
+        f"AI analysis with {provider} failed after {retry_max} attempts"
     )
 
 
@@ -240,7 +271,8 @@ def main():
     _, cfg = get_ai_config(SETTINGS, providers[0])
     analyzed = []
     next_read_candidates = {}
-    batches = chunk_papers(papers, cfg["batch_size"])
+    batch_size = int(ANALYSIS_SETTINGS.get("batch_size", cfg["batch_size"]))
+    batches = chunk_papers(papers, batch_size)
     last_request_at = {provider: None for provider in providers}
     active_provider_index = 0
 
