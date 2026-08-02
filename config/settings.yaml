@@ -30,6 +30,12 @@ metadata:
 # Analysis and report-generation settings
 analysis:
   fallback_providers: [github_models]
+  batch_size: 2
+  batch_max_tokens: 12000
+  reasoning_effort: low
+  retry_max: 6
+  retry_interval: 30.0
+  retry_max_interval: 300.0
   prompt_authors: 3
   temperature: 0.3
   enrichment_tokens_per_paper: 800
