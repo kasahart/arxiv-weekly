@@ -1,0 +1,388 @@
+{
+  "date": "2026-0731",
+  "generated_at": "2026-07-31T00:00:00+00:00",
+  "total": 7,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "labelEn": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2607.27109v2",
+          "date": "Jul 29",
+          "title": "MMAC: A Massive Multi-dimensional Benchmark for Audio Captioning",
+          "titleJa": "MMAC：音響キャプション生成のための大規模多次元ベンチマーク",
+          "authors": [
+            "Weijie Wu",
+            "Junbo Li",
+            "Lin Li",
+            "Jun Fang",
+            "Qingyang Hong"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "With the development of audio large language models (AudioLLMs), audio captioning needs to move from brief descriptions toward open-ended and fine-grained free-form descriptions. Existing evaluations often focus on generation quality or task performance, making it difficult to diagnose information coverage and description reliability. We propose MMAC, a \\textbf{M}assive \\textbf{M}ulti-dimensional benchmark for \\textbf{A}udio \\textbf{C}aptioning. MMAC contains 5,638 audio clips from more than 20 data sources, covering 6 capability categories and 15 evaluation dimensions. Given a model-generated caption, MMAC checks whether it mentions relevant information in the target dimension and whether the mentioned content is consistent with the reference label. We evaluate representative open-source and proprietary AudioLLMs. Results show clear differences across evaluation dimensions, information coverage, and description reliability. We will release the MMAC benchmark and evaluation code.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2607.27109v2",
+          "category": "foundation",
+          "task": "音響キャプション生成",
+          "taskEn": "Audio Captioning",
+          "proposedMethod": "MMAC",
+          "datasets": [],
+          "what": "音響巨大言語モデル（AudioLLM）の評価において、情報の網羅性と信頼性を診断するための、6つの能力カテゴリと15の評価次元を持つ大規模多次元ベンチマークを提案している。",
+          "whatEn": "The authors propose MMAC, a massive multi-dimensional benchmark for audio captioning, covering 6 capability categories and 15 evaluation dimensions to diagnose information coverage and description reliability of AudioLLMs.",
+          "novel": "単一の生成品質スコアだけでなく、モデル出力が特定の評価次元におけるターゲット情報を言及しているか、またその内容が参照ラベルと一致しているかを詳細にチェックできる多次元的評価手法を構築した点。",
+          "novelEn": "The authors claim novelty in establishing a multi-dimensional diagnostic benchmark that evaluates whether model-generated captions contain target dimension details and whether they are consistent with ground-truth reference labels, rather than relying on global generation scores.",
+          "method": "20以上のデータソースから収集された5,638件の音響クリップを含み、生成されたキャプションの特定の次元における情報網羅性と記述の信頼性をチェックする評価アルゴリズムを提供する。",
+          "methodEn": "The benchmark includes 5,638 audio clips from over 20 data sources, implementing an evaluation pipeline that checks information coverage in target dimensions and verifies description consistency against reference labels.",
+          "validation": "代表的なオープンソースおよび商用のAudioLLMを評価し、評価次元、情報網羅性、記述の信頼性の観点から各モデル間の明確な性能差を明らかにした。",
+          "validationEn": "Validation was performed by evaluating representative open-source and proprietary AudioLLMs, revealing clear differences across evaluation dimensions, information coverage, and description reliability.",
+          "discussion": "アブストラクトにはエラーの原因分析や特定モデルの偏りなど、システム全体の具体的な制限事項については言及されていない。",
+          "discussionEn": "The abstract does not explicitly detail limitations such as the root causes of specific model failures or bias in the evaluation dataset.",
+          "abstractJa": "音響巨大言語モデル（AudioLLM）の発展に伴い、音響キャプション生成（音響解説）は簡潔な説明から、オープンエンドで高精度な自由形式の説明へと移行する必要がある。既存の評価手法は、生成品質やタスクのパフォーマンスに焦点を当てることが多く、情報の網羅性や記述の信頼性を診断することは困難である。我々は、音響キャプションのための大規模多次元ベンチマークであるMMACを提案する。MMACは、20以上のデータソースからの5,638件の音響クリップを含み、6つの能力カテゴリと15の評価次元をカバーしている。モデルが生成したキャプションが与えられると、MMACはターゲット次元の関連情報が言及されているかどうか、また言及された内容が参照ラベルと一致しているかどうかを検証する。我々は、代表的なオープンソースおよびプロプライエタリなAudioLLMを評価した。結果は、評価次元、情報の網羅性、および記述の信頼性にわたって明確な違いを示している。MMACベンチマークと評価コードを公開する予定である。",
+          "nextReads": [
+            {
+              "label": "AudioLDM: Text-to-Audio Generation with Latent Diffusion Models (2023)",
+              "arxivId": "2301.12503",
+              "url": "https://arxiv.org/abs/2301.12503",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2607.26553v1",
+          "date": "Jul 29",
+          "title": "ThinkOmni: A Reasoning-Driven Omni-Modal LLM Framework for Audio Forgery Detection and Localization",
+          "titleJa": "ThinkOmni: 音声偽造検出と局所化のための推論駆動型オムニモーダル大規模言語モデルフレームワーク",
+          "authors": [
+            "Yuxiong Xu",
+            "Kaiqing Lin",
+            "Bin Li",
+            "Haodong Li",
+            "Sheng Li"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Existing audio forgery detection and localization (AFDL) methods often overfit dataset-specific low-level artifacts, limiting their generalization to subtle, localized, and unseen manipulations. Recent audio large language model (ALLM)-based approaches cast AFDL as question answering but still model forensic evidence implicitly, without linking manipulation cues to predictions. To bridge this gap, we propose ThinkOmni, a reasoning-driven omni-modal large language model that jointly performs explicit forensic reasoning, spoofing detection, and temporal manipulation localization. To enable explicit reasoning supervision, we construct Forensic-Aware Chain-of-Thought (FACoT), a 100K-sample dataset with structured forensic evidence and reasoning annotations. Leveraging FACoT, we introduce Forensic-Aware Modality-Incremental Learning (FMIL), which progressively aligns semantic, acoustic, and spectral-visual representations with the LLM backbone to capture complementary forensic cues. We further propose Forensic-Consistent Multi-task Loss (FCML), which combines weighted cross-entropy with an adaptive localization loss to coordinate reasoning generation, spoofing detection, and temporal localization. Extensive experiments show that ThinkOmni achieves strong cross-dataset generalization in both detection and localization. Code, models, data, and inference examples are available at https://beyond0814.github.io/ThinkOmni/.",
+          "comment": "Accepted by ACM MM 2026, 21 pages, 12 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2607.26553v1",
+          "category": "foundation",
+          "task": "音声偽造検出",
+          "taskEn": "Audio Forgery Detection",
+          "proposedMethod": "ThinkOmni",
+          "datasets": [
+            "FACoT"
+          ],
+          "what": "人間による音声の偽造や改ざんを検出し、その改ざん区間を特定（局所化）するための、推論駆動型のオムニモーダル大規模言語モデルフレームワークを提案している。",
+          "whatEn": "This paper proposes a reasoning-driven omni-modal large language model framework for detecting human speech forgery and localizing the manipulated temporal segments.",
+          "novel": "フォレンジック推論、スプーフィング検出、および時間的改ざん局所化を明示的かつ共同で実行する点、および推論の監視を可能にする10万サンプルのデータセット「FACoT」を構築した点にあると著者は主張している。",
+          "novelEn": "The authors claim novelty in jointly and explicitly performing forensic reasoning, spoofing detection, and temporal manipulation localization, and in constructing a 100K-sample dataset, FACoT, to enable explicit reasoning supervision.",
+          "method": "セマンティック、音響、およびスペクトロ・ビジュアル表現をLLMバックボーンと段階的に整列させる「フォレンジック認識型モダリティインクリメンタル学習（FMIL）」と、加重クロスエントロピーと適応的局所化損失を組み合わせた「フォレンジック一貫性マルチタスク損失（FCML）」を導入している。",
+          "methodEn": "The authors introduce Forensic-Aware Modality-Incremental Learning (FMIL) to progressively align semantic, acoustic, and spectral-visual representations with the LLM backbone, and propose Forensic-Consistent Multi-task Loss (FCML) which combines weighted cross-entropy with an adaptive localization loss.",
+          "validation": "広範な実験により、検出と局所化の両方において、ThinkOmniが強力なクロスデータセット汎化性能を達成することを示した。",
+          "validationEn": "Extensive experiments demonstrate that ThinkOmni achieves strong cross-dataset generalization in both detection and localization.",
+          "discussion": "アブストラクトには明示的な制限事項や課題に関する記述はない。",
+          "discussionEn": "The abstract does not provide explicit limitations or discussions on failure modes.",
+          "abstractJa": "既存の音声偽造検出・局所化（AFDL）手法は、データセット固有の低レベルのアーティファクトに過剰適合することが多く、微妙で局所的な、そして未知の改ざんに対する汎化能力が制限されている。近年、音声大規模言語モデル（ALLM）を用いたアプローチは、AFDLを質問応答として定式化しているが、依然としてフォレンジック証拠を暗黙的にモデル化しており、改ざんの手がかりと予測を結びつけていない。このギャップを埋めるため、我々は明示的なフォレンジック推論、スプーフィング検出、および時間的改ざん局所化を共同で行う、推論駆動型のオムニモーダル大規模言語モデル「ThinkOmni」を提案する。明示的な推論の監視を可能にするため、構造化されたフォレンジック証拠と推論のアノテーションを含む10万サンプルのデータセット「Forensic-Aware Chain-of-Thought (FACoT)」を構築する。FACoTを活用し、セマンティック、音響、およびスペクトロ・ビジュアル表現をLLMバックボーンと段階的に整列させて、補完的なフォレンジックの手がかりを捉える「Forensic-Aware Modality-Incremental Learning (FMIL)」を導入する。さらに、加重クロスエントロピーと適応的な局所化損失を組み合わせて、推論生成、スプーフィング検出、および時間的局所化を統合する「Forensic-Consistent Multi-task Loss (FCML)」を提案する。広範な実験により、ThinkOmniは検出と局所化の両方において、強力なクロスデータセット汎化性能を達成することが示された。コード、モデル、データ、および推論例は、https://beyond0814.github.io/ThinkOmni/ で公開されている。",
+          "nextReads": [
+            {
+              "label": "AudioGPT: Understanding and Generating Speech, Music, Sound, and Talking Head (2023)",
+              "arxivId": "2304.12995",
+              "url": "https://arxiv.org/abs/2304.12995",
+              "verified": true,
+              "source": "arxiv_api"
+            },
+            {
+              "label": "Voicebox: Text-Guided Multilingual Universal Speech Generation at Scale (2023)",
+              "arxivId": "2306.15687",
+              "url": "https://arxiv.org/abs/2306.15687",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "labelEn": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2607.27828v1",
+          "date": "Jul 30",
+          "title": "CrowdioSet and PaRIRset: Two Datasets Towards Live Music Source Separation",
+          "titleJa": "CrowdioSetとPaRIRset：ライブ音楽音源分離に向けた2つのデータセット",
+          "authors": [
+            "Enric Gusó",
+            "Xavier Serra"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Most Music Source Separation (MSS) models do not generalize well to live music recordings because they are trained on studio recordings alone, disregarding the venue acoustics, the speaker system's response and audience noise. We propose to bridge this gap by providing and training a model on two novel datasets. First, we present CrowdioSet: a noise dataset comprising 4800 real ambience tracks from Freesound and synthetic sing-alongs for the vocals in MUSDB18 and MOISESDB datasets, generated from zero-shot singing voice conversions. CrowdioSet enables effective audio denoising for live recordings, resulting in superior separation both in objective and subjective evaluations. Second, we introduce PaRIRset, a stereo impulse response dataset captured across 40 professional concert venues using a microphone array. Our results show that adding PaRIRset RIRs increases the performance of a MSS model compared to using real RIRs from Speech Enhancement tasks alone. We make the examples, code, model weights, PaRIRset, and CrowdioSet freely available to the public.",
+          "comment": "Accepted to ISMIR26. See : https://enricguso.github.io/crowdioset_parirset",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2607.27828v1",
+          "category": "separation",
+          "task": "音源分離",
+          "taskEn": "Audio Source Separation",
+          "proposedMethod": "CrowdioSet & PaRIRset",
+          "datasets": [
+            "Freesound",
+            "MUSDB18",
+            "MOISESDB"
+          ],
+          "what": "スタジオ録音のみで訓練された音楽音源分離モデルがライブ音楽録音に汎化しにくい課題を解決するため、観客のノイズやコンサート会場の空間音響を模した2つの新しいデータセットを提案している。",
+          "whatEn": "To address the poor generalization of music source separation models to live music recordings, the authors propose two novel datasets representing audience noise and concert venue acoustics.",
+          "novel": "Freesoundの環境音やゼロショット歌声変換による合唱ノイズを含む「CrowdioSet」と、40箇所のプロ仕様コンサート会場で収録されたステレオインパルス応答群「PaRIRset」という、ライブ音楽に特化したデータセットを初めて導入した点。",
+          "novelEn": "The novelty lies in introducing CrowdioSet, which contains real ambience and synthetic sing-alongs, and PaRIRset, a stereo impulse response dataset captured across 40 professional concert venues, specifically designed for live music.",
+          "method": "CrowdioSetを用いてライブ録音に対する効果的なデノイジングを可能にし、PaRIRsetのインパルス応答を重畳させることで、従来の音声強調タスク用インパルス応答のみを使用した場合と比較して、音楽音源分離モデルの性能を向上させる。",
+          "methodEn": "The method involves training models with CrowdioSet for effective denoising of live recordings and utilizing PaRIRset's RIRs to increase the performance of music source separation models compared to using standard speech enhancement RIRs.",
+          "validation": "客観的評価および主観的評価により、CrowdioSetが優れた分離性能を示すこと、またPaRIRsetの追加が音楽音源分離モデルの性能向上に寄与することを確認した。",
+          "validationEn": "Validation via objective and subjective evaluations demonstrates that CrowdioSet results in superior separation and that adding PaRIRset RIRs increases the performance of a music source separation model.",
+          "discussion": "アブストラクトには制限事項に関する具体的な記載はなく、未知の環境に対する一般化や他のアーキテクチャへの適用可能性についての詳細な議論は提供されていない。",
+          "discussionEn": "The abstract does not explicitly mention limitations, and further discussion on generalization to unseen environments or other architectures is not detailed.",
+          "abstractJa": "ほとんどの音楽音源分離（MSS）モデルは、スタジオ録音のみで訓練されているため、会場の音響、スピーカーシステムの応答、および観客のノイズが考慮されておらず、ライブ音楽録音に対して十分に汎化しない。我々は、2つの新しいデータセットを提供し、その上でモデルを訓練することにより、このギャップを埋めることを提案する。第一に、Freesoundからの4800のリアルな環境音トラックと、MUSDB18およびMOISESDBデータセットのボーカルに対してゼロショット歌声変換から生成された合成合唱からなるノイズデータセットであるCrowdioSetを提示する。CrowdioSetは、ライブ録音に対する効果的なオーディオデノイジングを可能にし、客観的評価と主観的評価の両方において優れた分離をもたらす。第二に、マイクロホンアレイを用いて40箇所のプロフェッショナルなコンサート会場でキャプチャされたステレオインパルス応答データセットであるPaRIRsetを紹介する。我々の結果は、PaRIRsetのRIR（室インパルス応答）を追加することで、音声強調タスクのリアルなRIRのみを使用する場合と比較して、MSSモデルの性能が向上することを示している。我々は例、コード、モデルの重み、PaRIRset、およびCrowdioSetを一般に無料で公開する。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2607.26874v1",
+          "date": "Jul 29",
+          "title": "Detection of AI-generated stems within hybrid human-AI music",
+          "titleJa": "人間とAIのハイブリッド音楽におけるAI生成ステムの検出",
+          "authors": [
+            "François Rigaud",
+            "Gabriel Meseguer-Brocal",
+            "Benjamin Martin",
+            "Romain Hennequin"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "This paper presents, to the best of our knowledge, the first study on detecting human-AI hybrid music tracks created by mixing human-produced and AI-generated stems. Building on recent work showing that AI music detectors can identify decoder-related artifacts in fully generated music, we investigate whether such artifacts remain detectable at the stem level after mixing. Using MUSDB18-HQ database in a two-stem vocals + accompaniment setting, we simulate hybrid mixtures by autoencoding individual stems with a neural codec. We compare two strategies combining AI-generated mix detection and source separation. A naive sequential pipeline, where source separation is followed by detection on separated sources, confirms that artifacts associated with an AI-generated stem are not reliably recovered by generic source separation systems. We therefore propose a parallel architecture in which source separation is only used to estimate source-relative energy within the mixture. We then train simple stem-specific binary classifiers that take as input the generated mix prediction together with the relative energy of the target stem on short audio chunks. Averaging chunk-level predictions yields encouraging track-level results, highlighting the potential of such approaches for detecting AI-generated stems in hybrid music.",
+          "comment": "Accepted at ISMIR 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2607.26874v1",
+          "category": "separation",
+          "task": "AI生成検出",
+          "taskEn": "AI-generated Audio Detection",
+          "proposedMethod": "Parallel source separation and stem-specific binary classification architecture",
+          "datasets": [
+            "MUSDB18-HQ"
+          ],
+          "what": "人間が制作した音源（ステム）とAIが生成したステムを混合したハイブリッド音楽において、AIによって生成された特定のステムを検出する手法を調査・提案している。",
+          "whatEn": "This paper investigates and proposes a method to detect AI-generated stems within human-AI hybrid music mixtures where human-produced and AI-generated stems are mixed.",
+          "novel": "ハイブリッド音楽におけるAI生成ステム検出という課題に初めて取り組み、音源分離を検出の前段に置く単純なパイプラインの欠点を克服するため、分離技術を相対エネルギー推定にのみ利用する並列アーキテクチャを提案した点。",
+          "novelEn": "The authors claim the first study on detecting AI-generated stems in human-AI hybrid music, introducing a parallel architecture that uses source separation only for energy estimation to overcome the failures of naive sequential pipelines.",
+          "method": "音源分離を用いて混合物内のターゲットステムの相対エネルギーを推定し、混合物全体の予測値とこの相対エネルギーを特徴量として、短いオーディオチャンク単位で特定のステムに対する二値分類器を学習させる。トラックレベルの判定は、チャンクごとの予測値を平均化することで行う。",
+          "methodEn": "The method uses source separation only to estimate source-relative energy. Simple stem-specific binary classifiers are trained on short chunks using the mix's prediction and the relative energy of the target stem, averaging predictions for track-level results.",
+          "validation": "MUSDB18-HQデータセットを用い、ボーカルと伴奏の2ステム構成において、ニューラルコーデックでAI生成アーティファクトをシミュレートしたハイブリッド音源を作成して評価し、有望な検出結果を得た。",
+          "validationEn": "Validation was conducted on the MUSDB18-HQ dataset in a two-stem setup (vocals and accompaniment) by simulating hybrid mixtures with a neural codec, yielding encouraging track-level detection results.",
+          "discussion": "現段階ではニューラルコーデックによるシミュレートされたAI生成ステムを前提としており、より複雑なミキシング工程や多様な生成AIモデルに対する頑健性についての検証は限定的である可能性がある。",
+          "discussionEn": "The study relies on simulated AI-generated stems via neural codecs, and robustness against complex professional mixing or a wider variety of real generative AI models remains to be thoroughly verified.",
+          "abstractJa": "本論文は、我々の知る限り、人間が制作したステム（音源）とAIが生成したステムを混合して作成された、人間とAIのハイブリッド音楽トラックを検出する最初の研究を提示する。AI音楽検出器が、完全に生成された音楽に含まれるデコーダー関連のアーティファクトを識別できるという最近の知見に基づき、ミキシング後であってもステムレベルでそのようなアーティファクトが検出可能のまま維持されるかを調査する。MUSDB18-HQデータベースを使用し、ボーカルと伴奏の2つのステム設定において、ニューラルコーデックで個々のステムを自己符号化することによりハイブリッド混合物をシミュレートする。AI生成ミキシング検出と音源分離を組み合わせた2つの戦略を比較する。音源分離の後に分離された音源に対して検出を行う素朴な直列パイプラインでは、AI生成ステムに関連するアーティファクトが一般的な音源分離システムによって確実には復元されないことを確認した。そこで我々は、音源分離を混合物内の音源相対エネルギーの推定にのみ使用する並列アーキテクチャを提案する。そして、短いオーディオチャンクにおけるターゲットステムの相対エネルギーと、生成された混合物の予測値を入力とする、シンプルなステム固有の二値分類器を訓練する。チャンクレベルの予測を平均化することで、トラックレベルで有望な結果が得られ、ハイブリッド音楽におけるAI生成ステムの検出に対するアプローチの可能性が示された。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2607.25919v1",
+          "date": "Jul 28",
+          "title": "Spacing Out: On the Reliability of Binaural Music Source Separation Metrics",
+          "titleJa": "間隔を空けて：バイノーラル音楽音源分離評価尺度の信頼性について",
+          "authors": [
+            "Richa Namballa",
+            "Magdalena Fuentes"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Despite the rising popularity of immersive audio, binaural music remains underexplored in music information retrieval (MIR), particularly regarding the task of music source separation (MSS). While existing stereo MSS models can process binaural audio, they often degrade the spatial quality of the separated stems and undermine listener immersion. Through a perceptual study comparing binaural and stereo MSS outputs, we evaluate how well objective spatial distortion metrics correlate with human perception. Our findings reveal varied agreement between these metrics and human judgment, highlighting a lack of reliability when used to evaluate binaural music tasks. Specifically, we find that Interaural Time Difference (ITD) estimation is highly sensitive to noise and separation artifacts. In evaluating two alternative ITD estimation methods, we uncover a critical trade-off between robustness and accuracy, particularly for narrow-band instruments like bass. These results underscore the need for accurate, interpretable spatial metrics designed for binaural music to develop models that preserve source localization and listener immersion.",
+          "comment": "6 pages + references, 6 figures, 1 table, 27th International Society for Music Information Retrieval (ISMIR) Conference",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2607.25919v1",
+          "category": "separation",
+          "task": "音源分離",
+          "taskEn": "Audio Source Separation",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "バイノーラル音楽の音源分離モデルにおいて、一般的に使用される客観的な空間歪み評価尺度が、人間の主観的な評価とどの程度一致しているかを調査している。",
+          "whatEn": "This paper investigates how well objective spatial distortion metrics correlate with human perception in the context of binaural music source separation.",
+          "novel": "バイノーラル音楽音源分離モデルの評価における、客観的な空間歪み評価尺度の不信頼性を知覚実験を通じて明らかにした点に新規性があると著者は主張している。",
+          "novelEn": "The authors claim novelty in revealing the lack of reliability in objective spatial distortion metrics when used to evaluate binaural music source separation tasks through a perceptual study.",
+          "method": "バイノーラルおよびステレオの音楽音源分離出力を用いた主観評価実験を行い、両耳間時間差（ITD）推定手法などの客観的な評価尺度との相関を比較分析した。",
+          "methodEn": "The authors conducted a perceptual study comparing binaural and stereo music source separation outputs and evaluated the correlation of objective spatial metrics, including two alternative ITD estimation methods, with human judgment.",
+          "validation": "客観的尺度と人間の判断の間に多様な乖離があることを明らかにし、特にITD推定がノイズや分離アーティファクトに対して高感度であること、およびベースのような狭帯域楽器におけるロバスト性と精度のトレードオフを検出した。",
+          "validationEn": "Validation revealed varied agreement between objective metrics and human judgment, showing that ITD estimation is highly sensitive to noise and separation artifacts, and highlighting a critical trade-off between robustness and accuracy for narrow-band instruments.",
+          "discussion": "現在の評価尺度ではバイノーラル音楽の空間的クオリティを正確に評価できないため、音源定位とリスナーの没入感を維持できる、バイノーラル音楽専用に設計された高精度かつ解釈可能な空間評価尺度が必要であると述べている。",
+          "discussionEn": "The discussion emphasizes the critical need for accurate and interpretable spatial metrics specifically designed for binaural music to help develop models that preserve source localization and listener immersion.",
+          "abstractJa": "没入型オーディオの人気の高まりにもかかわらず、バイノーラル音楽は音楽情報処理（MIR）、特に音楽音源分離（MSS）のタスクにおいて十分に探求されていない。既存のステレオMSSモデルはバイノーラルオーディオを処理できるものの、分離されたステムの空間的クオリティを低下させ、リスナーの没入感を損なうことがよくある。バイノーラルとステレオのMSS出力を比較する主観評価実験を通じて、客観的な空間歪み評価尺度が人間の知覚とどの程度相関しているかを評価する。我々の調査結果は、これらの評価尺度と人間の判断との間に多様な乖離があることを明らかにし、バイノーラル音楽タスクの評価に使用された場合の信頼性の低さを浮き彫りにしている。具体的には、両耳間時間差（ITD）推定がノイズや分離アーティファクトに対して非常に敏感であることを発見した。2つの代替的なITD推定手法を評価する中で、特にベースのような狭帯域の楽器において、ロバスト性と精度の間に重要なトレードオフが存在することを明らかにした。これらの結果は、音源の定位とリスナーの没入感を維持するモデルを開発するために、バイノーラル音楽向けに設計された、正確で解釈可能な空間評価尺度の必要性を強調している。",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2607.23395v1",
+          "date": "Jul 25",
+          "title": "Music-Source-Separation-Training (MSST): A Unified Framework for Training and Evaluating Music Demixing Models",
+          "titleJa": "Music-Source-Separation-Training (MSST): 音楽分離モデルのトレーニングと評価のための統一フレームワーク",
+          "authors": [
+            "Roman Solovyev",
+            "Ilya Kiselev",
+            "Alexander Stempkovskiy",
+            "Tatiana Gabruseva"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Music Source Separation (MSS), the task of recovering individual sound components (stems) from a polyphonic mixture, is central to applications ranging from karaoke and remixing to audio restoration and content production. The separation quality depends on engineering decisions across the entire pipeline: model choice, training data preparation and augmentation, loss function and metrics choice, training configuration, validation, and post-processing. This paper presents MSST (Music-Source-Separation-Training) - a universal open-source framework for MSS tasks, which unifies training, validation, and inference for a broad range of modern demixing model families under a single, configuration-driven interface. The framework supports various model architectures, data preprocessing and augmentations, multiple loss functions and evaluation metrics, which helps with fast iterations and ablation studies. Additionally, the framework supports a range of practical techniques that improve separation quality, such as sliding-window inference with cross-fading, test-time augmentation, model ensembling, and fine-tuning via Low-Rank Adaptation (LORA). Our ablation studies demonstrate improvements of MSS using the above techniques. By consolidating these components into a reproducible, YAML-configurable framework, MSST lowers the barrier to systematic experimentation and enables rapid iteration from idea to verifiable result.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2607.23395v1",
+          "category": "separation",
+          "task": "音源分離",
+          "taskEn": "Audio Source Separation",
+          "proposedMethod": "MSST",
+          "datasets": [],
+          "what": "様々なモダンな音楽音源分離（MSS）モデルのトレーニング、検証、推論を、構成ファイル（YAML）駆動の単一インターフェース下で統一して実行できる、オープンソースの汎用フレームワークを提案している。",
+          "whatEn": "This paper presents MSST (Music-Source-Separation-Training), an open-source, configuration-driven unified framework for training, validating, and performing inference with a wide range of modern music source separation models.",
+          "novel": "多様なアーキテクチャ、データ前処理・拡張、多数の損失関数や評価尺度を、再現可能でYAML構成可能なひとつのフレームワークへ集約し、系統的な実験や急速なイテレーションを可能にした点にあると著者は主張している。",
+          "novelEn": "The authors claim novelty in consolidating diverse model architectures, preprocessing/augmentation pipelines, loss functions, and evaluation metrics into a single reproducible, YAML-configurable framework to facilitate systematic experimentation and rapid iteration.",
+          "method": "クロスフェードを伴うスライディングウィンドウ推論、テスト時拡張（TTA）、モデルアンサンブル、およびLow-Rank Adaptation（LoRA）による微調整など、音源分離品質を向上させる実践的な技術群をサポートする共通のパイプラインを実装した。",
+          "methodEn": "The framework implements a common pipeline supporting practical quality-improving techniques such as sliding-window inference with cross-fading, test-time augmentation (TTA), model ensembling, and fine-tuning via Low-Rank Adaptation (LoRA).",
+          "validation": "アブレーションスタディを実施し、提案されたフレームワーク内の様々な技術（スライディングウィンドウ推論、TTA、アンサンブル、LoRA微調整など）を用いることで、音楽音源分離品質が向上することを検証した。",
+          "validationEn": "Ablation studies were conducted to demonstrate improvements in music source separation quality when utilizing the supported techniques within the framework.",
+          "discussion": "アブストラクトには特定の制限事項や対応していない条件に関する具体的な言及はない。",
+          "discussionEn": "The abstract does not provide specific limitations or failure modes of the proposed framework.",
+          "abstractJa": "混合音から個々の音声コンポーネント（ステム）を復元するタスクである音楽音源分離（MSS）は、カラオケやリミックスから、オーディオ修復、コンテンツ制作に至るまでのアプリケーションにおいて中心的な役割を担っている。分離の品質は、モデルの選択、トレーニングデータの作成と拡張、損失関数と評価尺度の選択、トレーニング構成、検証、および後処理といった、パイプライン全体のエンジニアリングの決定に依存する。本論文では、様々な現代的な分離モデルファミリーのトレーニング、検証、推論を単一の構成駆動型インターフェースの下で統一する、MSSタスク用の汎用オープンソースフレームワークであるMSST（Music-Source-Separation-Training）を提案する。このフレームワークは、多様なモデルアーキテクチャ、データの前処理と拡張、複数の損失関数と評価尺度をサポートしており、迅速なイテレーションやアブレーションスタディに役立つ。さらに、クロスフェードを伴うスライディングウィンドウ推論、テスト時拡張（TTA）、モデルアンサンブル、およびLow-Rank Adaptation（LoRA）による微調整など、分離品質を向上させる様々な実用的な技術をサポートしている。我々のアブレーションスタディは、上述の技術を用いたMSSの向上を実証している。これらのコンポーネントを再現可能でYAML構成可能なフレームワークに統合することにより、MSSTは系統的な実験の障壁を下げ、アイデアから検証可能な結果への迅速なイテレーションを可能にする。",
+          "nextReads": [
+            {
+              "label": "Music Demixing Challenge 2021 (2021)",
+              "arxivId": "2108.13559",
+              "url": "https://arxiv.org/abs/2108.13559",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "labelEn": "Anomalous Sound Detection",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2607.22086v1",
+          "date": "Jul 24",
+          "title": "MemNMF: Memory-Augmented NMF on LPC Spectra for Anomalous Sound Detection",
+          "titleJa": "MemNMF：異常音検知のためのLPCスペクトル上でのメモリ拡張NMF",
+          "authors": [
+            "Phurich Saengthong",
+            "Takahiro Shinozaki"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Autoencoder-based anomalous sound detection is attractive for machine condition monitoring because it can be trained using only normal recordings and yields an interpretable anomaly score from reconstruction error. Most prior work uses spectrogram autoencoders, but reconstructing detailed time--frequency patterns is sensitive to noise and transients, and models can reconstruct some anomalous inputs well, weakening normal--anomaly separation. We propose MemNMF, a constrained reconstruction method that operates on the Linear Predictive Coding spectrum, a compact estimate of the spectral envelope. MemNMF initializes a memory module from an NMF dictionary learned on normal LPC spectra and reconstructs each input as an attention-weighted combination of prototypical normal spectral patterns. Experiments on MIMII and DCASE 2020 Task 2 across multiple machine types and operating conditions show that LPC-spectrum inputs improve a standard autoencoder baseline and that MemNMF yields further gains, with especially strong robustness under noisy, non-stationary settings.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2607.22086v1",
+          "category": "anomaly",
+          "task": "異常音検知",
+          "taskEn": "Anomalous Sound Detection",
+          "proposedMethod": "MemNMF",
+          "datasets": [
+            "MIMII",
+            "DCASE 2020 Task 2"
+          ],
+          "what": "機械の稼働状態監視において、LPCスペクトルを入力とし、正常なスペクトルパターンのプロトタイプをアテンション重み付きで組み合わせて再構成する異常音検知手法を提案している。",
+          "whatEn": "The paper proposes an anomalous sound detection method that operates on LPC spectra and reconstructs inputs as an attention-weighted combination of prototypical normal spectral patterns for machine condition monitoring.",
+          "novel": "詳細な時間・周波数パターンのノイズ感受性を低減するためにスペクトルエンベロープのコンパクトな推定値であるLPCスペクトルを採用し、NMFディクショナリで初期化したメモリを用いることで正常と異常の分離能を向上させた点であると著者は主張している。",
+          "novelEn": "The authors claim that the novelty lies in using LPC spectra, a compact estimate of the spectral envelope, to reduce sensitivity to detailed time-frequency noise, and employing a memory module initialized with an NMF dictionary to improve the separation between normal and anomalous sounds.",
+          "method": "正常なLPCスペクトルから学習したNMFディクショナリを用いてメモリユニットを初期化し、入力スペクトルをそのプロトタイプの制約付きアテンション重み付き組み合わせとして再構成する。",
+          "methodEn": "A memory unit is initialized using an NMF dictionary learned from normal LPC spectra, and each input spectrum is reconstructed as a constrained attention-weighted combination of these prototypical patterns.",
+          "validation": "MIMIIおよびDCASE 2020 Task 2データセットにおける複数の機械種と運転条件を用いて評価を行い、LPCスペクトルの採用により標準的なオートエンコーダの性能が向上し、MemNMFの導入により騒音下や非定常環境下でさらなる性能向上が得られることを確認した。",
+          "validationEn": "Validation was performed on MIMII and DCASE 2020 Task 2 datasets across multiple machine types and conditions, showing that LPC-spectrum inputs improve a standard autoencoder and MemNMF yields further gains, especially in noisy, non-stationary settings.",
+          "discussion": "アブストラクトには明示的な限界や注意点の記載はなく、非定常かつノイズの多い環境下でのロバスト性が強調されているが、LPC次数などのハイパーパラメータ設定の影響については十分な情報が提供されていない。",
+          "discussionEn": "The abstract does not explicitly mention limitations but emphasizes robustness in noisy and non-stationary settings, leaving the impact of hyperparameters like LPC order unspecified.",
+          "abstractJa": "オートエンコーダに基づく異常音検知は、正常な録音のみを用いて学習可能であり、再構成誤差から解釈可能な異常スコアを得られるため、機械の状態監視において魅力的である。従来研究の多くはスペクトログラムオートエンコーダを使用しているが、詳細な時間・周波数パターンの再構成はノイズや過渡信号に敏感であり、モデルが一部の異常入力を良好に再構成してしまうことで、正常と異常の分離が弱まることがある。本稿では、スペクトルエンベロープのコンパクトな推定値である線形予測符号化（LPC）スペクトル上で動作する制約付き再構成手法であるMemNMFを提案する。MemNMFは、正常なLPCスペクトルで学習されたNMFディクショナリからメモリユニットを初期化し、各入力をプロトタイプ的な正常スペクトルパターンのアテンション重み付き組み合わせとして再構成する。複数の機械タイプおよび動作条件下でのMIMIIおよびDCASE 2020 Task 2における実験により、LPCスペクトル入力が標準的なオートエンコーダのベースラインを改善すること、そしてMemNMFがさらに性能を向上させ、特にノイズの多い非定常な環境下で強力な堅牢性を示すことを明らかにした。",
+          "nextReads": [
+            {
+              "label": "MIMII Dataset: Sound Dataset for Malfunctioning Industrial Machine Investigation and Inspection (2019)",
+              "arxivId": "1909.09347",
+              "url": "https://arxiv.org/abs/1909.09347",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "MSSTやCrowdioSet/PaRIRsetといった新たなフレームワークやデータセットが登場し、ライブ音源への適応や空間歪み評価手法の信頼性検証など音源分離技術の実用化研究が進んでいます。",
+    "音声キャプショニングを多角的に評価するMMACベンチマークや、偽造音声を検出・特定するThinkOmni、ハイブリッド楽曲中のAI生成ステム検出など、生成AI時代の評価と検知技術が盛んです。",
+    "機械の異常音検知に向けて、LPCスペクトル上でメモリ拡張型NMFを用いて正常パターンを効率的に再構成するMemNMFなどの実用的かつ高度な音響処理技術が提案されています。"
+  ],
+  "trendEn": [
+    "Music source separation technology is advancing toward practical application with new frameworks like MSST, specialized datasets like CrowdioSet and PaRIRset for live music, and reliability studies on spatial metrics.",
+    "Evaluation and detection of AI-generated audio are gaining momentum, highlighted by the MMAC benchmark for AudioLLMs, the ThinkOmni framework for speech forgery localization, and AI-generated stem detection in hybrid music.",
+    "Industrial acoustic applications are being developed, including advanced anomalous sound detection using MemNMF which reconstructs normal patterns on LPC spectra."
+  ]
+}
