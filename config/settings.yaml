@@ -30,7 +30,7 @@ metadata:
 # Analysis and report-generation settings
 analysis:
   fallback_providers: [github_models]
-  batch_size: 2
+  batch_size: 3
   batch_max_tokens: 12000
   reasoning_effort: low
   retry_max: 6
@@ -145,7 +145,7 @@ gemini:
   api_key_env: "GEMINI_API_KEY"
   endpoint: "https://generativelanguage.googleapis.com/v1beta/openai/"
   model: "gemini-3.5-flash"
-  request_limit_per_run: 20
+  request_limit_per_run: 30
   feature_max_tokens: 64000
   max_tokens: 16000
   batch_size: 5

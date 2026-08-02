@@ -81,8 +81,9 @@ def analyze_batch(
     retry_max_interval = float(
         ANALYSIS_SETTINGS.get("retry_max_interval", retry_interval * 8)
     )
-    max_tokens = int(
-        ANALYSIS_SETTINGS.get("batch_max_tokens", cfg["batch_max_tokens"])
+    max_tokens = min(
+        int(ANALYSIS_SETTINGS.get("batch_max_tokens", cfg["batch_max_tokens"])),
+        int(cfg["batch_max_tokens"]),
     )
     reasoning_effort = ANALYSIS_SETTINGS.get("reasoning_effort")
 
@@ -144,7 +145,10 @@ def analyze_batch(
                 ) from e
         if attempt + 1 < retry_max:
             base_delay = min(retry_interval * (2**attempt), retry_max_interval)
-            delay = base_delay * random.uniform(0.8, 1.2)
+            delay = min(
+                base_delay * random.uniform(0.8, 1.2),
+                retry_max_interval,
+            )
             print(f"[analyze] retrying in {delay:.1f}s ...")
             time.sleep(delay)
 
