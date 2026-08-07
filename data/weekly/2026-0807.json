@@ -1,0 +1,369 @@
+{
+  "date": "2026-0807",
+  "generated_at": "2026-08-07T00:00:00+00:00",
+  "total": 7,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "labelEn": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2608.03050v1",
+          "date": "Aug 04",
+          "title": "Learning Music Style for Piano Arrangement Through Cross-Modal Bootstrapping",
+          "titleJa": "クロスモーダルブートストラップを介したピアノ編曲のための音楽スタイルの学習",
+          "authors": [
+            "Jingwei Zhao",
+            "Gus Xia",
+            "Ziyu Wang",
+            "Ye Wang"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "What is music style? Though often described using text labels such as \"swing,\" \"classical,\" or \"emotional,\" the real style remains implicit and hidden in concrete music examples. In this paper, we introduce a cross-modal framework that learns implicit music styles from raw audio and applies them to symbolic music generation. Inspired by BLIP-2, our model leverages a Querying Transformer (Q-Former) to extract style representations from a large, pre-trained audio language model (LM), and further applies them to condition a symbolic LM for generating piano arrangements. We adopt a two-stage training strategy: contrastive learning to align auditory style with symbolic expression, followed by generative modeling for music arrangement. Our model generates piano performances jointly conditioned on a lead sheet (content) and a reference audio example (style), enabling controllable and stylistically faithful arrangement. Experiments demonstrate the effectiveness of our approach in piano cover generation, style transfer, and audio-to-MIDI retrieval, achieving substantial improvements in style-aware alignment and music quality.",
+          "comment": "Accepted by ISMIR 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2608.03050v1",
+          "category": "foundation",
+          "task": "シンボリック音楽生成",
+          "taskEn": "Symbolic Music Generation",
+          "proposedMethod": "Cross-Modal Bootstrapping Framework (with Q-Former)",
+          "datasets": [],
+          "what": "生のオーディオから暗示的な音楽スタイルを学習し、それをシンボリックな音楽生成（ピアノ編曲）に適用するクロスモーダルなフレームワークを提案している。",
+          "whatEn": "This paper introduces a cross-modal framework that learns implicit music styles from raw audio and applies them to symbolic music generation for piano arrangements.",
+          "novel": "BLIP-2に着想を得て、Q-Formerを利用して大規模な事前学習済みオーディオ言語モデルからスタイル表現を抽出し、それを条件としてシンボリック言語モデルにピアノ編曲を生成させる点。",
+          "novelEn": "The authors claim novelty in leveraging a Querying Transformer (Q-Former), inspired by BLIP-2, to extract style representations from a large, pre-trained audio language model and conditioning a symbolic language model for piano arrangements.",
+          "method": "聴覚的スタイルとシンボリックな表現を整列させる対照学習と、それに続く音楽編曲のための生成モデリングという2段階の訓練戦略を採用している。これにより、リードシート（コンテンツ）と参照オーディオ（スタイル）の双方を条件としたピアノ演奏を共同生成する。",
+          "methodEn": "A two-stage training strategy is adopted: contrastive learning to align auditory style with symbolic expression, followed by generative modeling for music arrangement. The model generates piano performances jointly conditioned on a lead sheet (content) and a reference audio example (style).",
+          "validation": "ピアノカバー生成、スタイル変換、およびオーディオからMIDIへの検索において実験を行い、スタイルを考慮したアライメントと音楽品質の大幅な向上を達成した。",
+          "validationEn": "Experiments demonstrated the effectiveness in piano cover generation, style transfer, and audio-to-MIDI retrieval, achieving substantial improvements in style-aware alignment and music quality.",
+          "discussion": "アブストラクトには制限事項に関する具体的な記述はない。",
+          "discussionEn": "The abstract does not explicitly mention limitations.",
+          "abstractJa": "音楽スタイルとは何でしょうか。「スウィング」「クラシック」「エモーショナル」といったテキストラベルで表現されることが多いですが、真のスタイルは具体的な音楽の例の中に暗黙的かつ隠された状態で存在しています。本論文では、生のオーディオから暗示的な音楽スタイルを学習し、それをシンボリックな音楽生成に適用するクロスモーダルなフレームワークを紹介します。BLIP-2に着想を得て、提案モデルはQuerying Transformer (Q-Former)を活用して、大規模な事前学習済みオーディオ言語モデル(LM)からスタイル表現を抽出し、さらにそれらをシンボリックLMの条件としてピアノ編曲を生成させます。私たちは2段階の訓練戦略を採用しています。まず、聴覚的スタイルとシンボリックな表現を整列させる対照学習、次に音楽編曲のための生成モデリングです。提案モデルは、リードシート（コンテンツ）と参照オーディオ例（スタイル）の双方を条件として、ピアノ演奏を共同生成し、コントロール可能でスタイルに忠実な編曲を実現します。実験により、ピアノカバー生成、スタイル変換、オーディオからMIDIへの検索における提案手法の有効性が示され、スタイルを考慮したアライメントと音楽品質の大幅な向上が達成されました。",
+          "nextReads": [
+            {
+              "label": "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models (2023)",
+              "arxivId": "2301.12597",
+              "url": "https://arxiv.org/abs/2301.12597",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2607.29086v1",
+          "date": "Jul 31",
+          "title": "Do Music Foundation Models Embed Pitch in Helical Structure?",
+          "titleJa": "音楽基盤モデルはらせん構造の中に音高を埋め込んでいるのか？",
+          "authors": [
+            "Hayato Yagi",
+            "Shinnosuke Takamichi",
+            "Rin Sato",
+            "Keitaro Tanaka",
+            "Shigeo Morishima"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "This study analyzes the intermediate representations of music foundation models (MFMs) and reports the geometric structures used to represent pitch information. By inputting isolated musical notes into trained MFMs and analyzing their principal components, we reveal that the representations form a helical structure reflecting the octave periodicity of pitch. Furthermore, we show that the clarity and geometry of this helical structure vary not only across models but also with the acoustic properties of the input signals. Our analysis provides a novel approach for clarifying the internal mechanisms of MFMs.",
+          "comment": "Accepted by ISMIR 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2607.29086v1",
+          "category": "foundation",
+          "task": "表現分析",
+          "taskEn": "Representation Analysis",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "本研究は、音楽基盤モデル（MFM）の中間表現を分析し、音高情報を表現するために使用されている幾何学的構造を調査・報告するものである。",
+          "whatEn": "This study analyzes the intermediate representations of music foundation models (MFMs) to investigate and report the geometric structures used to represent pitch information.",
+          "novel": "音楽基盤モデルの内部表現において、音高のオクターブ周期性を反映したらせん構造が形成されていることを、主成分分析を用いて明らかにした点である。",
+          "novelEn": "The authors claim novelty in revealing, through principal component analysis, that music foundation model representations form a helical structure reflecting the octave periodicity of pitch.",
+          "method": "学習済み音楽基盤モデルに単音を入力し、得られた中間表現の主成分分析を行うことで、その幾何学的構造および音響特性による影響を解析する。",
+          "methodEn": "The method involves inputting isolated musical notes into trained music foundation models and analyzing the principal components of the intermediate representations to examine their geometry and the influence of acoustic properties.",
+          "validation": "分析の結果、内部表現にらせん構造が存在することを示し、その明瞭度や幾何学的形状がモデル間だけでなく、入力信号の音響特性によっても変化することを明らかにした。",
+          "validationEn": "Validation was performed by demonstrating the existence of the helical structure in the representations, and showing that its clarity and geometry vary across different models as well as with the acoustic properties of the input signals.",
+          "discussion": "本論文の抽象には具体的な制限事項は記載されておらず、らせん構造の明瞭度がモデルや信号特性に依存して変化することが示されているのみである。",
+          "discussionEn": "No specific limitations are explicitly reported in the abstract, beyond the observation that the clarity and geometry of the helical structure vary depending on the models and input signal properties.",
+          "abstractJa": "本研究では、音楽基盤モデル（MFM）の中間表現を分析し、音高情報を表現するために使用されている幾何学的構造について報告する。学習済みの音楽基盤モデルに単音を入力し、その主成分を分析することで、その表現が音高のオクターブ周期性を反映したらせん構造を形成していることを明らかにする。さらに、このらせん構造の明瞭さと幾何学的形状は、モデル間で異なるだけでなく、入力信号の音響特性によっても変化することを示す。我々の分析は、音楽基盤モデルの内部メカニズムを解明するための新たなアプローチを提供するものである。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "labelEn": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2608.05506v1",
+          "date": "Aug 06",
+          "title": "Rethinking Automatic Music Mixing as Sequential Stem Blending",
+          "titleJa": "シーケンシャルなステムブレンドとしての自動音楽ミキシングの再考",
+          "authors": [
+            "Yen-Tung Yeh",
+            "Chung-Jui Chan",
+            " Yun-Ning",
+            " Hung",
+            "Yi-Hsuan Yang"
+          ],
+          "org": "Amy",
+          "orgSource": "arxiv_affiliation",
+          "abstract": "Automatic music mixing, the task of automatically combining individual audio tracks into a cohesive mixture, is typically addressed by parallelized architectures that process all input tracks in a single pass. In this work, inspired by how human mix engineers process stems one at a time, we propose a paradigm shift and ask whether automatic music mixing can be reformulated as a sequential stem blending task, where each stem is blended into a growing submix. Specifically, we train a latent flow matching model conditioned on the submix context, enabling sequential processing of an arbitrary number of input tracks. To train the model, we introduce a degradation-based data synthesis strategy that simulates realistic stem blending scenarios from existing multitrack and source separation datasets. Experimental results on both stem blending and automatic music mixing benchmarks demonstrate the effectiveness of the proposed approach. We provide audio examples on the accompanying demo page\\footnote{https://sequential-mixing-demo.vercel.app/}.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2608.05506v1",
+          "category": "separation",
+          "task": "自動音楽ミキシング",
+          "taskEn": "Automatic Music Mixing",
+          "proposedMethod": "Latent Flow Matching model for sequential stem blending",
+          "datasets": [
+            "Slakh2100",
+            "MUSDB18"
+          ],
+          "what": "人間のミキシングエンジニアがステムを1つずつ処理する方法に着想を得て、自動音楽ミキシングを、各ステムを成長していくサブミックスに順次ブレンドするシーケンシャルなステムブレンドタスクとして再定式化する手法を提案している。",
+          "whatEn": "Inspired by how human mixing engineers process stems one at a time, this paper proposes to reformulate automatic music mixing as a sequential stem blending task where each stem is blended into a growing submix.",
+          "novel": "すべての入力トラックを1回で処理する従来の並列化アーキテクチャから、任意数の入力トラックを順次処理可能にするサブミックスコンテキストを条件とした潜在フローマッチングモデルを用いたシーケンシャル処理へのパラダイムシフトを提案した点。",
+          "novelEn": "The authors claim a paradigm shift from conventional parallelized architectures to a sequential processing paradigm using a latent flow matching model conditioned on submix context, which enables sequential processing of an arbitrary number of input tracks.",
+          "method": "サブミックスの文脈に条件付けられた潜在フローマッチングモデルを訓練する。また、既存のマルチトラックおよび音源分離データセットから現実的なステムブレンドのシナリオをシミュレートする、劣化ベースのデータ合成戦略を導入する。",
+          "methodEn": "A latent flow matching model is trained conditioned on the submix context. To train this model, a degradation-based data synthesis strategy is introduced to simulate realistic stem blending scenarios from existing multitrack and source separation datasets.",
+          "validation": "ステムブレンドおよび自動音楽ミキシングのベンチマークにおいて実験を行い、提案アプローチの有効性を実証した。",
+          "validationEn": "The effectiveness of the proposed approach was demonstrated through experiments on both stem blending and automatic music mixing benchmarks.",
+          "discussion": "アブストラクトには制限事項に関する具体的な記述はない。",
+          "discussionEn": "The abstract does not explicitly mention limitations.",
+          "abstractJa": "自動音楽ミキシング（個々のオーディオトラックを自動的に結合してまとまりのあるミックスにするタスク）は、通常、すべての入力トラックを単一のパスで処理する並行化アーキテクチャによって対処されます。本研究では、人間のミキシングエンジニアがステムを一度に1つずつ処理する方法に触発され、パラダイムシフトを提案し、自動音楽ミキシングを、各ステムが成長するサブミックスにブレンドされるシーケンシャルなステムブレンドタスクとして再定式化できるかを問いかけます。具体的には、サブミックスの文脈を条件とする潜在フローマッチングモデルを訓練し、任意の数の入力トラックの連続的な処理を可能にします。モデルを訓練するために、既存のマルチトラックおよび音源分離データセットから現実的なステムブレンドのシナリオをシミュレートする、劣化ベースのデータ合成戦略を導入します。ステムブレンドと自動音楽ミキシングの両方のベンチマークにおける実験結果は、提案手法の有効性を示しています。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.01623v1",
+          "date": "Aug 03",
+          "title": "SAGE: Switch-Aware EEG-Guided Soft Gating for Target Speaker Extraction with In-Trial Switching",
+          "titleJa": "SAGE：試行内スイッチングを伴うターゲット話者抽出のためのスイッチ認識型EEG誘導ソフトゲーティング",
+          "authors": [
+            "Xuefei Wang",
+            "Ximin Chen",
+            "Yuting Ding",
+            "Chunlin Li",
+            "Fei Chen"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "EEG-guided target speaker extraction is challenging under in-trial auditory attention switching, where neural noise and intrinsic latency can delay or destabilize attention tracking. Conventional methods struggle with dynamic switches and often cause discontinuities at switching points. Therefore, we propose SAGE, a switch-aware EEG-guided soft gating framework that treats in-trial switching as dynamic selection. SAGE generates two candidate speech streams with a robust separator and uses an EEG-guided switch-aware gating module to produce smooth fusion weights and suppress transition artifacts. We further integrate latency-compensated alignment and an uncertainty-driven conservative strategy to handle latency discrepancies and fluctuating EEG reliability. SAGE outperforms baselines, achieving 8.67 dB SI-SDR and 88.24% STOI while reducing average switching latency to 2.04 s. By coupling neural decoding with speech separation, it enables robust target extraction in dynamic scenarios.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.SP",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2608.01623v1",
+          "category": "separation",
+          "task": "ターゲット話者抽出",
+          "taskEn": "Target Speaker Extraction",
+          "proposedMethod": "SAGE",
+          "datasets": [],
+          "what": "試行内の聴覚注意切り替え下におけるEEG誘導型ターゲット話者抽出において、切り替えを動的な選択問題として扱う、スイッチ認識型のEEG誘導ソフトゲーティングフレームワーク「SAGE」を提案している。",
+          "whatEn": "This paper proposes SAGE, a switch-aware EEG-guided soft gating framework that treats in-trial attention switching as dynamic selection for robust target speaker extraction under auditory attention switching.",
+          "novel": "試行内のアテンション切り替えを動的な選択として捉え、ロバストなセパレータによって2つの候補音声ストリームを生成し、EEG誘導型スイッチ認識ゲートモジュールを用いて滑らかな融合重みを生成することで遷移のアーティファクトを抑制する点。",
+          "novelEn": "The authors claim novelty in treating in-trial switching as dynamic selection, generating two candidate speech streams with a robust separator, and using an EEG-guided switch-aware gating module to produce smooth fusion weights and suppress transition artifacts.",
+          "method": "ロバストなセパレータで2つの候補音声ストリームを生成し、EEG誘導型スイッチ認識ゲートモジュールで滑らかな融合重みを生成する。さらに、潜時の不一致や変動するEEGの信頼性を処理するため、遅延補償アライメントと不確実性駆動型の保守的戦略を統合している。",
+          "methodEn": "The framework generates two candidate speech streams with a robust separator and uses an EEG-guided switch-aware gating module to produce smooth fusion weights. It further integrates latency-compensated alignment and an uncertainty-driven conservative strategy to handle latency discrepancies and fluctuating EEG reliability.",
+          "validation": "提案手法は、評価基準においてベースラインを上回り、8.67 dBのSI-SDRと88.24%のSTOIを達成するとともに、平均切り替え遅延を2.04秒に短縮した。",
+          "validationEn": "SAGE outperformed baselines, achieving 8.67 dB SI-SDR and 88.24% STOI while reducing the average switching latency to 2.04 s.",
+          "discussion": "アブストラクトには制限事項に関する具体的な記述はない。",
+          "discussionEn": "The abstract does not explicitly mention limitations.",
+          "abstractJa": "脳波（EEG）誘導によるターゲット話者抽出は、試行内での聴覚注意の切り替えにおいて困難を極めます。神経のノイズや固有の遅延により、注意の追跡が遅れたり不安定になったりするためです。従来の手法は動的な切り替えに対応するのが難しく、切り替えポイントで不連続性が発生することがよくあります。そこで、私たちは試行内の切り替えを動的な選択肢として処理する、スイッチ認識型のEEG誘導ソフトゲーティングフレームワークであるSAGEを提案します。SAGEはロバストなセパレータを用いて2つの候補音声ストリームを生成し、EEG誘導型のスイッチ認識ゲーティングモジュールを使用して滑らかな融合重みを生成し、遷移時のアーティファクトを抑制します。さらに、遅延の不一致や変動するEEGの信頼性に対処するために、遅延補正アライメントと不確実性駆動の保守的戦略を統合します。SAGEはベースラインを上回り、8.67 dBのSI-SDRと88.24%のSTOIを達成し、平均切り替え遅延を2.04秒に短縮しました。神経解読と音声分離を結合することにより、動的なシナリオにおいて堅牢なターゲット抽出を可能にします。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.01093v1",
+          "date": "Aug 02",
+          "title": "Separate-and-Detect: Unified Drum Transcription and Stem Generation via Latent Diffusion",
+          "titleJa": "Separate-and-Detect: 潜在拡散モデルを用いた統合的なドラム採譜とステム生成",
+          "authors": [
+            "Wei-Han Hsu",
+            "Chih-Cheng Chang",
+            "Bo-Yu Chen",
+            "Li Su",
+            "Yi-Hsuan Yang"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Automatic Drum Transcription (ADT) is commonly formulated as a direct mapping from a music mixture to symbolic drum events. While effective for transcription, this formulation discards the acoustic stems that are useful for editing, remixing, and production. We revisit an alternative separate-and-detect formulation, where a drum source separation front end first produces five editable drum stems, and a fixed onset detector then converts each stem into symbolic events. The separator is built on a five-stem latent diffusion model that jointly generates kick, snare, toms, hi-hats, and cymbals in a compact VAE latent space. We further study two training-only auxiliary branches--an onset branch (OB) and a timbre branch (TB)--which shape the separator during learning but are discarded at inference. Trained on synthetic drum multitracks and evaluated on MDB Drums and ENST-Drums, the proposed pipeline consistently improves over a strong U-Net-based drum separation baseline in overall transcription F1. It also outperforms a representative end-to-end ADT system on kick and snare F1 under our evaluation protocol, while additionally providing separated audio stems. The ablation results show that OB gives the most stable transcription gains, whereas TB changes the trade-off between reconstruction, acoustic stem quality, and onset detection. These results suggest that generative drum demixing can serve not only as a source separation model, but also as a practical front end for interpretable drum transcription.",
+          "comment": "8 pages, 3 figures, 4 tables. Accepted at the 27th International Society for Music Information Retrieval Conference (ISMIR 2026)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2608.01093v1",
+          "category": "separation",
+          "task": "ドラム採譜と音源分離",
+          "taskEn": "Drum Transcription and Source Separation",
+          "proposedMethod": "Separate-and-Detect",
+          "datasets": [
+            "MDB Drums",
+            "ENST-Drums"
+          ],
+          "what": "音源分離フロントエンドが5つのドラムステムを生成し、その後段で固定のオンセット検出器がシンボリックイベントに変換するドラム採譜および音源分離のための統一フレームワーク。",
+          "whatEn": "A unified framework for drum transcription and source separation where a source separation front end generates five drum stems, which are then converted into symbolic events by a fixed onset detector.",
+          "novel": "編集可能な5つのドラムステムを同時に生成する潜在拡散モデルをベースにし、推論時には破棄されるオンセットブランチと音色ブランチという2つの学習専用補助ブランチを導入した点。",
+          "novelEn": "The novelty lies in utilizing a latent diffusion model to jointly generate five editable drum stems and introducing two training-only auxiliary branches (onset and timbre branches) that are discarded during inference to guide the separator.",
+          "method": "5ステムのコンパクトなVAE潜在空間において、バスドラム、スネア、タム、ハイハット、シンバルを共同生成する潜在拡散モデルを構築。さらに、学習段階でセパレータを方向付けるためのオンセットブランチ（OB）と音色ブランチ（TB）を導入。",
+          "methodEn": "The separator is built on a five-stem latent diffusion model generating kick, snare, toms, hi-hats, and cymbals in a compact VAE latent space, incorporating an onset branch (OB) and a timbre branch (TB) during training.",
+          "validation": "合成ドラムマルチトラックで学習し、MDB DrumsおよびENST-Drumsデータセットで評価。強力なU-Netベースの分離ベースラインを全体的な採譜F1スコアで上回り、代表的なエンドツーエンドADTシステムに対してもバスドラムとスネアのF1で上回る結果を示した。",
+          "validationEn": "Trained on synthetic drum multitracks and evaluated on MDB Drums and ENST-Drums, the proposed pipeline consistently improved over a strong U-Net-based separation baseline in overall transcription F1, and outperformed a representative end-to-end ADT system on kick and snare F1.",
+          "discussion": "音色ブランチ（TB）の導入が、再構成精度、音響ステムの品質、およびオンセット検出の間でトレードオフを変化させることが確認されており、最適なバランス調整が課題となる。",
+          "discussionEn": "Ablation results show that the timbre branch (TB) alters the trade-off between reconstruction, acoustic stem quality, and onset detection, suggesting a need for careful balancing.",
+          "abstractJa": "自動ドラム採譜（ADT）は一般に、音楽の混合音からシンボリックなドラムイベントへの直接的なマッピングとして定式化される。この定式化は採譜には有効である一方、編集、リミックス、制作に有用な音響ステムを破棄してしまう。我々は、代替となる「分離と検出（separate-and-detect）」定式化を再考する。ここでは、ドラム音源分離フロントエンドがまず5つの編集可能なドラムステムを生成し、固定のオンセット検出器が各ステムをシンボリックイベントに変換する。このセパレータは、コンパクトなVAE潜在空間においてキック、スネア、タム、ハイハット、シンバルを共同で生成する5ステム潜在拡散モデルに基づいて構築されている。さらに我々は、学習中にセパレータの形状を整え、推論時には破棄される2つの学習専用補助ブランチ（オンセットブランチ：OB、音色ブランチ：TB）について研究する。合成ドラムマルチトラックで学習し、MDB DrumsおよびENST-Drumsで評価した結果、提案するパイプラインは、全体的な採譜F1において、強力なU-Netベースのドラム分離ベースラインを一貫して上回った。また、評価プロトコルにおいてキックとスネアのF1で代表的なエンドツーエンドADTシステムを上回り、さらに分離されたオーディオステムを提供した。アブレーション結果は、OBが最も安定した採譜の向上をもたらす一方で、TBが再構成、音響ステム品質、およびオンセット検出の間のトレードオフを変化させることを示している。これらの結果は、生成的なドラム分離が音源分離モデルとして機能するだけでなく、解釈可能なドラム採譜の実用的なフロントエンドとしても機能し得ることを示唆している。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.00875v1",
+          "date": "Aug 01",
+          "title": "DRONEAUDIONET: Noise Suppression for Drone Audition-based Search and Rescue",
+          "titleJa": "DRONEAUDIONET: ドローン聴覚に基づく捜索救助のための雑音抑制",
+          "authors": [
+            "Chitralekha Gupta",
+            "Soundarya Ramesh",
+            "Yifei Luo",
+            "Suranga Nanayakkara"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Microphones mounted on UAVs enable aerial acoustic scene analysis applications such as search-and-rescue, wildlife monitoring, and industrial inspection. However, drone rotor noise often dominates the mixture signal at SNRs well below -10 dB, making source recovery extremely challenging. Existing enhancement and source separation methods are typically designed for near-balanced mixtures and degrade substantially in drone audition settings. In this work, we propose DRONEAUDIONET, a drone noise suppression method that reframes a source separation model as a drone noise estimator. To better model drone-dominant mixtures, we introduce a learnable mask-scaling mechanism that allows mask magnitudes beyond unity, together with an additive residual correction term for improved drone estimation and source recovery. We train and evaluate our model on a publicly available drone audition dataset and test generalizability on an out-of-domain dataset with unseen drone hardware and flight modes. Results show that DRONEAUDIONET consistently improves downstream sound classification performance, with the largest gains observed for human vocal sounds. Our findings demonstrate the importance of drone-specific modeling for robust aerial acoustic perception and highlight the potential of source separation methods for real-world drone-assisted search-and-rescue.",
+          "comment": "*first two authors are equal contributors",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2608.00875v1",
+          "category": "separation",
+          "task": "雑音抑制",
+          "taskEn": "Noise Suppression",
+          "proposedMethod": "DRONEAUDIONET",
+          "datasets": [],
+          "what": "ドローン捜索救助を支援するため、強力なローター雑音に埋もれたオーディオ信号から対象音源を復元する雑音抑制技術。",
+          "whatEn": "A noise suppression technology to recover target sound sources from audio signals heavily masked by drone rotor noise to assist in drone search-and-rescue.",
+          "novel": "音源分離モデルをドローン雑音推定器として再定義し、1を超える振幅を許容する学習可能なマスクスケーリング機構と加算型残留補正項を組み合わせた点。",
+          "novelEn": "The novelty lies in reframing a source separation model as a drone noise estimator, incorporating a learnable mask-scaling mechanism allowing mask magnitudes beyond unity and an additive residual correction term.",
+          "method": "提案モデルDRONEAUDIONETは、ローター雑音が支配的な混合音に対応するため、学習可能なマスクスケーリング機構と残留補正項を用いてドローン雑音を推定・除去する。公開されているドローン聴覚データセットで学習・評価を行い、未知のドローン機種や飛行モードを含むドメイン外データセットで一般化性能を検証。",
+          "methodEn": "DRONEAUDIONET suppresses drone noise using a learnable mask-scaling mechanism combined with an additive residual correction term for noise estimation. It was trained and evaluated on a public drone audition dataset, and generalizability was tested on an out-of-domain dataset.",
+          "validation": "下流の環境音分類において一貫した性能向上を達成し、特に人間の音声に対する改善効果が最大であった。未知のハードウェアや飛行モードに対しても一般化性能を示した。",
+          "validationEn": "The system consistently improved downstream sound classification performance, with the largest gains observed for human vocal sounds, demonstrating generalizability to unseen hardware and flight modes.",
+          "discussion": "ドメイン外の未知のドローンハードウェアや極端な飛行ノイズ環境におけるさらなる堅牢性の向上が今後の課題として示唆される。",
+          "discussionEn": "Further robustness enhancement in extremely harsh flight noise conditions and with entirely unseen drone hardware remains an area for investigation.",
+          "abstractJa": "UAVに搭載されたマイクロホンは、捜索救助、野生生物の監視、産業検査などの空中音響シーン解析アプリケーションを可能にする。しかし、ドローンのローター雑音は、しばしば-10 dBを大幅に下回るSNRで混合信号を支配するため、音源の復元は極めて困難である。既存の強調および音源分離手法は、通常、バランスの取れた混合音向けに設計されており、ドローン聴覚の環境下では大幅に劣化する。本研究では、音源分離モデルをドローン雑音推定器として再構成するドローン雑音抑制手法であるDRONEAUDIONETを提案する。ドローン雑音が支配的な混合音をより適切にモデル化するために、1を超えるマスク振幅を許容する学習可能なマスクスケーリング機構と、ドローン推定および音源復元を向上させるための加算型残留補正項を導入する。公開されているドローン聴覚データセットでモデルを訓練および評価し、未知のドローンハードウェアや飛行モードを含むドメイン外データセットで一般化性能をテストする。実験結果は、DRONEAUDIONETが下流の音響分類性能を一貫して向上させ、特に人間の音声に対して最大の効果が得られることを示している。我々の発見は、堅牢な空中音響知覚におけるドローン固有のモデル化の重要性を示し、実際のドローン支援捜索救助における音源分離手法の可能性を浮き彫りにしている。",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "labelEn": "Anomalous Sound Detection",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2608.00447v1",
+          "date": "Aug 01",
+          "title": "Anomalous Sound Detection Meets Noise-Aware Self-Supervised Learning",
+          "titleJa": "異常音検知とノイズ対応型自己教師あり学習の融合",
+          "authors": [
+            "Takuya Fujimura",
+            "Gordon Wichern",
+            "Yoshiki Masuyama",
+            "Christoph Boeddeker",
+            "Kohei Saijo"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "In this paper, we introduce noise-aware self-supervised learning (NA-SSL) models for noise-aware anomalous sound detection (NA-ASD). NA-ASD is an ASD task with two-channel audio recordings, where one microphone is located close to the target machine and the other is located farther away to capture noise. For this task, we simulate two-channel recordings using diverse audio datasets and train NA-SSL models to extract clean SSL representations of the close-microphone signal by using the far-microphone recording dominated by background noise as auxiliary information. The NA-SSL models are then used as frontends in the standard ASD framework. Our experimental evaluation on the DCASE 2026 Challenge Task 2 development dataset demonstrates the effectiveness of the NA-SSL framework across three base SSL models (BEATs, EAT, and Dasheng), both with and without discriminative fine-tuning. Furthermore, the challenge results proved the effectiveness of the proposed approach, where the NA-BEATs system won the challenge by a large margin, achieving an official score of 70.24%, while the second-place system achieved 65.46%.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2608.00447v1",
+          "category": "anomaly",
+          "task": "異常音検知",
+          "taskEn": "Anomalous Sound Detection",
+          "proposedMethod": "NA-SSL (Noise-Aware Self-Supervised Learning)",
+          "datasets": [
+            "DCASE 2026 Challenge Task 2"
+          ],
+          "what": "対象マシンに近いマイクと背景雑音を捉える遠方のマイクの2つを用いた異常音検知（NA-ASD）において、雑音を考慮した表現学習を行う自己教師あり学習フロントエンド。",
+          "whatEn": "A self-supervised learning front end for noise-aware anomalous sound detection (NA-ASD) using two microphones—one near the machine and one far away—to capture noise and learn noise-aware representations.",
+          "novel": "背景雑音に支配された遠方マイクの録音を補助情報として用い、近接マイク信号のクリーンな自己教師あり学習（SSL）表現を抽出する、ノイズ対応型自己教師あり学習（NA-SSL）フレームワークを提案した点。",
+          "novelEn": "The authors proposed a Noise-Aware Self-Supervised Learning (NA-SSL) framework that extracts clean SSL representations of the close-microphone signal by using the noise-dominated far-microphone recording as auxiliary information.",
+          "method": "多様なオーディオデータセットを用いてシミュレートした2チャンネル録音データでNA-SSLモデルを事前学習する。既存の強力なSSL基盤モデル（BEATs, EAT, Dasheng）をベースラインとして統合し、下流のASDフレームワークのフロントエンドとして使用する。",
+          "methodEn": "NA-SSL models are pre-trained on simulated two-channel recordings from diverse datasets. These models integrate established SSL backbones (BEATs, EAT, Dasheng) and serve as front ends for standard ASD frameworks.",
+          "validation": "DCASE 2026 Challenge Task 2の開発データセットで検証。提案のNA-BEATsシステムはタスクで圧倒的な大差（公式スコア70.24%を獲得、2位は65.46%）で優勝し、その有効性を実証した。",
+          "validationEn": "Evaluated on the DCASE 2026 Challenge Task 2 development dataset. The proposed NA-BEATs system won the challenge by a large margin, achieving an official score of 70.24% compared to the runner-up score of 65.46%.",
+          "discussion": "アブレーションや課題として、判別微調整（discriminative fine-tuning）の有無による影響はあるものの、具体的な計算コストや超低S/N比環境におけるロバスト性の限界についての詳細はアブストラクトに未記載。",
+          "discussionEn": "While the impact of discriminative fine-tuning is explored, specific limitations regarding computational cost or performance in extremely low SNR conditions are not detailed in the abstract.",
+          "abstractJa": "本論文では、雑音を考慮した異常音検知（NA-ASD）のための、ノイズ対応型自己教師あり学習（NA-SSL）モデルを導入する。NA-ASDは、2チャンネルのオーディオ録音を用いた異常音検知タスクであり、一方のマイクは対象マシンの近くに配置され、他方のマイクは背景雑音を捉えるために遠くに配置される。このタスクに対して、我々は多様な音響データセットを用いて2チャンネルの録音をシミュレートし、背景雑音に支配された遠方マイクの録音を補助情報として使用することで、近接マイク信号のクリーンなSSL表現を抽出するようにNA-SSLモデルを学習する。このNA-SSLモデルは、標準的な異常音検知フレームワークのフロントエンドとして使用される。DCASE 2026 Challenge Task 2の開発データセットにおける実験的評価により、判別的な微調整の有無にかかわらず、3つのベースSSLモデル（BEATs、EAT、Dasheng）にわたってNA-SSLフレームワークの有効性が実証された。さらに、コンペティションの結果により提案手法の有効性が証明され、NA-BEATsシステムが2位のシステムの65.46%に対して70.24%という公式スコアを達成し、大差をつけて優勝した。",
+          "nextReads": [
+            {
+              "label": "BEATs: Audio Pre-Training with Acoustic Tokenizers (2022)",
+              "arxivId": "2212.09058",
+              "url": "https://arxiv.org/abs/2212.09058",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "潜在拡散モデルを用いた「Separate-and-Detect」などのフレームワークにより、自動ミキシング、ピアノ編曲、ドラム音源分離と楽譜起こしの統合技術が進化しています。",
+    "聴覚的注意の切り替えに対応するため、脳波ガイド付きソフトゲーティングを用いた「SAGE」フレームワークによる頑健な対象話者抽出が提案されています。",
+    "ドローン救助用のノイズ抑制技術「DRONEAUDIONET」や、ノイズを考慮した自己教師あり学習による異常音検知など、実環境における雑音対策技術が向上しています。"
+  ],
+  "trendEn": [
+    "Music processing frameworks like \"Separate-and-Detect\" advance automatic mixing, piano arrangement, and unified drum transcription using latent diffusion and cross-modal learning.",
+    "Target speaker extraction achieves robustness during attention switching through the \"SAGE\" framework, which employs switch-aware EEG-guided soft gating.",
+    "Real-world audio enhancement is improved by \"DRONEAUDIONET\" for drone search-and-rescue noise suppression and noise-aware self-supervised learning for anomalous sound detection."
+  ]
+}
