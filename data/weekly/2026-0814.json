@@ -1,0 +1,175 @@
+{
+  "date": "2026-0814",
+  "generated_at": "2026-08-14T00:00:00+00:00",
+  "total": 3,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "labelEn": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2608.09930v1",
+          "date": "Aug 10",
+          "title": "Beyond Naturalness: Probing Automated Text-To-Speech Evaluators on Linguistically Grounded Dimensions",
+          "titleJa": "自然さを超えて：言語学的根拠に基づく次元における自動テキスト音声合成評価器の調査",
+          "authors": [
+            "Oluwanifemi Bamgbose",
+            "Simon Rosen",
+            "Jash Shah",
+            "Lindsay Devon Brin",
+            "Hoang H Nguyen"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Automated Text-to-Speech (TTS) evaluation methods (Mean Opinion Score (MOS) predictors and Audio Large Language Models (Audio-LLM) judges) are expected to reflect human perception, yet it is unclear how well they capture the distinct aspects of speech that listeners actually perceive. We deconstruct \"naturalness\" into a linguistically grounded annotation schema spanning 10 distinct perceptual dimensions, and use it to construct the first dimension-level meta-evaluation benchmark for TTS, comprising 860 utterances annotated by trained linguist raters. Results from benchmarking four MOS predictors and four Audio-LLM judges reveal that MOS predictors collapse onto acoustic signal quality, while Audio-LLM judges show selective, prompt-dependent detection that does not generalise across all dimensions. Neither class reliably captures a breadth of linguistically structured speech errors. Our dataset, annotation schema, and evaluation code are publicly released to support more targeted and interpretable TTS evaluation.",
+          "comment": "Work in progress",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2608.09930v1",
+          "category": "foundation",
+          "task": "音声合成評価",
+          "taskEn": "TTS Evaluation",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "自動テキスト音声合成（TTS）評価手法（MOS予測器およびAudio-LLM判定器）が、人間のリスナーが知覚する音声の異なる側面をどの程度捉えているかを、10個の言語学的知覚次元に分解したアノテーションスキーマを用いて評価する。",
+          "whatEn": "This paper investigates how well automated Text-to-Speech (TTS) evaluation methods (MOS predictors and Audio-LLM judges) capture distinct aspects of speech perceived by human listeners, using an annotation schema deconstructed into 10 linguistically grounded perceptual dimensions.",
+          "novel": "TTS評価において「自然さ」を10の言語学的次元に解体し、訓練された言語学者によってアノテーションされた初の次元レベルのメタ評価ベンチマークデータセットを構築した点。",
+          "novelEn": "The authors deconstruct \"naturalness\" into 10 linguistic dimensions and construct the first dimension-level meta-evaluation benchmark for TTS comprising utterances annotated by trained linguists.",
+          "method": "4つのMOS予測器と4つのAudio-LLM判定器を対象に、言語学者アノテーターによる860の発話データセットを用いてメタ評価を行う。MOS予測器の評価傾向やAudio-LLMのプロンプト依存性、および両者が言語学的に構造化された音声エラーを捉えられているかを検証する。",
+          "methodEn": "The method involves benchmarking four MOS predictors and four Audio-LLM judges against a newly constructed meta-evaluation dataset of 860 utterances annotated by trained linguists to analyze evaluation tendencies and sensitivity to linguistic errors.",
+          "validation": "ベンチマーク結果、MOS予測器は音響信号品質に収束しがちであり、Audio-LLMはプロンプト依存の検出を示すもののすべての次元に一般化できないことが明らかになり、どちらのクラスも言語学的な音声エラーを確実には捉えられないことが示された。",
+          "validationEn": "Benchmarking results revealed that MOS predictors tend to collapse onto acoustic signal quality, while Audio-LLM judges show prompt-dependent detection that does not generalize across all dimensions, with neither class reliably capturing linguistically structured speech errors.",
+          "discussion": "いずれの評価手法も言語構造的な音声エラーを頑健には捉えられない点が限界として挙げられており、よりターゲットを絞った解釈可能なTTS評価のために提案データセットやアノテーションスキーマ、評価コードが公開されている。",
+          "discussionEn": "A limitation is that neither class of automated evaluators reliably captures a breadth of linguistically structured speech errors, motivating the public release of the dataset, schema, and code for more interpretable evaluation.",
+          "abstractJa": "自動テキスト音声合成（TTS）評価手法（平均意見評点（MOS）予測器および音声大規模言語モデル（Audio-LLM）判定器）は、人間の知覚を反映することが期待されているが、リスナーが実際に知覚する音声の明確な側面をどの程度正確に捉えているかは明らかではない。本研究では、「自然さ」を10の異なる知覚次元にわたる言語学的根拠に基づいたアノテーションスキーマへと解体し、これを用いて、訓練された言語学者の評価者によってアノテーションされた860の発話からなる、TTSのための初の次元レベルのメタ評価ベンチマークを構築した。4つのMOS予測器と4つのAudio-LLM判定器をベンチマークした結果、MOS予測器は音響信号品質へと収束する一方で、Audio-LLM判定器はプロンプトに依存した選択的な検出を示すものの、すべての次元には一般化されないことが明らかになった。いずれのクラスも、言語学的に構造化された広範な音声エラーを確実には捉えていない。より標的を絞った解釈可能なTTS評価をサポートするため、データセット、アノテーションスキーマ、および評価コードを一般公開する。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "labelEn": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2608.09451v1",
+          "date": "Aug 10",
+          "title": "Dynamic Clustering for Cross-Segment Permutation Alignment in Long Speech Separation",
+          "titleJa": "長時間の音声分離におけるセグメント間パーミュテーション整合のための動的クラスタリング",
+          "authors": [
+            "Yuzhu Wang",
+            "Archontis Politis",
+            "Konstantinos Drossos",
+            "Tuomas Virtanen"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Long speech separation typically employs a segment-separation-stitch paradigm where recordings are divided into short segments, processed independently, and stitched together. Its challenge lies in predicting cross-segment permutations. This paper proposes a training-free dynamic clustering approach for cross-segment permutation alignment using speaker embedding reference pools. The method predicts the permutation using the cosine similarity between current segment embeddings and the reference pools. The approach updates reference pools by retaining the most representative speaker embeddings based on their overall cosine similarity with existing references. As a plug-and-play post-processing module compatible with existing separation models, the proposed method demonstrates superior performance compared to existing methods on dense and sparse long speech scenarios, particularly in challenging sparse scenarios with extended utterance gaps, and further shows robustness to speaker count estimation errors in unknown speaker count scenarios.",
+          "comment": "6 pages, accepted by MLSP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2608.09451v1",
+          "category": "separation",
+          "task": "音源分離",
+          "taskEn": "Audio Source Separation",
+          "proposedMethod": "Dynamic Clustering for Cross-Segment Permutation Alignment",
+          "datasets": [],
+          "what": "長時間の音声分離において、短いセグメントに分割して処理した後に発生するセグメント間の話者の並び替え（パーミュテーション）問題を解決するための、学習を必要としない動的クラスタリング手法を提案する。",
+          "whatEn": "This paper proposes a training-free dynamic clustering approach to solve the cross-segment permutation alignment problem in long speech separation using a segment-separation-stitch paradigm.",
+          "novel": "話者埋め込みの参照プールを用い、現在のセグメント埋め込みとのコサイン類似度に基づいて学習なしで動的にパーミュテーションを予測・整合する点。",
+          "novelEn": "The claimed novelty is a training-free dynamic clustering approach that uses speaker embedding reference pools and cosine similarity to predict and align cross-segment permutations.",
+          "method": "セグメントごとの話者埋め込みと既存の参照プールとのコサイン類似度を用いてパーミュテーションを予測する。参照プールは、既存の参照との全体的なコサイン類似度に基づいて、最も代表的な話者埋め込みを保持することで動的に更新される。これは既存の分離モデルにプラグアンドプレイで適用可能な後処理モジュールとして機能する。",
+          "methodEn": "The method predicts permutations using cosine similarity between current segment embeddings and speaker embedding reference pools. The reference pools are dynamically updated by retaining representative embeddings. It functions as a plug-and-play post-processing module for existing separation models.",
+          "validation": "長時間の音声分離（密および疎なシナリオ）において検証を行い、特に発話ギャップが長い疎なシナリオや、話者数が未知で話者数推定エラーが発生するシナリオにおいて、既存の手法と比較して優れた性能と頑健性を示した。",
+          "validationEn": "Validation was performed on dense and sparse long speech scenarios. The approach demonstrated superior performance compared to existing methods, particularly in challenging sparse scenarios with extended gaps and in unknown speaker count scenarios with estimation errors.",
+          "discussion": "具体的な制限事項についての詳細な言及は抄録にありませんが、既存の分離モデルに依存する後処理モジュールとしての性質が前提となります。",
+          "discussionEn": "Specific limitations are not detailed in the abstract, though it operates as a post-processing module dependent on existing separation models.",
+          "abstractJa": "長時間の音声分離は、通常、録音を短いセグメントに分割し、独立して処理した後に結合する、セグメント分離・結合パラダイムを採用している。その課題は、セグメントをまたぐパーミュテーション（順列）の予測にある。本論文では、話者埋め込み参照プールを用いた、セグメント間パーミュテーション整合のための学習不要な動的クラスタリングアプローチを提案する。本手法は、現在のセグメントの埋め込みと参照プールとの間のコサイン類似度を用いてパーミュテーションを予測する。このアプローチでは、既存の参照との全体的なコサイン類似度に基づいて、最も代表的な話者埋め込みを保持することにより、参照プールを更新する。既存の分離モデルと互換性のあるプラグアンドプレイの後処理モジュールとして、提案手法は、密および疎な長時間の音声シナリオにおいて既存の手法を上回る優れた性能を示し、特に発話ギャップが長い困難な疎のシナリオや、未知の話者数シナリオにおける話者数推定エラーに対する頑健性をさらに示した。",
+          "nextReads": [
+            {
+              "label": "Continuous speech separation: dataset and analysis (2020)",
+              "arxivId": "2001.11482",
+              "url": "https://arxiv.org/abs/2001.11482",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.09288v1",
+          "date": "Aug 10",
+          "title": "DAVE: A Decoupled Audio-Visual Enhancement Framework for Real-World Speech Separation",
+          "titleJa": "DAVE：実世界音声分離のためのデカップリングされた音響・映像強調フレームワーク",
+          "authors": [
+            "Wei Zhou",
+            "Wanyi Ning",
+            "Yinshang Guo",
+            "Qianxiao Fang",
+            "Haitao Qian"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Audio-visual speech enhancement under real-world conditions remains challenging due to unreliable visual inputs and the lack of large-scale training data with realistic acoustic conditions. Existing approaches usually fuse visual features directly into the separation network, making them vulnerable to degraded visual signals. In this paper, we present DAVE, a decoupled audio-visual enhancement framework for real-world speech separation. Firstly, to address the data scarcity issue, we construct DAVE-Corpus, a large-scale training corpus with 219,411 mixtures generated from public meeting corpora through combinatorial acoustic augmentation. Then, we introduce a progressive multi-objective optimization strategy to jointly improve speech separation, intelligibility, speaker identity preservation, and perceptual quality. We further develop a certified selective enhancement chain that applies scene routing, GAN-based denoising, and loudness normalization only within the no-reference partition, guaranteeing non-degradation of reference-based metrics. Experimental results on the Real-World Audio-Visual Speech Enhancement Challenge demonstrate the robustness of DAVE under both real-world mixed scenarios and visual degradation conditions.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2608.09288v1",
+          "category": "separation",
+          "task": "音声強調",
+          "taskEn": "Speech Enhancement",
+          "proposedMethod": "DAVE",
+          "datasets": [
+            "DAVE-Corpus"
+          ],
+          "what": "実世界の状況下での音響・映像音声強調（分離）における、信頼性の低い視覚入力や大規模訓練データの不足という課題に対処するため、デカップリングされた音響・映像強調フレームワークを提案する。",
+          "whatEn": "The paper introduces DAVE, a decoupled audio-visual enhancement framework for real-world speech separation, designed to address issues like degraded visual inputs and lack of large-scale training data.",
+          "novel": "視覚的劣化の影響を受けにくくするデカップリングされた音響・映像処理フレームワーク、大規模な合成データセットの作成、および非参照パーティションのみに特定の強調処理を適用して評価指標の悪化を防ぐ「認証選択的強調チェーン」の構築。",
+          "novelEn": "The author-claimed novelty lies in the decoupled framework that avoids direct fusion degradation, the creation of a large-scale training dataset DAVE-Corpus, and a certified selective enhancement chain that guarantees non-degradation of reference-based metrics.",
+          "method": "公的な会議コーパスから219,411混合のデータセット「DAVE-Corpus」を合成し、段階的マルチオブジェクト最適化により分離、明瞭度、話者同一性保持、知覚品質を共同で向上させる。さらに、ノンレファレンス部分にのみシーンルーティング、GANベースのデノイジング、ラウドネス正規化を適用する「認証選択的強調チェーン」を導入した。",
+          "methodEn": "The method utilizes 'DAVE-Corpus', containing 219,411 mixtures, uses progressive multi-objective optimization, and implements a certified selective enhancement chain (comprising scene routing, GAN-based denoising, and loudness normalization) only on the no-reference partition.",
+          "validation": "Real-World Audio-Visual Speech Enhancement Challengeにおいて検証実験を行い、実世界の混合シナリオおよび視覚信号の劣化条件下でのDAVEの頑健性を実証した。",
+          "validationEn": "Experimental results on the Real-World Audio-Visual Speech Enhancement Challenge demonstrated the robustness of DAVE under both real-world mixed scenarios and visual degradation conditions.",
+          "discussion": "抄録には、本アプローチの制限事項についての具体的な記述はありません。",
+          "discussionEn": "The abstract does not explicitly mention limitations or failure modes of the proposed framework.",
+          "abstractJa": "実世界の条件下における音響・映像音声強調は、信頼性の低い視覚的入力や、現実的な音響条件を伴う大規模な訓練データの不足により、依然として困難な課題である。既存のアプローチは通常、視覚特徴を分離ネットワークに直接融合させるため、劣化した視覚信号の影響を受けやすい。本論文では、実世界の音声分離のためのデカップリングされた音響・映像強調フレームワークであるDAVEを提示する。まず、データ不足の問題に対処するため、公的な会議コーパスから組み合わせ的な音響拡張を通じて生成された219,411個の混合データからなる大規模訓練コーパス「DAVE-Corpus」を構築する。次に、音声分離、明瞭度、話者同一性の保持、および知覚的品質を共同で改善するための段階的マルチオブジェクト最適化戦略を導入する。さらに、非参照（no-reference）パーティション内のみにシーンルーティング、GANベースのノイズ除去、およびラウドネス正規化を適用し、参照ベースの指標の劣化を防止する「認証選択的強調チェーン」を開発する。Real-World Audio-Visual Speech Enhancement Challengeにおける実験結果は、実世界の混合シナリオと視覚劣化条件の両方におけるDAVEの頑健性を実証している。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "自動音声合成評価は、MOS予測器やAudio-LLM判定器を用いて言語学的な解釈性を検証する方向へと進展しています。",
+    "長時間音声分離においては、学習不要な動的クラスタリング手法がセグメント間の順列アライメント問題を効果的に解決します。",
+    "分離型音響・視覚エンハンスメントフレームワークDAVEは、視覚情報の劣化やデータ不足が存在する実世界の音声分離を改善します。"
+  ],
+  "trendEn": [
+    "Automated Text-to-Speech evaluation is shifting towards probing linguistically grounded dimensions using MOS predictors and Audio-LLM judges.",
+    "For long speech separation, a training-free dynamic clustering method successfully resolves the cross-segment permutation alignment issue.",
+    "The decoupled audio-visual enhancement framework DAVE improves real-world speech separation under degraded visual inputs and data scarcity."
+  ]
+}
