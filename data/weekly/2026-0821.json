@@ -1,0 +1,367 @@
+{
+  "date": "2026-0821",
+  "generated_at": "2026-08-21T00:00:00+00:00",
+  "total": 7,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "labelEn": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2608.16539v1",
+          "date": "Aug 17",
+          "title": "Listen, Reason, and Segment: Aligning LALMs with Editorial Judgment for Media Chapterization",
+          "titleJa": "Listen, Reason, and Segment：メディアチャプタライゼーションのためのLALMと編集判断のアライメント",
+          "authors": [
+            "Tony Alex",
+            "Wish Suharitdamrong",
+            "Sara Atito",
+            "Armin Mustafa",
+            "Muhammad Awais"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Large Audio Language Models (LALMs) have made rapid progress on standardized benchmarks, yet their deployment in practical media workflows, curation, archival indexing, and content distribution remains largely unrealized. We identify automated audio chapterization, the task of segmenting continuous audio streams into thematically coherent chapters, as a demanding and commercially consequential setting that exposes this gap. Chapterization is challenging because boundaries are defined less by objective acoustic events than by subjective editorial judgment, requiring models to reason sequentially over long acoustic contexts and approximate creator-authored boundary decisions. We present AudioChaps, a post-training framework for aligning end-to-end LALMs for this task via Group Relative Policy Optimization (GRPO) guided by Chain-of-Thought (CoT) reasoning. To support training and evaluation, we curate three datasets: AudioChaps-Alignment, derived from creator-annotated chapter boundaries on YouTube; AudioChaps-CoT, which provides structured supervision for well-formatted, high-quality, and evidence-grounded boundary reasoning; and AudioChaps-Eval, a held-out benchmark for audio chapterization. Applying GRPO directly without a Supervised Fine-Tuning (SFT) cold start, AudioChaps-R1-Zero already improves average F1 by 33 points over the state-of-the-art LALM Audio-Flamingo-3-Think. The AudioChaps framework produces our final aligned LALM, AudioChaps-R1, which improves average F1 by 49 points. These results demonstrate that GRPO-trained LALMs can reliably transform unstructured auditory streams into navigable, structured media. Our code, models, and dataset resources will be released upon acceptance at https://github.com/ta012/AudioChaps.",
+          "comment": "19 pages, 9 figures, 8 tables",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2608.16539v1",
+          "category": "foundation",
+          "task": "オーディオチャプタライゼーション",
+          "taskEn": "Audio Chapterization",
+          "proposedMethod": "AudioChaps",
+          "datasets": [
+            "AudioChaps-Alignment",
+            "AudioChaps-CoT",
+            "AudioChaps-Eval"
+          ],
+          "what": "大規模音響言語モデル（LALM）を用いて、長時間のオーディオ流から作成者の編集意図を考慮したチャプター境界を自動分割するポストトレーニングフレームワークを提示する。",
+          "whatEn": "This paper presents AudioChaps, a post-training framework that aligns Large Audio Language Models (LALMs) to segment continuous audio streams into chapters matching human editorial judgment.",
+          "novel": "教師あり微調整の初期フェーズを経ずに、思考の連鎖（CoT）を伴うグループ相対方策最適化（GRPO）を適用することで、LALMを編集意図に基づくオーディオ分割タスクへ適合させた点である。",
+          "novelEn": "The authors claim novelty in applying Group Relative Policy Optimization (GRPO) guided by Chain-of-Thought (CoT) reasoning directly without a Supervised Fine-Tuning cold start to align LALMs for subjective audio segmentation.",
+          "method": "YouTubeから収集したデータや思考の連鎖を含むデータなど3つのデータセットを構築し、GRPOによる強化学習により音響LALMの境界意思決定プロセスを最適化した。",
+          "methodEn": "The authors curated three datasets (including alignment, CoT, and evaluation sets) and utilized GRPO-based reinforcement learning to optimize the boundary reasoning and decision-making process of the LALM.",
+          "validation": "AudioChaps-Evalを用いた評価において、ベースラインのAudio-Flamingo-3-Thinkと比較して、提案手法であるAudioChaps-R1は平均F1スコアを49ポイント向上させた。",
+          "validationEn": "Evaluation on AudioChaps-Eval demonstrated that the final aligned model, AudioChaps-R1, improved average F1 by 49 points over the state-of-the-art Audio-Flamingo-3-Think baseline.",
+          "discussion": "主観的な「編集者の意図」に基づく境界の定義には依然として曖昧さが残る可能性があり、さらなる一般化能力の評価が必要である。",
+          "discussionEn": "Boundary definitions based on subjective editorial judgment can still be ambiguous, requiring further evaluation of generalization capabilities.",
+          "abstractJa": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.15578v1",
+          "date": "Aug 16",
+          "title": "ARENA: Automated Red-Teaming for Large Audio Language Models",
+          "titleJa": "ARENA: 大型音声言語モデル向け自動レッドチーム手法",
+          "authors": [
+            "Jiaming He",
+            "Zhicong Huang",
+            "Tian Jin",
+            "Zhen Sun",
+            "Cheng Hong"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Large audio-language models (LALMs) make it possible to interact with language models through speech, music, and environmental sound, but they also introduce a safety surface that is difficult to expose with text-only red-teaming. We study automated audio-grounded red-teaming, where a text query must remain safe in isolation while the joint text-audio input induces harmful target behavior. We propose ARENA, a closed-loop framework that trains a controller on an independent 2,000case text-audio dataset. MD-Judge supplies training rewards and adaptive search feedback, while a separate, non-adaptive Llama Guard 3 evaluator alone labels final outcomes. On 520 held-out AdvBench objectives, ARENA achieves FDR/PSR of 87.9/100.0%, 71.5/96.3%, 68.1/100.0%, and 75.4/98.5% on Audio Flamingo 3, Qwen2-Audio, MiMo-Audio, and GPTAudio, respectively. Ablations show that feedback-based refinement and audio-variant search substantially improve attack discovery.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2608.15578v1",
+          "category": "foundation",
+          "task": "レッドチーム",
+          "taskEn": "Red-Teaming",
+          "proposedMethod": "ARENA",
+          "datasets": [
+            "AdvBench"
+          ],
+          "what": "音声、音楽、環境音を通じて言語モデルと対話可能にする大型音声言語モデル（LALM）に対する、自動化された音響グラウンデッドなレッドチーム手法を研究している。",
+          "whatEn": "This paper studies automated audio-grounded red-teaming for large audio-language models (LALMs) where a joint text-audio input is designed to induce harmful target behavior.",
+          "novel": "テキストクエリ単体では安全でありながら、音声入力と組み合わせることで有害な動作を誘発するような攻撃を自動的に生成・発見する閉ループフレームワークを提案した点。",
+          "novelEn": "The authors claim the novelty of proposing a closed-loop framework that automatically generates and discovers attacks where the text query remains safe in isolation but triggers harmful behaviors when combined with audio.",
+          "method": "独立した2,000ケースのテキスト・オーディオデータセットを用いてコントローラを訓練する。MD-Judgeが訓練用報酬と適応的探索フィードバックを提供し、検証には独立したLlama Guard 3評価器を用いる。",
+          "methodEn": "The method trains a controller on an independent 2,000-case text-audio dataset. MD-Judge provides training rewards and adaptive search feedback, while a non-adaptive Llama Guard 3 evaluator labels final outcomes.",
+          "validation": "AdvBenchの520個の保留タスクを用いて評価し、Audio Flamingo 3、Qwen2-Audio、MiMo-Audio、GPTAudioにおいて高い攻撃成功率（FDR/PSR）を達成した。",
+          "validationEn": "Validation on 520 held-out AdvBench objectives demonstrated high attack success rates (FDR/PSR) on Audio Flamingo 3, Qwen2-Audio, MiMo-Audio, and GPTAudio.",
+          "discussion": "アブレーション研究によりフィードバックベースの洗練やオーディオバリアント探索が攻撃発見を大幅に向上させることが示されたが、具体的な制限事項や防御策についてはアブストラクトからは十分に推論できない。",
+          "discussionEn": "While ablations show that feedback-based refinement and audio-variant search improve attack discovery, specific limitations or defense mechanisms are not detailed in the abstract.",
+          "abstractJa": "大型音声言語モデル（LALM）は、音声、音楽、環境音を介した言語モデルとの対話を可能にしますが、テキストのみのレッドチーム手法では検出が困難なセキュリティ上のリスクも生み出します。本研究では、テキストクエリ単体では安全でありながら、テキストとオーディオを組み合わせた入力が有害なターゲット動作を誘発するような、自動化された音響グラウンデッドなレッドチーム手法を検討します。我々は、独立した2,000ケースのテキスト・オーディオデータセットでコントローラを訓練する閉ループフレームワーク「ARENA」を提案します。MD-Judgeが訓練報酬と適応型探索フィードバックを提供し、独立した非適応型のLlama Guard 3評価器のみが最終的な結果を分類します。保留された520件のAdvBench目標において、ARENAはAudio Flamingo 3、Qwen2-Audio、MiMo-Audio、GPTAudioでそれぞれ87.9/100.0%、71.5/96.3%、68.1/100.0%、75.4/98.5%のFDR/PSRを達成しました。アブレーション解析により、フィードバックに基づく洗練とオーディオバリアントの探索が、攻撃の発見率を大幅に向上させることが示されました。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.14819v1",
+          "date": "Aug 14",
+          "title": "What Makes a Good Layer? Assessing the Layer-Wise Intrinsic Properties of Music Foundation Models",
+          "titleJa": "優れたレイヤーの条件とは？音楽基盤モデルのレイヤーごとの固有特性の評価",
+          "authors": [
+            "Angelos-Nikolaos Kanatas",
+            "Yuexuan Kong",
+            "Pablo Alonso-Jiménez",
+            "Xavier Serra",
+            "Dmitry Bogdanov"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Music foundation models are commonly used as frozen audio feature extractors, yet selecting which layer to extract from remains largely heuristic. Current practice defaults to fixed depths or multi-layer fusion, with limited understanding of why certain layers transfer better across downstream tasks or how representation quality varies with depth and pre-training paradigm. We conduct a systematic layer-wise analysis of 12 music foundation models spanning three pre-training paradigms (masked modeling, autoregressive modeling, and contrastive learning), characterizing their hidden representations through intrinsic geometric and transformation-based properties. Correlating label-free representation-quality metrics with layer-wise performance across 15 downstream tasks, we find that several metrics track layer quality for genre classification, emotion recognition, automatic tagging, and beat tracking, albeit with varying strength across tasks and pre-training paradigms. However, all metrics fail on tonal tasks such as key estimation and chord recognition, indicating that no single property serves as a general proxy for representation quality across music information retrieval tasks. To address this gap, we introduce a pitch-transposition equivariance measure that captures properties missed by these standard metrics, providing a consistent indicator of tonal quality across model families. Finally, we show that intrinsic metrics can serve as effective proxies for layer selection, matching or outperforming trainable multi-layer fusion methods, particularly in limited-data settings.",
+          "comment": "11 pages, 2 figures, 2 tables. Accepted at ISMIR 2026. Project page: https://angeloskanatas.github.io/music-fms-layer-eval/",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2608.14819v1",
+          "category": "foundation",
+          "task": "モデル分析",
+          "taskEn": "Model Analysis",
+          "proposedMethod": "pitch-transposition equivariance measure",
+          "datasets": [],
+          "what": "音楽基盤モデルを凍結特徴抽出器として用いる際のレイヤー選択について、3つの事前学習パラダイムにわたる12のモデルを系統的に分析した。",
+          "whatEn": "This paper systematically analyzes layer-wise characteristics of 12 music foundation models across three pre-training paradigms to understand how representation quality varies with depth and pre-training.",
+          "novel": "標準的な幾何学的・変換ベースの評価指標が調性（トーン）に関する下流タスクで機能しないことを特定し、この欠点を解消するために音高移調同変性の指標（pitch-transposition equivariance measure）を新たに導入した点。",
+          "novelEn": "The authors identify that standard geometric and transformation-based metrics fail on tonal tasks, and they propose a novel pitch-transposition equivariance measure to consistently evaluate representation quality for tonal tasks across model families.",
+          "method": "マスク言語モデリング、自己回帰モデリング、対照学習の3つのパラダイムからなる12の音楽基盤モデルを対象に、15の下流タスク（ジャンル分類、自動タグ付け、拍検出など）における性能と、表現品質の固有の指標をレイヤー単位で相関分析した。",
+          "methodEn": "The method analyzes 12 music foundation models from three pre-training paradigms across 15 downstream tasks, correlating label-free representation-quality metrics and the proposed pitch-transposition equivariance with layer-wise performance.",
+          "validation": "提案した固有の指標が、特にデータが限定された設定において、学習可能なマルチレイヤー融合法と同等かそれ以上の精度で効果的にレイヤー選択を行えることを示した。",
+          "validationEn": "Validation results show that the intrinsic metrics serve as effective proxies for layer selection, matching or outperforming trainable multi-layer fusion methods, especially in limited-data scenarios.",
+          "discussion": "標準的な表現品質指標のどれ一つとして、すべての音楽情報検索タスクにわたって万能な代理指標とはなり得ないことが判明している。",
+          "discussionEn": "A key finding and limitation is that no single property or metric can serve as a general proxy for representation quality across all music information retrieval tasks.",
+          "abstractJa": "音楽基盤モデルは通常、凍結されたオーディオ特徴抽出器として一般的に使用されていますが、どのレイヤーから特徴を抽出するかの選択は大部分がヒューリスティックなままです。現在の実務では、固定された深さやマルチレイヤーの融合がデフォルトとなっていますが、なぜ特定のレイヤーが下流タスク間で優れた転移を示すのか、また表現の品質が深さや事前学習パラダイムによってどのように変化するのかについては、ほとんど理解されていません。私たちは、3つの事前学習パラダイム（マスクモデリング、自己回帰モデリング、対照学習）にわたる12の音楽基盤モデルを対象に、系統的なレイヤー単位の分析を行い、固有の幾何学的特性および変換ベースの特性を通じてそれらの隠れ表現を特徴付けました。ラベルフリーの表現品質指標と、15の下流タスク（ジャンル分類、感情認識、自動タグ付け、拍追跡など）におけるレイヤーごとの性能との相関を調査した結果、いくつかの指標はレイヤーの品質を良好に捉えるものの、その強さはタスクや事前学習パラダイムによって異なることが分かりました。しかし、すべての指標は調性タスク（キー推定やコード認識）で破綻しており、音楽情報検索タスク全般にわたって表現品質を普遍的に代替できる単一の特性は存在しないことが示されました。この課題を解決するため、私たちはこれらの標準指標が見落としていた特性をとらえる「音高移調同変性（pitch-transposition equivariance）」尺度を導入し、モデルファミリー全体で調性品質の一貫した指標を提供します。最後に、固有の指標がレイヤー選択の有効なプロキシとして機能し、特にデータが限定された設定において、学習可能なマルチレイヤー融合手法と同等以上の性能を達成できることを示します。",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "labelEn": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2608.14516v1",
+          "date": "Aug 14",
+          "title": "Singer-Informed Vocal Source Separation for Multi-Singer Music Mixtures",
+          "titleJa": "複数歌手による歌唱混合音に対する歌手情報を用いた歌声音源分離",
+          "authors": [
+            "Jocelyn Xu",
+            "Minje Kim"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Music source separation systems typically extract a single vocal track and do not distinguish between multiple singers. We study singer-informed vocal source separation for multi-singer mixtures. Our framework introduces a short enrollment recording of a target singer to guide separation through a learned embedding. The singer embedding is incorporated using feature concatenation or feature-wise linear modulation (FiLM), enabling the model to focus on the target singer while suppressing interference. We construct a duet dataset based on DAMP-VSEP with quality filtering and non-overlapping enrollment segments. Experiments on solo and duet settings show that while baseline models perform well for single-singer mixtures, the proposed method improves target-singer extraction in multi-singer cases, increasing target-singer SI-SDR from 0.33 dB to 5.58 dB. Fréchet Audio Distance (FAD) further shows improved perceptual quality and better alignment with target audio distributions. Code and checkpoints are available at https://github.com/jocelynxu01/singer-separation-paper.",
+          "comment": "Accepted at IWAENC 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2608.14516v1",
+          "category": "separation",
+          "task": "音源分離",
+          "taskEn": "Audio Source Separation",
+          "proposedMethod": "Singer-Informed Vocal Source Separation with learned embedding",
+          "datasets": [
+            "DAMP-VSEP"
+          ],
+          "what": "複数歌手が同時に歌う楽曲（デュエットなど）から、登録用の短い音声を用いて、ターゲットとなる特定の歌手の歌声を分離する手法を研究している。",
+          "whatEn": "This paper investigates singer-informed vocal source separation for multi-singer mixtures, targeting a specific singer guided by a short enrollment recording.",
+          "novel": "登録された歌手埋め込みを特徴量結合またはFiLMを用いてネットワークに統合し、単一歌唱での性能を維持しつつ、多重歌唱時における標的歌手の抽出性能を大幅に向上させた点。",
+          "novelEn": "The authors propose integrating a target singer embedding via feature concatenation or FiLM, significantly improving target extraction in multi-singer mixtures while maintaining single-singer performance.",
+          "method": "ターゲット歌手の短い登録音から学習された埋め込みを、特徴量結合またはFiLMによって音源分離モデルに統合する。DAMP-VSEPに基づき、品質フィルタリングを施した重複のない登録セグメントを持つデュエットデータセットを構築して評価を行った。",
+          "methodEn": "The target singer embedding from a short enrollment recording is incorporated using feature concatenation or FiLM. The framework is validated on a duet dataset constructed from DAMP-VSEP with quality filtering.",
+          "validation": "提案手法により、複数歌手の混合音からのターゲット歌手抽出において、ベースラインモデルと比較してSI-SDRが0.33 dBから5.58 dBへと向上し、FADによる知覚品質および目標分布との整合性も改善された。",
+          "validationEn": "Evaluation on solo and duet settings showed that the proposed method increased target-singer SI-SDR from 0.33 dB to 5.58 dB in multi-singer mixtures and improved FAD.",
+          "discussion": "デュエットや複数歌手の混合音には対応できるが、歌手数が増加した際の頑健性や、極めて類似した歌声同士の分離における課題についてはアブストラクトにおいて言及されていない。",
+          "discussionEn": "While the system is validated on solo and duet setups, scalability to more simultaneous singers or performance on highly similar voices is not explicitly discussed in the abstract.",
+          "abstractJa": "音楽音源分離システムは、一般的に単一の歌声トラックを抽出するのみであり、複数の歌手を区別しません。本研究では、複数歌手による混合音を対象とした、歌手情報に基づく歌声音源分離を提案します。本フレームワークは、ターゲット歌手の短い登録録音を導入し、学習された埋め込みを介して分離を誘導します。歌手埋め込みは、特徴量の結合または特徴量適応型線形変調（FiLM）を用いて組み込まれ、モデルが干渉を抑制しながらターゲット歌手に焦点を合わせることを可能にします。我々は、品質フィルタリングと非重複の登録セグメントを施したDAMP-VSEPベースのデュエットデータセットを構築しました。ソロおよびデュエット環境での実験の結果、既存のベースラインモデルは単一歌手の混合音に対して良好に動作するものの、提案手法は複数歌手の場合におけるターゲット歌手の抽出を改善し、ターゲット歌手のSI-SDRを0.33 dBから5.58 dBへと向上させることが示されました。また、Fréchet Audio Distance (FAD) による評価でも、知覚品質の向上とターゲットのオーディオ分布とのより良い整合が示されました。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.14756v1",
+          "date": "Aug 14",
+          "title": "The Note-Chord-Voice Framework: Structured Source Separation and Causal Inference for EV Charging Data",
+          "titleJa": "Note-Chord-Voiceフレームワーク：電気自動車充電データのための構造化音源分離と因果推論",
+          "authors": [
+            "Jiajie Chen",
+            "Jinfeng Li"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Real-world EV charging data exhibit three interlocking pathologies: hardware fragmentation (network timeouts and billing resets split sessions), physical violations (independent energy/duration models produce impossible states like 50 kWh in 10 min on a 7 kW charger), and collider bias (clustering on post-treatment outcomes opens backdoor paths for price elasticity). We propose the Note-Chord-Voice framework, a music-inspired, axiom-driven pipeline that separates data cleaning (Repair Chords), structural pattern discovery (Harmonic Chords), descriptive source separation (NMF Voices), and causal inference into distinct, falsifiable stages. Key innovations: (i) falsification gates (A1-A5, G3, G10) that test data suitability before modeling; (ii) Gamma-initialized NMF with input rescaling for convergence stability from STL decomposition; (iii) tag-based coupon grading (A/B/C/D) to isolate quasi-random treatment from night-time confounders and targeted promotions; (iv) separate per-voice OLS to avoid simplex collinearity; (v) Foote novelty curves for structural regime detection. Applied to the Jiangmen dataset (495,707 sessions, 20 stations, from July 2024 to March 2025), all core axioms pass except G3 (no strong 168 h cycle). NMF achieves R^2=0.9921; the physically constrained duration model yields aggregate R^2=0.5409. Two voices are price-sensitive (beta = -11 to -14 min, p<0.001), of which one is stable (Voice 3, beta=-14.16) and one treatment-driven (Voice 1, beta=-11.10); only the stable voice supports causal claims. Counterfactual simulation shows targeting discounts to price-sensitive voices recovers 52.8% of discount expenditures (~0.85M CNY/year); restricting to the single stable price-sensitive voice yields a more conservative estimate.",
+          "comment": "30 pages, 10 figures",
+          "journalRef": null,
+          "categories": [
+            "eess.SP",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2608.14756v1",
+          "category": "separation",
+          "task": "音源分離",
+          "taskEn": "Source Separation",
+          "proposedMethod": "Note-Chord-Voice framework",
+          "datasets": [
+            "Jiangmen dataset"
+          ],
+          "what": "電気自動車（EV）充電データにおけるハードウェアの断片化、物理的制約の違反、および選択バイアス（コライダーバイアス）に対処するため、音楽にインスパイアされた音源分離と因果推論のパイプラインを提案する。",
+          "whatEn": "This paper proposes a music-inspired, axiom-driven pipeline to address hardware fragmentation, physical constraint violations, and collider bias in EV charging data by combining source separation and causal inference.",
+          "novel": "データクリーニング、構造的パターン検出、記述的音源分離、および因果推論を明確に分離し、モデル構築前にデータの適合性を検証する検証ゲートを導入した点、および非負値行列因子分解（NMF）とCausal OLSを統合した点が新しいと著者は主張している。",
+          "novelEn": "The authors claim novelty in separating data cleaning, structural discovery, descriptive source separation, and causal inference into distinct stages with falsification gates, and integrating non-negative matrix factorization (NMF) with causal OLS to avoid collinearity.",
+          "method": "構造検出のためのFooteノベルティ曲線の利用、STL分解に基づくスケーリングを施したガンマ初期化NMF、および交絡因子を排除するためのクーポン格付けタグと、ボイスごとのOLS（最小二乗法）による因果効果推定を用いる。",
+          "methodEn": "The method utilizes Foote novelty curves for structural regime detection, Gamma-initialized NMF with input rescaling from STL decomposition, tag-based coupon grading to isolate treatments, and separate per-voice OLS estimation to prevent simplex collinearity.",
+          "validation": "2024年7月から2025年3月までのJiangmenデータセット（495,707セッション、20拠点）を用いて検証を行い、NMFによる分離でR^2=0.9921、因果シミュレーションにより割引費用の52.8%（年間約85万人民元）を回収可能であることを示した。",
+          "validationEn": "Validation was performed on the Jiangmen dataset containing 495,707 sessions across 20 stations from July 2024 to March 2025, where the NMF achieved an R^2 of 0.9921, and counterfactual simulation demonstrated recovering 52.8% of discount expenditures (~0.85M CNY/year).",
+          "discussion": "提案された核となる公理のうち、168時間の強い周期性を仮定する公理（G3）は、検証対象のデータセットにおいて成立しなかったことが報告されている。",
+          "discussionEn": "The authors note that among the core axioms tested, the G3 axiom (assuming a strong 168-hour cycle) did not hold on the evaluated dataset.",
+          "abstractJa": "現実世界のEV充電データは、3つの連動する病理を示している。すなわち、ハードウェアの断片化（ネットワークのタイムアウトや課金リセットによるセッションの分割）、物理的違反（独立したエネルギー/時間モデルが、7 kWの充電器で10分間に50 kWhといった不可能な状態を生み出すこと）、およびコライダーバイアス（処置後の結果に対するクラスタリングが、価格弾力性のバックドアパスを開くこと）である。我々は、データクリーニング（Repair Chords）、構造パターン検出（Harmonic Chords）、記述的音源分離（NMF Voices）、および因果推論を明確で反証可能な段階に分離する、音楽にインスパイアされ公理に基づいたパイプラインである「Note-Chord-Voice」フレームワークを提案する。主な革新点は以下の通りである。(i) モデル構築前にデータの適合性をテストする反証ゲート（A1-A5, G3, G10）、(ii) STL分解からの収束安定性のための入力再スケーリングを伴うガンマ初期化NMF、(iii) 夜間の交絡因子やターゲットプロモーションから準ランダムな処置を隔離するためのタグベースのクーポン格付け（A/B/C/D）、(iv) 単体（シンプレックス）の多重共線性を避けるためのボイスごとの独立したOLS、(v) 構造的レジーム検出のためのFooteノベルティ曲線。江門（Jiangmen）データセット（2024年7月から2025年3月までの495,707セッション、20のステーション）に適用したところ、G3（強い168時間周期なし）を除くすべてのコアイクイオム（公理）をパスした。NMFはR^2=0.9921を達成し、物理的制約を課した充電時間モデルは総合でR^2=0.5409となった。2つのボイス（因子）は価格に敏感であり（beta = -11〜-14分、p<0.001）、そのうち1つは安定（ボイス3、beta=-14.16）、もう1つは処置主導（ボイス1、beta=-11.10）であった。安定したボイスのみが因果関係の主張をサポートする。反事実シミュレーションによると、価格に敏感なボイスに割引をターゲットにすることで、割引支出の52.8%（年間約85万中国元）を回収でき、単一の安定した価格感応ボイスに限定すると、より保守的な見積もりが得られることが示された。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "異音検知",
+      "labelEn": "Anomalous Sound Detection",
+      "color": "#fb923c",
+      "papers": [
+        {
+          "id": "2608.18341v1",
+          "date": "Aug 18",
+          "title": "Low-Power, Neuromorphic, Acoustic Anomaly Detection for Persistent Machine Monitoring",
+          "titleJa": "持続的な機械監視のための低消費電力なニューロモーフィック音響異常検知",
+          "authors": [
+            "Steven C. Nesbit",
+            "Victor M. Vergara",
+            "Michael A. Felix",
+            "Evan T. Kain",
+            "Luis R. García Carrillo"
+          ],
+          "org": "Information Sciences, CAI-3, Los Alamos National Laboratory,",
+          "orgSource": "arxiv_affiliation",
+          "abstract": "Persistent acoustic monitoring can detect machine faults without physical contact, but always-on inference is constrained by power, latency, and deployment complexity. We demonstrate autoencoder-based acoustic anomaly detection on an Intel Loihi 2 neuromorphic processor under clean and noisy conditions. Log-mel features are computed off chip; normalization, autoencoder inference, L1 reconstruction scoring, and thresholding run on chip. In a clean, microphone-position-invariant ToyADMOS ToyCar benchmark, the on-chip model achieves 0.9959 AUC and 0.9785 standardized pAUC at maximum false-positive rate 0.1. In the DCASE 2026 Task 2 ToyCar noisy benchmark, the model achieves source AUC 0.7990, target AUC 0.6466, and pAUC 0.6426, exceeding reported baseline metrics. Power profiling on a 16-chip Loihi 2 VPX system shows real-time throughput with 0.0406$\\unicode{x2013}$0.0426 mJ dynamic energy per sample, two orders of magnitude lower than both a CPU and GPU. These results support neuromorphic acoustic anomaly detection as a practical candidate for low-power, persistent machine monitoring.",
+          "comment": "5 pages, 2 figures, 2 tables",
+          "journalRef": null,
+          "categories": [
+            "cs.NE",
+            "cs.AI",
+            "cs.ET",
+            "cs.LG",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2608.18341v1",
+          "category": "anomaly",
+          "task": "異常検知",
+          "taskEn": "Anomaly Detection",
+          "proposedMethod": null,
+          "datasets": [
+            "ToyADMOS",
+            "DCASE 2026 Task 2"
+          ],
+          "what": "持続的な機械監視を目的とした、Intel Loihi 2ニューロモーフィックプロセッサ上での自己符号化器に基づく音響異常検知システムを提案する。",
+          "whatEn": "This paper proposes an autoencoder-based acoustic anomaly detection system on the Intel Loihi 2 neuromorphic processor for persistent machine monitoring.",
+          "novel": "ログメル特徴量以外の規格化、推論、再構成スコア算出、閾値処理といったパイプライン全体をチップ上で処理し、CPUやGPUと比較して消費電力を大幅に削減した点である。",
+          "novelEn": "The authors claim novelty in running the entire pipeline (normalization, inference, reconstruction scoring, and thresholding) on chip except for log-mel feature extraction, significantly reducing dynamic energy compared to CPU and GPU.",
+          "method": "チップ外部でログメル特徴量を計算し、その後、自己符号化器の推論とL1損失に基づく再構成スコア、および閾値処理をLoihi 2チップ上で実行する。",
+          "methodEn": "Log-mel features are computed off chip, after which autoencoder inference, L1 reconstruction scoring, and thresholding are executed on the Loihi 2 chip.",
+          "validation": "ToyADMOSのクリーンなToyCarベンチマークと、DCASE 2026 Task 2の騒音環境下ベンチマークを用いて評価し、高いAUC性能とCPU/GPU比で2桁低い動的エネルギー消費を実証した。",
+          "validationEn": "Validation was performed on the clean ToyADMOS ToyCar benchmark and the noisy DCASE 2026 Task 2 ToyCar benchmark, demonstrating high AUC performance and two orders of magnitude lower dynamic energy consumption compared to CPU and GPU.",
+          "discussion": "特徴量抽出プロセスは依然としてチップ外部で行われており、完全なオンチップ統合に向けた最適化の余地がある。",
+          "discussionEn": "The feature extraction process is still computed off-chip, suggesting room for further integration in fully on-chip processing.",
+          "abstractJa": "持続的な音響監視は、物理的な接触なしに機械の故障を検出できるが、常時稼働する推論は、電力、遅延、および導入の複雑さによって制限される。本研究では、Intel Loihi 2ニューロモーフィックプロセッサ上での自己符号化器ベースの音響異常検知を、クリーンおよびノイズのある条件下で実証する。ログメル特徴量はチップ外で計算され、規格化、自己符号化器の推論、L1再構成スコアリング、および閾値処理はチップ上で実行される。クリーンでマイクロホンの位置に依存しないToyADMOS ToyCarベンチマークにおいて、オンチップモデルは最大誤検出率0.1において0.9959のAUCと0.9785の標準化pAUCを達成した。DCASE 2026 Task 2 ToyCarノイズベンチマークでは、モデルはソースAUC 0.7990、ターゲットAUC 0.6466、およびpAUC 0.6426を達成し、報告されているベースライン指標を上回った。16チップのLoihi 2 VPXシステムでの電力プロファイリングは、サンプルあたり0.0406〜0.0426 mJの動的エネルギーでリアルタイムのスループットを示し、これはCPUとGPUの両方よりも2桁低い。これらの結果は、低電力で持続的な機械監視の実用的な候補として、ニューロモーフィック音響異常検知を支持するものである。",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.17852v1",
+          "date": "Aug 18",
+          "title": "UniVerse: Benchmarking and Enhancing LALMs on Culturally Inclusive Low-Resource Music Understanding",
+          "titleJa": "UniVerse：文化的に包摂的な低資源音楽理解におけるLALMのベンチマーク評価と強化",
+          "authors": [
+            "Ziya Zhou",
+            "Shangda Wu",
+            "Shenyang Xu",
+            "Yutong Zheng",
+            "Dafang Liang"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Recent advances in large audio-language models (LALMs) have significantly improved performance in tasks such as music captioning, genre classification, and sound event detection. However, limited attention has been paid to improving their adaptability across diverse musical traditions, particularly folk music rooted in distinct cultural contexts. Folk-music traditions are typically resource-scarce, unevenly represented across regions, and poorly documented. Even when such samples appear in large-scale pre-training, LALMs often fail to capture their structural and stylistic characteristics, partly due to the absence of dedicated evaluation protocols and training solutions. To address these limitations, we introduce UniVerse, a reproducible solution for low-resource music understanding. Specifically, we propose UniVerseBench, a benchmark of 5,042 Q&A pairs across more than 38 cultural and linguistic entities, constructed via an expert-guided yet highly automated pipeline. In parallel, we construct a fully automated, model-generated multi-turn dialogue training dataset UniVerseSet. By training LALMs on UniVerseSet, we systematically adapt and investigate representative multimodal imbalance learning strategies across both dense and Mixture-of-Experts (MoE) architectures. Experimental results indicate that fully automated data curation combined with imbalance-aware training yields non-trivial improvements, but models still struggle to capture fine-grained acoustic features, indicating a gap between surface-level alignment and deep musical comprehension.",
+          "comment": "21 pages, 7 figures, 8 tables",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.MM"
+          ],
+          "url": "https://arxiv.org/abs/2608.17852v1",
+          "category": "anomaly",
+          "task": "音楽理解",
+          "taskEn": "Music Understanding",
+          "proposedMethod": "UniVerse",
+          "datasets": [
+            "UniVerseBench",
+            "UniVerseSet"
+          ],
+          "what": "文化的多様性や民俗音楽のような低資源な音楽領域に対する大規模音響言語モデル（LALM）の適応能力をベンチマーク評価し、改善するためのソリューションUniVerseを提案する。",
+          "whatEn": "This paper proposes UniVerse, a solution to benchmark and enhance the adaptability of Large Audio-Language Models (LALMs) on culturally diverse and low-resource music genres such as folk music.",
+          "novel": "民俗音楽に焦点を当て、専門家主導の自動パイプラインによるベンチマークデータセットと、自動生成による多ターン対話データセットを構築し、不均衡学習戦略をLALMに適用した点である。",
+          "novelEn": "The authors claim novelty in establishing a dedicated benchmark and training dataset for low-resource cultural folk music via automated pipelines, and systematically applying multimodal imbalance learning strategies to LALMs.",
+          "method": "5,042個のQ&Aペアを含むベンチマークUniVerseBenchと、マルチターン対話訓練データUniVerseSetを構築し、高密度アーキテクチャおよびMixture-of-Experts（MoE）LALMを用いて不均衡学習を検証した。",
+          "methodEn": "The authors constructed the UniVerseBench benchmark containing 5,042 Q&A pairs and the UniVerseSet multi-turn dialogue training dataset, and evaluated imbalance learning strategies across dense and Mixture-of-Experts (MoE) LALM architectures.",
+          "validation": "提案した訓練データと不均衡対応学習により性能向上が確認されたが、微細な音響特徴を捉える点においては、表層的なアライメントと深い音楽的理解の間になお課題が残ることが示された。",
+          "validationEn": "Validation results indicated that the proposed data curation and imbalance-aware training yielded non-trivial improvements, but models still struggled with fine-grained acoustic features, revealing a gap in deep musical comprehension.",
+          "discussion": "モデルは依然として詳細な音響特徴を捉えることに苦戦しており、表層的な整合と深い音楽理解の間にはギャップが存在する。",
+          "discussionEn": "Models still struggle to capture fine-grained acoustic features, indicating a gap between surface-level alignment and deep musical comprehension.",
+          "abstractJa": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "UniVerseによる多文化的な音楽理解やAudioChapsによる自動章分割など、大規模音響言語モデル（LALM）の応用が進むと同時に、ARENAを用いた自動レッドチーミングによる安全性評価が注目されています。",
+    "音楽基盤モデルの層別特性分析に加え、特定の歌手をターゲットにした歌声分離や、音楽の発想を応用してEV充電データを解析するNote-Chord-Voiceフレームワークなど、音源分離技術が進化しています。",
+    "エッジデバイスや持続的な監視に向けて、Intel Loihi 2ニューロモーフィックプロセッサを搭載した超低消費電力なオートエンコーダベースの音響異常検知システムが提案されています。"
+  ],
+  "trendEn": [
+    "While the applications of Large Audio-Language Models (LALMs) expand into cultural music understanding with UniVerse and media chapterization with AudioChaps, safety evaluations via automated red-teaming with ARENA are gaining prominence.",
+    "Alongside layer-wise analysis of music foundation models, source separation technologies are evolving with singer-informed vocal separation and the music-inspired Note-Chord-Voice framework applied to EV charging data.",
+    "For edge deployment and continuous monitoring, ultra-low-power, autoencoder-based acoustic anomaly detection systems leveraging the Intel Loihi 2 neuromorphic processor are being proposed."
+  ]
+}
