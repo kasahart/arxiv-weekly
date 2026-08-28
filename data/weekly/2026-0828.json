@@ -1,0 +1,416 @@
+{
+  "date": "2026-0828",
+  "generated_at": "2026-08-28T00:00:00+00:00",
+  "total": 8,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "labelEn": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2608.27026v1",
+          "date": "Aug 27",
+          "title": "Direct or Mediated? Task-Dependent Audio Information Routing in Large Audio Language Models",
+          "titleJa": "直接か媒介か？大規模音響言語モデルにおけるタスク依存のオーディオ情報ルーティング",
+          "authors": [
+            "Yizhou Zhang",
+            "Wangjin Zhou",
+            "Xin Gu",
+            "Yichi Wang",
+            "Wei Tan"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Large Audio Language Models (LALMs) have demonstrated strong performance across a wide range of audio understanding tasks. However, they are typically evaluated on single, coherent audio segments, leaving their behavior under less familiar input configurations underexplored. We study this issue through a controlled setting in which two audio segments are concatenated into a single input. Across multiple LALMs, we observe a striking task-dependent robustness gap: automatic speech recognition (ASR) remains comparatively stable, whereas audio question answering (AQA) degrades substantially. To investigate the mechanisms underlying this disparity, we analyze how audio information is routed through LALM decoders using layer-wise attention knockout. The results reveal distinct task-dependent pathways. ASR relies primarily on direct retrieval from audio tokens by answer tokens, whereas AQA depends more strongly on a mediated route in which audio information is first integrated into prompt tokens and subsequently accessed during generation. We further probe prompt-token representations under audio concatenation and find that task-relevant audio attributes remain readily decodable, particularly in middle and later decoder layers, even when AQA performance deteriorates sharply. This dissociation indicates that the failure cannot be explained by complete loss of audio information from the decoder states and is instead consistent with a downstream bottleneck in retrieving or utilizing prompt-mediated information during answer generation. Together, our findings reveal task-dependent audio information routing in LALMs and highlight information utilization as a potential limitation on their generalization.",
+          "comment": "8 pages, 2 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.MM"
+          ],
+          "url": "https://arxiv.org/abs/2608.27026v1",
+          "category": "foundation",
+          "task": "大規模音響言語モデルの解析",
+          "taskEn": "Analysis of Large Audio Language Models",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "大規模音響言語モデル（LALM）において、2つのオーディオセグメントを連結して入力した際、自動音声認識（ASR）は安定しているのに対し、オーディオ質問応答（AQA）の性能が著しく低下するという、タスク依存の頑健性のギャップを調査・解明している。",
+          "whatEn": "This paper investigates the task-dependent robustness gap in Large Audio Language Models (LALMs) under concatenated audio inputs, where automatic speech recognition (ASR) remains stable while audio question answering (AQA) degrades significantly.",
+          "novel": "著者らは、レイヤーごとのアテンションノックアウトを用いることで、ASRがオーディオトークンからの直接的な情報抽出に依存する一方、AQAはプロンプトトークンを介した媒介ルートに強く依存するという、タスク依存の情報のルーティング経路を明らかにした。",
+          "novelEn": "The authors claim the novelty of revealing task-dependent audio information routing pathways in LALMs using layer-wise attention knockout, showing that ASR relies on direct retrieval while AQA depends heavily on a mediated route via prompt tokens.",
+          "method": "2つのオーディオセグメントを連結する制御環境を構築し、デコーダにおけるレイヤーごとのアテンションを無効化（ノックアウト）して情報の伝播経路を分析した。さらに、デコーダ状態からの情報デコーディングを試みることで、表現の保持状況を調査した。",
+          "methodEn": "The authors designed a controlled setting with concatenated audio segments, analyzed information propagation pathways by knocking out layer-wise attention in LALM decoders, and probed prompt-token representations to check information decodability.",
+          "validation": "実験の結果、ASRとAQAで異なる情報ルーティング経路が存在することを示した。また、性能低下時にも情報自体は失われておらず、媒介情報の取り出しや利用における下流のボトルネックが原因であることを突き止めた。",
+          "validationEn": "Experiments demonstrated distinct information routing pathways for ASR and AQA. They validated that the performance drop is not due to complete information loss in decoder states but rather to a downstream bottleneck in retrieving or utilizing prompt-mediated information.",
+          "discussion": "アブストラクトには、モデルの構造的改善策の具体的な検証や、さらに多くのタスク・データセットでの一般化に関する定量的な限界についての直接的な記述はない。",
+          "discussionEn": "The abstract does not explicitly discuss specific architectural solutions or quantitative limitations regarding generalization across a wider variety of tasks and datasets.",
+          "abstractJa": "大規模音響言語モデル（LALM）は、幅広いオーディオ理解タスクにわたり強力な性能を示している。しかし、これらは通常、単一の整合性のあるオーディオセグメントで評価されており、馴染みの薄い入力構成下での挙動は十分に調査されていない。本研究では、2つのオーディオセグメントを1つの入力に連結する制御された設定を通じてこの問題を調査する。複数のLALMにおいて、タスク依存の顕著な頑健性のギャップが観察された。具体的には、自動音声認識（ASR）は比較的安定しているのに対し、オーディオ質問応答（AQA）は大幅に低下する。この不一致の背後にあるメカニズムを調べるため、レイヤーごとのアテンションノックアウトを用いて、オーディオ情報がLALMデコーダ内をどのようにルーティングされるかを分析する。その結果、明確なタスク依存の経路が明らかになった。ASRは主に回答トークンによるオーディオトークンからの直接的な検索に依存しているのに対し、AQAは、オーディオ情報がまずプロンプトトークンに統合され、その後生成中にアクセスされる媒介ルートに強く依存している。さらに、オーディオ連結下でのプロンプトトークン表現を調査したところ、AQAの性能が急激に低下した場合でも、タスク関連のオーディオ属性はデコーダの中間層および後期の層で容易にデコード可能なままであることが判明した。この解離は、失敗の原因がデコーダ状態からのオーディオ情報の完全な喪失としては説明できず、回答生成中にプロンプト媒介情報を検索または利用する際の下流のボトルネックと一致していることを示している。以上の結果は、LALMにおけるタスク依存のオーディオ情報ルーティングを明らかにし、情報の利用がモデルの汎化における潜在的な制限要因であることを浮き彫りにしている。",
+          "nextReads": [
+            {
+              "label": "AudioPaLM: A Large Language Model That Can Speak and Listen (2023)",
+              "arxivId": "2306.12925",
+              "url": "https://arxiv.org/abs/2306.12925",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.24374v1",
+          "date": "Aug 25",
+          "title": "CoSTALA: Compositional Spatio-Temporal Audio-Language Alignment via Multi-Grain Hierarchical Contrastive Learning",
+          "titleJa": "CoSTALA: 多粒度階層型対照学習による構成的な時空間オーディオ・言語アライメント",
+          "authors": [
+            "Peiwei Ren",
+            "Jinbo Hu",
+            "Fang Kang",
+            "Shan Liang",
+            "Yin Cao"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Conventional audio language models (ALMs) have made significant progress in achieving alignment between auditory and textual representations, including recent explorations in spatial audio. However, in daily spatial scenarios, they still cannot effectively process multi-event audio sequences. Current approaches primarily rely on coarse-grained contrastive learning with global auditory and textual features, lacking the resolution to distinguish multiple sequential events. To overcome these limitations, we propose CoSTALA-a novel training paradigm that transitions from purely global alignment to fine-grained spatio-temporal reasoning. By constructing a multi-granularity hierarchical loss function system, we achieve explicit modeling of temporal dependencies, and successfully anchors individual acoustic events to preserve their semantic purity. Extensive experiments demonstrate that CoSTALA significantly establish a powerful new framework for spatio-temporal audio understanding.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2608.24374v1",
+          "category": "foundation",
+          "task": "時空間オーディオ理解",
+          "taskEn": "Spatio-Temporal Audio Understanding",
+          "proposedMethod": "CoSTALA",
+          "datasets": [],
+          "what": "日常の空間音響シナリオにおいて、複数の音響イベントを含むシーケンスに対して、高精度な時空間的アライメントと推論を行うための新たな学習パラダイムを提案している。",
+          "whatEn": "This paper proposes CoSTALA, a novel training paradigm designed for precise spatio-temporal reasoning and alignment of multi-event audio sequences in daily spatial audio scenarios.",
+          "novel": "粗い粒度のグローバルなアライメントから、時空間的な依存関係を明示的にモデリングする多粒度な階層的損失関数システムへと移行し、個々の音響イベントをそのセマンティックな純度を保ったまま係留（アンカー）する手法を確立した点。",
+          "novelEn": "The authors claim the novelty of transitioning from coarse-grained global contrastive learning to fine-grained spatio-temporal reasoning by constructing a multi-granularity hierarchical loss system that explicitly models temporal dependencies and anchors individual acoustic events.",
+          "method": "多粒度の階層型対照学習に基づく損失関数システムを構築し、時間的依存関係の明示的なモデリングと、個々の音響イベントをテキスト表現と高精度に対応づけるアンカー化を実現した。",
+          "methodEn": "The method constructs a multi-granularity hierarchical contrastive loss system to explicitly model temporal dependencies and anchor individual acoustic events to preserve their semantic purity.",
+          "validation": "広範な実験を実施し、時空間的なオーディオ理解において、CoSTALAが強力で新しいフレームワークを確立することを有意に示した。",
+          "validationEn": "Extensive experiments were conducted to demonstrate that CoSTALA significantly establishes a powerful new framework for spatio-temporal audio understanding.",
+          "discussion": "アブストラクトには、特定の実世界のノイズや計算コストの増加などに関する限界や制限についての明示的な記載はない。",
+          "discussionEn": "The abstract does not explicitly mention any specific limitations or challenges, such as real-world noise or increased computational cost.",
+          "abstractJa": "従来の音響言語モデル（ALM）は、近年の空間オーディオにおける探求を含め、聴覚表現とテキスト表現の間のアライメントを達成する上で大きな進歩を遂げてきた。しかし、日常の空間的なシナリオにおいて、これらは依然として複数のイベントを含むオーディオシーケンスを効果的に処理することができない。現在のアプローチは主に、大まかな粒度の対照学習を用いた全域的な聴覚特徴およびテキスト特徴に依存しており、連続する複数のイベントを区別するための解像度が不足している。これらの制限を克服するために、私たちは純粋なグローバルアライメントから微細な粒度の時空間推論へと移行する新しい訓練パラダイムである「CoSTALA」を提案する。多粒度な階層型損失関数システムを構築することにより、時間的依存関係の明示的なモデリングを実現し、個々の音響イベントをその意味的な純度を保ったままアンカー化することに成功した。広範な実験により、CoSTALAが時空間的なオーディオ理解のための強力な新しいフレームワークを著しく確立することが示された。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.24168v2",
+          "date": "Aug 25",
+          "title": "FireRedAudio: A General-Purpose Audio Language Model with Decoupled Continuous Representations for Understanding and Generation",
+          "titleJa": "FireRedAudio: 理解と生成のための分離された連続表現を備えた汎用音響言語モデル",
+          "authors": [
+            "Feiyu Shen",
+            "Fenglong Xie",
+            "Junjie Li",
+            "Kun Xie",
+            "Lei Xie"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "A unified audio model must recognize and understand linguistic, paralinguistic, and environmental information while supporting speech synthesis and editing. A key challenge is representation: understanding favors compact features suited to long-context modeling, whereas speech generation requires reconstructible features that preserve fine-grained acoustic detail. We introduce FireRedAudio, a general-purpose audio language model with a shared 9B-parameter LLM. To the best of our knowledge, it is the first publicly disclosed unified audio-language model to provide separate continuous input representations for understanding and generation within a single trainable autoregressive LLM. Audio to be recognized or analyzed is processed by a dedicated Audio Encoder, while speech inputs for generation use a RedAE-based pathway. The LLM directly generates text or conditions a flow-matching DiT to produce continuous acoustic latents. Through progressive multitask training, FireRedAudio supports ASR and audio understanding, with the latter extending to recordings of up to one hour, as well as zero-shot TTS, Instruct TTS, and semantic and acoustic speech editing. Its structured organization of long-form audio achieves second-level timestamp accuracy. Across comprehensive evaluations, FireRedAudio achieves competitive or leading performance in audio understanding and multilingual ASR, strong content accuracy and speaker preservation in zero-shot TTS, leading instruction following in Instruct TTS, and substantial improvements over Ming-UniAudio-Edit in both semantic and acoustic speech editing. These results demonstrate the viability of decoupled continuous input representations for unifying audio understanding and continuous-latent speech generation in a model of moderate scale. Our code is available at https://github.com/FireRedTeam/FireRedAudio.",
+          "comment": "20 pages, 3 figures. In this revision, the author list is ordered alphabetically by given name and an author-contribution statement is added; the technical content is unchanged",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2608.24168v2",
+          "category": "foundation",
+          "task": "音響言語モデル",
+          "taskEn": "Audio Language Model",
+          "proposedMethod": "FireRedAudio",
+          "datasets": [],
+          "what": "理解と生成のタスクにおいて、それぞれ異なる連続入力表現を単一の自己回帰LLM内で分離して提供する、90億パラメータの共有LLMに基づく汎用音響言語モデルを提案している。",
+          "whatEn": "This paper proposes FireRedAudio, a general-purpose audio language model based on a shared 9B-parameter LLM that provides separate continuous input representations for understanding and generation within a single autoregressive LLM.",
+          "novel": "単一のトレーニング可能な自己回帰LLMにおいて、理解のためのコンパクトな特徴量と、生成のための再構成可能な連続音響ラテントの入力を、別々の経路で処理し分離して提供した点にあると著者は主張している。",
+          "novelEn": "The authors claim the novelty lies in being the first to provide separate continuous input representations for understanding and generation within a single trainable autoregressive LLM, separating compact features from reconstructible acoustic latents.",
+          "method": "理解または分析対象のオーディオを専用のオーディオエンコーダで処理する一方、生成用の音声入力にはRedAEベースの経路を使用し、テキスト生成またはflow-matching DiTを条件付けて連続音響ラテントを生成する。段階的なマルチタスク学習を通じて、各種タスクを統合する。",
+          "methodEn": "Audio to be recognized or analyzed is processed by a dedicated Audio Encoder, while speech inputs for generation use a RedAE-based pathway, where the LLM directly generates text or conditions a flow-matching DiT to produce continuous acoustic latents through progressive multitask training.",
+          "validation": "多言語ASR、最大1時間の録音を含む音響理解、ゼロショットTTS、Instruct TTS、および意味的・音響的音声編集タスクにおいて評価を行い、優れた性能または競争力のある結果を示した。",
+          "validationEn": "Evaluations across multilingual ASR, audio understanding up to one hour, zero-shot TTS, Instruct TTS, and semantic/acoustic speech editing demonstrated competitive or leading performance.",
+          "discussion": "中規模のモデルサイズにおける分離表現の有効性は実証されたものの、極端に複雑な環境やさらなるスケールアップ時における限界、また多言語対応の網羅性については抽象からは明記されていない。",
+          "discussionEn": "While demonstrating the viability at a moderate scale, the abstract does not explicitly detail limitations regarding extreme environments, further scaling behavior, or the full coverage of languages.",
+          "abstractJa": "統一された音響モデルは、言語的、準言語的、および環境的な情報を認識・理解すると同時に、音声合成と編集をサポートしなければなりません。主な課題は表現にあります。理解には長いコンテキストのモデリングに適したコンパクトな特徴量が好まれるのに対し、音声生成には微細な音響的詳細を保持する再構成可能な特徴量が必要となります。本稿では、9Bパラメータの共有LLMを備えた汎用音響言語モデルであるFireRedAudioを紹介します。私たちの知る限り、これは単一のトレーニング可能な自己回帰LLM内で、理解と生成のために分離された連続入力表現を提供する、公に開示された最初の統一音響言語モデルです。認識または分析されるオーディオは専用のオーディオエンコーダによって処理され、生成用の音声入力はRedAEベースのパスを使用します。LLMはテキストを直接生成するか、flow-matching DiTを条件付けて連続的な音響ラテントを生成します。段階的なマルチタスク学習を通じて、FireRedAudioは自動音声認識（ASR）と音響理解（後者は最大1時間の録音に対応）をサポートするほか、ゼロショットTTS、Instruct TTS、そして意味的および音響的な音声編集もサポートします。長時間のオーディオを構造化して整理することで、秒単位のタイムスタンプ精度を達成します。包括的な評価において、FireRedAudioは音響理解と多言語ASRで競争力のある、または最先端の性能を達成し、ゼロショットTTSにおける強力なコンテンツ正確性と話者性保持、Instruct TTSにおける優れた指示追従、そして意味的および音響的な音声編集の両方でMing-UniAudio-Editに対する大幅な改善を達成しました。これらの結果は、中規模のモデルにおいて、音響理解と連続ラテント音声生成を統一するために、分離された連続入力表現が実現可能であることを示しています。コードは https://github.com/FireRedTeam/FireRedAudio で入手可能です。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2608.24958v1",
+          "date": "Aug 25",
+          "title": "Can We Read the Mind of an Audio LLM? A Verbalizable, Multilingual Middle-Layer Workspace",
+          "titleJa": "音響言語モデルの思考を読むことはできるか？言語化可能で多言語に対応した中間層ワークスペース",
+          "authors": [
+            "Jiajun Fan",
+            "Jingyuan Li",
+            "Prashanth Gurunath Shivakumar",
+            "Qi Luo",
+            "Jia-Hong Huang"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "An audio language model is a black box in a specific way: we see what it says, never what it works out on the way there, and chain-of-thought monitoring helps only if the model writes its reasoning down. Reading a base Qwen3-Omni with a logit lens at the audio-token positions, we find that the answer to a spoken question becomes legible - in words - in the model's middle layers, before it emits any token. Five findings follow. (1) The readout carries concepts in neither the question, the options, nor the model's own transcription: on a clip whose verbatim transcription is empty garbling, it reconstructs Watergate and scandal, passes through the role president, and resolves to Nixon - a hidden multi-hop chain, read with no chain-of-thought. (2) The content is language-agnostic: one audio-inferred concept surfaces in several scripts at once, and 38% of top-1 readouts are Chinese on English inputs. (3) It is paralinguistic: given the same clip as audio and as the model's own emotion-free caption, the audio mind forms the sound source, speaker role, or affect that the caption discards, and answers correctly more often. (4) The audio-driven signal is absent at the input, turns on about a tenth of the way into the network, separates most cleanly from the text prior in the middle band (35-80% of depth), and activation patching shows it is causally used and committed before the last fifth of the layers. (5) Deleting single layers maps the pipeline: reading the sound in is localized to the entry layers and answer delivery to the output layer, while retrieval is distributed across the interior. Throughout, a waveform-swap control - identical text, only the sound changed - isolates the audio-driven signal from a prior over the printed options. This is a qualitative account of what an audio model works out before it speaks: the quantities are controls, not benchmark scores.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2608.24958v1",
+          "category": "foundation",
+          "task": "音響言語モデルの解釈可能性",
+          "taskEn": "Interpretability of Audio Language Models",
+          "proposedMethod": "Logit lens probing / Waveform-swap control",
+          "datasets": [],
+          "what": "音響言語モデル（Qwen3-Omni）の中間層において、音声の回答が出力トークンとして生成される前に、内部でどのように言語的な概念や準言語的な情報が処理されているかをロジットレンズなどの手法を用いて分析している。",
+          "whatEn": "This paper analyzes how linguistic concepts and paralinguistic information are internally processed within the middle layers of an audio language model (Qwen3-Omni) before emitting any output tokens, utilizing logit lens and other interpretability techniques.",
+          "novel": "音声質問の回答が、文字による説明や連鎖思考（CoT）による書き出しを経ることなく、モデルの中間層で既に単語として読み取り可能であること、およびこれが言語に依存しない多言語対応概念や準言語的特徴（感情や音源など）を保持していることを解明した点にあると著者は主張している。",
+          "novelEn": "The authors claim the novelty lies in discovering that the answer to a spoken question becomes legible in words within the middle layers without explicit chain-of-thought, demonstrating that this internal representation is language-agnostic and retains rich paralinguistic information discarded by captions.",
+          "method": "Qwen3-Omniモデルの音声トークン位置において中間層の表現をロジットレンズで読み出す手法と、音響駆動の信号をテキストの事前確率から分離するための波形スワップ制御（テキストは同一で音響のみ変更）やアクティベーションパッチングなどの介入実験を適用した。",
+          "methodEn": "The method applies logit-lens reading at audio-token positions in Qwen3-Omni, combined with activation patching and a waveform-swap control (identical text with swapped audio) to isolate audio-driven signals from text priors.",
+          "validation": "各種の検証により、入力音声に存在しない概念が多段の推論を経て中間層（深さ35-80%）で表現されることや、最終層に到達する前に因果的に使用・決定されることを確認した。",
+          "validationEn": "Validation confirmed that concepts absent in the raw input emerge through multi-hop inference in the middle band (35-80% of depth) and are causally committed to before the final layers.",
+          "discussion": "本研究は音響言語モデルが発話前に何を解決しているかを定性的に説明することに主眼を置いており、提示された数値は対照実験のコントロールでありベンチマークスコアではないため、一般的な汎用性能の評価基準としては適用できない。",
+          "discussionEn": "The discussion notes that this is a qualitative account where the reported quantities function as experimental controls rather than standard benchmark scores, rendering direct performance comparisons inapplicable.",
+          "abstractJa": "音響言語モデルは、ある特有の方法におけるブラックボックスです。私たちはモデルが何を語るかを見ることはできますが、そこに到達するまでに何を処理しているかを見ることはできません。また、Chain-of-Thought（思考の連鎖）のモニタリングは、モデルがその推論を書き留めた場合にのみ役立ちます。ベースとなるQwen3-Omniをオーディオトークンの位置においてロジットレンズ（logit lens）で読み解くことで、モデルがトークンを出力する前に、音声の質問に対する回答がモデルの中間層で言葉として読み取り可能になることがわかりました。これに続いて5つの発見があります。(1) 読み出し結果には、質問、選択肢、さらにはモデル自身の書き起こしにも含まれない概念が含まれています。例えば、逐語的な書き起こしが意味のない内容であるクリップにおいて、モデルは「ウォーターゲート」と「スキャンダル」を再構築し、「大統領」という役割を通過し、「ニクソン」へと解決します。これはChain-of-Thoughtを伴わずに読み出される、隠されたマルチホップの推論連鎖です。(2) このコンテンツは言語に依存しません。音声から推論された1つの概念が同時に複数の文字で表面化し、英語の入力に対してトップ1の読み出しの38%が中国語でした。(3) これは準言語的です。同じクリップをオーディオとして与えた場合と、モデル自身による感情の排除されたキャプションとして与えた場合を比較すると、オーディオによる「精神」は、キャプションが捨てる音源、話者の役割、または感情を形成し、より高い確率で正しく回答します。(4) 音響駆動の信号は入力時点では存在せず、ネットワークの約10分の1の深さでオンになり、中間帯（深さの35-80%）でテキストの事前分布から最も綺麗に分離されます。また、アクティベーションパッチングにより、それが最後の5分の1の層に達する前に因果的に使用され、決定されていることが示されます。(5) 単一の層を削除することでパイプラインがマッピングされます。音の読み込みは入り口の層に局所化され、回答の配信は出力層に、そして検索は内部全体に分散されています。全体を通して、波形スワップ制御（テキストは同一で音響のみを変更）により、音響駆動の信号を印刷された選択肢に対する事前分布から分離しました。これは、音響モデルが発話する前に何を処理しているかについての定性的な説明です。示されている数値は対照条件であり、ベンチマークスコアではありません。",
+          "nextReads": [
+            {
+              "label": "Locating and Editing Factual Associations in GPT (2022)",
+              "arxivId": "2202.05262",
+              "url": "https://arxiv.org/abs/2202.05262",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.23758v2",
+          "date": "Aug 24",
+          "title": "EXAM$^2$: $\\underline{Ex}tending$ $\\underline{A}udio$ $Understanding$ $in$ $\\underline{M}ultilingual$ $and$ $\\underline{M}ultimodal$ $Analysis$",
+          "titleJa": "EXAM$^2$: 多言語およびマルチモーダル分析における音響理解の拡張",
+          "authors": [
+            "Jiawen Wang",
+            "Xiaoxue Gao",
+            "Zi Haur Pang",
+            "Nancy F. Chen"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Recent large audio language models (LALMs) have achieved impressive progress in audio understanding. However, existing evaluations remain largely constrained to English and narrow audio domains. Prior benchmarks typically focus on a single audio modality, i.e., speech, sound, or music, limiting the systematic investigation into how these models generalize across diverse visual scenarios. In this paper, we introduce EXAM$^2$, a benchmark for multilingual and multimodal audio understanding spanning six languages and multiple modalities, including speech, sound, music, mixed-audio settings, and visual images. By incorporating visual information alongside heterogeneous audio inputs, EXAM$^2$ enables more realistic evaluation of scene-aware audio reasoning and cross-modal comprehension. EXAM$^2$ comprises $5,667$ multiple-choice questions, $22,614$ image instances, and $135,684$ multilingual translations. We evaluate state-of-the-art open-source and proprietary LALMs as well as multimodal LLMs, revealing substantial performance gaps in multilingual and cross-modal understanding. Furthermore, we propose Gemma3n-EXAM$^2$, a lightweight fusion-model fine-tuned on EXAM$^2$-train, achieves up to $12.4\\%$ improvement in multilingual settings and $21.7\\%$ gains in multimodal evaluation over a strong baseline. Empirical results establish EXAM$^2$ as a challenging benchmark and pioneer future multilingual and multimodal audio intelligence research.",
+          "comment": "8 pages, 2 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2608.23758v2",
+          "category": "foundation",
+          "task": "音響ベンチマーク",
+          "taskEn": "Audio Benchmark",
+          "proposedMethod": "EXAM$^2$ / Gemma3n-EXAM$^2$",
+          "datasets": [
+            "EXAM^2"
+          ],
+          "what": "多言語およびマルチモーダルのコンテキストにおける統合的な音響理解を評価するためのベンチマークであるEXAM$^2$と、それを活用して高い性能向上を達成した軽量な融合モデルであるGemma3n-EXAM$^2$を提示している。",
+          "whatEn": "This paper introduces EXAM$^2$, a benchmark for evaluating multilingual and multimodal audio understanding, alongside Gemma3n-EXAM$^2$, a lightweight fusion-model fine-tuned on this dataset to achieve significant performance improvements.",
+          "novel": "従来の英語や単一モダリティに偏った評価から脱却し、音声、環境音、音楽、混合音響、および画像を含む多言語（6言語）かつマルチモーダルな文脈でのシーン認識・音響推論を評価できるベンチマークを初めて構築したと著者は主張している。",
+          "novelEn": "The authors claim the novelty is introducing a benchmark (EXAM$^2$) that spans six languages and multiple modalities (speech, sound, music, mixed audio, and images), moving beyond single-modality and English-centric evaluations to support scene-aware audio reasoning and cross-modal comprehension.",
+          "method": "5,667個の多肢選択式質問、22,614個の画像、135,684個の多言語翻訳から構成されるデータセットを構築した。また、この学習データで微調整した軽量な融合モデルであるGemma3n-EXAM$^2$を提案した。",
+          "methodEn": "The method involves constructing a benchmark with 5,667 multiple-choice questions, 22,614 images, and 135,684 multilingual translations, and fine-tuning a lightweight fusion model, Gemma3n-EXAM$^2$, on the EXAM$^2$-train subset.",
+          "validation": "最新のオープンソースおよび商用大規模音響言語モデル（LALM）やマルチモーダルLLMを評価し、多言語・クロスモーダル理解に大きな性能ギャップがあることを示した。またGemma3n-EXAM$^2$により、ベースラインと比べて多言語設定で最大12.4%、マルチモーダル評価で21.7%の向上を確認した。",
+          "validationEn": "Validation on state-of-the-art open-source and proprietary LALMs and multimodal LLMs revealed substantial performance gaps, while the proposed Gemma3n-EXAM$^2$ achieved up to a 12.4% improvement in multilingual settings and 21.7% in multimodal evaluations over a strong baseline.",
+          "discussion": "ベンチマークにおける大規模言語モデルの性能不足やギャップは明らかにしたものの、対象としている6言語以外の広範な多言語展開や、極めてノイズの多い実環境における汎用性については抽象から十分な情報が得られない。",
+          "discussionEn": "While revealing performance gaps in current models, the abstract does not provide sufficient information on generalization to languages beyond the selected six or performance under highly noisy real-world environments.",
+          "abstractJa": "最近の大型音響言語モデル（LALM）は、音響の理解において著しい進歩を遂げています。しかし、既存の評価は依然として主に英語や限定的な音響ドメインに制約されています。以前のベンチマークは通常、音声、環境音、または音楽といった単一の音響モダリティに焦点を当てており、これらのモデルが多様な視覚的シナリオにどのように一般化できるかを体系的に調査することを制限していました。本論文では、音声、環境音、音楽、混合音響設定、および視覚画像を含む、6つの言語と複数のモダリティにまたがる多言語かつマルチモーダルな音響理解のベンチマークであるEXAM$^2$を導入します。異種混合の音響入力とともに視覚情報を組み込むことで、EXAM$^2$はシーンを認識した音響推論とクロスモーダルな理解のより現実的な評価を可能にします。EXAM$^2$は、5,667個の多肢選択問題、22,614個の画像インスタンス、および135,684個の多言語翻訳で構成されています。最新のオープンソースおよび独自のLALM、ならびにマルチモーダルLLMを評価し、多言語およびクロスモーダルな理解において大幅な性能ギャップが存在することを明らかにしました。さらに、EXAM$^2$-trainで微調整された軽量な融合モデルであるGemma3n-EXAM$^2$を提案し、強力なベースラインと比較して、多言語設定で最大12.4%、マルチモーダル評価で21.7%の向上を達成しました。実験結果は、EXAM$^2$が挑戦的なベンチマークであることを実証し、今後の多言語およびマルチモーダル音響知能研究の先駆けとなるものです。",
+          "nextReads": [
+            {
+              "label": "WavLM: Large-Scale Self-Supervised Pre-Training for Full Stack Speech Processing (2021)",
+              "arxivId": "2110.13900",
+              "url": "https://arxiv.org/abs/2110.13900",
+              "verified": true,
+              "source": "arxiv_api"
+            },
+            {
+              "label": "Gemma: Open Models Based on Gemini Research and Technology (2024)",
+              "arxivId": "2403.08295",
+              "url": "https://arxiv.org/abs/2403.08295",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "labelEn": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2608.24659v1",
+          "date": "Aug 25",
+          "title": "REDnet: Recursive Encoder and Decoder for Speech Separation under Unknown Number of Speakers and Variable Number of Microphones",
+          "titleJa": "REDnet: 未知の話者数および可変のマイク数における音声分離のための再帰的エンコーダ・デコーダ",
+          "authors": [
+            "Fulin Wu",
+            "Zhong-Qiu Wang"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "We propose $\\textit{recursive encoder and decoder}$ (RED) for building a single deep neural network (DNN) model that can separate multi-speaker mixtures containing unknown numbers of speakers and variable numbers of microphones arranged in an unknown geometry, a task that has not been studied yet. The decoder of RED recursively detects whether there are active speakers left and separates one speaker at a time. It is designed to be trained in an end-to-end fashion to improve separation performance. The encoder of RED recursively encodes each microphone channel of the input mixture, sequentially incorporating spatial cues. Combining both, the DNN can be trained to separate mixtures not only with unknown numbers of speakers but also with variable numbers of microphones, achieving state-of-the-art performance on multiple public datasets.",
+          "comment": "in submission",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2608.24659v1",
+          "category": "separation",
+          "task": "音源分離",
+          "taskEn": "Audio Source Separation",
+          "proposedMethod": "REDnet",
+          "datasets": [],
+          "what": "未知の話者数、および未知の配置形状で数が変動するマイク入力に対応し、単一の深層学習モデルでマルチスピーカー混合音声を分離する「再帰的エンコーダ・デコーダ（RED）」を提案している。",
+          "whatEn": "This paper proposes the Recursive Encoder and Decoder (RED) for building a single deep neural network model capable of separating multi-speaker mixtures with an unknown number of speakers and a variable number of microphones in unknown geometries.",
+          "novel": "未知の話者数と可変マイク数の同時処理という、これまで研究されてこなかった課題に取り組み、話者の再帰的検出とマルチマイク情報の逐次統合を可能にする単一のネットワーク構造を実現した点。",
+          "novelEn": "The authors claim novelty in addressing the previously unstudied task of handling both an unknown number of speakers and a variable number of microphones simultaneously, using a single network structure designed for recursive speaker detection and sequential multi-microphone integration.",
+          "method": "REDのエンコーダがマイクチャンネルを再帰的にエンコードして空間的な手がかりを順次取り込み、デコーダが活動中の話者が残っているかを再帰的に判定しながら一度に1人ずつ音声を分離する。全体はエンドツーエンドで訓練可能である。",
+          "methodEn": "The encoder of RED recursively encodes each microphone channel to sequentially incorporate spatial cues, while the decoder recursively detects remaining active speakers and separates them one by one, enabling end-to-end training.",
+          "validation": "複数の公開データセットにおいて評価を行い、未知の話者数や可変のマイク数環境下において最高峰（SOTA）の分離性能を達成したことを示している。",
+          "validationEn": "The model was evaluated on multiple public datasets, demonstrating state-of-the-art separation performance on mixtures containing both unknown speaker numbers and variable numbers of microphones.",
+          "discussion": "アブストラクトには本手法の具体的な制限事項や、極端な騒音・残響環境における性能低下などの課題についての直接的な言及はない。",
+          "discussionEn": "The abstract does not explicitly discuss specific limitations of the method or challenges under extreme noise and reverberation conditions.",
+          "abstractJa": "未知の話者数、および未知の形状で配置された可変数のマイクを含むマルチ話者混合音声を分離できる単一の深層ニューラルネットワーク（DNN）モデルを構築するための「再帰的エンコーダ・デコーダ」（RED）を提案する。このタスクはこれまで研究されていなかった。REDのデコーダは、アクティブな話者が残っているかどうかを再帰的に検出し、一度に1人の話者を分離する。これは、分離性能を向上させるためにエンドツーエンド方式で訓練できるように設計されている。REDのエンコーダは、入力混合音声の各マイクチャンネルを再帰的にエンコードし、空間的な手がかりを順次取り込んでいく。これら両方を組み合わせることで、DNNは未知の話者数だけでなく可変のマイク数を持つ混合音声をも分離するように訓練でき、複数の公開データセットで最先端の性能を達成している。",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.22111v2",
+          "date": "Aug 22",
+          "title": "FlowSep 2: Self-Supervised Flow Matching for Language-Queried Audio Source Separation",
+          "titleJa": "FlowSep 2: 言語クエリによる音源分離のための自己教師ありフローマッチング",
+          "authors": [
+            "Yi Yuan",
+            "Xubo Liu",
+            "Haohe Liu",
+            "Xiyuan Kang",
+            "Mark D. Plumbley"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Language-queried audio source separation (LASS) aims to extract target sources from audio mixtures according to natural language descriptions, offering a flexible and scalable interface for audio source separation. However, most existing LASS methods rely on discriminative, mask-based models, which estimate masks from the input mixture. These methods often over-suppress target sounds or fail to fully separate them, especially when multiple sound events strongly overlap in complex acoustic scenes. In this work, we propose FlowSep2, a text-conditioned flow-matching generative model for LASS. Instead of directly predicting a separation mask, FlowSep2 learns to generate the target source representation from Gaussian noise in a latent space, conditioned on both the mixture representation and the text query. Specifically, we employ rectified flow matching with a Diffusion Transformer backbone. We further incorporate Self-Flow, a self-supervised flow-matching paradigm, into our LASS framework. By encouraging semantically structured latent representations under the generative objective, Self-Flow improves the model's ability to separate target sources according to text queries. Experiments on multiple LASS benchmarks show that FlowSep2 achieves state-of-the-art performance and demonstrates enhanced sound separation results in challenging scenarios with overlapping sound events.",
+          "comment": "Submission to IEEE/ACM Transactions on Audio, Speech, and Language Processing",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2608.22111v2",
+          "category": "separation",
+          "task": "音源分離",
+          "taskEn": "Audio Source Separation",
+          "proposedMethod": "FlowSep2",
+          "datasets": [],
+          "what": "テキストクエリに基づいて混合音響信号から目的の音源を抽出する、フローマッチング生成モデルを用いた言語クエリ音源分離（LASS）手法。",
+          "whatEn": "A language-queried audio source separation (LASS) method using a flow-matching generative model to extract target sources from audio mixtures based on text queries.",
+          "novel": "マスク予測に基づく従来手法の過剰抑制や分離失敗という課題に対し、潜在空間におけるガウスノイズからの生成モデルアプローチと、自己教師ありフローマッチング（Self-Flow）の統合を提案している点。",
+          "novelEn": "The authors claim novelty in addressing the over-suppression and separation failure of mask-based methods by proposing a generative approach from Gaussian noise in latent space, integrated with a self-supervised flow-matching paradigm (Self-Flow).",
+          "method": "Diffusion Transformerバックボーンを備えた整流フローmatchingを用い、混合信号とテキストクエリを条件として潜在空間で目的音源表現を生成する。さらに、セマンティックに構造化された潜在表現を促すSelf-Flowを導入する。",
+          "methodEn": "Using rectified flow matching with a Diffusion Transformer backbone, the method generates target source representations in a latent space conditioned on the mixture and text. It further incorporates Self-Flow to encourage semantically structured latent representations.",
+          "validation": "複数のLASSベンチマークにおいて実験を行い、本手法が最先端の性能を達成し、特に複数の音響イベントが重なり合う困難なシナリオにおいて分離性能が向上することを示した。",
+          "validationEn": "Experiments on multiple LASS benchmarks demonstrate that the method achieves state-of-the-art performance and shows enhanced separation results in challenging scenarios with overlapping sound events.",
+          "discussion": "アブストラクトには、モデルの限界や、極端なノイズ環境における具体的な失敗例に関する記述はない。",
+          "discussionEn": "The abstract does not explicitly discuss specific limitations or failure cases under extreme acoustic conditions.",
+          "abstractJa": "言語クエリによる音源分離（LASS）は、自然言語の記述に従って混合オーディオから目的の音源を抽出することを目指しており、音源分離に対して柔軟で拡張可能なインターフェースを提供します。しかし、既存のLASS手法の多くは、入力混合信号からマスクを推定する識別的なマスクベースのモデルに依存しています。これらの手法は、特に複雑な音響シーンで複数の音響イベントが強く重なり合っている場合に、目的の音を過剰に抑制したり、完全に分離できなかったりすることがよくあります。本研究では、LASSのためのテキスト条件付きフローマッチング生成モデルであるFlowSep2を提案します。FlowSep2は、分離マスクを直接予測するのではなく、混合信号の表現とテキストクエリの両方を条件として、潜在空間内のガウスノイズから目的音源の表現を生成することを学習します。具体的には、Diffusion Transformerバックボーンを備えた整流フローマッチングを採用しています。さらに、自己教師ありフローマッチングパラダイムであるSelf-FlowをLASSフレームワークに組み込みます。生成目標の下でセマンティックに構造化された潜在表現を促すことにより、Self-Flowはテキストクエリに従って目的の音源を分離するモデルの能力を向上させます。複数のLASSベンチマークでの実験により、FlowSep2が最先端の性能を達成し、音響イベントが重複する困難なシナリオにおいて向上した音分離結果を示すことが証明されました。",
+          "nextReads": [
+            {
+              "label": "AudioLDM: Text-to-Audio Generation with Latent Diffusion Models (2023)",
+              "arxivId": "2301.12503",
+              "url": "https://arxiv.org/abs/2301.12503",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.22057v1",
+          "date": "Aug 22",
+          "title": "Vibrato Matching for Modulation Control and Blending in Sound Mixtures",
+          "titleJa": "音響混合物における変調制御とブレンディングのためのビブラートマッチング",
+          "authors": [
+            "Jeremy Hyrkas"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "In sound mixtures of more than one musical source, different vibrato patterns act as a cue that multiple sources are present for both human listeners and source separation algorithms. Matching the vibrato patterns of the signals in the mixture reduces the perception of multiple sources, particularly when the sources play in unison. This work introduces the vibrato matching algorithm, which first suppresses vibrato in a target signal and then transfers vibrato from a source signal to the target. An existing vibrato suppression algorithm is combined with a new algorithm for vibrato transfer, which imparts frequency modulation and amplitude modulation to the harmonics of the target signal, and amplitude modulation onto the spectral envelope of the non-harmonic residual component. Examples demonstrate the algorithm's utility as a vibrato control mechanism and as a tool for blending sound sources. Matching vibrato degrades the performance of source separation algorithms, suggesting a similar degradation in listeners ability to detect the presence of multiple sources.",
+          "comment": "6 pages, 8 figures, International Computer Music Conference (ICMC) 2026",
+          "journalRef": "Proceedings of the 51st International Computer Music Conference (2026) 164-169",
+          "categories": [
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2608.22057v1",
+          "category": "separation",
+          "task": "オーディオ信号処理",
+          "taskEn": "Audio Signal Processing",
+          "proposedMethod": "Vibrato Matching Algorithm",
+          "datasets": [],
+          "what": "複数の音楽音源の混合において、ビブラートパターンを一致させることで複数音源の知覚を減少させ、音源同士のブレンドを容易にするアルゴリズム。",
+          "whatEn": "An algorithm that matches vibrato patterns between musical sources in a mixture to reduce the perception of multiple sources and facilitate blending.",
+          "novel": "ターゲット信号のビブラートを抑制した後、ソース信号からターゲット信号へビブラート（周波数および振幅変調）を転送し、非調和残差成分のスペクトルエンベロープにも振幅変調を適用する新しいビブラート転送技術を提案した点。",
+          "novelEn": "The authors present novelty in a new vibrato transfer algorithm that suppresses vibrato in a target signal, transfers frequency and amplitude modulation to its harmonics from a source signal, and applies amplitude modulation to the spectral envelope of the non-harmonic residual.",
+          "method": "既存のビブラート抑制アルゴリズムと、調和構造への変調付与および非調和残差への振幅変調転送を行う新しいビブラート転送アルゴリズムを組み合わせる。",
+          "methodEn": "The method combines an existing vibrato suppression algorithm with a new vibrato transfer algorithm that imparts frequency/amplitude modulation to harmonics and amplitude modulation to the non-harmonic residual's spectral envelope.",
+          "validation": "具体例を用いて、ビブラート制御機構および音源のブレンディングツールとしての有用性を示した。また、ビブラートの一致が音源分離アルゴリズムの性能を低下させ、人間の検知能力低下を示唆することを確認した。",
+          "validationEn": "Examples demonstrate the algorithm's utility for vibrato control and blending. It was shown that matching vibrato degrades the performance of source separation algorithms, suggesting a similar degradation in human listener detection.",
+          "discussion": "人間のリスナーに対する主観的な音響評価試験の規模や詳細、および極端なビブラートパラメータに対する頑健性についての具体的な記述はアブストラクトにない。",
+          "discussionEn": "The abstract does not specify the scale of subjective listening tests with human listeners or the robustness of the algorithm under extreme vibrato parameters.",
+          "abstractJa": "複数の音楽音源からなる音響混合物において、異なるビブラートパターンは、人間のリスナーと音源分離アルゴリズムの両方に対して、複数の音源が存在するという手がかりとして機能します。混合信号内のビブラートパターンを一致させることは、特に音源がユニゾンで演奏されている場合に、複数の音源が独立して存在するという知覚を減少させます。本研究では、ターゲット信号のビブラートをまず抑制し、その後ソース信号からターゲット信号へビブラートを転送する「ビブラートマッチングアルゴリズム」を提案します。既存のビブラート抑制アルゴリズムを、ターゲット信号の高調波に周波数変調と振幅変調を付与し、さらに非高調波の残差成分のスペクトルエンベロープに振幅変調を付与する新しいビブラート転送アルゴリズムと組み合わせます。実例により、ビブラート制御メカニズムとして、また音源をブレンドするためのツールとしての本アルゴリズムの有用性が示されます。ビブラートを一致させることは音源分離アルゴリズムの性能を低下させ、これは複数の音源の存在を検出するリスナーの能力においても同様の低下が起こることを示唆しています。",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "理解と生成の表現を分離したFireRedAudioや、多言語・多角的な音声理解を可能にするEXAM^2ベンチマークなど、大型音響言語モデルの性能向上と評価手法が加速しています。",
+    "未知の話者やマイク環境に対応するREDnet、テキスト指定で音源を分離するFlowSep 2、そしてCoSTALAによる時空間アライメントなど、高度な音源分離と整列技術が提案されています。",
+    "Qwen3-Omniの中間層における概念の内部処理プロセスの解析や、混合音の調和を高めるVibrato Matchingなど、音声AIの解釈可能性と精密な制御性の向上に焦点が当てられています"
+  ],
+  "trendEn": [
+    "Performance enhancements and evaluations of large audio language models are accelerating, featuring FireRedAudio with decoupled representations and the EXAM^2 benchmark for multimodal audio understanding.",
+    "Advanced source separation and alignment techniques are emerging, highlighted by REDnet for unknown speaker and microphone setups, FlowSep 2 for language-queried separation, and CoSTALA for spatio-temporal alignment.",
+    "Research is focusing on improving interpretability and control in audio AI, such as analyzing the internal concept processing in Qwen3-Omni's middle layers and utilizing Vibrato Matching to enhance sound blending."
+  ]
+}
