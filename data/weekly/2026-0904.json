@@ -1,0 +1,411 @@
+{
+  "date": "2026-0904",
+  "generated_at": "2026-09-04T00:00:00+00:00",
+  "total": 8,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "音の基盤モデル",
+      "labelEn": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2609.03620v1",
+          "date": "Sep 03",
+          "title": "ToolDF: Tool-Integrated Reasoning for Mixed-Authenticity Audio Deepfake Detection",
+          "titleJa": "ToolDF: 混合真正性オーディオディープフェイク検出のためのツール統合型推論",
+          "authors": [
+            "Taewoo Kim",
+            "Young Han Lee",
+            "Nam In Park",
+            "Chanwoo Kim"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Audio deepfake detection is commonly formulated as clip-level binary classification of single-domain audio. However, real-world manipulated audio can exhibit mixed authenticity, where genuine and manipulated cues coexist across temporal transitions, overlapping sources, or both. This setting requires not only detecting manipulated audio but also localizing the components that provide evidence for the decision. We propose ToolDF, a tool-integrated reasoning framework for mixed-authenticity audio deepfake detection. ToolDF employs an audio large language model as an orchestrator trained with supervised tool-use trajectories. It adaptively analyzes the audio scene, selectively performs source separation, routes components to domain-specific experts, and aggregates their evidence into an interpretable verdict. We further introduce a mixed-authenticity ADD benchmark covering temporal transitions, acoustic overlaps, and hybrid mixtures. Experimental results show that ToolDF achieves the best overall performance on composite-type detection, achieving macro-F1 gains of 3.72 and 14.39 points over the strongest monolithic baseline and a fixed pipeline, respectively, while providing interpretable evidence localized to temporal regions and acoustic sources. Our source code and dataset are publicly available online.",
+          "comment": "To appear in Findings of the Association for Computational Linguistics: EMNLP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2609.03620v1",
+          "category": "foundation",
+          "task": "ディープフェイク検出",
+          "taskEn": "Deepfake Detection",
+          "proposedMethod": "ToolDF",
+          "datasets": [],
+          "what": "実世界における本物と偽物が混在した（時間的遷移、重複した音源、またはその両方）音声データを検出し、その根拠となる成分を特定するための、ツール統合型推論フレームワークを提案している。",
+          "whatEn": "The paper proposes a tool-integrated reasoning framework to detect mixed-authenticity audio (coexisting genuine and manipulated cues across temporal transitions, overlapping sources, or both) and localize the components providing evidence for the decision.",
+          "novel": "著者らは、音響大規模言語モデルをオーケストレーターとして、音源分離やドメイン専門分野の専門家ツールを適応的に選択・統合するアプローチを提案し、さらに時間的遷移や音響的重複をカバーする新しい混合真正性ベンチマークを導入した点に新規性があると主張している。",
+          "novelEn": "The authors claim novelty in employing an audio large language model as an orchestrator trained with supervised tool-use trajectories to adaptively select tools like source separation, and introducing a new mixed-authenticity benchmark covering temporal transitions and acoustic overlaps.",
+          "method": "提案手法ToolDFは、音響大規模言語モデルを司令塔とし、教師ありツール利用軌跡を用いて学習させ、音響シーンの分析、必要に応じた音源分離、特定ドメイン専門家へのルーティング、そして解釈可能な判定結果への証拠の集約を適応的に行う。",
+          "methodEn": "ToolDF employs an audio large language model as an orchestrator trained with supervised tool-use trajectories to adaptively analyze the acoustic scene, selectively perform source separation, route components to domain-specific experts, and aggregate evidence into an interpretable verdict.",
+          "validation": "提案した混合真正性ADDベンチマークを用いて検証し、最も強力なモノリシックなベースラインおよび固定パイプラインと比較して、複合タイプの検出においてそれぞれ3.72ポイントおよび14.39ポイントのmacro-F1向上を達成した。",
+          "validationEn": "Validation was performed on the proposed mixed-authenticity ADD benchmark, demonstrating that ToolDF achieved macro-F1 gains of 3.72 and 14.39 points over the strongest monolithic baseline and a fixed pipeline, respectively, on composite-type detection.",
+          "discussion": "アブストラクトには、提案手法の具体的な限界や課題に関する記述はない。",
+          "discussionEn": "The abstract does not explicitly mention specific limitations or challenges of the proposed method.",
+          "abstractJa": "音声ディープフェイク検出は、一般的に単一ドメインの音声に対するクリップレベルの2値分類として定式化される。しかし、実世界の改ざんされた音声は、時間的な遷移、重複する音源、あるいはその両方にわたって、本物の手がかりと改ざんされた手がかりが共存する「混合真正性（mixed authenticity）」を示すことがある。この設定では、改ざんされた音声を検出するだけでなく、判断の根拠となる要素を特定することも求められる。本論文では、混合真正性音声ディープフェイク検出のためのツール統合型推論フレームワークであるToolDFを提案する。ToolDFは、教師ありツール利用軌跡で学習された音響大規模言語モデルをオーケストレーターとして採用している。これは、音響シーンを適応的に分析し、選択的に音源分離を実行し、コンポーネントをドメイン固有の専門家にルーティングし、それらの証拠を解釈可能な判定に統合する。さらに、時間的遷移、音響的重複、およびハイブリッド混合をカバーする、混合真正性ADDベンチマークを導入する。実験結果は、ToolDFが複合タイプ検出において最高の総合性能を達成し、最も強力なモノリシックなベースラインおよび固定パイプラインに対して、それぞれ3.72ポイントおよび14.39ポイントのmacro-F1向上を達成すると同時に、時間領域および音響ソースに特定された解釈可能な証拠を提供することを示している。ソースコードとデータセットはオンラインで公開されている。",
+          "nextReads": [
+            {
+              "label": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale (2020)",
+              "arxivId": "2010.11929",
+              "url": "https://arxiv.org/abs/2010.11929",
+              "verified": true,
+              "source": "arxiv_api"
+            },
+            {
+              "label": "Toolformer: Language Models Can Teach Themselves to Use Tools (2023)",
+              "arxivId": "2302.04761",
+              "url": "https://arxiv.org/abs/2302.04761",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2609.02277v1",
+          "date": "Sep 02",
+          "title": "Auditory Illusion Benchmark for Large Audio Language Models",
+          "titleJa": "音響大規模言語モデルのための聴覚錯覚ベンチマーク",
+          "authors": [
+            "Hayoon Kim",
+            "Eunice Hong",
+            "Kyogu Lee"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Perceptual illusions have long served as crucial probes into human cognition, revealing biases and limitations of perception. In the auditory domain, such illusions provide a unique lens for testing whether Large Audio Language Models (LALMs) replicate human perceptual tendencies. Despite their importance, most benchmarks focus on visual illusions or general audio tasks, leaving auditory illusions underexplored. To this end, we present AIB, the first auditory illusion benchmark for LALMs, covering ten representative illusions across music, sound, and speech, each annotated for the presence of knowledge-based priors. Our methodology pairs model evaluation with controlled human listening studies, enabling direct comparison of responses. Results show systematic differences: while most LALMs remain signal-faithful on low-level acoustic illusions, several exhibit more human-like responses when linguistic or musical priors are involved, although no model matches the human perceptual profile. These findings highlight the current limitations of LALMs as cognitive models. By establishing auditory illusions as a rigorous testbed, our work offers a new perspective for probing neural black-box models and advancing understanding of auditory cognition. AIB is publicly available at https://github.com/gillosae/aib.",
+          "comment": "Accepted to the 2026 IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP 2026)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2609.02277v1",
+          "category": "foundation",
+          "task": "ベンチマーク構築",
+          "taskEn": "Benchmark Evaluation",
+          "proposedMethod": "Auditory Illusion Benchmark (AIB)",
+          "datasets": [
+            "Auditory Illusion Benchmark"
+          ],
+          "what": "音響大規模言語モデル（LALM）が人間の知覚的傾向を再現しているかを評価するために、音楽、環境音、音声にわたる10の代表的な聴覚錯覚をカバーする初のベンチマークを提案し、人間との直接比較評価を行った。",
+          "whatEn": "The paper presents the Auditory Illusion Benchmark (AIB), the first benchmark designed to test whether Large Audio Language Models (LALMs) replicate human perceptual tendencies using representative auditory illusions.",
+          "novel": "視覚的錯覚や一般的なオーディオタスク用のベンチマークが多い中、未探索であった聴覚錯覚に焦点を当て、知識に基づくプライア（先行知識）のアノテーションと制御された人間による聴取実験とを組み合わせた点に新規性があると主張している。",
+          "novelEn": "The authors claim novelty in establishing the first auditory illusion benchmark for LALMs, which pairs model evaluation with controlled human listening studies across music, sound, and speech with annotated knowledge-based priors.",
+          "method": "音楽、環境音、音声の分野から10の錯覚現象を選択してベンチマーク（AIB）を構築し、モデル評価結果と、管理された環境下で人間が行った聴取テストの結果を直接対比させた。",
+          "methodEn": "The methodology pairs LALM evaluation on the Auditory Illusion Benchmark (AIB), which covers ten representative auditory illusions across music, sound, and speech annotated with knowledge-based priors, with controlled human listening studies.",
+          "validation": "LALMは低レベルの音響錯覚に対しては信号に忠実であり人間のような錯覚を起こしにくい一方、言語的・音楽的プライアが関与する錯覚では人間的な反応を一部見せるものの、人間の知覚プロファイル全体を一致して再現できるモデルは存在しないことを示した。",
+          "validationEn": "Evaluations showed that while most LALMs remain signal-faithful on low-level acoustic illusions, several exhibit more human-like responses when linguistic or musical priors are involved, though no model fully matches the human perceptual profile.",
+          "discussion": "現在のLALMが認知モデルとしては依然として限界を抱えていることが浮き彫りになり、モデルの動作が人間の知覚と完全に一致していないことが示されている。",
+          "discussionEn": "The findings highlight the current limitations of LALMs as cognitive models, demonstrating that no model matches the human perceptual profile.",
+          "abstractJa": "知覚的錯覚は、人間の認知を調査し、知覚のバイアスや限界を明らかにするための重要な手段として長年機能してきた。音響領域において、このような錯覚は、音響大規模言語モデル（LALM）が人間の知覚傾向を模倣しているかどうかを検証するためのユニークな視点を提供する。その重要性にもかかわらず、ほとんどのベンチマークは視覚的錯覚や一般的なオーディオタスクに焦点を当てており、聴覚的錯覚は十分に探索されていない。この目的のために、我々はLALMのための初の聴覚錯覚ベンチマークであるAIBを提案する。これは、音楽、環境音、音声にわたる10の代表的な錯覚をカバーし、それぞれに知識ベースのプライアの存在がアノテーションされている。我々の評価手法は、モデル評価と、対照群を用いた人間の聴取実験をペアにしており、反応の直接比較を可能にしている。結果は系統的な違いを示している。ほとんどのLALMは低レベルの音響錯覚において信号に忠実なままであるが、言語的または音楽的なプライアが関与する場合、いくつかのモデルはより人間のような反応を示すものの、人間の知覚プロファイルと一致するモデルは存在しなかった。これらの発見は、認知モデルとしてのLALMの現在の限界を浮き彫りにしている。聴覚錯覚を厳密なテストベッドとして確立することにより、本研究はニューラルブラックボックスモデルを調査し、聴覚認知の理解を促進するための新たな視点を提供する。AIBは https://github.com/gillosae/aib で一般公開されている。",
+          "nextReads": [
+            {
+              "label": "SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities (2023)",
+              "arxivId": "2305.11000",
+              "url": "https://arxiv.org/abs/2305.11000",
+              "verified": true,
+              "source": "arxiv_api"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2609.01542v2",
+          "date": "Sep 01",
+          "title": "TAG-Bench: Benchmarking Temporal Audio Grounding in Large Audio Language Models",
+          "titleJa": "TAG-Bench: 大規模音響言語モデルにおける時間的オーディオグラウンディングのベンチマーク",
+          "authors": [
+            "Yuhang Dai",
+            "Xin Shu",
+            "Zengxi Li",
+            "Lei Xie",
+            "Xiangang Li"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Large audio language models (LALMs) can describe what is heard, but their ability to localize when queried content occurs remains less systematically evaluated. We present TAG-Bench, a benchmark for temporal audio grounding in which a model returns every time interval that matches a natural-language query. TAG-Bench contains 1,750 human-verified query-recording pairs covering 149.5 hours, with eight source-dependent subsets spanning query categories and audio durations from 7 s to 20 min; 22.1% of the queries have multiple ground-truth intervals. Across 21 evaluated systems, the best-performing model achieves 31.2 mIoU and is the only system above 20 mIoU on the two long subsets, yet even this top performer reaches only 21.5% recall at IoU >= 0.7. Moreover, 9 of 21 systems fall below 5 mIoU, and every model under-reports the number of occurrences on one-to-many queries, with none exceeding 13.2% count accuracy. Because responses are free-form, we report parsing-failure rate and MAE coverage: parsing failures remain in mIoU, Recall, gIoU, and count metrics as empty predictions but do not enter MAE. The results separate precise localization, occurrence enumeration, and output-format reliability within a benchmark whose cross-subset comparisons are descriptive rather than controlled estimates of query abstraction or duration. We will release the TAG-Bench data and evaluation code to support future research.",
+          "comment": "13 pages, 7 figures, 9 tables",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2609.01542v2",
+          "category": "foundation",
+          "task": "オーディオグラウンディング",
+          "taskEn": "Audio Grounding",
+          "proposedMethod": "TAG-Bench",
+          "datasets": [
+            "TAG-Bench"
+          ],
+          "what": "自然言語クエリに一致する音響信号内のすべての時間区間を特定するタスクにおいて、大規模音響言語モデル（LALM）の性能を評価するためのベンチマークを提案している。",
+          "whatEn": "This paper presents a benchmark, TAG-Bench, to evaluate the capability of Large Audio Language Models (LALMs) in localizing all time intervals in an audio recording that match a natural-language query.",
+          "novel": "クエリのカテゴリや音響信号の長さ（7秒から20分）にわたる1,750件の人手で検証されたクエリと録音のペアを含み、複数区間にまたがるクエリにも対応した初の本格的なLALM向け時間的オーディオグラウンディング評価用ベンチマークである点。",
+          "novelEn": "The authors present the first comprehensive temporal audio grounding benchmark for LALMs, featuring 1,750 human-verified query-recording pairs spanning diverse durations (from 7s to 20min) and including one-to-many queries.",
+          "method": "多様な長さと内容を持つ8つのサブセットから構成されるデータセットを構築し、21の既存システムをIoU（積集合・和集合比）やリコール、カウント精度などの複数指標を用いて評価し、出力フォーマットの解析失敗率も測定している。",
+          "methodEn": "The benchmark is constructed with eight subsets of human-verified data, evaluating 21 systems using metrics like mIoU, Recall, gIoU, count accuracy, and parsing-failure rate to disentangle localization, enumeration, and formatting reliability.",
+          "validation": "21のモデルを評価した結果、最高性能のモデルでも31.2 mIoU、IoU >= 0.7におけるリコールが21.5%に留まり、複数区間クエリではすべて数が過小報告されるなど、現在のLALMの限界を明らかにしている。",
+          "validationEn": "Evaluation of 21 models reveals that the best-performing model achieves only 31.2 mIoU and 21.5% recall at IoU >= 0.7, and all models under-report occurrences on one-to-many queries.",
+          "discussion": "各サブセット間の比較は、クエリの抽象度や音響信号の長さによる直接的な影響を厳密に制御して推定したものではなく、記述的な比較に留まる点。",
+          "discussionEn": "A limitation is that the cross-subset comparisons in the benchmark are descriptive rather than controlled estimates of query abstraction or duration.",
+          "abstractJa": "大規模音響言語モデル（LALM）は、聞こえた内容を説明することはできるが、クエリされたコンテンツがいつ発生するかを特定する能力については、これまで体系的に評価されてこなかった。本論文では、モデルが自然言語クエリに一致するすべての時間区間を返す、時間的オーディオグラウンディングのベンチマークであるTAG-Benchを提示する。TAG-Benchは、149.5時間をカバーする人手で検証された1,750個のクエリと録音のペアを含み、クエリのカテゴリと7秒から20分までの音声長にわたる8つのソース依存のサブセットで構成される。クエリの22.1%には、複数の正解（グラウンドトゥルース）区間が存在する。評価された21のシステムのうち、最も優れたモデルは31.2 mIoUを達成し、2つの長いサブセットで20 mIoUを超えた唯一のシステムであったが、このトップモデルでさえ、IoU >= 0.7におけるリコールはわずか21.5%に留まった。さらに、21のシステムのうち9つが5 mIoUを下回り、すべてのモデルが1対多のクエリで発生回数を過小報告し、カウント精度が13.2%を超えるものはなかった。応答は自由形式であるため、パース失敗率とMAE（平均絶対誤差）カバレッジを報告する。パースの失敗は、mIoU、Recall、gIoU、およびカウント指標には空の予測として残るが、MAEには影響しない。これらの結果は、クエリの抽象化や時間に関する厳密に制御された推定ではなく、サブセット間の記述的な比較を行うベンチマークにおいて、高精度な定位、発生数のカウント、および出力フォーマットの信頼性を明確に区別するものである。今後の研究を支援するため、TAG-Benchのデータと評価コードを公開する予定である。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2609.00727v1",
+          "date": "Sep 01",
+          "title": "Heard but Not Heeded: Paralinguistic Information Encoding and Loss in Audio-Language Models",
+          "titleJa": "聞こえてはいるが重視されない：音響言語モデルにおけるパラ言語情報のエンコードと損失",
+          "authors": [
+            "Bhuvan Koduru",
+            "Dareen Safar B Alharthi",
+            "Rita Singh",
+            "Bhiksha Raj"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Audio language models are designed to understand speech, yet it remains unclear whether they capture how something is said beyond what is said. We present a mechanistic analysis of paralinguistic information in four open source models, Whisper-large-v2, Qwen2-Audio-7B Instruct, Qwen2.5-Omni-7B, and Chroma-4B, using the Expresso dataset with controlled speaking styles. We combine centered kernel alignment, linear probing with leave one speaker out evaluation, open ended tone prediction, and a content prosody leakage metric to trace how style information moves from the audio encoder to the final output. All models strongly encode speaking style in the late encoder, that is, the top third of the audio encoder's layers, but this information is consistently degraded before reaching the output. The projector reshapes representation geometry without removing information, while decoders differ in how much style they preserve depending on architecture and training objective. At the output level, models fall into two behaviors. Some are content driven, where predictions depend mainly on text. Others are acoustic driven, where predictions vary with speaking style. The leakage metric quantifies this difference, and qualitative results confirm it. Overall, we identify a gap between what models encode and what they use, highlighting a key limitation in current audio language models.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2609.00727v1",
+          "category": "foundation",
+          "task": "パラ言語情報解析",
+          "taskEn": "Paralinguistic Analysis",
+          "proposedMethod": "Content Prosody Leakage Metric",
+          "datasets": [
+            "Expresso"
+          ],
+          "what": "音響言語モデルが、発話されたテキストの内容だけでなく、話し方（スタイル）などのパラ言語情報をどのように処理し、出力に反映しているかを詳細に分析・検証している。",
+          "whatEn": "This paper presents a mechanistic analysis of how audio language models process and potentially lose paralinguistic style information (how something is said) from the encoder to the output.",
+          "novel": "エンコーダ後期、プロジェクタ、デコーダを通過するパラ言語情報の流れを、中心カーネルアライメントやトーン予測、および提案するコンテンツプロソディ漏洩指標を用いてメカニスティックに追跡し、エンコードされた情報と出力で利用される情報のギャップを明らかにした点。",
+          "novelEn": "The authors perform a mechanistic analysis tracing style information through model components using techniques like centered kernel alignment and a new content prosody leakage metric, revealing a gap between encoding and utilization.",
+          "method": "Whisper-large-v2やQwen2-Audioなどの4つのオープンソースモデルを対象に、発話スタイルが制御されたExpressoデータセットを用いて、各レイヤー表現の類似度分析、線形プロービング、自由記述のトーン予測、および独自指標によるコンテンツ漏洩評価を組み合わせている。",
+          "methodEn": "The study analyzes four open-source models (Whisper-large-v2, Qwen2-Audio-7B Instruct, Qwen2.5-Omni-7B, and Chroma-4B) using the Expresso dataset, combining centered kernel alignment, linear probing, tone prediction, and a leakage metric.",
+          "validation": "すべてのモデルがエンコーダ後期で話し方のスタイルを強く符号化しているものの、プロジェクタやデコーダを通過する間に情報が劣化すること、また出力レベルでテキストに依存する群と音響に依存する群の2つの振る舞いに分かれることを突き止めた。",
+          "validationEn": "The validation shows that while all models encode style strongly in late encoder layers, this information degrades before reaching the output, and models diverge into content-driven and acoustic-driven behaviors.",
+          "discussion": "本分析は、制御された発話スタイル（Expresso）に焦点を当てており、より複雑な野生環境の音声や、多様な種類のパラ言語情報に対する網羅的な検証はさらに進める必要がある。",
+          "discussionEn": "The study focuses on controlled speaking styles and the identified limitation suggests a general gap, but the findings are subject to the specific scope of evaluated models and datasets.",
+          "abstractJa": "音響言語モデルは音声を理解するように設計されているが、話された内容（テキスト）を超えて、それが「どのように話されたか」というパラ言語情報を捉えているかどうかはまだ不明である。本論文では、制御された話し方のスタイルを含むExpressoデータセットを用いて、Whisper-large-v2、Qwen2-Audio-7B Instruct、Qwen2.5-Omni-7B、Chroma-4Bの4つのオープンソースモデルにおけるパラ言語情報のメカニスティックな分析を提示する。中心カーネルアライメント（CKA）、話者を除外した評価を伴う線形プロービング、自由記述のトーン予測、およびコンテンツプロソディ漏洩（Content Prosody Leakage）指標を組み合わせることで、スタイル情報が音声エンコーダから最終出力へどのように移動するかを追跡する。すべてのモデルは、音声エンコーダの上位3分の1の層（エンコーダ後期）において、話し方のスタイルを強くエンコードしているが、この情報は出力に達する前に一貫して劣化する。プロジェクタは情報を失うことなく表現の幾何学的形状を再構築するが、デコーダはアーキテクチャや学習目的に応じてスタイルの保持レベルが異なる。出力レベルにおいて、モデルは2つの行動に分類される。1つは予測が主にテキストに依存する「コンテンツ主導型」、もう1つは予測が話し方のスタイルによって変化する「音響主導型」である。漏洩指標はこの違いを定量化し、定性的な結果もこれを裏付けている。全体として、モデルがエンコードするものと実際に使用するものとの間にギャップがあることを特定し、現在の音響言語モデルにおける重要な限界を明らかにした。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.30622v1",
+          "date": "Aug 31",
+          "title": "Textual Acoustic Grounding for Generalizable LLM-Based Deepfake Voice Detection",
+          "titleJa": "汎用的なLLMベースのディープフェイク音声検出に向けたテキスト音響グラウンディング",
+          "authors": [
+            "Yassine El Kheir",
+            "Xin Wang",
+            "Wanqing Ge",
+            "Tim Polzehl",
+            "Sebastian Moeller"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Deepfake voice detection suffers from poor generalization across unseen domains. While Audio Large Language Models (ALLMs) show promise, the modality gap between continuous audio embeddings which capture the subtle acoustic details necessary for deepfake detection and the semantic space of LLMs remains a critical, underexplored bottleneck. We address this by benchmarking diverse audio encoders integrated with Qwen LLMs (0.5B to 7B parameters). First, we demonstrate that fine-tuning the LLM alone risks out-of-domain overfitting, making a frozen LLM a stronger, resource-efficient baseline. Second, to explicitly bridge the modality gap, we introduce a cross-modal prompting strategy that injects linguistic-knowledge-driven acoustic features (via openSMILE) as structured text tokens. This explicit textual grounding not only enhances the frozen baseline but also makes LLM fine-tuning more effective. Ultimately, our approach demonstrates state-of-the-art resilience on the out-of-domain ITW and MLAAD benchmarks, yielding over \\textbf{16.2\\%} absolute improvement in Macro-F1 over existing ALLM baselines while maintaining competitive in-domain performance. All models reported in this work are \\href{https://huggingface.co/01Yassine/AudioLLM-Deepfake-Detection}{publicly available}.",
+          "comment": "6pages + 1ref, SLT Submission",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2608.30622v1",
+          "category": "foundation",
+          "task": "音声偽造検出",
+          "taskEn": "Deepfake Voice Detection",
+          "proposedMethod": null,
+          "datasets": [
+            "ITW",
+            "MLAAD"
+          ],
+          "what": "音声LLM（ALLM）を用いたディープフェイク音声検出において、連続的な音声埋め込みとLLMの意味空間との間のモダリティギャップを埋めるためのテキスト音響グラウンディング手法を提案している。",
+          "whatEn": "The paper proposes a textual acoustic grounding approach to bridge the modality gap between continuous audio embeddings and the semantic space of LLMs for deepfake voice detection using Audio LLMs.",
+          "novel": "著者らは、LLM単体の微調整がドメイン外での過学習を招くことを示し、openSMILEを介して言語知識に基づいた音響特徴量を構造化テキストトークンとして注入するクロスモーダルプロンプティング戦略を提案した点に新規性がある。",
+          "novelEn": "The authors show that fine-tuning the LLM alone risks out-of-domain overfitting, and they propose a novel cross-modal prompting strategy that injects linguistic-knowledge-driven acoustic features via openSMILE as structured text tokens to explicitly bridge the modality gap.",
+          "method": "Qwen LLM（0.5B〜7Bパラメータ）と多様な音声エンコーダを統合し、凍結されたLLMを強力なベースラインとして使用する。さらに、構造化テキストとして音響特徴量をプロンプトに注入する手法を導入する。",
+          "methodEn": "They integrate diverse audio encoders with Qwen LLMs (0.5B to 7B parameters), utilizing frozen LLMs as a baseline. They then introduce a method to inject acoustic features as structured text tokens into the prompt.",
+          "validation": "ドメイン外のベンチマークであるITWおよびMLAADにおいて評価を行い、従来のALLMベースラインに対してMacro-F1で16.2%以上の絶対的な向上を達成し、高い頑健性を示した。",
+          "validationEn": "Evaluation on out-of-domain benchmarks ITW and MLAAD demonstrated state-of-the-art resilience, yielding over 16.2% absolute improvement in Macro-F1 over existing ALLM baselines while maintaining competitive in-domain performance.",
+          "discussion": "アブストラクトには明示的な制限事項の記述はないが、モデルサイズ（最大7Bパラメータ）による推論コストや、事前定義された音響特徴（openSMILE）の選択に対する依存性が影響する可能性がある。",
+          "discussionEn": "No explicit limitations are mentioned in the abstract, but potential aspects include the inference cost of larger models (up to 7B) and the dependence on the specific choice of handcrafted acoustic features (openSMILE).",
+          "abstractJa": "ディープフェイク音声検出は、未知のドメインにおける汎化性能の低さに悩まされている。音声大規模言語モデル（ALLM）は有望性を示しているが、ディープフェイク検出に必要な微細な音響的詳細を捉える連続的な音声埋め込みと、LLMのセマンティック空間との間のモダリティギャップは、極めて重要でありながら十分に探索されていないボトルネックのままである。本研究では、Qwen LLM（0.5Bから7Bパラメータ）と統合された多様な音声エンコーダをベンチマーク評価することで、この問題に対処する。第一に、LLMのみの微調整はドメイン外での過学習のリスクがあることを示し、凍結されたLLMが強力で資源効率の高いベースラインになることを実証する。第二に、モダリティギャップを明示的に埋めるために、言語知識駆動の音響特徴（openSMILE経由）を構造化テキストトークンとして注入するクロスモーダルプロンプティング戦略を提案する。この明示的なテキストグラウンディングは、凍結されたベースラインを強化するだけでなく、LLMの微調整をより効果的にする。最終的に、提案手法はドメイン外のITWおよびMLAADベンチマークにおいて最先端の回復力を示し、既存のALLMベースラインと比較してMacro-F1で16.2%以上の絶対的な向上を達成しつつ、ドメイン内での競争力のある性能を維持した。本研究で報告されたすべてのモデルは公開されている。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2608.30559v1",
+          "date": "Aug 31",
+          "title": "SPHERE: Automatic Music Upmixing via Audio Language Model Post-Training with Spatial Heuristic Rewards",
+          "titleJa": "SPHERE: 空間ヒューリスティック報酬を用いた音声言語モデルの事後学習による自動音楽アップミキシング",
+          "authors": [
+            "Zixun Guo",
+            "Calvin Murdock",
+            "Sanjeel Parekh",
+            "W Owen Brimijoin",
+            "Simon Dixon"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "In this paper, we study the task of automatic music upmixing, wherein a system predicts spatial mixing parameters from a multi-stem recording. Different from existing methods that rely on task-specific music encoders, we approach this task via audio language model (ALM) post-training, leveraging rich representations from existing ALMs, which encode both music semantics and mixing knowledge. Specifically, we propose a post-training recipe that first employs rejection sampling SFT, followed by reinforcement learning (RL) with verifiable rewards (RLVR) via GRPO. We propose Sphere (Spatial Heuristic Rewards), a deterministic reward suite inspired by music mixing conventions, to guide our post-training. It consists of 6 perceptually-motivated sub-rewards and encourages the output mix to be centered, balanced and spacious. More broadly, our results suggest that expert domain knowledge can be encoded as verifiable rewards and distilled into language models, without task-specific architectures.",
+          "comment": null,
+          "journalRef": "EMNLP 2026",
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2608.30559v1",
+          "category": "foundation",
+          "task": "音楽アップミキシング",
+          "taskEn": "Music Upmixing",
+          "proposedMethod": "SPHERE",
+          "datasets": [],
+          "what": "マルチステム音源から空間ミキシングパラメータを予測する自動音楽アップミキシングの課題に対し、音声言語モデル（ALM）の事後学習と空間ヒューリスティック報酬（SPHERE）を組み合わせた手法を提案している。",
+          "whatEn": "The paper addresses the task of automatic music upmixing by predicting spatial mixing parameters from multi-stem recordings through post-training an audio language model (ALM) combined with Spatial Heuristic Rewards (SPHERE).",
+          "novel": "タスク固有の音楽エンコーダに依存せず、音楽ミキシングの慣習に基づいた検証可能な音響的報酬であるSPHEREを用いた強化学習（GRPO）を通じて、専門知識を言語モデルに蒸留するポストトレーニング手法を提案したこと。",
+          "novelEn": "Instead of relying on task-specific music encoders, the authors propose a post-training recipe using reinforcement learning (GRPO) with a suite of verifiable, domain-expert spatial heuristic rewards (SPHERE) to distill mixing knowledge directly into language models.",
+          "method": "リジェクションサンプリングSFTの後、GRPOによる検証可能報酬付き強化学習（RLVR）を採用する。ミキシングの慣習に着想を得た6つの知覚的サブ報酬からなるSPHEREを提案し、出力をセンター配置、バランス、広がりのあるものに導く。",
+          "methodEn": "The post-training recipe employs rejection sampling SFT followed by reinforcement learning with verifiable rewards (RLVR) via GRPO. The proposed SPHERE reward suite consists of 6 perceptually-motivated sub-rewards to encourage centered, balanced, and spacious mix outputs.",
+          "validation": "専門的なドメイン知識を検証可能な報酬として符号化し、タスク固有のアーキテクチャを追加することなく言語モデルに蒸留可能であることを結果によって示している。",
+          "validationEn": "The results demonstrate that expert domain knowledge can be encoded as verifiable rewards and distilled into language models without requiring task-specific architectures.",
+          "discussion": "アブストラクトには具体的な評価用データセット名や定量的な限界値は明示されておらず、シチュエーションに応じた手動設計の報酬（SPHERE）のパラメータ調整の依存度についての詳細は記載がない。",
+          "discussionEn": "The abstract does not explicitly name the datasets used or mention specific quantitative limitations, leaving details about the sensitivity of the manually designed SPHERE reward parameters unspecified.",
+          "abstractJa": "本論文では、マルチステムの録音から空間ミキシングパラメータをシステムが予測する、自動音楽アップミキシングのタスクを研究する。タスク固有の音楽エンコーダに依存する既存の手法とは異なり、音楽セマンティクスとミキシング知識の両方をエンコードしている既存の音声言語モデル（ALM）の豊かな表現を活用し、ALMの事後学習を介してこのタスクにアプローチする。具体的には、まずリジェクションサンプリングSFTを採用し、続いてGRPOによる検証可能な報酬を伴う強化学習（RLVR）を行う事後学習レシピを提案する。我々は、音楽ミキシングの慣例からインスピレーションを得た決定論的な報酬スイートであるSphere（Spatial Heuristic Rewards）を提案し、事後学習をガイドする。これは、知覚的に動機付けられた6つのサブ報酬で構成され、出力ミックスが中央に配置され、バランスが取れ、広がりのあるものになるように促す。より広範には、我々の結果は、タスク固有のアーキテクチャを必要とせずに、専門家のドメイン知識を検証可能な報酬としてエンコードし、言語モデルに蒸留できることを示唆している。",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "音源分離",
+      "labelEn": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2609.02474v1",
+          "date": "Sep 02",
+          "title": "VAANI Noise Event Dataset: A curated spontaneous speech dataset annotated with timestamps for noise events",
+          "titleJa": "VAANI Noise Event Dataset: 雑音イベントのタイムスタンプがアノテーションされた精選された自発発話データセット",
+          "authors": [
+            "Pavan Kumar J",
+            "Agneedh Basu",
+            "Pranav Bhat",
+            "Sujith Pulikodan",
+            "Suryansh Shukla"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "Most public sound-event corpora are optimized either for general audio tagging or for clean speech separation, and comparatively few provide strong timestamped noise annotations layered directly on top of spontaneous, real-world speech. We present the VAANI Noise Event Timestamp Dataset, a derived annotation layer built on Project VAANI field recordings of spontaneous speech collected across 165 Indian districts in 105 languages. Unlike synthetically mixed corpora, VAANI captures speech and ambient noise in situ and simultaneously, and annotates each recording with fine-grained start/end timestamps for overlapping background noise events organized into a compact seven-class semantic taxonomy: animal, traffic, baby/child, music, signal/alarm, appliance, and non-speech human. This combination of spontaneous multilingual Indic speech, authentic regional soundscapes, and span-level noise tags that may overlap with speech targets tasks that existing datasets address only partially: noise-robust Automatic Speech Recognition (ASR), sound event detection (SED), and speech enhancement. We position VAANI against nine widely used corpora and benchmarks, including WHAM!, AVA-Speech, MUSAN, FSD50K, CHiME-6, AudioSet, DESED, the India-specific iNoise noise database, and the Kathbath-Noisy noisy-ASR benchmarks, and describe the annotation protocol and quality-control procedure used to produce the timestamped tags.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2609.02474v1",
+          "category": "separation",
+          "task": "データセット構築",
+          "taskEn": "Dataset Creation",
+          "proposedMethod": "VAANI Noise Event Timestamp Dataset",
+          "datasets": [
+            "VAANI Noise Event Timestamp Dataset"
+          ],
+          "what": "165のインドの地域から集められた105の言語による自発発話のフィールドレコーディングに基づき、発話と重なる背景雑音イベントに対して、開始・終了のタイムスタンプと7クラスの分類アノテーションを付与したデータセットを提供する。",
+          "whatEn": "The paper presents the VAANI Noise Event Timestamp Dataset, which provides detailed start/end timestamps and a 7-class taxonomy for background noise events overlapping spontaneous multilingual Indic speech.",
+          "novel": "合成混合データとは異なり、実世界の自発的な多言語インド音声と、現地ならではの環境音をその場で同時に捉え、音声と重複する雑音に詳細な区間ラベル（タイムスタンプ）を付与した点に新規性がある。",
+          "novelEn": "Unlike synthetically mixed corpora, the dataset captures spontaneous multilingual Indic speech and authentic regional soundscapes in situ and simultaneously, providing fine-grained span-level noise timestamps that overlap with speech.",
+          "method": "Project VAANIで収集された自発発話データに、7つのセマンティッククラス（動物、交通、赤ちゃん/子供、音楽、信号/アラーム、家電、非音声人間）からなるコンパクトな分類体系を用いて、詳細な開始・終了タイムスタンプのアノテーションを手動で精選して適用した。",
+          "methodEn": "An annotation layer was curated on top of Project VAANI recordings, applying precise start/end timestamps for overlapping background noise events categorized into a compact seven-class semantic taxonomy: animal, traffic, baby/child, music, signal/alarm, appliance, and non-speech human.",
+          "validation": "提案データセットを、WHAM!、AVA-Speech、MUSAN、FSD50K、CHiME-6、AudioSet、DESED、iNoise、Kathbath-Noisyなどの既存の9つの代表的なコーパスやベンチマークと比較し、その位置づけやアノテーションプロトコル、品質管理手順を記述した。",
+          "validationEn": "The paper positions the VAANI dataset against nine widely used corpora and benchmarks (including WHAM!, AVA-Speech, MUSAN, etc.) and describes the annotation protocol and quality-control procedure used for production.",
+          "discussion": "アブストラクトには、手法やデータの明確な限界・制約に関する記述は含まれていない。",
+          "discussionEn": "The abstract does not explicitly mention limitations of the dataset or the annotation process.",
+          "abstractJa": "ほとんどの公開音響イベントコーパスは、一般的なオーディオタギングまたはクリーンな音源分離のいずれかに最適化されており、自発的な実世界の音声の上に直接レイヤー化された、タイムスタンプ付きの強力な雑音アノテーションを提供するものは比較的少ない。我々は、165のインドの地区で105の言語で収集された自発発話のProject VAANIフィールドレコーディングに基づいて構築された派生アノテーションレイヤーである、VAANI Noise Event Timestamp Datasetを提案する。合成的に混合されたコーパスとは異なり、VAANIは音声と環境音をその場で（in situ）同時に捉え、重複する背景雑音イベントに対して、動物、交通、赤ちゃん/子供、音楽、信号/アラーム、家電、非音声人間のコンパクトな7クラスのセマンティックタキソノミーに整理された、きめ細かな開始/終了タイムスタンプを各録音にアノテーションする。自発的な多言語インド音声、本物の地域的な音風景、および音声と重複する可能性のあるスパンレベルの雑音タグのこの組み合わせは、既存のデータセットが部分的にしか対処していないタスク、すなわち雑音に強い自動音声認識（ASR）、音響イベント検出（SED）、および音声強調を対象としている。我々は、WHAM!、AVA-Speech、MUSAN、FSD50K、CHiME-6、AudioSet、DESED、インド固有のiNoise雑音データベース、およびKathbath-Noisy雑音ASRベンチマークを含む、広く使用されている9つのコーパスおよびベンチマークに対してVAANIを位置づけ、タイムスタンプ付きタグの作成に使用されたアノテーションプロトコルと品質管理手順について説明する。",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2609.00238v1",
+          "date": "Aug 31",
+          "title": "XVAE-WMT: Explainable Wavelet-Temporal Variational Autoencoder for Blind Source Separation of Heart and Lung Sounds",
+          "titleJa": "XVAE-WMT: 心音と肺音のブラインド音源分離のための説明可能なウェーブレット・時間的変分オートエンコーダ",
+          "authors": [
+            "Yasaman Torabi",
+            "Shahram Shirani",
+            "James P. Reilly"
+          ],
+          "org": "",
+          "orgSource": null,
+          "abstract": "The separation of cardiovascular sounds is a critical task in biomedical signal processing. In this paper, we introduce XVAE-WMT1, an unsupervised explainable generative AI algorithm combining a variational autoencoder (VAE) with explainable AI (XAI), wavelet-based inputs, a post-hoc output mask, and temporal consistency (TC) loss. Unlike existing supervised and VAE-based methods that rely on Short-Time Fourier Transform (STFT) and ignore latent interpretability, XVAE-WMT requires no paired clean recordings and integrates a Continuous Wavelet Transform (CWT) front-end for superior time-frequency localization. We assessed the latent space interpretability via different metrics, with SHAP (SHapley Additive exPlanations) enabling dimensionality reduction to the top 75% of latent features while preserving separation quality. Evaluated across two datasets using Signal-to-Distortion Ratio (SDR), Signal-to-Interference Ratio (SIR), and Signal-to-Artifacts Ratio (SAR), XVAE-WMT attains 26.8 dB SDR, 32.8 dB SIR, and 28.6 dB SAR.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2609.00238v1",
+          "category": "separation",
+          "task": "音源分離",
+          "taskEn": "Audio Source Separation",
+          "proposedMethod": "XVAE-WMT",
+          "datasets": [],
+          "what": "一対のクリーンな録音データを必要とせず、心音と肺音を分離するための教師なしの「説明可能なAI（XAI）」を統合した変分オートエンコーダ（VAE）アルゴリズムを提案している。",
+          "whatEn": "The paper introduces XVAE-WMT, an unsupervised, explainable generative AI algorithm combining a variational autoencoder (VAE) with continuous wavelet transform and temporal consistency loss for blind source separation of heart and lung sounds.",
+          "novel": "短時間フーリエ変換（STFT）に依存する既存手法とは異なり、連続ウェーブレット変換（CWT）フロントエンドによる高い時間周波数局所性と、SHAPによる潜在空間の解釈性（説明可能性）を導入し、さらに時間的整合性（TC）損失とポストホックマスクを組み合わせた点。",
+          "novelEn": "The authors combine a Continuous Wavelet Transform (CWT) front-end, a VAE, temporal consistency loss, and SHAP-based explainable AI to reduce latent dimensionality while maintaining separation quality, avoiding reliance on paired training data or STFT.",
+          "method": "CWTを入力特徴とし、VAEを用いて潜在変数をモデル化。SHAP（SHapley Additive exPlanations）を適用して上位75%の重要特徴量に潜在空間を削減し、時間的整合性損失と事後出力マスクを用いて分離処理を行う。",
+          "methodEn": "The method utilizes a CWT front-end, VAE modeling, SHAP for reducing the latent space to the top 75% features to assess interpretability, and a temporal consistency loss along with a post-hoc output mask for source separation.",
+          "validation": "2つのデータセットを用いて、SDR 26.8 dB、SIR 32.8 dB、SAR 28.6 dBを達成し、潜在空間の解釈性と高精度な分離品質の両立を検証した。",
+          "validationEn": "Evaluation on two datasets demonstrates separation performance with 26.8 dB SDR, 32.8 dB SIR, and 28.6 dB SAR while maintaining latent space interpretability.",
+          "discussion": "抄録には手法の明確な限界や検討課題についての直接的な言及はない。",
+          "discussionEn": "The abstract does not explicitly mention limitations or failure modes of the proposed method.",
+          "abstractJa": "心血管音の分離は、生体医学信号処理において重要な課題である。本論文では、変分オートエンコーダ（VAE）と説明可能AI（XAI）、ウェーブレットに基づく入力、事後出力マスク、および時間的整合性（TC）損失を組み合わせた、教師なしの説明可能な生成AIアルゴリズムであるXVAE-WMTを提案する。短時間フーリエ変換（STFT）に依存し、潜在空間の解釈可能性を無視する既存の教師あり手法やVAEベースの手法とは異なり、XVAE-WMTは一対のクリーンな録音を必要とせず、優れた時間周波数局所性のために連続ウェーブレット変換（CWT）フロントエンドを統合している。様々な指標を用いて潜在空間の解釈可能性を評価し、SHAP（SHapley Additive exPlanations）を使用することで、分離品質を維持しながら潜在特徴量の上位75%への次元削減を可能にした。2つのデータセットを用いた評価において、XVAE-WMTはSDR 26.8 dB、SIR 32.8 dB、SAR 28.6 dBを達成した。",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Auditory Illusion Benchmark (AIB)やTAG-Benchなどのベンチマークの登場により、大規模音声言語モデル（LALM）における聴覚的錯覚、時間的グラウンディング、および傍言語情報の保持能力の評価が急速に進んでいます。",
+    "ディープフェイク検出の分野では、ToolDFによるツール統合推論やTextual Acoustic Groundingアプローチなど、LALMを活用して真偽判定の精度と説明可能性を向上させる技術が注目を集めています。",
+    "音響信号処理の応用において、心肺音分離のための説明可能なXVAE-WMTや、空間的ヒューリスティック報酬を用いた自動音楽アップミキシング手法SPHEREなど、実用的なタスクに特化した新手法が提案されています。"
+  ],
+  "trendEn": [
+    "The evaluation of Large Audio Language Models (LALMs) is rapidly advancing with new benchmarks like the Auditory Illusion Benchmark (AIB) and TAG-Bench to assess auditory illusions, temporal grounding, and paralinguistic information retention.",
+    "In deepfake detection, techniques utilizing LALMs to improve detection accuracy and explainability are gaining traction, including ToolDF's tool-integrated reasoning and Textual Acoustic Grounding approaches.",
+    "For practical audio applications, specialized methods are being developed to enhance signal processing, such as the explainable XVAE-WMT for heart and lung sound separation and SPHERE for automatic music upmixing."
+  ]
+}
